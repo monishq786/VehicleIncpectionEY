@@ -392,7 +392,7 @@ tr[data-mydata="X"] {
 
 .cl_bordergridlist {
     background-color: white;
-    border: 2px solid #0047ba !important;
+    border: 2px solid #00C000 !important;
     border-radius: 4px !important;
     height: 3.5rem !important;
 }
@@ -1650,4 +1650,9 @@ border-bottom:none !important
 .Cl_SearchInput .sapMInputBaseContentWrapper {
     border: 1.5px solid #0047ba;
     border-radius: 8px;
+}
+.sapMInput {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0 2px;
 }
