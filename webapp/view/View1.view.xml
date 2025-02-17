@@ -282,7 +282,7 @@
 									<Image height="2.7rem" src="{imageModel>/path}/image/QRetestIcon.png" class="sapUiTinyMarginEnd"/>
 								</FlexBox>
 								<OverflowToolbar height="2rem">
-									<Text text="Fresh Test" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<Text text="Pending Service Request" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
 									<ToolbarSpacer/>
 								</OverflowToolbar>
 							</VBox>
@@ -368,6 +368,7 @@
 								</OverflowToolbar>
 							</VBox>
 						</f:GridListItem> -->
+
 						<f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onPressESMA" type="Active" visible="true">
 
 							<VBox height="auto" justifyContent="Center">
@@ -379,6 +380,42 @@
 								</FlexBox>
 								<OverflowToolbar height="2rem">
 									<Text text="Visual Test (Demo)" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem>
+
+					</f:GridList>
+
+					<f:GridList visible="true" width="50%">
+
+						<f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="" type="Active" visible="true">
+
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="3rem" src="{imageModel>/path}/image/QFreshTestIcon.png" class="sapUiTinyMarginEnd"/>
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+									<Text text="Re-Test" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem>
+
+						<f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="" type="Active" visible="true" >
+
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="3rem" src="{imageModel>/path}/image/QFreshTestIcon.png" class="sapUiTinyMarginEnd"/>
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+									<Text text="Re-Print" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
 									<ToolbarSpacer/>
 								</OverflowToolbar>
 							</VBox>
