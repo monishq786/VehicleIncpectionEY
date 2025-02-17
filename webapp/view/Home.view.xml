@@ -1,0 +1,539 @@
+<mvc:View
+    controllerName="VIR.controller.Home"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:ff="sap.f"
+>
+    <App>
+        <pages>
+            <Page
+                showHeader="false"
+                class="sapUiSizeCompact"
+            >
+                <content>
+                    <l:VerticalLayout width="100%">
+                        <l:BlockLayout background="Dashboard">
+                            <l:BlockLayoutRow accentCells="Accent1">
+                                <l:BlockLayoutCell
+                                    width="3"
+                                    class="Cl_BlockLayoutPading"
+                                >
+                                    <!-- <Title text="Search Vehicle" level="H1" class="cl_WelcomeText"/> -->
+                                    <Title
+                                        text="Search Vehicle"
+                                        class="Cl_TitleColor"
+                                    />
+                                    <FlexBox
+                                        height="auto"
+                                        alignItems="Center"
+                                        justifyContent="Start"
+                                    >
+                                        <Input
+                                            value="{VIRGlobalModel>/PlateNo}"
+                                            placeholder="Plate Number"
+                                            maxLength="5"
+                                            class="Cl_SearchInput sapUiTinyMarginEnd sapUiTinyMarginBottom"
+                                        />
+
+                                        <Input
+                                            value="{VIRGlobalModel>/PlateCode}"
+                                            placeholder="Plate Code"
+                                            maxLength="3"
+                                            width="95%"
+                                            class="Cl_SearchInput sapUiTinyMarginBegin sapUiTinyMarginEnd sapUiTinyMarginBottom"
+                                        />
+
+                                        <Input
+                                            value=""
+                                            placeholder="Chassis Number"
+                                            maxLength="10"
+                                            class="Cl_SearchInput sapUiTinyMarginBeginEnd sapUiTinyMarginBottom"
+                                            width="95%"
+                                        />
+                                        <Input
+                                            value=""
+                                            placeholder="Certificate Number"
+                                            maxLength="10"
+                                            class="Cl_SearchInput sapUiTinyMarginBegin sapUiTinyMarginBottom"
+                                            width="95%"
+                                        />
+                                        <Button
+                                            text="Go"
+                                            type="Emphasized"
+                                            class="sapUiSmallMarginBeginEnd"
+                                            press="onPressAdpolice"
+                                        />
+                                        <Button
+                                            text="Clear"
+                                            type="Transparent"
+                                            class="sapUiTinyMarginBeginEnd"
+                                        />
+                                    </FlexBox>
+                                </l:BlockLayoutCell>
+                            </l:BlockLayoutRow>
+                        </l:BlockLayout>
+                        <l:BlockLayout background="Dashboard">
+                            <l:BlockLayoutRow accentCells="Accent1">
+                                <l:BlockLayoutCell
+                                    width="6"
+                                    class="Cl_BlockLayoutRadius"
+                                    height="5rem"
+                                >
+                                    <FlexBox
+                                        alignItems="Start"
+                                        justifyContent="SpaceBetween"
+                                    >
+                                        <Title
+                                            text="Vehicle Info"
+                                            class="Cl_TitleColor sapUiSmallMargin"
+                                        />
+                                        <Image
+                                            src="{imageModel>/path}/image/toyota.svg"
+                                            press="onPressShowVehicleInfo"
+                                            class="sapUiTinyMarginBegin"
+                                            width="46px"
+                                            height="46px"
+                                        />
+                                    </FlexBox>
+                                    <f:Form
+                                        editable="false"
+                                        class="cl_VehicleInfo"
+                                    >
+                                        <!-- <f:title>
+                                            <core:Title text="Vehicle Info" class="cl_WelcomeText"/>
+                                        </f:title> -->
+                                        <f:layout>
+                                            <f:ResponsiveGridLayout
+                                                labelSpanXL="4"
+                                                labelSpanL="4"
+                                                labelSpanM="4"
+                                                labelSpanS="12"
+                                                adjustLabelSpan="false"
+                                                emptySpanXL="0"
+                                                emptySpanL="0"
+                                                emptySpanM="0"
+                                                emptySpanS="0"
+                                                columnsXL="3"
+                                                columnsL="2"
+                                                columnsM="2"
+                                                singleContainerFullSize="false"
+                                            />
+                                        </f:layout>
+                                        <f:formContainers>
+                                            <f:FormContainer>
+                                                <f:formElements>
+                                                    <f:FormElement
+                                                        label="Chassis No"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Chassisno}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Engine No"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Engineno}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Country"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Country}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Manufacturer"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Manufacturer}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Model"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Model}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement label="Kind">
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Kind}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement label="Type">
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Type}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Body Color"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/BodyColor}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Gear Type"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/GearType}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Fuel Type"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/FuelType}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Steering Side"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/SteeringSide}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Weight Kind"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/WeightKind}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Init Reg Year"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/InitRegyear}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Reg Exp Date"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/RegExpYear}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                </f:formElements>
+                                            </f:FormContainer>
+                                            <f:FormContainer>
+                                                <f:formElements>
+                                                    <f:FormElement
+                                                        label="Plate Type"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/PlateType}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="MFG Year"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/MFGYear}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Horse Power"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/HP}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="No.of.Axles"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Axles}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="No.of.Cylinders"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Cylinders}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="No.of.Wheels"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Wheels}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="No.of.Doors"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Doors}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="No.of.Passengers"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/Passengers}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Empty Weight"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/EmptyWeight}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Full Weight"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/FullWeight}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Mielage"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/CubicCapacity}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                    <f:FormElement
+                                                        label="Cubic Capacity"
+                                                    >
+                                                        <f:fields>
+                                                            <Text
+                                                                text="{SearchViewModel>/CubicCapacity}"
+                                                            />
+                                                        </f:fields>
+                                                    </f:FormElement>
+                                                </f:formElements>
+                                            </f:FormContainer>
+                                        </f:formContainers>
+                                    </f:Form>
+                                </l:BlockLayoutCell>
+                                <l:BlockLayoutCell
+                                    width="2"
+                                    class="Cl_BlockLayoutRadius"
+                                >
+                                    <ff:GridListItem
+                                        visible="true"
+                                        class="Cl_QuickLinkGridList"
+                                    >
+                                        <VBox
+                                            height="auto"
+                                            justifyContent="Center"
+                                        >
+                                            <FlexBox
+                                                alignItems="Center"
+                                                justifyContent="Center"
+                                                height="3rem"
+                                            >
+                                                <Image
+                                                    height="2.7rem"
+                                                    src="{imageModel>/path}/image/user.png"
+                                                    class="sapUiTinyMarginEnd sapUiTinyMarginTop"
+                                                />
+                                            </FlexBox>
+                                            <VBox
+                                                alignItems="Center"
+                                                justifyContent="Center"
+                                            >
+                                                <HBox>
+                                                    <core:Icon
+                                                        src="sap-icon://employe"
+                                                        class="size4 sapUiTinyMarginTopBottom"
+                                                        color="#1C4C98"
+                                                    />
+                                                    <Title
+                                                        title="Name"
+                                                        text="{SearchViewModel>/CustomerName}"
+                                                        active="true"
+                                                        class="cl_NewHomeobjlabel sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                    />
+                                                </HBox>
+                                                <HBox>
+                                                    <core:Icon
+                                                        src="sap-icon://email"
+                                                        class="size4 sapUiTinyMarginTopBottom"
+                                                        color="#1C4C98"
+                                                    />
+                                                    <Text
+                                                        text="{SearchViewModel>/HeaderEmail}"
+                                                        class="cl_NewHomeobjlabel sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                    />
+                                                </HBox>
+                                                <HBox>
+                                                    <core:Icon
+                                                        src="sap-icon://outgoing-call"
+                                                        class="size4 sapUiTinyMarginTopBottom"
+                                                        color="#1C4C98"
+                                                    />
+                                                    <Text
+                                                        text="{SearchViewModel>/HeaderMobileNo}"
+                                                        class="cl_NewHomeobjlabel sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                    />
+                                                </HBox>
+                                            </VBox>
+                                        </VBox>
+                                    </ff:GridListItem>
+                                    <FlexBox
+                                        alignItems="Start"
+                                        justifyContent="SpaceBetween"
+                                        class="sapUiSmallMarginTop"
+                                    >
+                                        <Title
+                                            text="Select Inspection"
+                                            class="Cl_TitleColor sapUiSmallMargin"
+                                        />
+                                        <!-- <Image src="{imageModel>/path}/image/BMW.png" press="onPressShowVehicleInfo" class="sapUiTinyMarginBegin" /> -->
+                                    </FlexBox>
+
+                                    <ff:GridList visible="true">
+                                        <!-- <ff:headerToolbar>
+                                            <Toolbar>
+                                                <Title text="Select Inspection" class="Cl_TitleColor"/>
+                                                <ToolbarSpacer/>
+                                            </Toolbar>
+                                        </ff:headerToolbar> -->
+
+                                        <!-- Fresh Test -->
+                                        <ff:GridListItem
+                                            class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom"
+                                            press="onPressProceed"
+                                            type="Active"
+                                            visible="true"
+                                        >
+                                            <VBox
+                                                height="auto"
+                                                justifyContent="Center"
+                                            >
+                                                <HBox>
+                                                    <Image
+                                                        height="2rem"
+                                                        src="{imageModel>/path}/image/QFreshTestIcon.png"
+                                                        class="sapUiSmallMarginBeginEnd sapUiTinyMarginTopBottom"
+                                                    />
+                                                    <Text
+                                                        text="Fresh Test"
+                                                        wrapping="true"
+                                                        class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiSmallMarginTopBottom"
+                                                    />
+                                                </HBox>
+                                            </VBox>
+                                        </ff:GridListItem>
+                                        <!-- Safety Items -->
+                                        <ff:GridListItem
+                                            class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom"
+                                            press="onPressProceed"
+                                            type="Active"
+                                            visible="true"
+                                        >
+                                            <VBox
+                                                height="auto"
+                                                justifyContent="Center"
+                                            >
+                                                <HBox>
+                                                    <Image
+                                                        height="2rem"
+                                                        src="{imageModel>/path}/image/Qsafety.png"
+                                                        class="sapUiSmallMarginBeginEnd sapUiTinyMarginTopBottom"
+                                                    />
+                                                    <Text
+                                                        text="Safety Items"
+                                                        wrapping="true"
+                                                        class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiSmallMarginTopBottom"
+                                                    />
+                                                </HBox>
+                                            </VBox>
+                                        </ff:GridListItem>
+                                        <!-- Permit -->
+                                        <ff:GridListItem
+                                            class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom"
+                                            press="onPressProceed"
+                                            type="Active"
+                                            visible="true"
+                                        >
+                                            <VBox
+                                                height="auto"
+                                                justifyContent="Center"
+                                            >
+                                                <HBox>
+                                                    <Image
+                                                        height="2rem"
+                                                        src="{imageModel>/path}/image/QPermitIcon.png"
+                                                        class="sapUiSmallMarginBeginEnd sapUiTinyMarginTopBottom"
+                                                    />
+                                                    <Text
+                                                        text="Permits"
+                                                        wrapping="true"
+                                                        class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiSmallMarginTopBottom"
+                                                    />
+                                                </HBox>
+                                            </VBox>
+                                        </ff:GridListItem>
+                                    </ff:GridList>
+                                </l:BlockLayoutCell>
+                            </l:BlockLayoutRow>
+                        </l:BlockLayout>
+                    </l:VerticalLayout>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

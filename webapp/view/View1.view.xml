@@ -1,0 +1,392 @@
+<mvc:View controllerName="VIR.controller.View1"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.f"
+	xmlns:card="sap.f.cards"
+	xmlns:u="sap.ui.unified"
+	xmlns:ui="sap.ui.table">
+	<App>
+		<pages>
+			<Page showHeader="false" class="sapUiSizeCompact">
+				<content>
+					<!--<Image height="20rem" width="98.5%" class="sapUiTinyMarginBegin sapUiTinyMarginEnd sapUiTinyMarginTopBottom"-->
+					<!-- src="{imageModel>/path}/image/AdnocBanner1.png"/>-->
+					<l:VerticalLayout width="100%">
+						<l:BlockLayout background="Dashboard">
+							<l:BlockLayoutRow accentCells="Accent1">
+								<l:BlockLayoutCell width="3" class="Cl_BlockLayoutPading">
+								<OverflowToolbar
+                                            height="3rem"
+                                            design="Solid"
+                                            class="Cl_CustomerHeaderBG"
+                                        >
+                                            <VBox justifyContent="SpaceBetween">
+                                                <FlexBox
+                                                    alignItems="Start"
+                                                    justifyContent="Center"
+                                                >
+                                                    <Title
+                                                        text="Open Service Request"
+                                                        wrapping="true"
+                                                        class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin"
+                                                    />
+                                                </FlexBox>
+                                            </VBox>
+                                        </OverflowToolbar>
+									<!--<Table items="{VIRGlobalModel>/PendingReq}" class="cl_table cl_tablecell sapUiSmallMarginBottom">-->
+									<!--	<headerToolbar>-->
+									<!--		<OverflowToolbar>-->
+									<!--			<content>-->
+									<!--				<Title text="Open Orders" level="H2" class="cl_WelcomeText"/>-->
+									<!--			</content>-->
+									<!--		</OverflowToolbar>-->
+									<!--	</headerToolbar>-->
+									<!--	<columns>-->
+									<!--		<Column minScreenWidth="Phone" demandPopin="true" width="7rem">-->
+									<!--			<Text text="Order No"/>-->
+									<!--		</Column>-->
+									<!--		<Column minScreenWidth="Tablet" demandPopin="true" width="7rem">-->
+									<!--			<Text text="Plate No"/>-->
+									<!--		</Column>-->
+									<!--		<Column minScreenWidth="Tablet" demandPopin="true" width="6rem">-->
+									<!--			<Text text="Lane"/>-->
+									<!--		</Column>-->
+									<!--		<Column minScreenWidth="Tablet" demandPopin="true" width="6rem">-->
+									<!--			<Text text="Pending"/>-->
+									<!--		</Column>-->
+									<!--	</columns>-->
+									<!--	<items>-->
+									<!--		<ColumnListItem>-->
+									<!--			<cells>-->
+									<!--				<Text text="{VIRGlobalModel>ReqNo}"></Text>-->
+									<!--				<Text text="{VIRGlobalModel>Plateno} / {VIRGlobalModel>PlateColor}"></Text>-->
+									<!--				<Text text="L{VIRGlobalModel>Lane}"></Text>-->
+									<!--				<HBox>-->
+									<!--					<Image press="onpressPendingReq" width="20px" height="20px" src="{imageModel>/path}/image/MAHA_Logo.svg"-->
+									<!-- visible="{VIRGlobalModel>MahaVisible}"/>-->
+									<!--					<Image press="onpressPendingReq" width="26px" height="24px" src="{imageModel>/path}/image/inspection.png"-->
+									<!-- visible="{VIRGlobalModel>Inspvisible}"/>-->
+									<!--				</HBox>-->
+									<!--			</cells>-->
+									<!--		</ColumnListItem>-->
+									<!--	</items>-->
+									<!--</Table>-->
+									<ui:Table width="auto" class="sapUiSmallMarginBottom cl_uitable" rows="{VIRGlobalModel>/PendingReq}" selectionMode="None" visibleRowCount="5">
+										<ui:extension>
+											<OverflowToolbar >
+												<!-- <Title text="Open Service Request" level="H2" class="cl_WelcomeText"/> -->
+												<ToolbarSpacer/>
+												<Button icon="sap-icon://feeder-arrow" iconFirst="false" text="Show Details" type="Transparent" press="onpressPendingReq" class="cl_WelcomeText"/>
+											</OverflowToolbar>
+										</ui:extension>
+										<ui:columns>
+											<ui:Column width="auto">
+												<Label text="Service Id"/>
+												<ui:template>
+													<Text text="{VIRGlobalModel>ReqNo}"></Text>
+												</ui:template>
+											</ui:Column>
+											<ui:Column width="auto">
+												<Label text="Plate No"/>
+												<ui:template>
+													<Text text="{VIRGlobalModel>Plateno} / {VIRGlobalModel>PlateColor}"></Text>
+												</ui:template>
+											</ui:Column>
+											<ui:Column width="auto">
+												<Label text="Lane"/>
+												<ui:template>
+													<Text text="L{VIRGlobalModel>Lane}"></Text>
+												</ui:template>
+											</ui:Column>
+											<!-- <ui:Column width="auto">
+												<Label text="Pending"/>
+												<ui:template>
+													<HBox>
+														<Image press="onpressPendingReq" width="20px" height="20px" src="{imageModel>/path}/image/MAHA_Logo.svg" visible="{VIRGlobalModel>MahaVisible}"/>
+														<Image press="onpressPendingReq" width="26px" height="24px" src="{imageModel>/path}/image/inspection.png" visible="{VIRGlobalModel>Inspvisible}"/>
+													</HBox>
+												</ui:template>
+											</ui:Column> -->
+										</ui:columns>
+									</ui:Table>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell width="3" class="Cl_BlockLayoutPading">
+								 <OverflowToolbar
+                                            height="3rem"
+                                            design="Solid"
+                                            class="Cl_CustomerHeaderBG"
+                                        >
+                                            <VBox justifyContent="SpaceBetween">
+                                                <FlexBox
+                                                    alignItems="Start"
+                                                    justifyContent="Center"
+                                                >
+                                                    <Title
+                                                        text="Today Status - Ahmed Asad"
+                                                        wrapping="true"
+                                                        class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin"
+                                                    />
+                                                </FlexBox>
+                                            </VBox>
+                                        </OverflowToolbar>
+								<!-- <OverflowToolbar >
+												<Title text="Today Status" level="H2" class="cl_WelcomeText"/>
+												<ToolbarSpacer/>
+												
+											</OverflowToolbar> -->
+									<viz:VizFrame id="idVizFrame" vizProperties="{title:{text:'Today Status', visible:false}, dataLabel : { name : 'Value Label',visible:true, type:'value' },legend:{visible:true, position:'right'}}" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='donut'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{MasterViewModel>/Chartdata}">                               
+                        <viz.data:dimensions> 
+                            <viz.data:DimensionDefinition name="Store Name"
+                                value="{MasterViewModel>Service}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Revenue"
+                                value="{MasterViewModel>Count}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="size" type="Measure"
+                        values="Revenue" />
+                    <viz.feeds:FeedItem uid="color" type="Dimension"
+                        values="Store Name" />
+                </viz:feeds>
+                <viz:dependents>
+                    <viz:Popover id="idPopOver"></viz:Popover>
+                </viz:dependents>
+            </viz:VizFrame>
+								
+									<!-- <viz:VizFrame visible="true" vizProperties="{title:{text:'Today Status'}, dataLabel : { name : 'Value Label',visible:true },legend:{visible:false}}" uiConfig="{applicationSet:'fiori'}" height='300px' width="100%" vizType='donut' id="id_Chart2">
+										<viz:dataset>
+											<viz.data:FlattenedDataset data="{MasterViewModel>/Chartdata}">
+												<viz.data:dimensions>
+													<viz.data:DimensionDefinition name="Services" value="{MasterViewModel>Service}" class="Cl_Label"/>
+												</viz.data:dimensions>
+												<viz.data:measures>
+													<viz.data:MeasureDefinition name="Open" value="{MasterViewModel>Count}"/>
+												</viz.data:measures>
+											</viz.data:FlattenedDataset>
+										</viz:dataset>
+										<viz:feeds>
+											<viz.feeds:FeedItem uid="size" type="Measure" values="Open" />
+											<viz.feeds:FeedItem uid="color" type="Dimension" values="Services" />
+										</viz:feeds>
+									</viz:VizFrame> -->
+									<!--<core:HTML content="&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;"></core:HTML>-->
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+						</l:BlockLayout>
+					</l:VerticalLayout>
+					<f:GridList id="gridList" headerText="Quick Actions" class="cl_list" visible="false">
+						<f:GridListItem class="Cl_QuickLinkBox0" press="onPressSearch" type="Active">
+							<VBox class="sapUiSmallMargin">
+								<Title text="Search Vehicle" wrapping="true" class="Cl_QuickLinkBox0"/>
+							</VBox>
+						</f:GridListItem>
+						<f:GridListItem class="Cl_QuickLinkBox2" press="onPressReNew" type="Active">
+							<VBox class="sapUiSmallMargin">
+								<Title text="Re-New" wrapping="true" class="Cl_QuickLinkBox2" level="H1"/>
+							</VBox>
+						</f:GridListItem>
+						<f:GridListItem class="Cl_QuickLinkBox2" press="onPressPremit" type="Active">
+							<VBox class="sapUiSmallMargin">
+								<Title text="Permit" wrapping="true" class="Cl_QuickLinkBox2" level="H1"/>
+							</VBox>
+						</f:GridListItem>
+						<f:GridListItem class="Cl_QuickLinkBox2" press="onPressRetest" type="Active">
+							<VBox class="sapUiSmallMargin">
+								<Title text="Re-Test" wrapping="true" class="Cl_QuickLinkBox2" level="H1"/>
+							</VBox>
+						</f:GridListItem>
+						<f:GridListItem class="Cl_QuickLinkBox2" press="onPressSafetyItem" type="Active">
+							<VBox class="sapUiSmallMargin">
+								<Title text="Safety Items" wrapping="true" class="Cl_QuickLinkBox2" level="H1"/>
+							</VBox>
+						</f:GridListItem>
+						<!-- <f:GridListItem class="Cl_QuickLinkBox1" press="onpressPendingReq" type="Active">
+							<VBox class="sapUiSmallMargin">
+								<Title text="Open Service Requests" wrapping="true" class="Cl_QuickLinkBox1"/>
+							</VBox>
+						</f:GridListItem> -->
+						<f:GridListItem class="Cl_QuickLinkBox2" press="onPressRetest" type="Active">
+							<VBox class="sapUiSmallMargin">
+								<Title text="Re-Test" wrapping="true" class="Cl_QuickLinkBox2" level="H1"/>
+							</VBox>
+						</f:GridListItem>
+						<!-- <f:GridListItem class="Cl_QuickLinkBox3" press="onPressESMA" type="Active">
+							<VBox class="sapUiSmallMargin">
+								<Title text="ESMA Test" wrapping="true" class="Cl_QuickLinkBox3"/>
+							</VBox>
+						</f:GridListItem> -->
+					</f:GridList>
+
+					<f:GridList visible="true">
+
+						<f:headerToolbar>
+							<Toolbar>
+								<Title text="Quick Actions" class="Cl_TitleColor"/>
+								<ToolbarSpacer/>
+							</Toolbar>
+						</f:headerToolbar>
+						<f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onPressSearch" type="Active" visible="true">
+
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="3rem" src="{imageModel>/path}/image/QSearchIcon.png" class="sapUiTinyMarginEnd"/>
+
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+
+									<Text text="Search" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem>
+
+						<!-- Inspection -->
+
+						<f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onPressInspection" type="Active" visible="true">
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="2.7rem" src="{imageModel>/path}/image/QFreshTestIcon.png" class="sapUiTinyMarginEnd"/>
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+									<Text text="Inspection" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem>
+						<!-- Fresh Test -->
+						<f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onPressReNew" type="Active" visible="true">
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="2.7rem" src="{imageModel>/path}/image/QRetestIcon.png" class="sapUiTinyMarginEnd"/>
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+									<Text text="Fresh Test" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem>
+												<!-- Re-Test -->
+						<!-- <f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onPressReNew" type="Active" visible="true">
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="3rem" src="{imageModel>/path}/image/QRetestIcon.png" class="sapUiTinyMarginEnd"/>
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+									<Text text="Re-Test" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem> -->
+
+						<!-- Re-New -->
+						<!-- <f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onPressReNew" type="Active" visible="true">
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="3rem" src="{imageModel>/path}/image/QNewTestIcon.png" class="sapUiTinyMarginEnd"/>
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+									<Text text="Re-Print" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem> -->
+
+						<!-- Safety Items -->
+						<!-- <f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onPressSafety" type="Active" visible="true">
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="3rem" src="{imageModel>/path}/image/Qsafety.png" class="sapUiTinyMarginEnd"/>
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+									<Text text="Safety Test" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem> -->
+						<!-- Permit -->
+						<!-- <f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onPressReNew" type="Active" visible="true">
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="3rem" src="{imageModel>/path}/image/QPermitIcon.png" class="sapUiTinyMarginEnd"/>
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+									<Text text="Permit" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem> -->
+
+
+						<!-- <f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onpressPendingReq" type="Active" visible="true">
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								
+								<FlexBox alignItems="Center" justifyContent="Center" height="4rem">
+								<Image height="3rem" src="{imageModel>/path}/image/NewServicesIcon.png" press="onPressPlant"/>
+									
+								</FlexBox>
+								<OverflowToolbar design="Solid" class="cl_SOListFooter" height="2rem">
+									<ToolbarSpacer/>
+									<Text text="Open Service Requests" wrapping="true" class="Cl_DashboardLabel sapUiSmallMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem> -->
+						<f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="onPressESMA" type="Active" visible="true">
+
+							<VBox height="auto" justifyContent="Center">
+								<layoutData>
+									<FlexItemData growFactor="1" shrinkFactor="0"/>
+								</layoutData>
+								<FlexBox alignItems="End" justifyContent="End" height="4rem">
+									<Image height="3rem" src="{imageModel>/path}/image/QFreshTestIcon.png" class="sapUiTinyMarginEnd"/>
+								</FlexBox>
+								<OverflowToolbar height="2rem">
+									<Text text="Visual Test (Demo)" wrapping="true" class="Cl_DashboardLabel sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" />
+									<ToolbarSpacer/>
+								</OverflowToolbar>
+							</VBox>
+						</f:GridListItem>
+					</f:GridList>
+
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

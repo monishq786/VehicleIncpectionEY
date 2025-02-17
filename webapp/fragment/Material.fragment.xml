@@ -1,0 +1,706 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:cssgrid="sap.ui.layout.cssgrid"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:l="sap.ui.layout"
+>
+    <Dialog
+        contentHeight="100%"
+        contentWidth="70%"
+        class="sapUiSizeCompact"
+        showHeader="false"
+    >
+        <Toolbar class="cl_fragtoolbar">
+            <ToolbarSpacer />
+            <Text
+                text="Materials"
+                class="cl_fragheader"
+            />
+            <ToolbarSpacer />
+            <Button
+                icon="sap-icon://decline"
+                type="Reject"
+                tooltip="Close"
+                press="onClosematerialf4"
+                class="sapUiSizeCompact sapUiTinyMarginEnd cl_Rejectbtn"
+            />
+        </Toolbar>
+        <content>
+            <IconTabBar
+                id="id_MaterialIcontabbar"
+                backgroundDesign="Translucent"
+                selectedKey="VehicleTest"
+                class="cl_icontabbar"
+            >
+                <items>
+                    <IconTabFilter
+                        text="Vehicle Test"
+                        key="VehicleTest"
+                        icon="{imageModel>/path}/image/AdnocAccessories.png"
+                    >
+                        <f:GridList
+                            id="idgridlistVT"
+                            items="{SearchViewModel>/VehicleTest}"
+                            class="sapUiTinyMarginTop cl_whitematetialgridlist"
+                            mode="None"
+                        >
+                            <f:headerToolbar>
+                                <Toolbar>
+                                    <content>
+                                        <SearchField />
+                                    </content>
+                                </Toolbar>
+                            </f:headerToolbar>
+                            <f:customLayout>
+                                <grid:GridBasicLayout
+                                    gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                    gridGap="0.5rem"
+                                />
+                            </f:customLayout>
+                            <SearchField />
+                            <f:GridListItem
+                                press="onPress1"
+                                type="Active"
+                                highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}"
+                                class="sapUiTinyMarginBeginEnd cl_Materialgridlist"
+                            >
+                                <VBox height="100%">
+                                    <HBox
+                                        height="100%"
+                                        class="sapUiTinyMargin"
+                                        alignItems="Center"
+                                    >
+                                        <VBox>
+                                            <HBox>
+                                                <Image
+                                                    height="2rem"
+                                                    width="auto"
+                                                    src="{imageModel>/path}/image/New_MaterialIcon.svg"
+                                                    class="sapUiTinyMarginBeginEnd"
+                                                    visible="false"
+                                                />
+                                                <Label
+                                                    text="{parts:['SearchViewModel>Material' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiSmallMarginEnd"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                            <HBox>
+                                                <Label
+                                                    text="{parts:['SearchViewModel>ServiceName' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                            <HBox>
+                                                <Label
+                                                    text="NetPrice: {parts:['SearchViewModel>Price' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+                            </f:GridListItem>
+                        </f:GridList>
+                        <Table
+                            id="id_VehicletestF4"
+                            width="auto"
+                            items="{SearchViewModel>/VehicleTest}"
+                            noDataText="No Data"
+                            fixedLayout="true"
+                            visible="false"
+                            growing="true"
+                            growingThreshold="100"
+                            growingScrollToLoad="false"
+                            class="sapUiTinyMargin sapUiTinyMarginTop cl_table"
+                            alternateRowColors="true"
+                            mode="MultiSelect"
+                        >
+                            <columns>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Material"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Description"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Price"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text
+                                            text="{SearchViewModel>Material}"
+                                        />
+                                        <Text
+                                            text="{SearchViewModel>ServiceName}"
+                                        />
+                                        <Text text="{SearchViewModel>Price}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        text="Accessories"
+                        key="Accessories"
+                         icon="{imageModel>/path}/image/ADNOC_Dist_Icons_Circle_Car_Care_22.png"
+                    >
+                        <f:GridList
+                            id="idgridlistAcc"
+                            items="{SearchViewModel>/Accessories}"
+                            class="sapUiTinyMarginTop cl_whitematetialgridlist"
+                            mode="None"
+                        >
+                            <f:headerToolbar>
+                                <Toolbar>
+                                    <content>
+                                        <SearchField width="100%" />
+                                    </content>
+                                </Toolbar>
+                            </f:headerToolbar>
+                            <f:customLayout>
+                                <grid:GridBasicLayout
+                                    gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                    gridGap="0.5rem"
+                                />
+                            </f:customLayout>
+                            <SearchField />
+                            <f:GridListItem
+                                press="onPress1"
+                                type="Active"
+                                highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}"
+                                class="sapUiTinyMarginBeginEnd cl_Materialgridlist"
+                            >
+                                <VBox height="100%">
+                                    <HBox
+                                        height="100%"
+                                        class="sapUiTinyMargin"
+                                        alignItems="Center"
+                                    >
+                                        <VBox>
+                                            <HBox>
+                                                <Image
+                                                    height="2rem"
+                                                    width="auto"
+                                                    src="{imageModel>/path}/image/New_MaterialIcon.svg"
+                                                    class="sapUiTinyMarginBeginEnd"
+                                                    visible="false"
+                                                />
+                                                <Label
+                                                    text="{parts:['SearchViewModel>Material' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiSmallMarginEnd"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                            <HBox>
+                                                <Label
+                                                    text="{parts:['SearchViewModel>ServiceName' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                            <HBox>
+                                                <Label
+                                                    text="NetPrice: {parts:['SearchViewModel>Price' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                                <!-- <Label text="Stock: {parts:['SearchViewModel>Stock' , 'SearchViewModel>Highlight'],formatter:'lubes.model.formatter.MaterialSelectionText'}"
+										class="cl_blueTXT sapUiTinyMarginTop sapUiSmallMarginBegin" wrapping="true"/> -->
+                                            </HBox>
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+                            </f:GridListItem>
+                        </f:GridList>
+                        <Table
+                            id="id_AccessoriesF4"
+                            width="auto"
+                            items="{SearchViewModel>/Accessories}"
+                            noDataText="No Data"
+                            fixedLayout="true"
+                            visible="false"
+                            growing="true"
+                            growingThreshold="100"
+                            growingScrollToLoad="false"
+                            class="sapUiTinyMargin sapUiTinyMarginTop cl_table"
+                            alternateRowColors="true"
+                            popinLayout="GridSmall"
+                            mode="MultiSelect"
+                        >
+                            <columns>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Material"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Description"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Stock"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Price"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text
+                                            text="{SearchViewModel>Material}"
+                                        />
+                                        <Text
+                                            text="{SearchViewModel>ServiceName}"
+                                        />
+                                        <Text text="{SearchViewModel>Stock}" />
+                                        <Text text="{SearchViewModel>Price}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        text="Permit"
+                        key="Permit"
+                          icon="{imageModel>/path}/image/Adnocothers.png "
+                    >
+                        <f:GridList
+                            id="idgridlistPermit"
+                            items="{SearchViewModel>/Permit}"
+                            class="sapUiTinyMarginTop cl_whitematetialgridlist"
+                            mode="None"
+                        >
+                            <f:headerToolbar>
+                                <Toolbar>
+                                    <content>
+                                        <SearchField width="100%" />
+                                    </content>
+                                </Toolbar>
+                            </f:headerToolbar>
+                            <f:customLayout>
+                                <grid:GridBasicLayout
+                                    gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                    gridGap="0.5rem"
+                                />
+                            </f:customLayout>
+                            <SearchField />
+
+                            <f:GridListItem
+                                press="onPress1"
+                                type="Active"
+                                highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}"
+                                class="sapUiTinyMarginBeginEnd cl_Materialgridlist"
+                            >
+                                <VBox height="100%">
+                                    <HBox
+                                        height="100%"
+                                        class="sapUiTinyMargin"
+                                        alignItems="Center"
+                                    >
+                                        <VBox>
+                                            <HBox>
+                                                <Image
+                                                    height="2rem"
+                                                    width="auto"
+                                                    src="{imageModel>/path}/image/New_MaterialIcon.svg"
+                                                    class="sapUiTinyMarginBeginEnd"
+                                                    visible="false"
+                                                />
+                                                <Label
+                                                    text="{parts:['SearchViewModel>Material' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiSmallMarginEnd"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                            <HBox>
+                                                <Label
+                                                    text="{parts:['SearchViewModel>ServiceName' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                            <HBox>
+                                                <Label
+                                                    text="NetPrice: {parts:['SearchViewModel>Price' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                                <!-- <Label text="Stock: {parts:['SearchViewModel>Stock' , 'SearchViewModel>Highlight'],formatter:'lubes.model.formatter.MaterialSelectionText'}"
+										class="cl_blueTXT sapUiTinyMarginTop sapUiSmallMarginBegin" wrapping="true"/> -->
+                                            </HBox>
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+                            </f:GridListItem>
+                        </f:GridList>
+                        <Table
+                            id="id_PermitF4"
+                            width="auto"
+                            items="{SearchViewModel>/Permit}"
+                            noDataText="No Data"
+                            fixedLayout="true"
+                            visible="false"
+                            growing="true"
+                            growingThreshold="100"
+                            growingScrollToLoad="false"
+                            class="sapUiTinyMargin sapUiTinyMarginTop cl_table"
+                            alternateRowColors="true"
+                            popinLayout="GridSmall"
+                            mode="MultiSelect"
+                        >
+                            <columns>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Material"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Description"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Price"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text
+                                            text="{SearchViewModel>Material}"
+                                        />
+                                        <Text
+                                            text="{SearchViewModel>ServiceName}"
+                                        />
+                                        <Text text="{SearchViewModel>Price}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        text="Others"
+                        key="Others"
+                          icon="{imageModel>/path}/image/ADNOC_Dist_Icons_Circle_Car_Services.png"
+                    >
+                        <f:GridList
+                            id="idgridlistOthers"
+                            items="{SearchViewModel>/Others}"
+                            class="sapUiTinyMarginTop cl_whitematetialgridlist"
+                            mode="None"
+                        >
+                            <f:headerToolbar>
+                                <Toolbar>
+                                    <content>
+                                        <SearchField width="100%" />
+                                    </content>
+                                </Toolbar>
+                            </f:headerToolbar>
+                            <f:customLayout>
+                                <grid:GridBasicLayout
+                                    gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                    gridGap="0.5rem"
+                                />
+                            </f:customLayout>
+                            <SearchField />
+                            <f:GridListItem
+                                press="onPress1"
+                                type="Active"
+                                highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}"
+                                class="sapUiTinyMarginBeginEnd cl_Materialgridlist"
+                            >
+                                <VBox height="100%">
+                                    <HBox
+                                        height="100%"
+                                        class="sapUiTinyMargin"
+                                        alignItems="Center"
+                                    >
+                                        <VBox>
+                                            <HBox>
+                                                <Image
+                                                    height="2rem"
+                                                    width="auto"
+                                                    src="{imageModel>/path}/image/New_MaterialIcon.svg"
+                                                    class="sapUiTinyMarginBeginEnd"
+                                                    visible="false"
+                                                />
+                                                <Label
+                                                    text="{parts:['SearchViewModel>Material' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiSmallMarginEnd"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                            <HBox>
+                                                <Label
+                                                    text="{parts:['SearchViewModel>ServiceName' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                            <HBox>
+                                                <Label
+                                                    text="NetPrice: {parts:['SearchViewModel>Price' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+                                                    class="cl_blueTXT sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                                <!-- <Label text="Stock: {parts:['SearchViewModel>Stock' , 'SearchViewModel>Highlight'],formatter:'lubes.model.formatter.MaterialSelectionText'}"
+										class="cl_blueTXT sapUiTinyMarginTop sapUiSmallMarginBegin" wrapping="true"/> -->
+                                            </HBox>
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+                            </f:GridListItem>
+                        </f:GridList>
+                        <Table
+                            id="id_OtherF4"
+                            width="auto"
+                            items="{SearchViewModel>/Others}"
+                            noDataText="No Data"
+                            fixedLayout="true"
+                            visible="false"
+                            growing="true"
+                            growingThreshold="100"
+                            growingScrollToLoad="false"
+                            class="sapUiTinyMargin sapUiTinyMarginTop cl_table"
+                            alternateRowColors="true"
+                            popinLayout="GridSmall"
+                            mode="MultiSelect"
+                        >
+                            <columns>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Material"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Description"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                                <Column
+                                    width="auto"
+                                    hAlign="Begin"
+                                    vAlign="Middle"
+                                    minScreenWidth="Phone"
+                                    demandPopin="true"
+                                    mergeDuplicates="false"
+                                >
+                                    <header>
+                                        <Text
+                                            text="Price"
+                                            wrapping="true"
+                                            textAlign="Begin"
+                                            textDirection="Inherit"
+                                            visible="true"
+                                        />
+                                    </header>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text
+                                            text="{SearchViewModel>Material}"
+                                        />
+                                        <Text
+                                            text="{SearchViewModel>ServiceName}"
+                                        />
+                                        <Text text="{SearchViewModel>Price}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <buttons>
+            <Button
+                text="Select"
+                type="Emphasized"
+                iconFirst="true"
+                width="auto"
+                iconDensityAware="false"
+                press="onPressSelectMaterial"
+                class="sapUiTinyMarginEnd cl_Emphasizebtn"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

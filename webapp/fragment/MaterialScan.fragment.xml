@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified"
+	xmlns:grid="sap.ui.layout.cssgrid" xmlns:g="sap.f" xmlns:ndc="sap.ndc">
+	<Dialog contentHeight="auto" contentWidth="25%" class="Cl_FormLabel sapUiSizeCompact" afterClose="dialogAfterclose" title="Scan Material"
+		titleAlignment="Center">
+
+		<content>
+			<f:Form editable="false" class="sapUiTinyMarginTop">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+						emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="3" singleContainerFullSize="false"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Material Number" class="Cl_RewardFormLabelColor">
+								<f:fields>
+									<HBox>
+										<Input placeholder="Material Number" value="{VIRGlobalModel>/MaterialNum}" valueState="Information"></Input>
+										<ndc:BarcodeScannerButton scanSuccess="onScanSuccess" scanFail="onScanError"
+											inputLiveUpdate="onScanLiveupdate" class="sapUiTinyMarginBegin"/>
+									</HBox>
+								</f:fields>
+							</f:FormElement>
+							
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+		<buttons>
+			
+			<Button text="Close" type="Reject" press="onPressCloseMaterialScan" class="cl_Rejectbtn"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

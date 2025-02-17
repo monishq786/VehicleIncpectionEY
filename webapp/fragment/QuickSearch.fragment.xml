@@ -1,0 +1,484 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:layout="sap.ui.layout"
+    xmlns:table="sap.ui.table"
+    xmlns:m="sap.m"
+    xmlns:fGrid="sap.f"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:ndc="sap.ndc"
+    xmlns:fgrid="sap.f"
+    xmlns:g="sap.f"
+>
+    <Dialog
+        contentHeight="100%"
+        contentWidth="37%"
+        class="sapUiSizeCompact"
+        title="Select Payment Mode"
+        showHeader="false"
+    >
+       
+        <content>
+            <VBox
+                class="sapUiTinyMarginBeginEnd sapUiTinyMarginTop cl_headerbox"
+            >
+                <f:Form
+                    editable="true"
+                    class="cl_QuickSearchLable"
+                >
+                    <f:layout>
+                        <f:ResponsiveGridLayout
+                            labelSpanXL="4"
+                            labelSpanL="4"
+                            labelSpanM="4"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="0"
+                            emptySpanL="0"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            columnsXL="3"
+                            columnsL="3"
+                            columnsM="3"
+                            singleContainerFullSize="false"
+                        />
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer>
+                            <f:formElements>
+                                <f:FormElement
+                                    label="Search"
+                                    design="bold"
+                                >
+                                    <f:fields>
+                                        <HBox>
+                                            <Input
+                                                value="{VIRGlobalModel>/PlateNo}"
+                                                placeholder="Plate Number"
+                                                maxLength="5"
+                                                class="sapUiTinyMarginEnd"
+                                            />
+                                            <Input
+                                                value="{VIRGlobalModel>/PlateCode}"
+                                                placeholder="Plate Code"
+                                                maxLength="3"
+                                                class="sapUiTinyMarginBegin"
+                                            />
+                                            <!-- <Image press="onpressAnpr" src='{imageModel>/path}/image/Camera.png' width="28px" height="29px" class="sapUiTinyMarginEnd"></Image>
+											<Text text="{VIRGlobalModel>/secs} Secs" class="cl_sectext"></Text> -->
+                                        </HBox>
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement visible="{SearchViewModel>/Normalisible}">
+                                    <f:fields>
+                                        <HBox>
+                                            <Input
+                                                value=""
+                                                placeholder="Chassis Number"
+                                                maxLength="10"
+                                                class="sapUiTinyMarginEnd"
+                                            />
+                                            <Input
+                                                value=""
+                                                placeholder="Certificate Number"
+                                                maxLength="10"
+                                                class="sapUiTinyMarginBegin"
+                                            />
+                                        </HBox>
+                                    </f:fields>
+                                </f:FormElement>
+
+                                 <f:FormElement visible="{SearchViewModel>/Safetyvisible}">
+                                    <f:fields>
+                                        <HBox>
+                                            <Input
+                                                value=""
+                                                placeholder="Mobile No"
+                                                maxLength="10"
+                                                class="sapUiTinyMarginEnd"
+                                            />
+                                          <Link text="WalkIn Customer" class="sapUiSmallMarginBegin"></Link>
+                                        </HBox>
+                                    </f:fields>
+                                </f:FormElement>
+                               
+                                <f:FormElement>
+                                    <f:fields>
+                                        <HBox
+                                            alignContent="End"
+                                            justifyContent="End"
+                                        >
+                                            <Button
+                                                class="cl_Emphasizebtn"
+                                                text="Go"
+                                                type="Emphasized"
+                                                press="onPressAdpolice"
+                                            />
+                                            <Button
+                                                text="Reset"
+                                                type="Reject"
+                                                press="onPressReset"
+                                                class="cl_Rejectbtn sapUiTinyMarginBegin"
+                                            />
+                                        </HBox>
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+            </VBox>
+            <l:VerticalLayout
+                id="containerLayout1"
+                width="100%"
+            >
+                <l:BlockLayout
+                    id="BlockLayout"
+                    background="Dashboard"
+                >
+                    <l:BlockLayoutRow>
+                        <l:BlockLayoutCell
+                            width='2'
+                            class="Cl_Bannerwidth"
+                            visible="false"
+                        >
+                            <!--<HBox>-->
+                            <HBox>
+                                <Image
+                                    width="42px"
+                                    height="42px"
+                                    src="{imageModel>/path}/image/sedan.png"
+                                />
+                                <ObjectIdentifier
+                                    title="Vehicle Details"
+                                    titleActive="false"
+                                    class="cl_objlabel sapUiTinyMarginTop sapUiSmallMarginBegin"
+                                />
+                            </HBox>
+                            <VBox class="sapUiSmallMarginBegin">
+                                <ObjectAttribute
+                                    title="Chassis No"
+                                    text="{SearchViewModel>/Chassisno}"
+                                    active="true"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                />
+                                <ObjectAttribute
+                                    title="Engine No"
+                                    text="{SearchViewModel>/Engineno}"
+                                    active="true"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                />
+                                <!-- <ObjectAttribute title="Country" text="{SearchViewModel>/Country}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/> -->
+                                <ObjectAttribute
+                                    title="Manufacturer"
+                                    text="{SearchViewModel>/Manufacturer}"
+                                    active="true"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                />
+                                <ObjectAttribute
+                                    title="Model"
+                                    text="{SearchViewModel>/Model}"
+                                    active="true"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                />
+                                <ObjectAttribute
+                                    title="Kind"
+                                    text="{SearchViewModel>/Kind}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="Type"
+                                    text="{SearchViewModel>/Type}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="Body Color"
+                                    text="{SearchViewModel>/BodyColor}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <!-- <ObjectAttribute title="Gear Type" text="{SearchViewModel>/GearType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Fuel Type" text="{SearchViewModel>/FuelType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Steering Side" text="{SearchViewModel>/SteeringSide}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Weight Kind" text="{SearchViewModel>/WeightKind}" class="cl_objlabel sapUiTinyMarginTop" active="true"/> -->
+                            </VBox>
+                        </l:BlockLayoutCell>
+                        <l:BlockLayoutCell
+                            width='2'
+                            class="Cl_Bannerwidth"
+                            visible="false"
+                        >
+                            <VBox class="sapUiSmallMarginBegin">
+                                <ObjectAttribute
+                                    title="Init Reg Year"
+                                    text="{SearchViewModel>/InitRegyear}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="Reg Exp Date"
+                                    text="{SearchViewModel>/RegExpYear}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="Plate Type"
+                                    text="{SearchViewModel>/PlateType}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="MFG Year"
+                                    text="{SearchViewModel>/MFGYear}"
+                                    active="true"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                />
+                                <ObjectAttribute
+                                    title="Horse Power"
+                                    text="{SearchViewModel>/HP}"
+                                    active="true"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                />
+                                <ObjectAttribute
+                                    title="No.of.Axles"
+                                    text="{SearchViewModel>/Axles}"
+                                    active="true"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                />
+                                <ObjectAttribute
+                                    title="No.of.Cylinders"
+                                    text="{SearchViewModel>/Cylinders}"
+                                    active="true"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                />
+                                <ObjectAttribute
+                                    title="No.of.Wheels"
+                                    text="{SearchViewModel>/Wheels}"
+                                    active="true"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                />
+                                <ObjectAttribute
+                                    title="No.of.Doors"
+                                    text="{SearchViewModel>/Doors}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="No.of.Passengers"
+                                    text="{SearchViewModel>/Passengers}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="Empty Weight"
+                                    text="{SearchViewModel>/EmptyWeight}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="Full Weight"
+                                    text="{SearchViewModel>/FullWeight}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="Mielage"
+                                    text="{SearchViewModel>/mileage}"
+                                    class="cl_objlabel sapUiTinyMarginTopBottom"
+                                    active="true"
+                                />
+                                <ObjectAttribute
+                                    title="Cubic Capacity"
+                                    text="{SearchViewModel>/CubicCapacity}"
+                                    class="cl_objlabel sapUiTinyMarginTop"
+                                    active="true"
+                                />
+                            </VBox>
+                        </l:BlockLayoutCell>
+                        <l:BlockLayoutCell
+                            width='2'
+                            class="Cl_Bannerwidth "
+                        >
+                            <Carousel
+                                loop="true"
+                                height="auto"
+                                pageIndicatorPlacement="Bottom"
+                                showPageIndicator="false"
+                                arrowsPlacement="PageIndicator"
+                                class="customCarousel"
+                            >
+                                <!-- Vehicle -->
+                                <g:GridListItem
+                                    press="onPressProceed"
+                                    class="Cl_ProfileCardBanner"
+                                    type="Active"
+                                >
+                                    <OverflowToolbar
+                                        height="3rem"
+                                        design="Solid"
+                                        class="Cl_CustomerHeaderBG"
+                                    >
+                                        <VBox justifyContent="SpaceBetween">
+                                            <FlexBox
+                                                alignItems="Start"
+                                                justifyContent="Center"
+                                            >
+                                                <Title
+                                                    text="Vehicle Details"
+                                                    wrapping="true"
+                                                    class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin"
+                                                />
+                                            </FlexBox>
+                                        </VBox>
+                                    </OverflowToolbar>
+                                    <HBox>
+                                        <VBox class="sapUiSmallMarginBegin">
+                                            <ObjectAttribute
+                                                title="Chassis No"
+                                                text="{SearchViewModel>/Chassisno}"
+                                                active="true"
+                                                class="cl_objlabel sapUiTinyMarginTopBottom"
+                                            />
+                                            <ObjectAttribute
+                                                title="Engine No"
+                                                text="{SearchViewModel>/Engineno}"
+                                                active="true"
+                                                class="cl_objlabel sapUiTinyMarginTopBottom"
+                                            />
+                                            <!-- <ObjectAttribute title="Country" text="{SearchViewModel>/Country}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/> -->
+                                            <ObjectAttribute
+                                                title="Manufacturer"
+                                                text="{SearchViewModel>/Manufacturer}"
+                                                active="true"
+                                                class="cl_objlabel sapUiTinyMarginTopBottom"
+                                            />
+                                            <ObjectAttribute
+                                                title="Model"
+                                                text="{SearchViewModel>/Model}"
+                                                active="true"
+                                                class="cl_objlabel sapUiTinyMarginTopBottom"
+                                            />
+                                            <ObjectAttribute
+                                                title="Kind"
+                                                text="{SearchViewModel>/Kind}"
+                                                class="cl_objlabel sapUiTinyMarginTopBottom"
+                                                active="true"
+                                            />
+                                            <!-- <ObjectAttribute title="Type" text="{SearchViewModel>/Type}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/> -->
+                                            <ObjectAttribute
+                                                title="Body Color"
+                                                text="{SearchViewModel>/BodyColor}"
+                                                class="cl_objlabel sapUiTinyMarginTopBottom"
+                                                active="true"
+                                            />
+                                            <ObjectAttribute
+                                                title="Name"
+                                                text="{SearchViewModel>/CustomerName}"
+                                                active="true"
+                                                class="cl_objlabel sapUiTinyMarginTopBottom"
+                                            />
+                                            <ObjectAttribute
+                                                title="Email"
+                                                text="{SearchViewModel>/HeaderEmail}"
+                                                active="true"
+                                                class="cl_objlabel sapUiTinyMarginTopBottom"
+                                            />
+
+                                            <ObjectAttribute
+                                                title="Mobile"
+                                                text="{SearchViewModel>/HeaderMobileNo}"
+                                                active="true"
+                                                class="cl_objlabel sapUiTinyMarginTopBottom"
+                                            />
+
+                                            <!-- <ObjectAttribute title="Gear Type" text="{SearchViewModel>/GearType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Fuel Type" text="{SearchViewModel>/FuelType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Steering Side" text="{SearchViewModel>/SteeringSide}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Weight Kind" text="{SearchViewModel>/WeightKind}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/> -->
+                                        </VBox>
+                                    </HBox>
+                                </g:GridListItem>
+
+                                <g:GridListItem class="Cl_ProfileCardBanner">
+                                    <OverflowToolbar
+                                        height="3rem"
+                                        design="Solid"
+                                        class="Cl_CustomerHeaderBG"
+                                    >
+                                        <VBox justifyContent="SpaceBetween">
+                                            <FlexBox
+                                                alignItems="Start"
+                                                justifyContent="Center"
+                                            >
+                                                <Title
+                                                    text="Customer Details"
+                                                    wrapping="true"
+                                                    class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin"
+                                                />
+                                            </FlexBox>
+                                        </VBox>
+                                    </OverflowToolbar>
+                                    <HBox>
+                                        <VBox
+                                            width="1000%"
+                                            class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                                        >
+                                            <ObjectAttribute
+                                                title="Name"
+                                                text="{SearchViewModel>/CustomerName}"
+                                                active="true"
+                                                class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                            />
+
+                                            <ObjectAttribute
+                                                title="Email"
+                                                text="{SearchViewModel>/HeaderEmail}"
+                                                active="true"
+                                                class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                            />
+
+                                            <ObjectAttribute
+                                                title="Mobile"
+                                                text="{SearchViewModel>/HeaderMobileNo}"
+                                                active="true"
+                                                class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                            />
+
+                                            <ObjectAttribute
+                                                title="City"
+                                                text="{SearchViewModel>/HeaderEmirates}"
+                                                active="true"
+                                                class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                            />
+
+                                            <ObjectAttribute
+                                                title="Postal Code"
+                                                text="{SearchViewModel>/pincode}"
+                                                class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                active="true"
+                                            />
+                                            <ObjectAttribute
+                                                title="Address"
+                                                text="{SearchViewModel>/Address}"
+                                                class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                active="true"
+                                            />
+                                        </VBox>
+                                    </HBox>
+                                </g:GridListItem>
+                            </Carousel>
+                        </l:BlockLayoutCell>
+                    </l:BlockLayoutRow>
+                </l:BlockLayout>
+            </l:VerticalLayout>
+        </content>
+        <buttons>
+            <Button text="Close" type="Transparent" iconFirst="true" iconDensityAware="false" press="onPressCloseReNew" class="sapUiTinyMarginEnd cl_Emphasizebtn" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

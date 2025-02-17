@@ -1,0 +1,118 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:m="sap.m" xmlns:fGrid="sap.f" xmlns:f="sap.ui.layout.form">
+	<Dialog contentHeight="100%" contentWidth="100%" class="sapUiSizeCompact">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label design="Bold" text="Generate Request" class="PageHead"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseCart" class="sapUiSizeCompact sapUiTinyMarginEnd"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<Toolbar class="cl_toolbar sapUiTinyMarginTop sapUiTinyMarginBeginEnd">
+				<VBox class="sapUiSmallMarginBegin">
+					<HBox>
+						<Image src="{imageModel>/path}/image/ProfileUser.png" width="42px" height="42px" class="sapUiTinyMarginTop"></Image>
+						<VBox>
+							<Title level="H3" text="{SearchViewModel>/HeaderCustomerNo} / {SearchViewModel>/CustomerName}"
+								class="sapUiSmallMarginBegin cl_WelcomeText sapUiTinyMarginTop"/>
+							<Title level="H3" text="{VIRGlobalModel>/PlateNo} / BMW X5 / SR #{SearchViewModel>/SR}"
+								class="sapUiSmallMarginBegin cl_WelcomeText sapUiTinyMarginTop"/>
+						</VBox>
+					</HBox>
+					<HBox>
+						<Input placeholder="Customer Mobile No" value="{SearchViewModel>/MObileNo}" maxLength="9"></Input>
+						<ComboBox class="sapUiSmallMarginBegin" placeholder="MOP Type" items="{SearchViewModel>/MOPF4}" value="{SearchViewModel>/MOPType}">
+							<core:ListItem key="{SearchViewModel>MOP}" text="{SearchViewModel>MOP}"/>
+						</ComboBox>
+					</HBox>
+				</VBox>
+				<ToolbarSpacer></ToolbarSpacer>
+				<VBox>
+					<Title text="Total: {SearchViewModel>/TotalAmount} AED" level="H1" class="cl_TotalText"/>
+					<Text text="VAT: {SearchViewModel>/VatAmount} AED" class="cl_VatText"/>
+				</VBox>
+			</Toolbar>
+			<Table width="auto" items="{SearchViewModel>/ServiceItems}" noDataText="No Data" fixedLayout="true" visible="true" growing="true"
+				growingThreshold="100" growingScrollToLoad="false" class="sapUiTinyMargin cl_table" alternateRowColors="true" popinLayout="GridSmall">
+				<headerToolbar>
+					<OverflowToolbar>
+						<content>
+							<ToolbarSpacer/>
+							<Button icon="{imageModel>/path}/image/checkout.png" press="onOpenMaterialF4"></Button>
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Material" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Description" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Qty" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Price" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="VAT %" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="VAT Amount" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Total Amount" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="3rem" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{SearchViewModel>Material}"></Text>
+							<Text text="{SearchViewModel>ServiceName}"></Text>
+							<Input value="{SearchViewModel>Qty}" width="4rem" visible="{= ${SearchViewModel>QtyInd} === 'X'? true : false}"></Input>
+							<Text text="{SearchViewModel>Price}"></Text>
+							<Text text="{SearchViewModel>VATPer}"></Text>
+							<Text text="{SearchViewModel>VAT}"></Text>
+							<Text text="{SearchViewModel>TotalAmount}"></Text>
+							<Button press="onDeleteItems" icon="sap-icon://delete"></Button>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button text="Save" type="Emphasized" iconFirst="true" width="auto" iconDensityAware="false" press="onPressSave" class="sapUiTinyMarginEnd"
+				visible="{SearchViewModel>/SavebtnVisible}"/>
+					<Button text="Change Vehicle Info" type="Default" iconFirst="true" width="auto" visible="{SearchViewModel>/PrintbtnVisible}" iconDensityAware="false"
+				class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/information.png' press="onPressChange"/>
+			<Button text="Print" type="Default" iconFirst="true" width="auto" visible="{SearchViewModel>/PrintbtnVisible}" iconDensityAware="false"
+				class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/print.png'/>
+			<Button text="Pay" type="Transparent" iconFirst="true" width="auto" iconDensityAware="false" press="onPressPay" class="sapUiTinyMarginEnd"
+				icon='{imageModel>/path}/image/pay.png' visible="{SearchViewModel>/PaybtnVisible}"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

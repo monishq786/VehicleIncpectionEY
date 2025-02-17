@@ -1,0 +1,396 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified">
+	<Dialog contentHeight="100%" contentWidth="80%" class="sapUiSizeCompact" showHeader="false">
+		<!-- <customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label design="Bold" text="Change Vehicle Info"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseChangeinfof4" class="sapUiSizeCompact sapUiTinyMarginEnd"/>
+				</contentRight>
+			</Bar>
+		</customHeader> -->
+		<Toolbar class="cl_fragtoolbar">
+			<ToolbarSpacer></ToolbarSpacer>
+			<Text text="Change Vehicle Info" class="cl_fragheader"></Text>
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseChangeinfof4"
+				class="sapUiSizeCompact sapUiTinyMarginEnd cl_Rejectbtn"/>
+		</Toolbar>
+		<content>
+			<!--<IconTabBar backgroundDesign="Translucent" selectedKey="Current">-->
+			<!--	<items>-->
+			<!--		<IconTabFilter text="Current Info" key="Current">-->
+			<!--<f:Form editable="true" class="cl_formlabel">-->
+			<!--	<f:layout>-->
+			<!--		<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"-->
+			<!--			emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false"/>-->
+			<!--	</f:layout>-->
+			<!--	<f:formContainers>-->
+			<!--		<f:FormContainer>-->
+			<!--			<f:formElements>-->
+			<!--				<f:FormElement label="Chassis No">-->
+			<!--					<f:fields>-->
+			<!--						<Input value="{SearchViewModel>/Chassisno}" editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Engine No">-->
+			<!--					<f:fields>-->
+			<!--						<Input value="{SearchViewModel>/Engineno}" editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Country">-->
+			<!--					<f:fields>-->
+			<!--						<Input value="{SearchViewModel>/Country}" editable="{SearchViewModel>/SearchFieldEditable}" showValueHelp="true" valueHelpOnly="true"-->
+			<!--							valueHelpRequest="openCountryF4"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Manufacturer">-->
+			<!--					<f:fields>-->
+			<!--						<Input value="{SearchViewModel>/Manufacturer}" editable="{SearchViewModel>/SearchFieldEditable}" showValueHelp="true" valueHelpOnly="true"-->
+			<!--							valueHelpRequest="openManufacturerF4"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Model">-->
+			<!--					<f:fields>-->
+			<!--						<Input value="{SearchViewModel>/Model}" editable="{SearchViewModel>/SearchFieldEditable}" showValueHelp="true" valueHelpOnly="true"-->
+			<!--							valueHelpRequest="openModelF4"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Plate Type">-->
+			<!--					<f:fields>-->
+			<!--<ComboBox items="{SearchViewModel>/PlatetypeF4}" value="{SearchViewModel>/PlateType}">-->
+			<!--	<core:ListItem key="{SearchViewModel>Category}" text="{SearchViewModel>Category}"/>-->
+			<!--</ComboBox>-->
+			<!--						<Input value="{SearchViewModel>/PlateType}" editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Kind">-->
+			<!--					<f:fields>-->
+			<!--<ComboBox items="{SearchViewModel>/KindF4}" value="{SearchViewModel>/Kind}">-->
+			<!--	<core:ListItem key="{SearchViewModel>Kind}" text="{SearchViewModel>Kind}"/>-->
+			<!--</ComboBox>-->
+			<!--						<Input value="{SearchViewModel>/Kind}" editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Type">-->
+			<!--					<f:fields>-->
+			<!--<ComboBox items="{SearchViewModel>/TypeF4}" value="{SearchViewModel>/Type}">-->
+			<!--	<core:ListItem key="{SearchViewModel>Type}" text="{SearchViewModel>Type}"/>-->
+			<!--</ComboBox>-->
+			<!--						<Input value="{SearchViewModel>/Type}" editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Body Color">-->
+			<!--					<f:fields>-->
+			<!--						<Input value="{SearchViewModel>/BodyColor}" editable="{SearchViewModel>/SearchFieldEditable}" showValueHelp="true" valueHelpOnly="true"-->
+			<!--							valueHelpRequest="openColorF4"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Gear Type">-->
+			<!--					<f:fields>-->
+			<!--<ComboBox items="{SearchViewModel>/GearTypeF4}" value="{SearchViewModel>/GearType}">-->
+			<!--	<core:ListItem key="{SearchViewModel>Gear}" text="{SearchViewModel>Gear}"/>-->
+			<!--</ComboBox>-->
+			<!--						<Input value="{SearchViewModel>/GearType}" editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Fuel Type">-->
+			<!--					<f:fields>-->
+			<!--<ComboBox items="{SearchViewModel>/FueltypeF4}" value="{SearchViewModel>/FuelType}">-->
+			<!--	<core:ListItem key="{SearchViewModel>Type}" text="{SearchViewModel>Type}"/>-->
+			<!--</ComboBox>-->
+			<!--						<Input value="{SearchViewModel>/FuelType}" editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Steering Side">-->
+			<!--					<f:fields>-->
+			<!--						<Input value="{SearchViewModel>/SteeringSide}" editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Weight Kind">-->
+			<!--					<f:fields>-->
+			<!--						<Input value="{SearchViewModel>/WeightKind}" editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Init Reg Year / Reg Exp Date">-->
+			<!--					<f:fields>-->
+			<!--						<DatePicker value="{SearchViewModel>/InitRegyear}" valueFormat="dd/mm/yyyy" editable="{SearchViewModel>/SearchFieldEditable}"></DatePicker>-->
+			<!--						<DatePicker value="{SearchViewModel>/RegExpYear}" valueFormat="dd/mm/yyyy" editable="{SearchViewModel>/SearchFieldEditable}"></DatePicker>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--			</f:formElements>-->
+			<!--		</f:FormContainer>-->
+			<!--		<f:FormContainer>-->
+			<!--			<f:formElements>-->
+			<!--				<f:FormElement label="MFG Year">-->
+			<!--					<f:fields>-->
+			<!--						<DatePicker width="50%" value="{SearchViewModel>/MFGYear}" displayFormat="yyyy" valueFormat="yyyy"-->
+			<!--							editable="{SearchViewModel>/SearchFieldEditable}"/>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Horse Power">-->
+			<!--					<f:fields>-->
+			<!--						<StepInput width="50%" value="{SearchViewModel>/HP}" editable="{SearchViewModel>/SearchFieldEditable}"></StepInput>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="No.of.Axles">-->
+			<!--					<f:fields>-->
+			<!--						<StepInput width="50%" value="{SearchViewModel>/Axles}" editable="{SearchViewModel>/SearchFieldEditable}"></StepInput>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="No.of.Cylinders">-->
+			<!--					<f:fields>-->
+			<!--						<StepInput width="50%" value="{SearchViewModel>/Cylinders}" editable="{SearchViewModel>/SearchFieldEditable}"></StepInput>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="No.of.Wheels">-->
+			<!--					<f:fields>-->
+			<!--						<StepInput width="50%" value="{SearchViewModel>/Wheels}" editable="{SearchViewModel>/SearchFieldEditable}"></StepInput>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="No.of.Doors">-->
+			<!--					<f:fields>-->
+			<!--						<StepInput width="50%" value="{SearchViewModel>/Doors}" editable="{SearchViewModel>/SearchFieldEditable}"></StepInput>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="No.of.Passengers">-->
+			<!--					<f:fields>-->
+			<!--						<StepInput width="50%" value="{SearchViewModel>/Passengers}" editable="{SearchViewModel>/SearchFieldEditable}"></StepInput>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Empty Weight">-->
+			<!--					<f:fields>-->
+			<!--						<StepInput width="50%" value="{SearchViewModel>/EmptyWeight}" editable="{SearchViewModel>/SearchFieldEditable}"></StepInput>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Full Weight">-->
+			<!--					<f:fields>-->
+			<!--						<StepInput width="50%" value="{SearchViewModel>/FullWeight}" editable="{SearchViewModel>/SearchFieldEditable}"></StepInput>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Mielage">-->
+			<!--					<f:fields>-->
+			<!--						<Input width="50%" value="{SearchViewModel>/mileage}" editable="{SearchViewModel>/SearchFieldEditable}"></Input>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--				<f:FormElement label="Cubic Capacity">-->
+			<!--					<f:fields>-->
+			<!--						<StepInput width="50%" value="{SearchViewModel>/CubicCapacity}" editable="{SearchViewModel>/SearchFieldEditable}"></StepInput>-->
+			<!--					</f:fields>-->
+			<!--				</f:FormElement>-->
+			<!--<f:FormElement label="Customer Mobile No">-->
+			<!--	<f:fields>-->
+			<!--		<Input width="50%" placeholder="Mobile No" value="{SearchViewModel>/MObileNo}" maxLength="9"></Input>-->
+			<!--	</f:fields>-->
+			<!--</f:FormElement>-->
+			<!--			</f:formElements>-->
+			<!--		</f:FormContainer>-->
+			<!--		<f:FormContainer></f:FormContainer>-->
+			<!--	</f:formContainers>-->
+			<!--</f:Form>-->
+			<!--</IconTabFilter>-->
+			<!--<IconTabFilter text="New Info" key="New">-->
+			<f:Form editable="true" class="cl_formlabel sapUiSmallMarginTop">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+						emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Chassis No">
+								<f:fields>
+									<Input value="{SearchViewModel>/NewChassisno}" editable="{SearchViewModel>/NewSearchFieldEditable}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Engine No">
+								<f:fields>
+									<Input value="{SearchViewModel>/NewEngineno}" editable="{SearchViewModel>/NewSearchFieldEditable}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Country">
+								<f:fields>
+									<Input value="{SearchViewModel>/NewCountry}" editable="{SearchViewModel>/NewSearchFieldEditable}" showValueHelp="true" valueHelpOnly="true"
+										valueHelpRequest="openCountryF4"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Manufacturer">
+								<f:fields>
+									<Input value="{SearchViewModel>/NewManufacturer}" editable="{SearchViewModel>/NewSearchFieldEditable}" showValueHelp="true"
+										valueHelpOnly="true" valueHelpRequest="openManufacturerF4"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Model">
+								<f:fields>
+									<Input value="{SearchViewModel>/NewModel}" editable="{SearchViewModel>/NewSearchFieldEditable}" showValueHelp="true" valueHelpOnly="true"
+										valueHelpRequest="openModelF4"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Plate Type">
+								<f:fields>
+									<!--<ComboBox items="{SearchViewModel>/PlatetypeF4}" value="{SearchViewModel>/PlateType}">-->
+									<!--	<core:ListItem key="{SearchViewModel>Category}" text="{SearchViewModel>Category}"/>-->
+									<!--</ComboBox>-->
+									<Input value="{SearchViewModel>/NewPlateType}" editable="{SearchViewModel>/NewSearchFieldEditable}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Kind">
+								<f:fields>
+									<ComboBox items="{CreateCustomerModel>/KindF4}" value="{SearchViewModel>/NewKind}" editable="{SearchViewModel>/PermitVehKindEditable}">
+										<core:ListItem key="{CreateCustomerModel>Kind}" text="{CreateCustomerModel>Kind}"/>
+									</ComboBox>
+									<!--<Input value="{SearchViewModel>/NewKind}" editable="{SearchViewModel>/PermitVehKindEditable}"/>-->
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Type">
+								<f:fields>
+									<!--<ComboBox items="{SearchViewModel>/TypeF4}" value="{SearchViewModel>/Type}">-->
+									<!--	<core:ListItem key="{SearchViewModel>Type}" text="{SearchViewModel>Type}"/>-->
+									<!--</ComboBox>-->
+									<Input value="{SearchViewModel>/NewType}" editable="{SearchViewModel>/NewSearchFieldEditable}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Body Color">
+								<f:fields>
+									<Input value="{SearchViewModel>/NewBodyColor}" editable="{SearchViewModel>/PermitColorEditable}" showValueHelp="true" valueHelpOnly="true"
+										valueHelpRequest="openColorF4"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Gear Type">
+								<f:fields>
+									<!--<ComboBox items="{SearchViewModel>/GearTypeF4}" value="{SearchViewModel>/GearType}">-->
+									<!--	<core:ListItem key="{SearchViewModel>Gear}" text="{SearchViewModel>Gear}"/>-->
+									<!--</ComboBox>-->
+									<Input value="{SearchViewModel>/NewGearType}" editable="{SearchViewModel>/NewSearchFieldEditable}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Fuel Type">
+								<f:fields>
+									<ComboBox editable="{SearchViewModel>/PermitFuelTypeEditable}" items="{CreateCustomerModel>/FueltypeF4}"
+										value="{SearchViewModel>/NewFuelType}">
+										<core:ListItem key="{CreateCustomerModel>Type}" text="{CreateCustomerModel>Type}"/>
+									</ComboBox>
+									<!--<Input value="{SearchViewModel>/NewFuelType}" editable="{SearchViewModel>/PermitFuelTypeEditable}"/>-->
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Steering Side">
+								<f:fields>
+									<Input value="{SearchViewModel>/NewSteeringSide}" editable="{SearchViewModel>/NewSearchFieldEditable}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Weight Kind">
+								<f:fields>
+									<Input value="{SearchViewModel>/NewWeightKind}" editable="{SearchViewModel>/NewSearchFieldEditable}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Init Reg Year / Reg Exp Date">
+								<f:fields>
+									<DatePicker value="{SearchViewModel>/NewInitRegyear}" valueFormat="dd/mm/yyyy" editable="{SearchViewModel>/NewSearchFieldEditable}"></DatePicker>
+									<DatePicker value="{SearchViewModel>/NewRegExpYear}" valueFormat="dd/mm/yyyy" editable="{SearchViewModel>/NewSearchFieldEditable}"></DatePicker>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="MFG Year">
+								<f:fields>
+									<DatePicker width="50%" value="{SearchViewModel>/NewMFGYear}" displayFormat="yyyy" valueFormat="yyyy"
+										editable="{SearchViewModel>/NewSearchFieldEditable}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Horse Power">
+								<f:fields>
+									<StepInput width="50%" value="{SearchViewModel>/NewHP}" editable="{SearchViewModel>/NewSearchFieldEditable}"></StepInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="No.of.Axles">
+								<f:fields>
+									<StepInput width="50%" value="{SearchViewModel>/NewAxles}" editable="{SearchViewModel>/NewSearchFieldEditable}"></StepInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="No.of.Cylinders">
+								<f:fields>
+									<StepInput width="50%" value="{SearchViewModel>/NewCylinders}" editable="{SearchViewModel>/NewSearchFieldEditable}"></StepInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="No.of.Wheels">
+								<f:fields>
+									<StepInput width="50%" value="{SearchViewModel>/NewWheels}" editable="{SearchViewModel>/NewSearchFieldEditable}"></StepInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="No.of.Doors">
+								<f:fields>
+									<StepInput width="50%" value="{SearchViewModel>/NewDoors}" editable="{SearchViewModel>/NewSearchFieldEditable}"></StepInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="No.of.Passengers">
+								<f:fields>
+									<StepInput width="50%" value="{SearchViewModel>/NewPassengers}" editable="{SearchViewModel>/NewSearchFieldEditable}"></StepInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Empty Weight">
+								<f:fields>
+									<StepInput width="50%" value="{SearchViewModel>/NewEmptyWeight}" editable="{SearchViewModel>/NewSearchFieldEditable}"></StepInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Full Weight">
+								<f:fields>
+									<StepInput width="50%" value="{SearchViewModel>/NewFullWeight}" editable="{SearchViewModel>/NewSearchFieldEditable}"></StepInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Mielage">
+								<f:fields>
+									<Input width="50%" value="{SearchViewModel>/Newmileage}"></Input>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Cubic Capacity">
+								<f:fields>
+									<StepInput width="50%" value="{SearchViewModel>/NewCubicCapacity}" editable="{SearchViewModel>/NewSearchFieldEditable}"></StepInput>
+								</f:fields>
+							</f:FormElement>
+							<!--<f:FormElement label="Customer Mobile No">-->
+							<!--	<f:fields>-->
+							<!--		<Input width="50%" placeholder="Mobile No" value="{SearchViewModel>/MObileNo}" maxLength="9"></Input>-->
+							<!--	</f:fields>-->
+							<!--</f:FormElement>-->
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer></f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<List id="id_VIUploadCollection" items="{AttachmentModel>/File}" mode="Delete" delete="deleteUploadedFile" enableBusyIndicator="true"
+				headerText="" noDataText="No Data" growing="true" visible="true" class="sapUiTinyMarginTop">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="Attachments"/>
+						<ToolbarSpacer/>
+						<u:FileUploader buttonText="Upload" buttonOnly="true" name="myFileUpload" value="" style="Emphasized" placeholder="{i18n>uploadPlaceholder}"
+							change="onFileUploaderChange" enabled="true" id="fileUploader"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<StandardListItem title="{AttachmentModel>Filename}" type="Active" press="fnpdf" iconDensityAware="false" iconInset="false"
+					icon="{path:'AttachmentModel>FileType',formatter:'.formatter.onIconDisplay'}"/>
+			</List>
+			<Toolbar class="sapUiTinyMargin sapUiTinyMarginTop cl_CTtoolbar2" visible="{SearchViewModel>/PermitBtnVisible}">
+				<Label class="cl_HeadingTooltext2" text="Comments" required="true"></Label>
+			</Toolbar>
+			<VBox class="sapUiTinyMargin" visible="{SearchViewModel>/PermitBtnVisible}">
+				<TextArea width="100%" rows="5" required="true"></TextArea>
+			</VBox>
+			<!--		</IconTabFilter>-->
+			<!--	</items>-->
+			<!--</IconTabBar>-->
+		</content>
+		<buttons>
+			<!--<Button press="onPressTraffic" text="Traffic Test" type="Emphasized" iconFirst="true" width="auto" iconDensityAware="false"-->
+			<!--	class="sapUiTinyMarginEnd"/>-->
+			<Button press="onpresssaveconf" visible="{SearchViewModel>/ChangeInfoBtnVisible}" text="Save &amp; Confirm" type="Emphasized"
+				iconFirst="true" width="auto" iconDensityAware="false" class="sapUiTinyMarginEnd"/>
+			<!-- <Button press="onpressPermitsaveapprove" visible="{SearchViewModel>/PermitBtnVisible}" text="Save &amp; Approve" type="Emphasized"
+				iconFirst="true" width="auto" iconDensityAware="false" class="sapUiTinyMarginEnd"/> -->
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

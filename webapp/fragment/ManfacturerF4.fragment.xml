@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" title="Select Manufacturer" confirm="onManfacturerConfirm" items="{CreateCustomerModel>/ManufacturerF4}"
+		liveChange="onSearchManufacture" class="sapUiSizeCompact" rememberSelections="false">
+		<StandardListItem title="{CreateCustomerModel>Manufacturer}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

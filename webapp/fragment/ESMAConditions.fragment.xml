@@ -1,0 +1,64 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:l="sap.ui.layout">
+	<Dialog showHeader="false" contentHeight="100%" contentWidth="70%" class="sapUiSizeCompact" xmlns:grid="sap.ui.layout.cssgrid">
+		<!-- <customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label design="Bold" text="ESMA Check List"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseESMAconditions" class="sapUiSizeCompact sapUiTinyMarginEnd"/>
+				</contentRight>
+			</Bar>
+		</customHeader> -->
+		<Toolbar class="cl_fragtoolbar">
+			<ToolbarSpacer></ToolbarSpacer>
+			<Text text="ESMA Check List" class="cl_fragheader"></Text>
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseESMAconditions"
+				class="sapUiSizeCompact sapUiTinyMarginEnd cl_Rejectbtn"/>
+		</Toolbar>
+		<content>
+			<VBox class="cl_esmaborder sapUiSmallMargin">
+				<f:GridList class="cl_gridlist sapUiSmallMarginBegin sapUiSmallMarginTop">
+					<f:customLayout>
+						<grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(16rem, 0fr))" gridGap="0.5rem"/>
+					</f:customLayout>
+					<f:GridListItem>
+						<ComboBox placeholder="Type" items="{SearchViewModel>/ESMATypeF4}" value="{SearchViewModel>/ESMAType}">
+							<core:ListItem key="{SearchViewModel>Type}" text="{SearchViewModel>Type}"/>
+						</ComboBox>
+					</f:GridListItem>
+					<f:GridListItem>
+						<ComboBox placeholder="Source" items="{SearchViewModel>/ESMASourceF4}" value="{SearchViewModel>/ESMASource}">
+							<core:ListItem key="{SearchViewModel>Source}" text="{SearchViewModel>Source}"/>
+						</ComboBox>
+					</f:GridListItem>
+					<f:GridListItem>
+						<Text text="Certificate No: {VIRGlobalModel>/unRegplateno}" class="sapUiTinyMarginTop cl_WelcomeText"></Text>
+					</f:GridListItem>
+					<f:GridListItem>
+						<Text text="Certificate Date: {VIRGlobalModel>/Certdate}" class="sapUiTinyMarginTop cl_WelcomeText"></Text>
+					</f:GridListItem>
+				</f:GridList>
+			</VBox>
+			<List mode="None" id="id_ESMAlist" items="{SearchViewModel>/ESMAConditionList}" class="sapUiTinyMarginTop">
+				<CustomListItem>
+					<Toolbar class="cl_toolbar1">
+						<CheckBox text="" selected="{SearchViewModel>Selected}" select="onListSelect"/>
+						<Text text="{SearchViewModel>ConditionText}" class="sapUiTinyMarginBegin cl_esmatest"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text text="{SearchViewModel>ArabicTest}" class="cl_esmatest"></Text>
+					</Toolbar>
+				</CustomListItem>
+			</List>
+		</content>
+		<buttons>
+			<!--<Button text="Save" type="Default" press="onpresESMAssave" icon='{imageModel>/path}/image/lists.png'></Button>-->
+			<Button press="onpresssaveapprove" text="Save &amp; Approve" type="Default" iconFirst="true" width="auto" iconDensityAware="false"
+				class="sapUiTinyMarginEnd" icon="{imageModel>/path}/image/approve.png"/>
+			<Button visible="{SearchViewModel>/ESMAPrintBtnVisible}" text="Print" icon='{imageModel>/path}/image/print.png' type="Default" width="auto"
+				iconDensityAware="false" iconFirst="true" class="sapUiTinyMarginEnd"/>
+			<Button text="Clear" type="Default" press="onpressclear"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.f" xmlns:card="sap.f.cards">
+	<Dialog contentHeight="auto" contentWidth="auto" class="sapUiSizeCompact">
+		<customHeader>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseComments" class="sapUiSizeCompact"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<VBox class="sapUiTinyMargin">
+				<TextArea rows="3" width="18rem"></TextArea>
+			</VBox>
+		</content>
+		<buttons>
+			<Button class="cl_Emphasizebtn" type="Emphasized" text="Save" press="onCloseComments"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

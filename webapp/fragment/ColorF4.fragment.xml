@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" title="Select Color" confirm="onColoronfirm" items="{CreateCustomerModel>/BodyColorF4}"
+		liveChange="onSearchCountry" class="sapUiSizeCompact" rememberSelections="false">
+		<StandardListItem title="{CreateCustomerModel>Color}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

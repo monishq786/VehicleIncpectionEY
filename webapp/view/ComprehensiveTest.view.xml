@@ -1,0 +1,691 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="VIR.controller.ComprehensiveTest"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page showHeader="false" class="sapUiSizeCompact cl_page">
+				<content>
+					<VBox class="sapUiSmallMarginTopBottom sapUiLargeMarginBeginEnd cl_Background">
+						<HBox justifyContent="SpaceBetween">
+							<VBox>
+								<Image src="{imageModel>/path}/image/adnoc-logo-updated.svg" height="110px"/>
+							</VBox>
+							<VBox>
+								<Image src="{imageModel>/path}/image/CertificateLogo.png" width="100px" height="100px" class="sapUiTinyMarginBegin" visible="false"/>
+							</VBox>
+							<VBox>
+								<Image src="{imageModel>/path}/image/ADPolice.png" width="100px" height="100px" visible="true" class="sapUiSmallMarginBegin"/>
+							</VBox>
+						</HBox>
+					</VBox>
+					<Toolbar class="sapUiTinyMarginTop cl_toolbar1">
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_Ecertext" text="Vehicle Test Certificate شهادة اختبار المركبة"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+					</Toolbar>
+					<Toolbar class="sapUiTinyMargin sapUiTinyMarginTop cl_CTtoolbar2">
+						<Text class="cl_HeadingTooltext2" text="Inspection Information"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text text="{VIRGlobalModel>/SR}" class="cl_HeadingTooltext2"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_HeadingTooltext2" text="معلومات التفتيش"></Text>
+					</Toolbar>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Center Name" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="اسم المركز"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="{i18n>CInspectiontype}" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="نوع التفتيش"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="{i18n>CInspectiontpur}" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Purpose}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="الغرض من التفتيش"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="{i18n>CInspectiondate}" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<DatePicker value="{Traffictestmodel>/CurrDate}"></DatePicker>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="تاريخ التفتيش"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="{i18n>CPrintdate}" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<DatePicker value="{Traffictestmodel>/CurrDate}"></DatePicker>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="تاريخ الطباعة"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="{i18n>CInspectedby}" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value=""></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="تم الفحص بواسطة"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="{i18n>CComents}" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value=""></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="تعليقات"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<Toolbar class="sapUiTinyMargin sapUiTinyMarginTop cl_CTtoolbar2">
+						<Text class="cl_HeadingTooltext2" text="Vehicle Information"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_HeadingTooltext2" text="معلومات السيارة"></Text>
+					</Toolbar>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="{i18n>CPlateno}" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input width="15rem" value="Eighth Category - {VIRGlobalModel>/PlateNo}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="لوحة لا"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="{i18n>CPlatesourcekind}" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/PlSource}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Chassis No" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Chassisno}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Engine No" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Engineno}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Color" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/BodyColor}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Model" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/MFGYear}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Vehicle Type" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Manufacturer} {VIRGlobalModel>/Model}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Vehicle Kind" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Type}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Made In" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Country}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Fuel" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/FuelType}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Gear" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/GearType}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Steering" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/SteeringSide}"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="No.of Passengers" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Passengers}" width="5rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="No.of Doors" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Doors}" width="5rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="No.of Cylinders" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Cylinders}" width="5rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="No.of Axles" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/Axles}" width="5rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Horse Power" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/HP}" width="5rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Weight Empty" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/EmptyWeight}" width="5rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Weight Loaded" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/FullWeight}" width="5rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Weight Estimated" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="1600" width="5rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Weight Type" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/WeightKind}" width="5rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Previous Odometer" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="{VIRGlobalModel>/mileage}" width="6rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
+								<Text text="Current Odometer" class="cl_traffictexttxt"></Text>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+								<Input value="" width="6rem"></Input>
+							</FlexBox>
+						</VBox>
+						<VBox width="33.33%">
+							<FlexBox height="100px" alignItems="Start" justifyContent="End">
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<Toolbar class="sapUiTinyMargin sapUiTinyMarginTop cl_CTtoolbar2">
+						<Text class="cl_HeadingTooltext2" text="Comments"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_HeadingTooltext2" text="معلومات التفتيش"></Text>
+					</Toolbar>
+					<VBox class="sapUiTinyMargin">
+						<TextArea width="100%" rows="5"></TextArea>
+					</VBox>
+					<!--<List items="{ComprehensiveTestmodel>/ServiceRequirements}" class="sapUiTinyMargin sapUiTinyMarginTop">-->
+					<!--	<items>-->
+					<!--		<StandardListItem title="{ComprehensiveTestmodel>Text1}" info="{ComprehensiveTestmodel>Text2}" infoState="None"/>-->
+					<!--	</items>-->
+					<!--</List>-->
+					<Table width="auto" items="{ComprehensiveTestmodel>/Body}" noDataText="No Data" fixedLayout="true" visible="true" growing="true"
+						growingThreshold="100" growingScrollToLoad="false" class="sapUiTinyMargin cl_table">
+						<columns>
+							<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+								<header>
+									<Text text="{ComprehensiveTestmodel>/TableHeaderText1}" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+							</Column>
+							<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+								<header>
+									<Text text="Examination Method" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+							</Column>
+							<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+								<header>
+									<Text text="Not Painted" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+							</Column>
+							<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+								<header>
+									<Text text="Painted" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+							</Column>
+							<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+								<header>
+									<Text text="طريقة الفحص" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+							</Column>
+							<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+								<header>
+									<Text text="حالة الجسم والطلاء" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<customData>
+									<core:CustomData key="mydata" value="{ComprehensiveTestmodel>Header}" writeToDom="true"></core:CustomData>
+								</customData>
+								<cells>
+									<Text text="{parts:['ComprehensiveTestmodel>HeaderText2', 'ComprehensiveTestmodel>Header'],formatter:'VIR.model.formatter.Tabletext'}"></Text>
+									<Text text="{parts:['ComprehensiveTestmodel>HeaderText3', 'ComprehensiveTestmodel>Header'],formatter:'VIR.model.formatter.Tabletext'}"></Text>
+									<HBox>
+										<CheckBox selected="{ComprehensiveTestmodel>result_label1Value}" select="onSelectYes"
+											visible="{= ${ComprehensiveTestmodel>Header} === ''? true : false}"></CheckBox>
+										<Text text="{parts:['ComprehensiveTestmodel>HeaderText4', 'ComprehensiveTestmodel>Header'],formatter:'VIR.model.formatter.Tabletext'}"
+											visible="{= ${ComprehensiveTestmodel>Header} === 'X'? true : false}"></Text>
+									</HBox>
+									<HBox>
+										<CheckBox selected="{ComprehensiveTestmodel>result_label2Value}" select="onSelectNo"
+											visible="{= ${ComprehensiveTestmodel>Header} === ''? true : false}"></CheckBox>
+										<Text text="{parts:['ComprehensiveTestmodel>HeaderText5', 'ComprehensiveTestmodel>Header'],formatter:'VIR.model.formatter.Tabletext'}"
+											visible="{= ${ComprehensiveTestmodel>Header} === 'X'? true : false}"></Text>
+									</HBox>
+									<Text text="{parts:['ComprehensiveTestmodel>HeaderText6', 'ComprehensiveTestmodel>Header'],formatter:'VIR.model.formatter.Tabletext'}"></Text>
+									<Text text="{ComprehensiveTestmodel>HeaderText7}"></Text>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<Toolbar class="sapUiTinyMargin sapUiTinyMarginTop cl_CTtoolbar2">
+						<Text class="cl_HeadingTooltext2" text="Comment"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_HeadingTooltext2" text="معلومات التفتيش"></Text>
+					</Toolbar>
+					<VBox class="sapUiTinyMargin">
+						<TextArea width="100%" rows="3"></TextArea>
+					</VBox>
+					<Toolbar class="sapUiTinyMarginBeginEnd sapUiTinyMarginTop cl_CTtoolbar2">
+						<Text class="cl_HeadingTooltext2" text="Terms &amp; Conditions"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_HeadingTooltext2" text="معلومات التفتيش"></Text>
+					</Toolbar>
+					<Toolbar class="sapUiTinyMarginBeginEnd cl_comptoolbar3">
+						<Text class="cl_compHeadingTooltext2" text="Certificate is valid for 30 Days Only from the Test Date for Registration And Renewal"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_compHeadingTooltext2" text="الشهادة صالحة لمدة 30 يومًا فقط من تاريخ الاختبار للتسجيل والتجديد"></Text>
+					</Toolbar>
+					<Toolbar class="sapUiTinyMarginBeginEnd cl_comptoolbar2">
+						<Text class="cl_compHeadingTooltext2"
+							text="For more information on vehicle inspection services, visit the adnoc distribution website www.adnocdistribution.ae Or call 800300"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_compHeadingTooltext2"
+							text="لمزيد من المعلومات حول خدمات فحص المركبات، قم بزيارة أدنوك موقع التوزيع www.adnocdistribution.ae أو اتصل على 800300"></Text>
+					</Toolbar>
+					<Toolbar class="sapUiTinyMarginBeginEnd cl_comptoolbar2">
+						<Text class="cl_compHeadingTooltext2"
+							text="Adnoc is not responsible for any vehicle malfunction that occurs during or after the completion of the vehicle diagnostic test"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_compHeadingTooltext2" text="أدنوك ليست مسؤولة عن أي عطل يحدث أثناء الرحلة أو بعد الانتهاء من الاختبار التشخيصي للمركبة"></Text>
+					</Toolbar>
+					<Toolbar class="sapUiTinyMarginBeginEnd cl_comptoolbar2">
+						<Text class="cl_compHeadingTooltext2" text="Adnoc is not responsible for any hidden defects"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_compHeadingTooltext2" text="أدنوك ليست مسؤولة عن أي عيوب مخفية"></Text>
+					</Toolbar>
+					<Toolbar class="sapUiTinyMarginBeginEnd cl_comptoolbar2">
+						<Text class="cl_compHeadingTooltext2" text="The certificate is issued as per the request of vehicle owner or his representative"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_compHeadingTooltext2" text="يتم إصدار الشهادة بناء على طلب مالك المركبة أو صاحبها ممثل"></Text>
+					</Toolbar>
+					<Toolbar class="sapUiTinyMarginBeginEnd cl_comptoolbar2">
+						<Text class="cl_compHeadingTooltext2" text="The certificate is only valid on the Specified date &amp; Time"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_compHeadingTooltext2" text="الشهادة صالحة فقط في التاريخ والوقت المحددين"></Text>
+					</Toolbar>
+					<Toolbar class="sapUiTinyMarginBeginEnd cl_comptoolbar2">
+						<Text class="cl_compHeadingTooltext2" text="Any scrape or modification will cancel this certificate"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_compHeadingTooltext2" text="وأي كشط أو تعديل سيؤدي إلى إلغاء هذه الشهادة"></Text>
+					</Toolbar>
+					<Toolbar class="sapUiTinyMarginBeginEnd cl_comptoolbar2">
+						<Text class="cl_compHeadingTooltext2" text="Mileage Status: Only for vehicles that are inspected at ADNOC centers on an annual basis"></Text>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Text class="cl_compHeadingTooltext2" text="حالة المسافة المقطوعة: فقط للمركبات التي يتم فحصها في مراكز أدنوك على أساس سنوي"></Text>
+					</Toolbar>
+				</content>
+				<footer class="cl_footer">
+					<OverflowToolbar enabled="true" visible="true">
+						<ToolbarSpacer/>
+						<content>
+							<!--<Button text="Submit" icon="{imageModel>/path}/image/submit.png" type="Transparent" iconFirst="true" width="auto" press="onSubmit"/>-->
+							<Button class="cl_Emphasizebtn" text="Save" type="Emphasized" iconFirst="true" press="onSaveComprehensive"/>
+							<Button text="Exit" type="Emphasized" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit"
+								class="sapUiSmallMarginEnd cl_Emphasizebtn"/>
+						</content>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

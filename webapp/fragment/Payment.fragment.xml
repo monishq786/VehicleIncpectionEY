@@ -1,0 +1,157 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:m="sap.m" xmlns:fGrid="sap.f" xmlns:f="sap.ui.layout.form">
+	<Dialog contentHeight="60%" contentWidth="40%" class="sapUiSizeCompact" afterClose="dialogAfterclose" title="" escapeHandler=".handleEscape">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label design="Bold" text="Payment Info" class="PageHead"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseCart" class="sapUiTinyMarginBegin sapUiTinyMarginEnd"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<!--Payment-->
+			<Toolbar class="cl_toolbar sapUiTinyMarginTop">
+				<Title level="H3" text="Request Id: 39921047" class="sapUiSmallMarginBegin"/>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Title text="Total: 165 AED" level="H1" class="cl_TotalText sapUiTinyMarginEnd"/>
+			</Toolbar>
+			<!--<Title level="H3" text="Payment" class="sapUiSmallMarginBeginEnd sapUiSmallMarginTopBottom"/>-->
+			<Panel expandable="true" expand="onExpandCash" width="auto" class="sapUiTinyMarginBeginEnd" expandAnimation="true">
+				<headerToolbar>
+					<OverflowToolbar height="3rem">
+						<Image height="1.5rem" src="{imageModel>/path}/image/reward.png"/>
+						<Title text="ADNOC Rewards"/>
+						<ToolbarSpacer/>
+						<CheckBox text="Rewards MOP" valueState="Information" enabled="true" select="onPressCashSelect"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<f:Form editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+								emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="ADNOC Rewards">
+										<f:fields>
+											<Input value="" placeholder="Amount" valueState="Information">
+												<layoutData>
+													<l:GridData span="XL1 L3 M4 S4"/>
+												</layoutData>
+											</Input>
+											<Input value="" placeholder="Reference" valueState="Information">
+												<layoutData>
+													<l:GridData span="XL1 L3 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+			<Panel expandable="true" expand="onExpandCash" width="auto" class="sapUiTinyMarginBeginEnd" expandAnimation="true">
+				<headerToolbar>
+					<OverflowToolbar height="3rem">
+						<Image height="1.5rem" src="{imageModel>/path}/image/MoneyLogo.png"/>
+						<Title text="Cash"/>
+						<ToolbarSpacer/>
+						<CheckBox text="Cash MOP" valueState="Information" enabled="true" select="onPressCashSelect"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<f:Form editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+								emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Cash">
+										<f:fields>
+											<Input value="" placeholder="Enter Amount" valueState="Information"></Input>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+			<Panel expandable="true" expand="onExpandCard" width="auto" class="sapUiTinyMarginBeginEnd sapUiSmallMarginBottom" expandAnimation="true">
+				<headerToolbar>
+					<OverflowToolbar height="3rem" style="Clear">
+						<Image height="1.5rem" src="{imageModel>/path}/image/CardLogo.png"/>
+						<Title text="Card"/>
+						<ToolbarSpacer/>
+						<CheckBox text="Card MOP" valueState="Information" enabled="true" selected="{ViewModel>/Card_CheckBoxSeleted}" select="onPressCardSelect"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+					<f:Form editable="true" visible="{PaymentViewModel>/Card_MOPForm}">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+								emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Debit Card">
+										<f:fields>
+											<Input value="" placeholder="Amount" valueState="Information">
+												<layoutData>
+													<l:GridData span="XL1 L2 M2 S4"/>
+												</layoutData>
+											</Input>
+											<Input value="" placeholder="Reference" valueState="Information">
+												<layoutData>
+													<l:GridData span="XL1 L2 M2 S4"/>
+												</layoutData>
+											</Input>
+											<Button text="Pay" type="Emphasized" press="onPressPayCard">
+												<layoutData>
+													<l:GridData span="XL1 L2 M2 S4"/>
+												</layoutData>
+											</Button>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="ADNOC Fleet Card">
+										<f:fields>
+											<Input value="" placeholder="Amount" valueState="Information">
+												<layoutData>
+													<l:GridData span="XL1 L3 M4 S4"/>
+												</layoutData>
+											</Input>
+											<Input value="" placeholder="Reference" valueState="Information">
+												<layoutData>
+													<l:GridData span="XL1 L3 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<OverflowToolbar enabled="true" visible="true">
+				<ToolbarSpacer/>
+				<content>
+					<Button text="Pay" type="Emphasized" iconFirst="true" width="auto" iconDensityAware="false" press="onPressPay" class="sapUiTinyMarginEnd"
+						icon='sap-icon://money-bills'/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+	</Dialog>
+</core:FragmentDefinition>

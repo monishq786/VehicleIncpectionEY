@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.f" xmlns:card="sap.f.cards" xmlns:core="sap.ui.core">
+	<Dialog contentHeight="auto" contentWidth="auto" class="sapUiSizeCompact" showHeader="false">
+		<!-- <customHeader>
+			<Bar class="cl_bar">
+				<contentMiddle>
+					<Label design="Bold" text="Short Close"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseShortclose" class="sapUiSizeCompact sapUiTinyMarginEnd"/>
+				</contentRight>
+			</Bar>
+		</customHeader> -->
+		<Toolbar class="cl_fragtoolbar">
+			<ToolbarSpacer></ToolbarSpacer>
+			<Text text="Short Close" class="cl_fragheader"></Text>
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseShortclose"
+				class="sapUiSizeCompact sapUiTinyMarginEnd cl_Rejectbtn"/>
+		</Toolbar>		
+		<content>
+			<f:Card class="sapUiMediumMargin" width="400px">
+				<f:header>
+					<card:Header title="Vehicle Details" subtitle="{SearchViewModel>/Customer}" iconSrc="{imageModel>/path}/image/sedan.png"/>
+				</f:header>
+				<f:content>
+					<HBox alignItems="Center" justifyContent="Start">
+						<VBox class="sapUiSmallMarginBegin">
+							<!--<ObjectAttribute title="Customer Name" text="{SearchViewModel>/Customer}" active="true" class="sapUiTinyMarginTopBottom"/>-->
+							<ObjectAttribute title="Plate No" text="{SearchViewModel>/PlateNo}" active="true" class="sapUiTinyMarginTopBottom cl_objAttri1"/>
+							<ObjectAttribute title="Plate Code" text="{SearchViewModel>/Platec}" active="true" class="sapUiTinyMarginTopBottom cl_objAttri1"/>
+							<ObjectAttribute title="Source" text="{SearchViewModel>/Source}" active="true" class="sapUiTinyMarginTopBottom cl_objAttri1"/>
+							<ObjectAttribute title="Vehicle kind" text="{SearchViewModel>/VehicleKind}" active="true" class="sapUiTinyMarginTopBottom cl_objAttri1"/>
+							<ObjectAttribute title="Amount Paid" text="{SearchViewModel>/Feepaid} AED" active="true" class="sapUiTinyMarginTopBottom cl_objAttri2"/>
+							<HBox renderType="Bare" justifyContent="SpaceBetween" class="sapUiTinyMarginTopBottom">
+								<DatePicker editable="false" width="150px" value="{SearchViewModel>/CurrDate}"/>
+								<!--<Input placeholder="Short Closed By" value="Ali Ahmed" editable="false" width="6rem" class="sapUiTinyMarginBegin"></Input>-->
+							</HBox>
+						</VBox>
+					</HBox>
+				</f:content>
+			</f:Card>
+			<VBox class="sapUiMediumMarginBegin sapUiTinyMarginBottom">
+				<TextArea value="{SearchViewModel>/Remarks}" rows="3" width="25rem" placeholder="Remarks"></TextArea>
+			</VBox>
+		</content>
+		<buttons>
+			<Button press="onPressShortClosetest" text="Short Close Test" type="Emphasized" width="auto" class="cl_Emphasizebtn"
+				iconFirst="true"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

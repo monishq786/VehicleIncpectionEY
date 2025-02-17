@@ -1,0 +1,319 @@
+{
+    "_version": "1.7.0",
+    "sap.app": {
+        "id": "VIR",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponent",
+            "version": "0.0.0",
+            "toolsId": "d8b05665-bf2f-41fc-9927-74c5b321b7b5"
+        },
+        "dataSources": {
+            "ZSB_LANEANPR_V2": {
+                "uri": "/sap/opu/odata/sap/ZSB_LANEANPR_V2/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ],
+        "fullWidth": true
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "VIR.view.MainmenuView",
+            "type": "XML",
+            "async": true,
+            "id": "splitapp"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
+                "sap.ushell": {},
+                "sap.collaboration": {},
+                "sap.ui.comp": {},
+                "sap.uxap": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "VIR.i18n.i18n"
+                }
+            },
+            "ZSB_LANEANPR_V2": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneTime",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZSB_LANEANPR_V2",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ],
+            "Font": [
+                {
+                    "uri": "Font/ADNOC_Sans_Bold.ttf"
+                },
+                {
+                    "uri": "Font/ADNOC_Sans_Regular.ttf"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "VIR.view",
+                "controlAggregation": "pages",
+                "controlId": "pageContainer",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "MainmenuView",
+                    "pattern": "MainmenuView",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "MainmenuView"
+                    ]
+                },
+                {
+                    "pattern": "View1",
+                    "name": "View1",
+                    "target": [
+                        "View1"
+                    ]
+                },
+                {
+                    "name": "Search",
+                    "pattern": "Search",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Search"
+                    ]
+                },
+                {
+                    "name": "PendingRequest",
+                    "pattern": "PendingRequest",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "PendingRequest"
+                    ]
+                },
+                {
+                    "name": "CreateCustomer",
+                    "pattern": "CreateCustomer",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "CreateCustomer"
+                    ]
+                },
+                {
+                    "name": "GenerateReq",
+                    "pattern": "GenerateReq",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "GenerateReq"
+                    ]
+                },
+                {
+                    "name": "TrafficTest",
+                    "pattern": "TrafficTest",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "TrafficTest"
+                    ]
+                },
+                {
+                    "name": "ComprehensiveTest",
+                    "pattern": "ComprehensiveTest",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "ComprehensiveTest"
+                    ]
+                },
+                {
+                    "name": "Inspection",
+                    "pattern": "Inspection",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Inspection"
+                    ]
+                },
+                {
+                    "name": "Payment",
+                    "pattern": "Payment",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Payment"
+                    ]
+                },
+                {
+                    "name": "InspectionTemp",
+                    "pattern": "InspectionTemp",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "InspectionTemp"
+                    ]
+                },
+                {
+                    "name": "PaymentDetails",
+                    "pattern": "PaymentDetails",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "PaymentDetails"
+                    ]
+                },
+                {
+                    "name": "Home",
+                    "pattern": "Home",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Home"
+                    ]
+                }
+            ],
+            "targets": {
+                "View1": {
+                    "viewType": "XML",
+                    "viewName": "View1",
+                    "clearControlAggregation": false
+                },
+                "MainmenuView": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "MainmenuView"
+                },
+                "Search": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "Search"
+                },
+                "PendingRequest": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "PendingRequest"
+                },
+                "CreateCustomer": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "CreateCustomer"
+                },
+                "GenerateReq": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "GenerateReq"
+                },
+                "TrafficTest": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "TrafficTest"
+                },
+                "ComprehensiveTest": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "ComprehensiveTest"
+                },
+                "Inspection": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "Inspection"
+                },
+                "Payment": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "Payment"
+                },
+                "InspectionTemp": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "InspectionTemp"
+                },
+                "PaymentDetails": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "PaymentDetails",
+                    "controlAggregation": "pages"
+                },
+                "Home": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "Home",
+                    "controlAggregation": "pages"
+                }
+            }
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zvir/webapp",
+        "_version": "1.1.0"
+    }
+}

@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ResponsivePopover title="" showHeader="false" class="sapUiPopupWithPadding" placement="Right" contentHeight="auto" contentWidth="auto">
+		<content>
+			<VBox>
+				<ObjectStatus visible="{= ${SearchViewModel>/CurrTVisible} === 'X'? true : false}" state="{SearchViewModel>/CurrTstate}"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin" inverted="true" text="Traffic Test: {SearchViewModel>/CurrTstatus}"/>
+				<ObjectStatus visible="{= ${SearchViewModel>/CurrCVisible} === 'X'? true : false}" state="{SearchViewModel>/CurrCstate}"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin" inverted="true" text="Comprehensive Test: {SearchViewModel>/CurrCstatus}"/>
+				<ObjectStatus visible="{= ${SearchViewModel>/CurrEVisible} === 'X'? true : false}" state="{SearchViewModel>/CurrEstate}"
+					class="sapUiTinyMarginTop sapUiTinyMarginBegin" inverted="true" text="ESMA Test: {SearchViewModel>/CurrEstatus}"/>
+			</VBox>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

@@ -1,0 +1,359 @@
+<mvc:View xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" controllerName="VIR.controller.Inspection"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:f="sap.f"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:l="sap.ui.layout">
+    <App>
+        <pages>
+            <Page title="Title" showHeader="false" class="cl_page" showFooter="true">
+                <content>
+                    <l:VerticalLayout width="100%">
+                        <l:BlockLayout background="Dashboard">
+                            <l:BlockLayoutRow>
+                                <l:BlockLayoutCell width='1.5' class="Cl_VIBannerwidth" visible="{SearchViewModel>/ServiceTestLayoutVisible}">
+                                    <VBox>
+                                        <VBox>
+                                            <Text text="Service Test" class="cl_WelcomeText sapUiTinyMarginBegin" />
+                                            <Text text="#{VIRGlobalModel>/SR}" class="cl_WelcomeText sapUiTinyMarginTop sapUiTinyMarginBegin" />
+                                        </VBox>
+                                        <List items="{VIRGlobalModel>/InspItems}" class="sapUiTinyMarginTop cl_customlist cl_standardlistitem">
+                                            <StandardListItem press="onselectList" type="Navigation" highlight="{VIRGlobalModel>Highlight}" class="sapUiSmallMarginTop" title="{VIRGlobalModel>Item} {VIRGlobalModel>ServiceName}" />
+                                        </List>
+
+                                        
+                                    </VBox>
+                                </l:BlockLayoutCell>
+                                <l:BlockLayoutCell width='4.5' class="Cl_VIBannerwidth">
+                                    <VBox>
+                                        <Toolbar class="cl_toolbar1" visible="false">
+                                            <!-- <Text text="Main Defect Category" class="cl_WelcomeText" /> -->
+                                            <ToolbarSpacer />
+                                            <Text text="{SearchViewModel>/ServiceItem} {SearchViewModel>/Servicename}" class="cl_WelcomeText" />
+                                        </Toolbar>
+                                        <NavContainer id="id_VItempnavCon" width="98%" height="25rem" class="navContainerControl">
+
+                                            <!-- First Level Category -->
+                                            <Page id="pt1" title="{SearchViewModel>/ServiceItem} {SearchViewModel>/Servicename} - Main Defect Category" class="cl_page" height="100%">
+                                                <f:GridList items="{SearchViewModel>/Interiorlist}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None" visible="false">
+                                                    <f:customLayout>
+                                                        <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(7rem, 1fr))" gridGap="0.5rem" />
+                                                    </f:customLayout>
+
+                                                    <f:GridListItem press="onPress1" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                        <VBox height="100%">
+                                                            <VBox height="100%" class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                    <HBox>
+                                                                        <Label text="{parts:['SearchViewModel>Interior' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                            </VBox>
+                                                        </VBox>
+                                                    </f:GridListItem>
+                                                </f:GridList>
+                                                <!-- new layout hz -->
+                                                <f:GridList mode="None" items="{SearchViewModel>/Interiorlist}" sticky="HeaderToolbar" class="sapUiTinyMarginTop cl_whitematetialgridlist" visible="true">
+                                                    <f:customLayout>
+                                                        <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))" gridGap="0.5rem"/>
+                                                    </f:customLayout>
+                                                    <!-- <f:GridListItem press="onPress1" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" visible="true" class="Cl_GridListItems sapUiTinyMarginBeginEnd">
+                                                        <VBox height="100%" justifyContent="SpaceBetween">
+                                                            <VBox class="sapUiTinyMargin">
+                                                                <VBox >
+                                                                    <HBox class="sapUiTinyMarginBeginEnd">
+                                                                        <Label text="{parts:['SearchViewModel>Interior' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" wrapping="true" class="sapUiSmallMarginEnd sapUiTinyMarginTop Cl_ReportText" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                            </VBox>
+                                                        </VBox>
+                                                    </f:GridListItem> -->
+
+                                                    <f:GridListItem press="onPress1" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" visible="true" class="Cl_GridListItems sapUiTinyMarginBeginEnd">
+                                                            <VBox height="auto" justifyContent="SpaceBetween">
+                                                            <VBox class="sapUiTinyMargin">
+                                                                <HBox alignContent="Start" justifyContent="SpaceBetween">
+                                                                    <HBox>
+                                                                        <!-- <Image src="{imageModel>/path}/image/NewServicesIcon.png" height="1.8rem" width="2rem" visible="{= ${SearchViewModel>Highlight} ==='None' ? true : false }"></Image> -->
+                                                                        <Image src="{imageModel>/path}/image/check-mark.png" height="1.8rem" width="2rem" visible="{= ${SearchViewModel>Highlight} ==='Information' ? true : false }"></Image>
+                                                                        <Title level="H3" text="{parts:['SearchViewModel>Interior' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" wrapping="true" class="sapUiTinyMarginTop sapUiTinyMarginBeginEnd"/>
+                                                                    </HBox>
+                                                                </HBox>
+                                                            </VBox>
+                                                        </VBox>
+                                                    </f:GridListItem>
+                                                </f:GridList>
+                                            </Page>
+                                            <!-- Second Level Category -->
+                                            <Page id="pt2" title="{SearchViewModel>/ServiceItem} {SearchViewModel>/Servicename} - Sub Defect Category" class="cl_page" showNavButton="true" navButtonPress="navtopt1">
+                                                <f:GridList items="{SearchViewModel>/InteriorSideList}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                    <f:customLayout>
+                                                        <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))" gridGap="0.5rem"/>
+                                                    </f:customLayout>
+
+                                                    <f:GridListItem press="onPress2" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2" visible="false">
+                                                        <VBox height="100%">
+                                                            <VBox height="100%" class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                    <HBox>
+                                                                        <Label text="{parts:['SearchViewModel>Material' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                            </VBox>
+                                                        </VBox>
+                                                    </f:GridListItem>
+                                                     <f:GridListItem press="onPress2" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" visible="true" class="Cl_GridListItems sapUiTinyMarginBeginEnd">
+                                                            <VBox height="auto" justifyContent="SpaceBetween">
+                                                            <VBox class="sapUiTinyMargin">
+                                                                <HBox alignContent="Start" justifyContent="SpaceBetween">
+                                                                    <HBox>
+                                                                        <!-- <Image src="{imageModel>/path}/image/NewServicesIcon.png" height="1.8rem" width="2rem" visible="{= ${SearchViewModel>Highlight} ==='None' ? true : false }"></Image> -->
+                                                                        <Image src="{imageModel>/path}/image/check-mark.png" height="1.8rem" width="2rem" visible="{= ${SearchViewModel>Highlight} ==='Information' ? true : false }"></Image>
+                                                                        <Title level="H3" text="{parts:['SearchViewModel>Material' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" wrapping="true" class="sapUiTinyMarginTop sapUiTinyMarginBeginEnd"/>
+                                                                    </HBox>
+                                                                </HBox>
+                                                            </VBox>
+                                                        </VBox>
+                                                    </f:GridListItem>
+                                                </f:GridList>
+
+                                               
+                                            </Page>
+
+                                            <Page showNavButton="true" navButtonPress="navtopt2" id="pt3" title="{SearchViewModel>/ServiceItem} {SearchViewModel>/Servicename} - Status and Location of Defect" class="cl_page" showFooter="false">
+                                                <l:VerticalLayout width="100%">
+                                                    <l:BlockLayout background="Default">
+                                                        <l:BlockLayoutRow >
+                                                            <l:BlockLayoutCell width='4' class="Cl_VIBlockwidth Cl_BlockLayoutheight">
+                                                                <HBox class="sapUiTinyMarginBegin" height="auto">
+                                                                    <VBox width="33.33%">
+                                                                        <VBox alignItems="Stretch" justifyContent="SpaceBetween" class="sapUiSmallMargin">
+                                                                            <f:GridList items="{SearchViewModel>/VIStatusFrontLeft}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                                                <!-- <f:customLayout>
+                                                                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(12rem, 2fr))" gridGap="0.5rem" />
+                                                                                </f:customLayout> -->
+
+                                                                                <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                                                    <VBox height="100%">
+                                                                                        <VBox height="100%" class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                            <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                                <HBox>
+                                                                                                    <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                                                </HBox>
+                                                                                            </VBox>
+                                                                                        </VBox>
+                                                                                    </VBox>
+                                                                                </f:GridListItem>
+                                                                            </f:GridList>
+                                                                            <!-- <Text text="" />
+                                                                            <Text text="" /> -->
+                                                                        </VBox>
+                                                                        <VBox alignItems="Stretch" justifyContent="SpaceBetween" class="sapUiSmallMargin">
+                                                                            <f:GridList items="{SearchViewModel>/VIStatusCenterLeft}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                                                <f:customLayout>
+                                                                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(12rem, 2fr))" gridGap="0.5rem" />
+                                                                                </f:customLayout>
+
+                                                                                <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                                                    <VBox height="100%">
+                                                                                        <VBox height="100%" class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                            <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                                <HBox>
+                                                                                                    <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                                                </HBox>
+                                                                                            </VBox>
+                                                                                        </VBox>
+                                                                                    </VBox>
+                                                                                </f:GridListItem>
+                                                                            </f:GridList>
+                                                                            <!-- <Text text="" />
+                                                                            <Text text="" /> -->
+                                                                        </VBox>
+                                                                        <VBox alignItems="Stretch" justifyContent="SpaceBetween" class="sapUiSmallMargin">
+                                                                            <f:GridList items="{SearchViewModel>/VIStatusRearLeft}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                                                <f:customLayout>
+                                                                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(12rem, 2fr))" gridGap="0.5rem" />
+                                                                                </f:customLayout>
+
+                                                                                <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                                                    <VBox height="100%">
+                                                                                        <VBox height="100%" class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                            <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                                <HBox>
+                                                                                                    <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                                                </HBox>
+                                                                                            </VBox>
+                                                                                        </VBox>
+                                                                                    </VBox>
+                                                                                </f:GridListItem>
+                                                                            </f:GridList>
+                                                                            <!-- <Text text="" />
+                                                                            <Text text="" /> -->
+                                                                        </VBox>
+                                                                    </VBox>
+
+                                                                    <!-- Center list -->
+
+                                                                    <VBox width="33.33%" class="">
+                                                                        <VBox alignItems="Stretch" justifyContent="SpaceBetween" class="sapUiSmallMargin">
+                                                                            <f:GridList items="{SearchViewModel>/VIStatusFrontCenter}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                                                <f:customLayout>
+                                                                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(12rem, 3fr))" gridGap="0.5rem" />
+                                                                                </f:customLayout>
+
+                                                                                <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                                                    <VBox height="100%">
+                                                                                        <VBox height="100%" class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                            <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                                <HBox>
+                                                                                                    <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                                                </HBox>
+                                                                                            </VBox>
+                                                                                        </VBox>
+                                                                                    </VBox>
+                                                                                </f:GridListItem>
+                                                                            </f:GridList>
+                                                                            <!-- <Text text="" />
+                                                                            <Text text="" /> -->
+                                                                        </VBox>
+                                                                        <VBox alignItems="Stretch" justifyContent="SpaceBetween" class="sapUiSmallMargin">
+                                                                            <f:GridList items="{SearchViewModel>/VIStatusCenter}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                                                <f:customLayout>
+                                                                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(12rem, 3fr))" gridGap="0.5rem" />
+                                                                                </f:customLayout>
+
+                                                                                <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                                                    <VBox height="100%">
+                                                                                        <VBox height="100%" class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                            <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                                <HBox>
+                                                                                                    <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                                                </HBox>
+                                                                                            </VBox>
+                                                                                        </VBox>
+                                                                                    </VBox>
+                                                                                </f:GridListItem>
+                                                                            </f:GridList>
+                                                                            <!-- <Text text="" />
+                                                                            <Text text="" /> -->
+                                                                        </VBox>
+                                                                        <VBox alignItems="Stretch" justifyContent="SpaceBetween" class="sapUiSmallMargin">
+                                                                            <f:GridList items="{SearchViewModel>/VIStatusRearCenter}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                                                <f:customLayout>
+                                                                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(12rem, 3fr))" gridGap="0.5rem" />
+                                                                                </f:customLayout>
+
+                                                                                <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                                                    <VBox height="100%">
+                                                                                        <VBox height="100%" class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                            <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                                <HBox>
+                                                                                                    <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                                                </HBox>
+                                                                                            </VBox>
+                                                                                        </VBox>
+                                                                                    </VBox>
+                                                                                </f:GridListItem>
+                                                                            </f:GridList>
+                                                                            <!-- <Text text="" />
+                                                                            <Text text="" /> -->
+                                                                        </VBox>
+                                                                    </VBox>
+
+                                                                    <VBox width="33.33%">
+                                                                        <VBox alignItems="Stretch" justifyContent="SpaceBetween" class="sapUiSmallMargin">
+                                                                            <f:GridList items="{SearchViewModel>/VIStatusFrontRight}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                                                <f:customLayout>
+                                                                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(12rem, 3fr))" gridGap="0.5rem" />
+                                                                                </f:customLayout>
+
+                                                                                <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                                                    <VBox height="100%">
+                                                                                        <VBox height="100%" class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                            <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                                <HBox>
+                                                                                                    <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                                                </HBox>
+                                                                                            </VBox>
+                                                                                        </VBox>
+                                                                                    </VBox>
+                                                                                </f:GridListItem>
+                                                                            </f:GridList>
+                                                                            <!-- <Text text="" />
+                                                                            <Text text="" /> -->
+                                                                        </VBox>
+                                                                        <VBox alignItems="Stretch" justifyContent="SpaceBetween" class="sapUiSmallMargin">
+                                                                            <f:GridList items="{SearchViewModel>/VIStatusCenterRight}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                                                <f:customLayout>
+                                                                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(12rem, 3fr))" gridGap="0.5rem" />
+                                                                                </f:customLayout>
+
+                                                                                <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                                                    <VBox >
+                                                                                        <VBox  class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                            <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                                <HBox>
+                                                                                                    <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                                                </HBox>
+                                                                                            </VBox>
+                                                                                        </VBox>
+                                                                                    </VBox>
+                                                                                </f:GridListItem>
+                                                                            </f:GridList>
+                                                                            <!-- <Text text="" />
+                                                                            <Text text="" /> -->
+                                                                        </VBox>
+                                                                        <VBox alignItems="Stretch" justifyContent="SpaceBetween" class="sapUiSmallMargin">
+                                                                            <f:GridList items="{SearchViewModel>/VIStatusRearRight}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                                                <f:customLayout>
+                                                                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(12rem, 3fr))" gridGap="0.5rem" />
+                                                                                </f:customLayout>
+
+                                                                                <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
+                                                                                    <VBox >
+                                                                                        <VBox  class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                            <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                                <HBox>
+                                                                                                    <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
+                                                                                                </HBox>
+                                                                                            </VBox>
+                                                                                        </VBox>
+                                                                                    </VBox>
+                                                                                </f:GridListItem>
+                                                                            </f:GridList>
+                                                                            <!-- <Text text="" />
+                                                                            <Text text="" /> -->
+                                                                        </VBox>
+                                                                    </VBox>
+                                                                </HBox>
+                                                            </l:BlockLayoutCell>
+                                                            <l:BlockLayoutCell width="2" class="Cl_VISecondcell">
+                                                                <TextArea class="sapUiSmallMargin Cl_TextArea" width="94%" rows="7" placeholder="Enter Remarks" />
+                                                            </l:BlockLayoutCell>
+                                                        </l:BlockLayoutRow>
+                                                    </l:BlockLayout>
+                                                </l:VerticalLayout>
+
+
+                                            </Page>
+                                        </NavContainer>
+                                    </VBox>
+                                </l:BlockLayoutCell>
+                            </l:BlockLayoutRow>
+                        </l:BlockLayout>
+                    </l:VerticalLayout>
+                </content>
+                <footer>
+                    <OverflowToolbar enabled="true" visible="true">
+                        <ToolbarSpacer />
+                        <Button text="Minor" visible="{SearchViewModel>/BtnEnabled}" type="Accept" iconFirst="true" width="auto" press="onPressSave" class="sapUiTinyMarginEnd cl_Acceptbtn"/>
+                        <Button text="Major" visible="{SearchViewModel>/BtnEnabled}" type="Reject" iconFirst="true" width="auto" class="sapUiSmallMarginEnd cl_Rejectbtn" press="onPressSave"/>
+                        <Button text="Clear" type="Emphasized" iconFirst="true" width="auto" class="cl_Emphasizebtn sapUiSmallMarginEnd" press="onPressclear" />
+                        <Button text="Exit" type="Emphasized" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit" class="sapUiSmallMarginEnd cl_Emphasizebtn" />
+                    </OverflowToolbar>
+                </footer>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

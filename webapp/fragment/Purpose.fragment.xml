@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<Dialog contentHeight="auto" contentWidth="auto" class="sapUiSizeCompact" showHeader="false">
+		<!-- <customHeader>
+			<Bar class="cl_bar">
+				<contentMiddle>
+					<Label design="Bold" text="Test Purpose" class="PageHead"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onClosePurpose" class="sapUiSizeCompact sapUiTinyMarginEnd"/>
+				</contentRight>
+			</Bar>
+		</customHeader> -->
+	<Toolbar class="cl_fragtoolbar">
+			<ToolbarSpacer></ToolbarSpacer>
+			<Text text="Test Purpose" class="cl_fragheader"></Text>
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onClosePurpose"
+				class="sapUiSizeCompact sapUiTinyMarginEnd cl_Rejectbtn"/>
+	</Toolbar>		
+		<content>
+			<!--<SelectDialog title="Purpose" confirm=".onConfirmpurpose" items="{VIRGlobalModel>/PurposeF4}" rememberSelections="false"-->
+			<!--	class="sapUiSizeCompact">-->
+			<!--	<StandardListItem title="{VIRGlobalModel>Purpose}" type="Active"/>-->
+			<!--</SelectDialog>-->
+			<List items="{VIRGlobalModel>/PurposeF4}" class="sapUiTinyMarginTop cl_standardlistitem">
+				<items>
+					<StandardListItem title="{VIRGlobalModel>Purpose}" type="Active" press="onConfirmpurpose"/>
+				</items>
+			</List>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

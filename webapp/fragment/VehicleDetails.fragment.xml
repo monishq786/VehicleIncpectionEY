@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:grid="sap.ui.layout.cssgrid"
+   xmlns:g="sap.f">
+    <Dialog contentHeight="auto" contentWidth="60%" class="sapUiSizeCompact" showHeader="false">
+        <content>
+           
+				<l:VerticalLayout width="100%">
+					<l:BlockLayout  background="Dashboard">
+						<l:BlockLayoutRow>
+							<l:BlockLayoutCell width='2' class="Cl_Bannerwidth">
+								<!--<HBox>-->
+								<HBox>
+									<Image width="42px" height="42px" src="{imageModel>/path}/image/sedan.png"/>
+									<ObjectIdentifier title="Vehicle Details" titleActive="false" class="cl_objlabel sapUiTinyMarginTop sapUiSmallMarginBegin"/>
+								</HBox>
+								<VBox class="sapUiSmallMarginBegin">
+									<ObjectAttribute title="Chassis No" text="{SearchViewModel>/Chassisno}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Engine No" text="{SearchViewModel>/Engineno}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Country" text="{SearchViewModel>/Country}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Manufacturer" text="{SearchViewModel>/Manufacturer}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Model" text="{SearchViewModel>/Model}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Kind" text="{SearchViewModel>/Kind}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Type" text="{SearchViewModel>/Type}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Body Color" text="{SearchViewModel>/BodyColor}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Gear Type" text="{SearchViewModel>/GearType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Fuel Type" text="{SearchViewModel>/FuelType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Steering Side" text="{SearchViewModel>/SteeringSide}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Weight Kind" text="{SearchViewModel>/WeightKind}" class="cl_objlabel sapUiTinyMarginTop" active="true"/>
+								</VBox>
+							</l:BlockLayoutCell>
+							<l:BlockLayoutCell width='2' class="Cl_Bannerwidth">
+								<VBox class="sapUiSmallMarginBegin">
+									<ObjectAttribute title="Init Reg Year" text="{SearchViewModel>/InitRegyear}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Reg Exp Date" text="{SearchViewModel>/RegExpYear}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Plate Type" text="{SearchViewModel>/PlateType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="MFG Year" text="{SearchViewModel>/MFGYear}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Horse Power" text="{SearchViewModel>/HP}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="No.of.Axles" text="{SearchViewModel>/Axles}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="No.of.Cylinders" text="{SearchViewModel>/Cylinders}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="No.of.Wheels" text="{SearchViewModel>/Wheels}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="No.of.Doors" text="{SearchViewModel>/Doors}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="No.of.Passengers" text="{SearchViewModel>/Passengers}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Empty Weight" text="{SearchViewModel>/EmptyWeight}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Full Weight" text="{SearchViewModel>/FullWeight}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Mielage" text="{SearchViewModel>/mileage}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Cubic Capacity" text="{SearchViewModel>/CubicCapacity}" class="cl_objlabel sapUiTinyMarginTop" active="true"/>
+								</VBox>
+							</l:BlockLayoutCell>
+							
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</l:VerticalLayout>
+        </content>
+        <buttons>
+
+            <Button text="Close" type="Default" width="auto" iconDensityAware="false" class="sapUiSmallMarginEnd" press="onPressCloseVehicle" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

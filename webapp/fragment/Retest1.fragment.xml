@@ -1,0 +1,82 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:m="sap.m" xmlns:fGrid="sap.f" xmlns:f="sap.ui.layout.form">
+	<Dialog contentHeight="auto" contentWidth="70%" class="sapUiSizeCompact">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label design="Bold" text="" class="PageHead"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseRetest" class="cl_Rejectbtn sapUiSizeCompact sapUiTinyMarginEnd"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<FlexBox alignItems="Start" justifyContent="Start" class="sapUiTinyMarginTop">
+				<HBox class="sapUiTinyMarginBegin">
+					<Input placeholder="Order No"></Input>
+					<Input placeholder="Plate No" maxLength="5" class="sapUiTinyMarginBegin" value="{SearchViewModel>/RetestPlatenum}"></Input>
+					<Input placeholder="Customer Mobile No" class="sapUiSmallMarginBegin"></Input>
+				</HBox>
+				<Button type="Emphasized" text="Search" class="cl_Emphasizebtn sapUiMediumMarginBegin" press="onpressSearch"></Button>
+			</FlexBox>
+			<Table width="auto" items="{VIRGlobalModel>/Retest}" noDataText="No Data" fixedLayout="true" visible="true" growing="true"
+				growingThreshold="100" growingScrollToLoad="false" class="sapUiTinyMargin cl_table sapUiTinyMarginTop" alternateRowColors="false"
+				popinLayout="GridSmall">
+				<columns>
+					<Column width="4rem" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Order No" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="4rem" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Created Date" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="4rem" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Plate No" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="4rem" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Plate Category" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="5rem" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Source" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="5rem" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Plate Kind" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+					<Column width="5rem" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
+						<header>
+							<Text text="Service" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{VIRGlobalModel>OrderNo}"></Text>
+							<Text text="{VIRGlobalModel>OrderDate}"></Text>
+							<Text text="{VIRGlobalModel>Plateno}"></Text>
+							<Text text="{VIRGlobalModel>PlateC}"></Text>
+							<Text text="{VIRGlobalModel>Source}"></Text>
+							<Text text="{VIRGlobalModel>Kind}"></Text>
+							<Text text="{VIRGlobalModel>Service}"></Text>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button text="Proceed to Re-Test" type="Emphasized" press="onpresstoRetest" class="cl_Emphasizebtn"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

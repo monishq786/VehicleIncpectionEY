@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" title="Select Emirates" confirm="onCountryconfirm" items="{CreateCustomerModel>/CountryF4}"
+		liveChange="onSearchCountry" class="sapUiSizeCompact" rememberSelections="false">
+		<StandardListItem title="{CreateCustomerModel>Country}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

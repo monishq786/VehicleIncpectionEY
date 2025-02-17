@@ -1,0 +1,890 @@
+<mvc:View
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="VIR.controller.GenerateReq"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:grid="sap.ui.layout.cssgrid"
+>
+    <App>
+        <pages>
+            <Page
+                showFooter="true"
+                showHeader="false"
+                class="cl_page"
+            >
+                <content>
+                    <Toolbar
+                        visible="false"
+                        class="cl_toolbar sapUiTinyMarginTop sapUiTinyMarginBeginEnd"
+                    >
+                        <VBox class="sapUiTinyMarginBegin">
+                            <!--<HBox alignContent="Center" alignItems="Center" justifyContent="Center">-->
+                            <Image
+                                class="sapUiSmallMarginBegin"
+                                src="{imageModel>/path}/image/favoriteuser.png"
+                                width="42px"
+                                height="42px"
+                            />
+                            <!--</HBox>-->
+                            <Title
+                                level="H3"
+                                text="{VIRGlobalModel>/CustomerName}"
+                                class="cl_WelcomeText sapUiTinyMarginTop"
+                            />
+                            <Title
+                                level="H3"
+                                text="{VIRGlobalModel>/PlateNo} / Toyota Fortuner"
+                                class="cl_WelcomeText sapUiTinyMarginTop"
+                            />
+                            <Text
+                                text="Mobile No: {VIRGlobalModel>/MObileNo}"
+                                class="cl_WelcomeText sapUiTinyMarginTop"
+                            />
+                            <Input
+                                editable="{SearchViewModel>/FieldsEditable}"
+                                placeholder="Enter Mobile No"
+                                type="Tel"
+                                value="{VIRGlobalModel>/SecMobileNo}"
+                                class="sapUiTinyMarginTop"
+                                maxLength="9"
+                            />
+                        </VBox>
+                        <ToolbarSpacer />
+                        <VBox>
+                            <Text
+                                text="Service Test"
+                                class="cl_WelcomeText"
+                            />
+                            <Text
+                                text="#{VIRGlobalModel>/SR}"
+                                class="cl_WelcomeText sapUiTinyMarginTop"
+                            />
+                            <!-- <ObjectStatus
+                                class="sapUiTinyMarginTop CL_successobj"
+                                visible="{VIRGlobalModel>/MahaFileUpdated}"
+                                text="MAHA File Processed"
+                                inverted="true"
+                                active="false"
+                                icon="sap-icon://sys-enter-2"
+                                state="Success"
+                            /> -->
+                            <!-- <ObjectStatus
+                                class="sapUiTinyMarginTop CL_warningobj"
+                                visible="{VIRGlobalModel>/MahaFileNotUpdated}"
+                                text="MAHA File Not Processed"
+                                inverted="true"
+                                active="true"
+                                icon="sap-icon://alert"
+                                state="Warning"
+                                press="onPressChange"
+                            /> -->
+                            <Title
+                                text="Total: {SearchViewModel>/TotalAmount} AED"
+                                level="H1"
+                                class="cl_TotalText sapUiTinyMarginTop"
+                            />
+                            <Text
+                                text="VAT: {SearchViewModel>/VatAmount} AED"
+                                class="cl_VatText sapUiTinyMarginTop"
+                            />
+                            <Text
+                                text="{VIRGlobalModel>/Authcode}"
+                                class="cl_VatText sapUiTinyMarginTop"
+                            />
+                            <!--<ComboBox class="sapUiTinyMarginTop" placeholder="MOP Type" items="{SearchViewModel>/MOPF4}" value="{SearchViewModel>/MOPType}">-->
+                            <!--	<core:ListItem key="{SearchViewModel>MOP}" text="{SearchViewModel>MOP}"/>-->
+                            <!--</ComboBox>-->
+                        </VBox>
+                    </Toolbar>
+                    <Carousel
+                        loop="true"
+                        height="auto"
+                        pageIndicatorPlacement="Horizontal"
+                        arrowsPlacement="Content"
+                        class="cl_carosuel"
+                        showPageIndicator="false"
+                    >
+                        <!-- 1st  Grid-->
+                        <f:GridList>
+                            <f:customLayout>
+                                <grid:GridBasicLayout
+                                    gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                    gridGap="0.5rem"
+                                />
+                            </f:customLayout>
+                            <f:GridListItem
+                                class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom"
+                                type="Inactive"
+                            >
+                                <OverflowToolbar
+                                    height="3rem"
+                                    design="Solid"
+                                    class="Cl_SOBarHeaderBG"
+                                >
+                                    <HBox justifyContent="SpaceBetween">
+                                        <FlexBox
+                                            alignItems="Start"
+                                            justifyContent="Center"
+                                        >
+                                            <Title
+                                                text="Plate Info: {VIRGlobalModel>/PlateNo} / {VIRGlobalModel>/PlateCode}"
+                                                wrapping="true"
+                                                class="cl_title sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                            />
+
+                                            <Title
+                                                text="Emirates: Abu Dhabi"
+                                                wrapping="true"
+                                                class="cl_title sapUiTinyMarginTopBottom sapUiSmallMarginBegin"
+                                            />
+
+                                            <Title
+                                                text="Model: Toyota Fortuner"
+                                                wrapping="true"
+                                                class="cl_title sapUiTinyMarginTopBottom sapUiSmallMarginBegin"
+                                            />
+                                        </FlexBox>
+                                    </HBox>
+                                </OverflowToolbar>
+                                <HBox visible="true">
+                                    <VBox width="82%">
+                                        <HBox
+                                            visible="false"
+                                            class="sapUiSmallMarginBottom sapUiTinyMarginTop"
+                                        >
+                                            <ObjectAttribute
+                                                title="Plate Detail"
+                                                text="{VIRGlobalModel>/PlateNo} / S"
+                                                active='true'
+                                                class="cl_objAttri sapUiSmallMarginBegin"
+                                            />
+                                            <ObjectAttribute
+                                                title="Emirates"
+                                                text="Abu Dhabi"
+                                                active='true'
+                                                class="cl_objAttri sapUiSmallMarginBegin"
+                                            />
+                                            <ObjectAttribute
+                                                title="Model"
+                                                text="Toyota Fortuner"
+                                                active='true'
+                                                class="cl_objAttri sapUiSmallMarginBegin"
+                                            />
+                                        </HBox>
+                                        <HBox
+                                            class="sapUiSmallMarginBottom sapUiTinyMarginTop"
+                                        >
+                                            <Image
+                                                src="{imageModel>/path}/image/toyota.svg"
+                                                press="onPressShowVehicleInfo"
+                                                class="sapUiTinyMarginBegin"
+                                                width="46px"
+                                                height="46px"
+                                            />
+                                            <ObjectAttribute
+                                                title="Chassis No"
+                                                text="{VIRGlobalModel>/Chassisno}"
+                                                active='true'
+                                                class="cl_objAttri sapUiTinyMarginBegin sapUiSmallMarginTop"
+                                            />
+                                            <ObjectAttribute
+                                                title="Engine No"
+                                                text="{VIRGlobalModel>/Engineno}"
+                                                active='true'
+                                                class="cl_objAttri sapUiSmallMarginBegin sapUiSmallMarginTop"
+                                            />
+                                        </HBox>
+                                        <HBox
+                                            visible="false"
+                                            class="sapUiSmallMarginBottom"
+                                        >
+                                            <!-- <Image
+                                            src="{imageModel>/path}/image/Toyota.png"
+                                            press="onPressShowVehicleInfo"
+                                            class="sapUiSmallMarginBegin"
+                                        /> -->
+                                            <!-- <ObjectStatus
+                                                class="CL_successobj sapUiMediumMarginBegin"
+                                                visible="{VIRGlobalModel>/MahaFileUpdated}"
+                                                text="MAHA File Updated"
+                                                inverted="true"
+                                                active="false"
+                                                icon="sap-icon://sys-enter-2"
+                                                state="Success"
+                                            />
+                                            <ObjectStatus
+                                                class="CL_warningobj sapUiSmallMarginBegin"
+                                                visible="{VIRGlobalModel>/MahaFileNotUpdated}"
+                                                text="MAHA File Not Updated"
+                                                inverted="true"
+                                                active="true"
+                                                icon="sap-icon://alert"
+                                                state="Warning"
+                                                press="onPressChange"
+                                            />
+
+                                            <ObjectAttribute
+                                                title="SR"
+                                                text="#{VIRGlobalModel>/SR}"
+                                                active="true"
+                                                class="cl_objAttri sapUiTinyMarginBeginEnd"
+                                            /> -->
+                                        </HBox>
+                                    </VBox>
+                                    <VBox width="18%">
+                                        <!-- <Image
+                                            src="{imageModel>/path}/image/Toyota.png"
+                                            press="onPressShowVehicleInfo"
+                                        /> -->
+
+                                        <!-- <Text
+                                            text="Service Test"
+                                            class="cl_WelcomeText"
+                                        /> -->
+                                        <Text
+                                            text="SR #{VIRGlobalModel>/SR}"
+                                            class="cl_WelcomeText sapUiTinyMarginTop"
+                                        />
+                                        <!-- <ObjectStatus
+                                            class="sapUiTinyMarginTop CL_successobj"
+                                            visible="{VIRGlobalModel>/MahaFileUpdated}"
+                                            text="MAHA File Processed"
+                                            inverted="true"
+                                            active="false"
+                                            icon="sap-icon://sys-enter-2"
+                                            state="Success"
+                                        /> -->
+                                        <!-- <ObjectStatus
+                                            class="sapUiTinyMarginTop CL_warningobj"
+                                            visible="{VIRGlobalModel>/MahaFileNotUpdated}"
+                                            text="MAHA File Not Processed"
+                                            inverted="true"
+                                            active="true"
+                                            icon="sap-icon://alert"
+                                            state="Warning"
+                                        /> -->
+                                        <Title
+                                            text="Total: {SearchViewModel>/TotalAmount} AED"
+                                            level="H1"
+                                            class="cl_TotalText sapUiTinyMarginTop"
+                                        />
+                                        <Text
+                                            text="VAT: {SearchViewModel>/VatAmount} AED"
+                                            class="cl_VatText sapUiTinyMarginTopBottom"
+                                        />
+                                    </VBox>
+                                </HBox>
+
+                                <!-- <OverflowToolbar design="Solid">
+                                    <ObjectAttribute
+                                        title="Total"
+                                        text="{SearchViewModel>/TotalAmount} AED"
+                                        active="true"
+                                        class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop"
+                                    />
+                                    <ObjectAttribute
+                                        title="Vat"
+                                        text="{SearchViewModel>/VatAmount} AED"
+                                        active="true"
+                                        class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop"
+                                    />
+                                </OverflowToolbar> -->
+                            </f:GridListItem>
+                        </f:GridList>
+
+                        <!-- 2nd Grid -->
+
+                        <f:GridList visible="true">
+                            <f:customLayout>
+                                <grid:GridBasicLayout
+                                    gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                    gridGap="0.5rem"
+                                />
+                            </f:customLayout>
+                            <f:GridListItem
+                                class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom"
+                                type="Inactive"
+                            >
+                                <OverflowToolbar
+                                    height="3rem"
+                                    design="Solid"
+                                    class="Cl_SOBarHeaderBG"
+                                >
+                                    <HBox justifyContent="SpaceBetween">
+                                        <FlexBox
+                                            alignItems="Start"
+                                            justifyContent="Center"
+                                        >
+                                            <Title
+                                                text="Vehicle Info"
+                                                wrapping="true"
+                                                class="cl_title sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                            />
+                                        </FlexBox>
+                                    </HBox>
+                                </OverflowToolbar>
+
+                                <HBox
+                                    class="sapUiSmallMarginBottom sapUiTinyMarginTop"
+                                >
+                                    <ObjectAttribute
+                                        title="Vehicle Type"
+                                        text="{VIRGlobalModel>/Type}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin"
+                                    />
+                                    <ObjectAttribute
+                                        title="Body Color"
+                                        text="{VIRGlobalModel>/BodyColor}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin "
+                                    />
+                                    <ObjectAttribute
+                                        title="Gear Type"
+                                        text="{VIRGlobalModel>/GearType}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin "
+                                    />
+                                    <ObjectAttribute
+                                        title="Fuel Type"
+                                        text="{VIRGlobalModel>/FuelType}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin"
+                                    />
+                                </HBox>
+                                <HBox
+                                    class="sapUiSmallMarginBottom sapUiTinyMarginTop"
+                                >
+                                    <ObjectAttribute
+                                        title="Steering Side"
+                                        text="{VIRGlobalModel>/SteeringSide}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin "
+                                    />
+                                    <ObjectAttribute
+                                        title="MFG Year"
+                                        text="{VIRGlobalModel>/MFGYear}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin "
+                                    />
+                                    <ObjectAttribute
+                                        title="Reg year"
+                                        text="{VIRGlobalModel>/InitRegyear}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin"
+                                    />
+                                    <ObjectAttribute
+                                        title="Mileage"
+                                        text="{VIRGlobalModel>/mileage}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin "
+                                    />
+                                </HBox>
+                                <HBox
+                                    class="sapUiSmallMarginBottom sapUiTinyMarginTop"
+                                >
+                                    <ObjectAttribute
+                                        title="Reg Exp Year"
+                                        text="{VIRGlobalModel>/RegExpYear}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin "
+                                    />
+                                    <ObjectAttribute
+                                        title="Horse power"
+                                        text="{VIRGlobalModel>/HP}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin "
+                                    />
+                                    <ObjectAttribute
+                                        title="Full Weight"
+                                        text="{VIRGlobalModel>/FullWeight}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin"
+                                    />
+                                    <ObjectAttribute
+                                        title="Cubic Capacity"
+                                        text="{VIRGlobalModel>/CubicCapacity}"
+                                        active='true'
+                                        class="cl_objAttri sapUiSmallMarginBegin "
+                                    />
+                                </HBox>
+                            </f:GridListItem>
+                        </f:GridList>
+                    </Carousel>
+
+                    <IconTabBar
+                        id="id_MaterialIcontabbar"
+                        backgroundDesign="Translucent"
+                        selectedKey="VehicleTest"
+                        class="cl_icontabbar"
+                        visible="{VIRGlobalModel>/MainIcontabbarVisible}"
+                    >
+                        <items>
+                            <IconTabFilter
+                                text="Fresh Test"
+                                key="VehicleTest"
+                                visible="{SearchViewModel>/FreshTestTabVisible}"
+                            >
+                                <f:GridList
+                                    id="idgridlistVT"
+                                    items="{SearchViewModel>/VehicleTest}"
+                                    class="sapUiTinyMarginTop cl_whitematetialgridlist"
+                                    mode="None"
+                                >
+                                    <f:headerToolbar>
+                                        <Toolbar>
+                                            <ToolbarSpacer />
+                                            <HBox>
+                                                <SearchField />
+                                            </HBox>
+                                        </Toolbar>
+                                    </f:headerToolbar>
+                                    <f:customLayout>
+                                        <grid:GridBasicLayout
+                                            gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                            gridGap="0.5rem"
+                                        />
+                                    </f:customLayout>
+                                    <SearchField />
+                                    <f:GridListItem
+                                        press="onPress1"
+                                        type="{SearchViewModel>Type}"
+                                        highlight="{SearchViewModel>Highlight3}"
+                                        class="sapUiTinyMarginBegin cl_Materialgridlist"
+                                    >
+                                        <VBox height="100%">
+                                            <!-- <HBox>
+                                                <Label
+                                                    text="{SearchViewModel>ServiceName}"
+                                                    class="cl_sidelisttext sapUiSmallMarginBegin sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                            </HBox> -->
+                                            <Toolbar class="cl_gridtoolbar">
+                                                <Label
+                                                    text="{SearchViewModel>ServiceName}"
+                                                    class="cl_sidelisttext sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                                <ToolbarSpacer />
+                                                <Label
+                                                    text="{SearchViewModel>Price}"
+                                                    class="cl_WelcomeText sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                            </Toolbar>
+
+                                            <!-- <Toolbar
+                                                class="cl_gridtoolbar"
+                                                visible="{= ${SearchViewModel>MahaVisible} === 'X'? true : false}"
+                                            >
+                                                <VBox
+                                                    class="sapUiSmallMarginBegin sapUiTinyMarginBottom"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <Text
+                                                        text="Maha IN"
+                                                       
+                                                    />
+                                                    <Image
+                                                        src="{imageModel>/path}/image/MahaS.png"
+                                                        width="22px"
+                                                        height="22px"
+                                                        visible="{= ${SearchViewModel>MahaIn} === 'X'? true : false}"
+                                                    />
+                                                    <Image
+                                                        src="{imageModel>/path}/image/MahaE.png"
+                                                        width="22px"
+                                                        height="22px"
+                                                        visible="{= ${SearchViewModel>MahaIn} === ''? true : false}"
+                                                    />
+                                                </VBox>
+                                                <VBox
+                                                    class="sapUiSmallMarginBegin sapUiTinyMarginBottom"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <Text
+                                                        text="Maha Out"
+                                                       
+                                                    />
+                                                    <Image
+                                                        src="{imageModel>/path}/image/MahaS.png"
+                                                        width="22px"
+                                                        height="22px"
+                                                        visible="{= ${SearchViewModel>MahaOut} === 'X'? true : false}"
+                                                    />
+                                                    <Image
+                                                        src="{imageModel>/path}/image/MahaE.png"
+                                                        width="22px"
+                                                        height="22px"
+                                                        visible="{= ${SearchViewModel>MahaOut} === ''? true : false}"
+                                                    />
+                                                </VBox>
+                                                <VBox
+                                                    class="sapUiSmallMarginBegin sapUiTinyMarginBottom"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <Text
+                                                        text="Visual"
+                                                      
+                                                    />
+                                                    <Image
+                                                        src="{imageModel>/path}/image/MahaS.png"
+                                                        width="22px"
+                                                        height="22px"
+                                                        visible="{= ${SearchViewModel>Visual} === 'X'? true : false}"
+                                                    />
+                                                    <Image
+                                                        src="{imageModel>/path}/image/MahaE.png"
+                                                        width="22px"
+                                                        height="22px"
+                                                         visible="{= ${SearchViewModel>Visual} === ''? true : false}"
+                                                    />
+                                                </VBox>
+                                            </Toolbar> -->
+                                        </VBox>
+                                    </f:GridListItem>
+                                </f:GridList>
+                            </IconTabFilter>
+
+                            <IconTabFilter
+                                text="Permits"
+                                key="Permit"
+                                visible="{SearchViewModel>/PermitIconTabVisible}"
+                            >
+                                <f:GridList
+                                    id="idgridlistPermit"
+                                    items="{SearchViewModel>/Permit}"
+                                    class="sapUiTinyMarginTop cl_whitematetialgridlist"
+                                    mode="None"
+                                >
+                                    <f:headerToolbar>
+                                        <Toolbar>
+                                            <ToolbarSpacer />
+                                            <HBox>
+                                                <SearchField />
+                                            </HBox>
+                                        </Toolbar>
+                                    </f:headerToolbar>
+                                    <f:customLayout>
+                                        <grid:GridBasicLayout
+                                            gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                            gridGap="0.5rem"
+                                        />
+                                    </f:customLayout>
+                                    <SearchField />
+
+                                    <f:GridListItem
+                                        press="onPress1"
+                                        type="{SearchViewModel>Type}"
+                                        class="sapUiTinyMarginBegin cl_Materialgridlist"
+                                    >
+                                        <VBox height="100%">
+                                            <!-- <HBox>
+                                                <Label
+                                                    text="{SearchViewModel>Material}"
+                                                    class="cl_sidelisttext sapUiTinyMarginTop sapUiSmallMarginBegin"
+                                                    wrapping="true"
+                                                />
+                                            </HBox> -->
+                                            <Toolbar class="cl_gridtoolbar">
+                                                <Label
+                                                    text="{SearchViewModel>ServiceName}"
+                                                    class="cl_sidelisttext sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                                <ToolbarSpacer />
+                                                <Label
+                                                    text="{SearchViewModel>Price}"
+                                                    class="cl_priceText sapUiTinyMarginTop sapUiTinyMarginEnd"
+                                                    wrapping="true"
+                                                />
+                                            </Toolbar>
+                                        </VBox>
+                                    </f:GridListItem>
+                                </f:GridList>
+                            </IconTabFilter>
+
+                            <IconTabFilter
+                                text="Accessories"
+                                key="Accessories"
+                            >
+                                <f:GridList
+                                    id="idgridlistAcc"
+                                    items="{SearchViewModel>/Accessories}"
+                                    class="sapUiTinyMarginTop cl_whitematetialgridlist"
+                                    mode="None"
+                                    
+                                >
+                                    <f:headerToolbar>
+                                        <Toolbar>
+                                            <ToolbarSpacer />
+                                            <Button
+                                                icon="sap-icon://bar-code"
+                                                type="Emphasized"
+                                                class="cl_Emphasizebtn"
+                                                press="onpressScanMaterial"
+                                            />
+                                            <HBox>
+                                                <SearchField />
+                                            </HBox>
+                                        </Toolbar>
+                                    </f:headerToolbar>
+                                    <f:customLayout>
+                                        <grid:GridBasicLayout
+                                            gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                            gridGap="0.5rem"
+                                        />
+                                    </f:customLayout>
+                                    <SearchField />
+                                    <f:GridListItem
+                                        press="onPress1"
+                                        type="{SearchViewModel>Type}"
+                                        class="sapUiTinyMarginBegin cl_Materialgridlist"
+                                        highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.GridListBorder'}"
+                                    >
+                                        <VBox height="100%">
+                                            <!-- <HBox>
+                                                <Label
+                                                    text="{SearchViewModel>Material}"
+                                                    class="cl_sidelisttext sapUiTinyMarginTop sapUiSmallMarginBegin"
+                                                    wrapping="true"
+                                                />
+                                            </HBox> -->
+                                            <Toolbar class="cl_gridtoolbar">
+                                                <Label
+                                                    text="{SearchViewModel>ServiceName}"
+                                                    class="cl_sidelisttext sapUiTinyMarginTop"
+                                                    wrapping="true"
+                                                />
+                                                <ToolbarSpacer />
+                                                <Label
+                                                    text="{SearchViewModel>Price}"
+                                                    class="cl_priceText sapUiTinyMarginTop sapUiTinyMarginEnd"
+                                                    wrapping="true"
+                                                />
+                                            </Toolbar>
+                                        </VBox>
+                                    </f:GridListItem>
+                                </f:GridList>
+                            </IconTabFilter>
+                            <!-- <IconTabFilter
+                                text="Re-Test"
+                                key="Others"
+                            >
+                                <f:GridList
+                                    id="idgridlistOthers"
+                                    items="{SearchViewModel>/Others}"
+                                    class="sapUiTinyMarginTop cl_whitematetialgridlist"
+                                    mode="None"
+                                >
+                                    <f:headerToolbar>
+                                        <Toolbar>
+                                            <ToolbarSpacer />
+                                            <HBox>
+                                                <SearchField />
+                                            </HBox>
+                                        </Toolbar>
+                                    </f:headerToolbar>
+                                    <f:customLayout>
+                                        <grid:GridBasicLayout
+                                            gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                            gridGap="0.5rem"
+                                        />
+                                    </f:customLayout>
+                                    <SearchField />
+                                    <f:GridListItem
+                                        press="onPress1"
+                                        type="{SearchViewModel>Type}"
+                                        highlight="{SearchViewModel>Highlight}"
+                                        class="sapUiTinyMarginBegin cl_Materialgridlist"
+                                    >
+                                        <VBox height="100%">
+                                            <HBox>
+                                                <Label
+                                                    text="{SearchViewModel>Material}"
+                                                    class="cl_sidelisttext sapUiTinyMarginTop sapUiSmallMarginBegin"
+                                                    wrapping="true"
+                                                />
+                                            </HBox>
+                                            <Toolbar class="cl_gridtoolbar">
+                                                <Label
+                                                    text="{SearchViewModel>ServiceName}"
+                                                    class="cl_sidelisttext sapUiSmallMarginBegin"
+                                                    wrapping="true"
+                                                />
+                                                <ToolbarSpacer />
+                                                <Label
+                                                    text="{SearchViewModel>Price}"
+                                                    class="cl_priceText sapUiTinyMarginEnd"
+                                                    wrapping="true"
+                                                />
+                                            </Toolbar>
+                                        </VBox>
+                                    </f:GridListItem>
+                                </f:GridList>
+                            </IconTabFilter> -->
+                        </items>
+                    </IconTabBar>
+
+                    <List
+                        headerText="Service Tests"
+                        items="{VIRGlobalModel>/ServiceItems}"
+                        itemPress="onpressVisualTest"
+                        visible="{VIRGlobalModel>/CartItemVisble}"
+                        class="sapUiTinyMarginBeginEnd cl_custlisthdr"
+                    >
+                        <CustomListItem
+                            type="Active"
+                            class="sapUiSmallMarginBeginEnd sapUiTinyMarginTopBottom cl_customlistcontent"
+                        >
+                            <HBox width="100%">
+                                <VBox width="80%">
+                                    <Text
+                                        text="{VIRGlobalModel>Item} - {VIRGlobalModel>ServiceName}"
+                                        class="sapUiTinyMarginTop"
+                                    />
+                                    <Text
+                                        text="{VIRGlobalModel>/PlateNo} / {VIRGlobalModel>/PlateCode}"
+                                        class="sapUiTinyMarginTopBottom"
+                                    />
+                                </VBox>
+                                <VBox width="20%">
+                                    <Toolbar
+                                        class="cl_gridtoolbar sapUiTinyMarginTopBottom"
+                                        visible="{= ${VIRGlobalModel>MahaVisible} === 'X'? true : false}"
+                                    >
+                                        <VBox
+                                            class="sapUiTinyMarginBottom"
+                                            alignContent="Center"
+                                            alignItems="Center"
+                                            visible="{= ${VIRGlobalModel>MahaHide} === 'X'? false : true}"
+                                        >
+                                            <Text text="IN" class="sapUiSmallMarginTop"/>
+                                            <Image
+                                                src="{imageModel>/path}/image/GreenDot.png"
+                                                width="36px"
+                                                height="36px"
+                                                visible="{= ${VIRGlobalModel>MahaIn} === 'X'? true : false}"
+                                            />
+                                            <Image
+                                                src="{imageModel>/path}/image/RedDot.png"
+                                                width="36px"
+                                                height="36px"
+                                                visible="{= ${VIRGlobalModel>MahaIn} === ''? true : false}"
+                                            />
+                                        </VBox>
+                                        <VBox
+                                            class="sapUiTinyMarginBottom sapUiMediumMarginBegin"
+                                            alignContent="Center"
+                                            alignItems="Center"
+                                            visible="{= ${VIRGlobalModel>MahaHide} === 'X'? false : true}"
+                                        >
+                                            <Text text="Out" class="sapUiSmallMarginTop"/>
+                                            <Image
+                                                src="{imageModel>/path}/image/GreenDot.png"
+                                                width="36px"
+                                                height="36px"
+                                                visible="{= ${VIRGlobalModel>MahaOut} === 'X'? true : false}"
+                                            />
+                                            <Image
+                                                src="{imageModel>/path}/image/RedDot.png"
+                                                width="36px"
+                                                height="36px"
+                                                visible="{= ${VIRGlobalModel>MahaOut} === ''? true : false}"
+                                            />
+                                        </VBox>
+                                        <VBox
+                                            class="sapUiTinyMarginBottom sapUiMediumMarginBegin"
+                                            alignContent="Center"
+                                            alignItems="Center"
+                                        >
+                                            <Text text="Visual" class="sapUiSmallMarginTop"/>
+                                            <Image
+                                                src="{imageModel>/path}/image/GreenDot.png"
+                                                width="36px"
+                                                height="36px"
+                                                visible="{= ${VIRGlobalModel>Visual} === 'X'? true : false}"
+                                            />
+                                            <Image
+                                                src="{imageModel>/path}/image/RedDot.png"
+                                                width="36px"
+                                                height="36px"
+                                                visible="{= ${VIRGlobalModel>Visual} === ''? true : false}"
+                                            />
+                                        </VBox>
+                                        <ToolbarSpacer />
+                                        <VBox>
+                                            <Button
+                                                type="Transparent"
+                                                icon="{imageModel>/path}/image/down.png"
+                                                press="onpressVisualTest"
+                                            />
+                                        </VBox>
+                                    </Toolbar>
+                                </VBox>
+                            </HBox>
+                        </CustomListItem>
+                    </List>
+                </content>
+                <footer>
+                    <OverflowToolbar
+                        enabled="true"
+                        visible="true"
+                    >
+                        <!-- <Button
+                            text="New Permit"
+                            class="cl_Emphasizebtn"
+                            type="Emphasized"
+                            press="onpressPermit"
+                            visible="{= ${VIRGlobalModel>/Purpose} === 'Permit'? true : false}"
+                        /> -->
+                        <ToolbarSpacer />
+                        <!-- <Button
+                            enabled="{SearchViewModel>/Btnenable}"
+                            text="Visual Test"
+                            press="onpressVisualTest"
+                            visible="{SearchViewModel>/PrintbtnVisible}"
+                            icon="{imageModel>/path}/image/view.png"
+                            type="Transparent"
+                            iconFirst="true"
+                        /> -->
+
+                        <Button
+                            class="sapUiSmallMarginEnd"
+                            text="Proceed"
+                            type="Transparent"
+                            press="onPressSave"
+                            enabled="{SearchViewModel>/FieldsEditable}"
+                        >
+                            <customData>
+                                <BadgeCustomData
+                                    key="badge"
+                                    value="{VIRGlobalModel>/MyCartCount}"
+                                    visible="true"
+                                />
+                            </customData>
+                        </Button>
+                        <Button
+                            text="Exit"
+                            type="Transparent"
+                            iconFirst="true"
+                            width="auto"
+                            visible="true"
+                            iconDensityAware="false"
+                            press="onExit"
+                            class="sapUiSmallMarginEnd cl_Emphasizebtn"
+                        />
+                    </OverflowToolbar>
+                </footer>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

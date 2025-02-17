@@ -1,0 +1,532 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:form="sap.ui.layout.form"
+>
+    <Dialog
+        contentHeight="100%"
+        contentWidth="80%"
+        class="sapUiSizeCompact"
+        showHeader="false"
+    >
+        <content>
+            <IconTabBar
+                id="id_carticontabbar"
+                backgroundDesign="Translucent"
+                selectedKey="VehicleTest"
+                class="cl_icontabbar"
+            >
+                <items>
+                    <IconTabFilter
+                        text="Cart Items"
+                        key="Cart"
+                    >
+                        <f:GridListItem
+                            class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom"
+                        >
+                            <OverflowToolbar
+                                height="3rem"
+                                design="Solid"
+                                class="Cl_SOBarHeaderBG"
+                            >
+                                <HBox justifyContent="SpaceBetween">
+                                    <FlexBox
+                                        alignItems="Start"
+                                        justifyContent="Center"
+                                    >
+                                        <Title
+                                            text="Plate Detail : {VIRGlobalModel>/PlateNo} / S"
+                                            wrapping="true"
+                                            class="cl_title sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                        />
+                                    </FlexBox>
+                                </HBox>
+                            </OverflowToolbar>
+
+                            <HBox
+                                class="sapUiSmallMarginBottom sapUiTinyMarginTop"
+                            >
+                                <!-- <ObjectAttribute
+                        title="Plate Detail"
+                        text="{VIRGlobalModel>/PlateNo} / S"
+                        active='true'
+                        class="cl_objAttri sapUiSmallMarginBegin"
+                    /> -->
+                                <ObjectAttribute
+                                    title="Emirates"
+                                    text="Abu Dhabi"
+                                    active='true'
+                                    class="cl_objAttri sapUiSmallMarginBegin "
+                                />
+                                <ObjectAttribute
+                                    title="Model"
+                                    text="BMW X5"
+                                    active='true'
+                                    class="cl_objAttri sapUiSmallMarginBegin "
+                                />
+                            </HBox>
+                            <HBox
+                                visible="true"
+                                class="sapUiSmallMarginBottom"
+                            >
+                                <ObjectStatus
+                                    class="CL_successobj sapUiSmallMarginBegin"
+                                    visible="{VIRGlobalModel>/MahaFileUpdated}"
+                                    text="MAHA File Processed"
+                                    inverted="true"
+                                    active="false"
+                                    icon="sap-icon://sys-enter-2"
+                                    state="Success"
+                                />
+                                <ObjectStatus
+                                    class="CL_warningobj sapUiSmallMarginBegin"
+                                    visible="{VIRGlobalModel>/MahaFileNotUpdated}"
+                                    text="MAHA File Not Processed"
+                                    inverted="true"
+                                    active="true"
+                                    icon="sap-icon://alert"
+                                    state="Warning"
+                                    press="onPressChange"
+                                />
+
+                                <ObjectAttribute
+                                    title="SR"
+                                    text="#{VIRGlobalModel>/SR}"
+                                    active="true"
+                                    class="cl_objAttri sapUiTinyMarginBeginEnd"
+                                />
+                            </HBox>
+                            <OverflowToolbar design="Solid">
+                                <ObjectAttribute
+                                    title="Total"
+                                    text="{SearchViewModel>/TotalAmount} AED"
+                                    active="true"
+                                    class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop"
+                                />
+                                <ObjectAttribute
+                                    title="Vat"
+                                    text="{SearchViewModel>/VatAmount} AED"
+                                    active="true"
+                                    class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop"
+                                />
+                            </OverflowToolbar>
+                        </f:GridListItem>
+                        <f:GridList
+                            mode="None"
+                            items="{VIRGlobalModel>/ServiceItems}"
+                            sticky="HeaderToolbar"
+                            class="cl_ListAligment"
+                            
+                        >
+                            <f:customLayout>
+                                <grid:GridBasicLayout
+                                    gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                    gridGap="0.5rem"
+                                />
+                            </f:customLayout>
+                            <f:GridListItem
+                                type="{SaleOrderModel>Type}"
+                                class="Cl_SOItems cl_SOListLabel sapUiTinyMarginBeginEnd"
+                            >
+                                <VBox
+                                    height="100%"
+                                    justifyContent="SpaceBetween"
+                                >
+                                    <layoutData>
+                                        <FlexItemData
+                                            growFactor="1"
+                                            shrinkFactor="0"
+                                        />
+                                        <!-- Don't shrink below minimum size. Fill space if available. -->
+                                    </layoutData>
+                                    <VBox class="sapUiTinyMargin">
+                                        <HBox justifyContent="SpaceBetween">
+                                            <HBox>
+                                                <!--<ObjectStatus title="Item" text="{SaleOrderModel>SalesOrderItem}" state="None"/>-->
+                                                <!--<Image height="1.5rem" width="auto" src="{imageModel>/path}/image/check-out.png" class="sapUiSmallMarginBeginEnd"/>-->
+                                                <ObjectAttribute
+                                                    text="{VIRGlobalModel>Material}"
+                                                    active="true"
+                                                    class="Cl_SearchListText sapUiTinyMarginBegin"
+                                                />
+                                            </HBox>
+                                            <ObjectAttribute
+                                                title="Item"
+                                                text="{VIRGlobalModel>Item}"
+                                                active="false"
+                                                class="cl_objAttri"
+                                            />
+                                        </HBox>
+                                        <Title
+                                            text="{VIRGlobalModel>ServiceName}"
+                                            class="cl_servicenametxt sapUiTinyMarginBegin sapUiTinyMarginTop"
+                                        />
+                                        <HBox
+                                            justifyContent="Start"
+                                            alignContent="Start"
+                                            class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                                        >
+                                            <ObjectAttribute
+                                                title="Net"
+                                                text="{VIRGlobalModel>Price}"
+                                                active="true"
+                                                class="cl_objAttri sapUiSmallMarginEnd"
+                                            />
+                                            <ObjectAttribute
+                                                title="Vat"
+                                                text="{VIRGlobalModel>VAT}"
+                                                active="true"
+                                                class="cl_objAttri sapUiSmallMarginEnd"
+                                            />
+                                            <ObjectAttribute
+                                                title="Total"
+                                                text="{VIRGlobalModel>TotalAmount}"
+                                                active="true"
+                                                class="cl_objAttri sapUiSmallMarginEnd"
+                                            />
+                                        </HBox>
+                                        <HBox
+                                            alignItems="Start"
+                                            justifyContent="Start"
+                                            class="sapUiTinyMarginBegin"
+                                        >
+                                            <HBox
+                                                visible="{= ${VIRGlobalModel>QtyInd} === 'X'? true : false}"
+                                            >
+                                                <Label
+                                                    text="Quantity"
+                                                    class="Cl_SearchListText sapUiTinyMarginEnd sapUiTinyMarginTop cl_SOListLabel"
+                                                />
+                                                <!-- <Input
+                                        editable="{SearchViewModel>/FieldsEditable}"
+                                        value="{VIRGlobalModel>Qty}"
+                                        width="3rem"
+                                        visible="{= ${VIRGlobalModel>QtyInd} === 'X'? true : false}"
+                                    /> -->
+                                                <StepInput
+                                                    value="{value}"
+                                                    displayValuePrecision="{displayValuePrecision}"
+                                                    min="1"
+                                                    max="99"
+                                                    width="3rem"
+                                                    editable="{SearchViewModel>/FieldsEditable}"
+                                                    visible="{= ${VIRGlobalModel>QtyInd} === 'X'? true : false}"
+                                                />
+                                            </HBox>
+                                        </HBox>
+                                    </VBox>
+                                    <OverflowToolbar
+                                        design="Solid"
+                                        class="cl_SOListFooter"
+                                    >
+                                        <ToolbarSpacer />
+                                        <Button
+                                            enabled="{SearchViewModel>/FieldsEditable}"
+                                            press="onDeleteItems"
+                                            icon="sap-icon://delete"
+                                            type="Transparent"
+                                            class="cl_delbtn"
+                                        />
+                                    </OverflowToolbar>
+                                </VBox>
+                            </f:GridListItem>
+                        </f:GridList>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        text="Payment"
+                        key="Payment"
+                    >
+                        <f:GridList visible="true">
+                            <f:customLayout>
+                                <grid:GridBasicLayout
+                                    gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                    gridGap="0.5rem"
+                                />
+                            </f:customLayout>
+                            <f:GridListItem
+                                class="sapUiTinyMarginBeginEnd sapUiTinyMarginTop"
+                                visible="true"
+                            >
+                                <OverflowToolbar
+                                    height="5rem"
+                                    design="Solid"
+                                    class="Cl_SOBarHeaderBG"
+                                >
+                                    <VBox>
+                                        <Title
+                                            text="#{VIRGlobalModel>/SR}"
+                                            wrapping="true"
+                                            class="cl_title sapUiTinyMarginTop sapUiTinyMarginBegin"
+                                        />
+                                        <Title
+                                            text="Plate Detail : {VIRGlobalModel>/PlateNo} / S"
+                                            wrapping="true"
+                                            class="cl_title sapUiTinyMarginTop sapUiTinyMarginBegin"
+                                        />
+                                    </VBox>
+                                    <ToolbarSpacer />
+                                    <VBox>
+                                        <Text
+                                            text="{SearchViewModel>/TotalAmount} AED"
+                                            wrapping="true"
+                                            class="cl_titleBold sapUiTinyMarginTop sapUiTinyMarginBegin"
+                                        />
+                                    </VBox>
+                                </OverflowToolbar>
+                            </f:GridListItem>
+                        </f:GridList>
+
+                        <Panel
+                            expandable="true"
+                            expand="onExpandCash"
+                            expanded="{ServicesViewModel>/CashMOPPanelExpand}"
+                            width="auto"
+                            class="sapUiTinyMarginBeginEnd"
+                            expandAnimation="true"
+                            visible="true"
+                        >
+                            <headerToolbar>
+                                <OverflowToolbar height="3rem">
+                                    <Image height="1.5rem" />
+                                    <Title
+                                        text="Cash"
+                                        class="cl_compHeadingTooltext2"
+                                    />
+                                    <ToolbarSpacer />
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <content>
+                                <FlexBox class="sapUiSmallMarginBegin">
+                                    <Input
+                                        change="onchangeamount"
+                                        value="{SearchViewModel>/CashAmount}"
+                                        placeholder="Enter Amount"
+                                        valueState="Information"
+                                    >
+                                        <layoutData>
+                                            <l:GridData span="XL1 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </FlexBox>
+                                <form:Form
+                                    editable="true"
+                                    class="cl_label"
+                                    visible="false"
+                                >
+                                    <form:layout>
+                                        <form:ResponsiveGridLayout
+                                            labelSpanXL="3"
+                                            labelSpanL="3"
+                                            labelSpanM="3"
+                                            labelSpanS="12"
+                                            adjustLabelSpan="false"
+                                            emptySpanXL="4"
+                                            emptySpanL="4"
+                                            emptySpanM="4"
+                                            emptySpanS="0"
+                                            columnsXL="1"
+                                            columnsL="1"
+                                            columnsM="1"
+                                            singleContainerFullSize="false"
+                                        />
+                                    </form:layout>
+                                    <form:formContainers>
+                                        <form:FormContainer>
+                                            <form:formElements>
+                                                <form:FormElement label="Cash">
+                                                    <form:fields>
+                                                        <Input
+                                                            change="onchangeamount"
+                                                            value="{SearchViewModel>/CashAmount}"
+                                                            placeholder="Enter Amount"
+                                                            valueState="Information"
+                                                        >
+                                                            <layoutData>
+                                                                <l:GridData
+                                                                    span="XL1 L2 M2 S4"
+                                                                />
+                                                            </layoutData>
+                                                        </Input>
+                                                    </form:fields>
+                                                </form:FormElement>
+                                            </form:formElements>
+                                        </form:FormContainer>
+                                    </form:formContainers>
+                                </form:Form>
+                            </content>
+                        </Panel>
+                        <!--Card MOP-->
+                        <Panel
+                            expandable="true"
+                            expand="onExpandCard"
+                            expanded="false"
+                            width="auto"
+                            class="sapUiTinyMarginBeginEnd"
+                            expandAnimation="true"
+                            visible="true"
+                        >
+                            <headerToolbar>
+                                <OverflowToolbar height="3rem">
+                                    <Image height="1.5rem" />
+                                    <Title
+                                        text="Card"
+                                        class="cl_compHeadingTooltext2"
+                                    />
+                                    <ToolbarSpacer />
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <content>
+                                <FlexBox class="sapUiSmallMarginBegin">
+                                    <Input
+                                        change="onchangeamount"
+                                        value="{SearchViewModel>/CardAmount}"
+                                        placeholder="Amount"
+                                        valueState="Information"
+                                    >
+                                        <layoutData>
+                                            <l:GridData span="XL1 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </FlexBox>
+                                <form:Form
+                                    class="cl_label"
+                                    editable="true"
+                                    visible="false"
+                                >
+                                    <form:layout>
+                                        <form:ResponsiveGridLayout
+                                            labelSpanXL="3"
+                                            labelSpanL="3"
+                                            labelSpanM="3"
+                                            labelSpanS="12"
+                                            adjustLabelSpan="false"
+                                            emptySpanXL="4"
+                                            emptySpanL="4"
+                                            emptySpanM="4"
+                                            emptySpanS="0"
+                                            columnsXL="1"
+                                            columnsL="1"
+                                            columnsM="1"
+                                            singleContainerFullSize="false"
+                                        />
+                                    </form:layout>
+                                    <form:formContainers>
+                                        <form:FormContainer>
+                                            <form:formElements>
+                                                <form:FormElement label="Card">
+                                                    <form:fields>
+                                                        <Input
+                                                            change="onchangeamount"
+                                                            value="{SearchViewModel>/CardAmount}"
+                                                            placeholder="Amount"
+                                                            valueState="Information"
+                                                        >
+                                                            <layoutData>
+                                                                <l:GridData
+                                                                    span="XL1 L2 M2 S4"
+                                                                />
+                                                            </layoutData>
+                                                        </Input>
+                                                    </form:fields>
+                                                </form:FormElement>
+                                            </form:formElements>
+                                        </form:FormContainer>
+                                    </form:formContainers>
+                                </form:Form>
+                            </content>
+                        </Panel>
+
+                        <Panel
+                            expandable="true"
+                            expand="onExpandCoupons"
+                            expanded="false"
+                            width="auto"
+                            class="sapUiTinyMarginBeginEnd"
+                            expandAnimation="true"
+                            visible="true"
+                        >
+                            <headerToolbar>
+                                <OverflowToolbar height="3rem">
+                                    <Image height="1.5rem" />
+                                    <Title
+                                        text="Wallet"
+                                        class="cl_compHeadingTooltext2"
+                                    />
+                                    <ToolbarSpacer />
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <content>
+                                <FlexBox class="sapUiSmallMarginBegin">
+                                    <Input
+                                        change="onchangeamount"
+                                        value="{SearchViewModel>/CouponAmount}"
+                                        placeholder="Amount"
+                                        valueState="Information"
+                                    >
+                                        <layoutData>
+                                            <l:GridData span="XL1 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </FlexBox>
+                            </content>
+                        </Panel>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <buttons>
+            <!-- <Button
+                text="Save"
+                type="Emphasized"
+                iconFirst="true"
+                width="auto"
+                iconDensityAware="false"
+                press="onPressSave"
+                class="sapUiTinyMarginEnd cl_Emphasizebtn"
+                visible="{SearchViewModel>/SavebtnVisible}"
+            /> -->
+            <Button
+                text="Pay"
+                type="Emphasized"
+                iconFirst="true"
+                width="auto"
+                iconDensityAware="false"
+                press="onPressPay"
+                class="sapUiTinyMarginEnd cl_Emphasizebtn"
+                visible="{SearchViewModel>/PaybtnVisible}"
+            />
+            <!-- <Button
+                enabled="{SearchViewModel>/Btnenable}"
+                text="Visual Test"
+                press="onpressVisualTest"
+                visible="{SearchViewModel>/PrintbtnVisible}"
+                icon="{imageModel>/path}/image/view.png"
+                type="Transparent"
+                iconFirst="true"
+            />
+            <Button
+                enabled="{SearchViewModel>/Btnenable}"
+                text="Change Vehicle Info"
+                type="Default"
+                iconFirst="true"
+                width="auto"
+                visible="{SearchViewModel>/PrintbtnVisible}"
+                iconDensityAware="false"
+                class="sapUiSmallMarginEnd"
+                icon='{imageModel>/path}/image/information.png'
+                press="onPressChange"
+            /> -->
+            <Button
+                text="Close"
+                type="Default"
+                width="auto"
+                iconDensityAware="false"
+                class="sapUiSmallMarginEnd"
+                press="onPressClose"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

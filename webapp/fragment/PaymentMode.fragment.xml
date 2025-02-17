@@ -1,0 +1,643 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:layout="sap.ui.layout"
+    xmlns:table="sap.ui.table"
+    xmlns:m="sap.m"
+    xmlns:fGrid="sap.f"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:ndc="sap.ndc"
+    xmlns:fgrid="sap.f"
+>
+    <Dialog
+        contentHeight="100%"
+        contentWidth="40%"
+        class="sapUiSizeCompact"
+        title="Select Payment methods"
+    >
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <!-- <Title level="H3" text="#{VIRGlobalModel>/SR}" class="cl_WelcomeText" visible="true"/> -->
+                </contentLeft>
+                <contentMiddle />
+                <contentRight>
+                    <Button
+                        icon="sap-icon://decline"
+                        type="Reject"
+                        tooltip="Close"
+                        press="onClosepaymentmode"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
+                    />
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <content>
+            <fgrid:GridList visible="true">
+                <fgrid:customLayout>
+                    <grid:GridBasicLayout
+                        gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                        gridGap="0.5rem"
+                    />
+                </fgrid:customLayout>
+                <fgrid:GridListItem
+                    class="sapUiTinyMarginBeginEnd sapUiTinyMarginTop"
+                    visible="true"
+                >
+                    <!-- <OverflowToolbar height="3rem" design="Solid" class="Cl_ToolBarHeaderBG">
+						<VBox>
+							<Title level="H3" text="#{VIRGlobalModel>/SR}" class="cl_WelcomeText sapUiTinyMarginTop sapUiTinyMarginBegin" visible="true"/>
+						</VBox>
+						<ToolbarSpacer/>
+						<VBox>
+							<Title level="H3" text="Total: {SearchViewModel>/TotalAmount} AED" class="cl_WelcomeText sapUiTinyMarginTop sapUiTinyMarginBegin"/>
+						</VBox>
+					</OverflowToolbar> -->
+                    <OverflowToolbar
+                        height="5rem"
+                        design="Solid"
+                        class="Cl_SOBarHeaderBG"
+                    >
+                        <VBox>
+                            <Title
+                                text="#{VIRGlobalModel>/SR}"
+                                wrapping="true"
+                                class="cl_title sapUiTinyMarginTop sapUiTinyMarginBegin"
+                            />
+                            <Title
+                                text="Plate Detail : {VIRGlobalModel>/PlateNo} / S"
+                                wrapping="true"
+                                class="cl_title sapUiTinyMarginTop sapUiTinyMarginBegin"
+                            />
+                        </VBox>
+                        <ToolbarSpacer />
+                        <VBox>
+                            <Text
+                                text="{SearchViewModel>/TotalAmount} AED"
+                                wrapping="true"
+                                class="cl_titleBold sapUiTinyMarginTop sapUiTinyMarginBegin"
+                            />
+                        </VBox>
+                    </OverflowToolbar>
+                </fgrid:GridListItem>
+            </fgrid:GridList>
+
+            <!-- MOP -->
+            <fgrid:GridList visible="false">
+                <fgrid:customLayout>
+                    <grid:GridBasicLayout
+                        gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                        gridGap="0.5rem"
+                    />
+                </fgrid:customLayout>
+                <fgrid:GridListItem
+                    class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom"
+                    visible="true"
+                >
+                    <VBox
+                        height="auto"
+                        justifyContent="Center"
+                    >
+                        <layoutData>
+                            <FlexItemData
+                                growFactor="1"
+                                shrinkFactor="0"
+                            />
+                        </layoutData>
+                        <OverflowToolbar
+                            design="Solid"
+                            class=""
+                            height="2.5rem"
+                        >
+                            <Title
+                                level="H3"
+                                text="Payment methods"
+                                class="cl_WelcomeText sapUiTinyMarginTop sapUiTinyMarginBegin"
+                            />
+                            <!-- <Text text="Payment Mode" wrapping="true" class="Cl_DashboardLabel sapUiSmallMarginBeginEnd sapUiTinyMarginTopBottom" /> -->
+                            <ToolbarSpacer />
+                        </OverflowToolbar>
+                        <FlexBox
+                            alignItems="Center"
+                            justifyContent="Center"
+                            height="auto"
+                        >
+                            <VBox>
+                                <!-- Cash -->
+                                <HBox class="sapUiTinyMarginTopBottom">
+                                    <CheckBox
+                                        text="Cash"
+                                        valueState="Information"
+                                        enabled="true"
+                                        selected="{ServicesViewModel>/Cash_CheckBoxSeleted}"
+                                        select="onPressCashSelect"
+                                        class="sapUiSmallMarginEnd"
+                                    />
+
+                                    <Input
+                                        change="onchangeamount"
+                                        value="{SearchViewModel>/CashAmount}"
+                                        placeholder="Enter Amount"
+                                        valueState="None"
+                                        class="sapUiSmallMarginBegin"
+                                    >
+                                        <layoutData>
+                                            <l:GridData span="XL1 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </HBox>
+                                <!-- Card -->
+                                <HBox class="sapUiTinyMarginTopBottom">
+                                    <CheckBox
+                                        text="Card"
+                                        valueState="Information"
+                                        enabled="true"
+                                        selected="{ServicesViewModel>/Card_CheckBoxSeleted}"
+                                        select="onPressCardSelect"
+                                        class="sapUiSmallMarginEnd"
+                                    />
+                                    <!-- <Input change="onchangeamount" value="{SearchViewModel>/CardAmount}" placeholder="Enter Amount" width="80%" valueState="Information" class="sapUiSmallMarginBeginEnd">
+								</Input>
+								<Input value="" placeholder="Auth Code" valueState="Information" width="70%">
+								</Input>
+								<Button text="Pay" type="Emphasized" press="onPressPayCard" class="sapUiSmallMarginEnd">
+									</Button> -->
+                                    <Input
+                                        change="onchangeamount"
+                                        value="{SearchViewModel>/CardAmount}"
+                                        placeholder="Enter Amount"
+                                        width="80%"
+                                        valueState="Information"
+                                        class="sapUiSmallMarginBegin sapUiTinyMarginEnd"
+                                    />
+                                    <Input
+                                        value=""
+                                        placeholder="Auth Code"
+                                        valueState="Information"
+                                        class=""
+                                        width="80%"
+                                    />
+                                    <Button
+                                        text="Pay"
+                                        type="Emphasized"
+                                        press="onPressPayCard"
+                                        class="sapUiSmallMarginEnd"
+                                    />
+                                </HBox>
+
+                                <!-- Loyalty -->
+                                <VBox>
+                                    <!-- <HBox>
+									<CheckBox text="Loyalty" valueState="Information" enabled="true" selected="{ServicesViewModel>/Loyalty_CheckBoxSeleted}" select="onPressLoyaltySelect" class="sapUiSmallMarginEnd"/>
+									<ObjectAttribute title="Loyalty Id" text="500000017" active="true" press="onPressCheckCard" class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom cl_objlabel cl_objAttri1"/>
+									<ObjectAttribute title="Points / Amount" text="100 / 20.00" active="true" class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom cl_objlabel cl_objAttri1"/>
+								</HBox> -->
+                                    <HBox>
+                                        <CheckBox
+                                            text="Loyalty"
+                                            valueState="Information"
+                                            enabled="true"
+                                            selected="{ServicesViewModel>/Loyalty_CheckBoxSeleted}"
+                                            select="onPressLoyaltySelect"
+                                            class="sapUiTinyMarginEnd"
+                                        />
+                                        <Input
+                                            change="onchangeamount"
+                                            value="{SearchViewModel>/Loyaltyamount}"
+                                            placeholder="Enter Amount"
+                                            width="90%"
+                                            valueState="Information"
+                                            class="sapUiTinyMarginBegin"
+                                        />
+                                        <Input
+                                            value=""
+                                            placeholder="Auth Code"
+                                            valueState="Information"
+                                            width="80%"
+                                        />
+                                        <Button
+                                            text="Check"
+                                            type="Emphasized"
+                                            press="onPressPayCard"
+                                            class="sapUiSmallMarginEnd"
+                                        />
+                                    </HBox>
+                                </VBox>
+
+                                <!-- Coupon -->
+                                <HBox class="sapUiTinyMarginTopBottom">
+                                    <CheckBox
+                                        text="Coupon "
+                                        valueState="Information"
+                                        enabled="true"
+                                        selected="{ServicesViewModel>/Card_CheckBoxSeleted}"
+                                        select="onPressCardSelect"
+                                        class="sapUiTinyMarginEnd"
+                                    />
+                                    <Input
+                                        change="onchangeamount"
+                                        value="{SearchViewModel>/CouponAmount}"
+                                        placeholder="Enter Amount"
+                                        width="90%"
+                                        valueState="Information"
+                                        class="sapUiTinyMarginBegin"
+                                    />
+                                    <Input
+                                        value=""
+                                        placeholder="Auth Code"
+                                        valueState="Information"
+                                        class="sapUiTinyMarginEnd"
+                                        width="80%"
+                                    />
+                                    <Button
+                                        text="Check"
+                                        type="Emphasized"
+                                        press="onPressPayCard"
+                                        class="sapUiSmallMarginEnd"
+                                    />
+                                </HBox>
+                            </VBox>
+                        </FlexBox>
+                    </VBox>
+                </fgrid:GridListItem>
+            </fgrid:GridList>
+
+            <!--Cash MOP-->
+            <Panel
+                expandable="true"
+                expand="onExpandCash"
+                expanded="{ServicesViewModel>/CashMOPPanelExpand}"
+                width="auto"
+                class="sapUiTinyMarginBeginEnd"
+                expandAnimation="true"
+                visible="true"
+            >
+                <headerToolbar>
+                    <OverflowToolbar height="3rem">
+                        <Image height="1.5rem" />
+                        <Title
+                            text="Cash"
+                            class="cl_compHeadingTooltext2"
+                        />
+                        <ToolbarSpacer />
+                        <!--<CheckBox text="" valueState="Information" enabled="true" selected="{ServicesViewModel>/Cash_CheckBoxSeleted}"-->
+                        <!-- select="onPressCashSelect"/>-->
+                    </OverflowToolbar>
+                </headerToolbar>
+                <content>
+                    <f:Form
+                        editable="true"
+                        class="cl_label"
+                        visible="{PaymentServicesViewModel>/Cash_MOPForm}"
+                    >
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="4"
+                                emptySpanL="4"
+                                emptySpanM="4"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer>
+                                <f:formElements>
+                                    <f:FormElement label="Cash">
+                                        <f:fields>
+                                            <Input
+                                                change="onchangeamount"
+                                                value="{SearchViewModel>/CashAmount}"
+                                                placeholder="Enter Amount"
+                                                valueState="Information"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL1 L2 M2 S4"
+                                                    />
+                                                </layoutData>
+                                            </Input>
+                                        </f:fields>
+                                    </f:FormElement>
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                </content>
+            </Panel>
+            <!--Card MOP-->
+            <Panel
+                expandable="true"
+                expand="onExpandCard"
+                expanded="false"
+                width="auto"
+                class="sapUiTinyMarginBeginEnd"
+                expandAnimation="true"
+                visible="true"
+            >
+                <headerToolbar>
+                    <OverflowToolbar height="3rem">
+                        <Image height="1.5rem" />
+                        <Title
+                            text="Card"
+                            class="cl_compHeadingTooltext2"
+                        />
+                        <ToolbarSpacer />
+                        <!--<CheckBox text="" valueState="Information" enabled="true" selected="{ServicesViewModel>/Card_CheckBoxSeleted}"-->
+                        <!-- select="onPressCardSelect"/>-->
+                    </OverflowToolbar>
+                </headerToolbar>
+                <content>
+                    <f:Form
+                        class="cl_label"
+                        editable="true"
+                        visible="{PaymentServicesViewModel>/Card_MOPForm}"
+                    >
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="4"
+                                emptySpanL="4"
+                                emptySpanM="4"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer>
+                                <f:formElements>
+                                    <f:FormElement label="Card">
+                                        <f:fields>
+                                            <Input
+                                                change="onchangeamount"
+                                                value="{SearchViewModel>/CardAmount}"
+                                                placeholder="Amount"
+                                                valueState="Information"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL1 L2 M2 S4"
+                                                    />
+                                                </layoutData>
+                                            </Input>
+                                            <!-- <Input value="" placeholder="Auth Code" valueState="Information">
+												<layoutData>
+													<l:GridData span="XL1 L2 M2 S4"/>
+												</layoutData>
+											</Input> -->
+                                            <!--<Button text="Pay" type="Emphasized" press="onPressNavtoPaymentapp">-->
+                                            <!--	<layoutData>-->
+                                            <!--		<l:GridData span="XL1 L2 M2 S4"/>-->
+                                            <!--	</layoutData>-->
+                                            <!--</Button>-->
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <!--<f:FormElement label="ADNOC Fleet Card">-->
+                                    <!--	<f:fields>-->
+                                    <!--		<Input value="" placeholder="Amount" valueState="Information">-->
+                                    <!--			<layoutData>-->
+                                    <!--				<l:GridData span="XL1 L3 M4 S4"/>-->
+                                    <!--			</layoutData>-->
+                                    <!--		</Input>-->
+                                    <!--		<Input value="" placeholder="Reference" valueState="Information">-->
+                                    <!--			<layoutData>-->
+                                    <!--				<l:GridData span="XL1 L3 M4 S4"/>-->
+                                    <!--			</layoutData>-->
+                                    <!--		</Input>-->
+                                    <!--	</f:fields>-->
+                                    <!--</f:FormElement>-->
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                </content>
+            </Panel>
+            <!--Loyalty MOP-->
+            <Panel
+                expandable="true"
+                expand="onExpandLoyalty"
+                expanded="false"
+                width="auto"
+                class="sapUiTinyMarginBeginEnd"
+                expandAnimation="true"
+                visible="true"
+            >
+                <headerToolbar>
+                    <OverflowToolbar height="3rem">
+                        <Image height="1.5rem" />
+                        <Title
+                            text="Loyalty"
+                            class="cl_compHeadingTooltext2"
+                        />
+                        <ToolbarSpacer />
+                        <!--<CheckBox text="" valueState="Information" enabled="true" selected="{ServicesViewModel>/Loyalty_CheckBoxSeleted}"-->
+                        <!-- select="onPressLoyaltySelect"/>-->
+                    </OverflowToolbar>
+                </headerToolbar>
+                <content>
+                    <HBox>
+                        <ObjectAttribute
+                            title="ID"
+                            text="500000017"
+                            active="true"
+                            press="onPressCheckCard"
+                            class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom cl_objlabel cl_objAttri1"
+                        />
+                        <ObjectAttribute
+                            title="Points / Amount"
+                            text="100 / 20.00"
+                            active="true"
+                            class="sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom cl_objlabel cl_objAttri1"
+                        />
+                        <!--<ndc:BarcodeScannerButton id="sampleBarcodeScannerButton" scanSuccess="onScanSuccess" scanFail="onScanError"-->
+                        <!-- inputLiveUpdate="onScanLiveupdate" class="sapUiTinyMarginBegin"/>-->
+                    </HBox>
+                    <f:Form
+                        class="cl_label"
+                        editable="true"
+                    >
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="4"
+                                emptySpanL="4"
+                                emptySpanM="4"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer>
+                                <f:formElements>
+                                    <f:FormElement label="Loyalty Card">
+                                        <f:fields>
+                                            <Input
+                                                change="onchangeamount"
+                                                value="{SearchViewModel>/Loyaltyamount}"
+                                                placeholder="Amount"
+                                                valueState="Information"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL1 L2 M2 S4"
+                                                    />
+                                                </layoutData>
+                                            </Input>
+                                            <Input
+                                                value=""
+                                                placeholder="Reference"
+                                                valueState="Information"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL1 L2 M2 S4"
+                                                    />
+                                                </layoutData>
+                                            </Input>
+                                            <Button
+                                                text="Check"
+                                                type="Emphasized"
+                                                press="onPressPayCard"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL1 L2 M2 S4"
+                                                    />
+                                                </layoutData>
+                                            </Button>
+                                        </f:fields>
+                                    </f:FormElement>
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                </content>
+            </Panel>
+            <!--Coupon MOP-->
+            <Panel
+                expandable="true"
+                expand="onExpandCoupons"
+                expanded="false"
+                width="auto"
+                class="sapUiTinyMarginBeginEnd"
+                expandAnimation="true"
+                visible="true"
+            >
+                <headerToolbar>
+                    <OverflowToolbar height="3rem">
+                        <Image height="1.5rem" />
+                        <Title
+                            text="Coupon"
+                            class="cl_compHeadingTooltext2"
+                        />
+                        <ToolbarSpacer />
+                        <!--<CheckBox text="" valueState="Information" enabled="true" selected="{ServicesViewModel>/Loyalty_CheckBoxSeleted}"-->
+                        <!-- select="onPressLoyaltySelect"/>-->
+                    </OverflowToolbar>
+                </headerToolbar>
+                <content>
+                    <f:Form
+                        class="cl_label"
+                        editable="true"
+                    >
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="4"
+                                emptySpanL="4"
+                                emptySpanM="4"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            />
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer>
+                                <f:formElements>
+                                    <f:FormElement label="Coupon">
+                                        <f:fields>
+                                            <Input
+                                                change="onchangeamount"
+                                                value="{SearchViewModel>/CouponAmount}"
+                                                placeholder="Amount"
+                                                valueState="Information"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL1 L2 M2 S4"
+                                                    />
+                                                </layoutData>
+                                            </Input>
+                                            <Input
+                                                value=""
+                                                placeholder="Coupon No"
+                                                valueState="Information"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL1 L2 M2 S4"
+                                                    />
+                                                </layoutData>
+                                            </Input>
+                                            <Button
+                                                text="Check"
+                                                type="Emphasized"
+                                                press="onPressPayCard"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="XL1 L2 M2 S4"
+                                                    />
+                                                </layoutData>
+                                            </Button>
+                                        </f:fields>
+                                    </f:FormElement>
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                </content>
+            </Panel>
+        </content>
+        <buttons>
+            <Button
+                text="Payment"
+                type="Emphasized"
+                iconFirst="true"
+                iconDensityAware="false"
+                press="onPressPay"
+                class="sapUiTinyMarginEnd cl_Emphasizebtn"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

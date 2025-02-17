@@ -1,0 +1,78 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="VIR.controller.MainmenuView"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tnt="sap.tnt">
+	<App >
+		<pages>
+			<Page title="Title" showHeader="false" class="sapUiSizeCompact">
+				<content>
+					<tnt:ToolPage id="id_VIRtoolPage" class="cl_NavigationIcon" sideExpanded="{VIRGlobalModel>/Expanded}">
+						<tnt:header>
+							<tnt:ToolHeader class="Cl_ToolHeader">
+								<Image height="1.3rem" class="sapUiTinyMarginBegin" src="{imageModel>/path}/image/MenuIcon.png" press=".onSideNavButtonPress"/>
+								<Image height="1.9rem" press="onPressmainHome" class="sapUiSmallMarginBegin" src="{imageModel>/path}/image/NewLogo.png"/>
+								<!--<ToolbarSpacer/>-->
+								<Title text="Welcome to Vehicle Inspection" level="H1" class="cl_WelcomeText"/>
+								<ToolbarSpacer/>
+								<!--<ObjectStatus text="L{VIRGlobalModel>/Bay} | ANPC7 | M10.20.2" inverted="true" active="false" icon="sap-icon://information"-->
+								<!--	state="Information"/>-->
+								<!--<ObjectStatus class="clobjstatus" text="L{VIRGlobalModel>/Bay} | ANPC7 | M10.20.2" inverted="true" active="true"-->
+								<!--	icon="sap-icon://information" state="Information"/>-->
+								<Image src="{imageModel>/path}/image/information.png" width="18px" height="18px"></Image>
+								<ComboBox width="12rem" placeholder="Lane" items="{VIRGlobalModel>/BAYF4}" value="{VIRGlobalModel>/Bay}">
+									<core:ListItem key="{VIRGlobalModel>BAY}" text="{VIRGlobalModel>BAY}"/>
+								</ComboBox>
+								<!--<Text  text="L{VIRGlobalModel>/Bay} | ANPC7 | M10.20.2" class="cl_siteText"></Text>-->
+								<Image src="{imageModel>/path}/image/pin.png" width="14px" height="14px"></Image>
+								<Text text="Muroor" class="cl_siteText sapUiTinyMarginEnd"></Text>
+								<Image src="{imageModel>/path}/image/user.png" width="14px" height="14px"></Image>
+								<Text text="Ahmed Asad" class="cl_siteText"></Text>
+								<!--<Button class="cl_refreshbutton" press="onRefresh" type="Default" icon="{imageModel>/path}/image/refresh-button.png"/>-->
+								<!--<Image height="1.4rem" class="sapUiSmallMarginBegin" src="{imageModel>/path}/image/filter.png" press="onPressFilter"/>-->
+								<!--<Button type="Default" icon="{imageModel>/path}/image/Home.png" press="onPressNavHome" tooltip="Home"/>-->
+								<!--<Button id="BadgedButton" class="sapUiTinyMarginBeginEnd" icon="{imageModel>/path}/image/Notify2.png" type="Default" text=""-->
+								<!--	tooltip="Notification" press="onOpenPopover">-->
+								<!--	<customData>-->
+								<!--		<BadgeCustomData key="badge" value="1" visible="true"/>-->
+								<!--	</customData>-->
+								<!--</Button>-->
+								<!--<Title text="" level="H2" class="cl_WelcomeText sapUiMediumMarginEnd" id="iduser"/>-->
+								<!-- <Image height="1.3rem" class="sapUiTinyMarginBegin" src="{imageModel>/path}/image/MenuIcon.png" press="onpressopenpayment"/> -->
+							</tnt:ToolHeader>
+						</tnt:header>
+						<tnt:sideContent>
+							<tnt:SideNavigation id="sideNavigation" class="Cl_SideNav">
+								<tnt:NavigationList id="nav" class="Cl_NavBG">
+									<tnt:NavigationListItem text="Home" key="Home" select="onPressBanner" icon="sap-icon://home" id="Home">
+										<!-- <tnt:NavigationListItem text="Customer" select="onView2" type="Navigation"/> -->
+									</tnt:NavigationListItem>
+									<tnt:NavigationListItem text="Search" key="Search" select="onPressSearch" icon="sap-icon://search" id="Search">
+										<!-- <tnt:NavigationListItem text="Customer" select="onView2" type="Navigation"/> -->
+									</tnt:NavigationListItem>
+									<tnt:NavigationListItem text="Service Tests" key="VIR" select="onPressVIR" icon="sap-icon://inspection" id="VIR" expanded="false">
+										<tnt:NavigationListItem text="Fresh Test" select="onView2" type="Navigation"/>
+										<tnt:NavigationListItem text="Re-Test" select="onView2" type="Navigation"/>
+										<tnt:NavigationListItem text="ESMA Test" select="onView2" type="Navigation"/>
+										<tnt:NavigationListItem text="Short Close Service" select="onView2" type="Navigation"/>
+										<tnt:NavigationListItem text="Reprint Service" select="onView2" type="Navigation"/>
+										<tnt:NavigationListItem text="Armored Vehicle" select="onView2" type="Navigation"/>
+										<tnt:NavigationListItem text="Traffic Test Service" select="onView2" type="Navigation"/>
+										<tnt:NavigationListItem text="Comprehensive Test Service" select="onView2" type="Navigation"/>
+										<tnt:NavigationListItem text="Renew" select="onView2" type="Navigation"/>
+									</tnt:NavigationListItem>
+									<tnt:NavigationListItem text="Open Service Requests" key="Request" select="onPressPendingReq" icon="sap-icon://my-sales-order" id="Request"></tnt:NavigationListItem>
+									<tnt:NavigationListItem text="Pending Payments" key="Payments" select="onPressPayment" icon="sap-icon://sales-quote" id="Short"></tnt:NavigationListItem>
+
+									<tnt:NavigationListItem text="Inspection" key="NewHome" select="onPressNewHome" icon="sap-icon://sales-quote" id="newhome"></tnt:NavigationListItem>
+								</tnt:NavigationList>
+							</tnt:SideNavigation>
+						</tnt:sideContent>
+						<tnt:mainContents id="root">
+							<NavContainer id="pageContainer">
+								<pages ></pages>
+							</NavContainer>
+						</tnt:mainContents>
+					</tnt:ToolPage>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="VIR.controller.Search"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:f="sap.f"
+	xmlns:cssgrid="sap.ui.layout.cssgrid" xmlns:grid="sap.ui.layout.cssgrid">
+	<Dialog contentHeight="70%" contentWidth="100%" class="sapUiSizeCompact" afterClose="dialogAfterclose" title="Select Material"
+		escapeHandler=".handleEscape">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label design="Bold" text="Physical Inspection" class="PageHead"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseCart" class="sapUiSizeCompact sapUiTinyMarginEnd"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<l:DynamicSideContent id="DynamicSideContent" class="sapUiDSCExplored sapUiContentPadding" sideContentFallDown="BelowM"
+				containerQuery="true" breakpointChanged="handleBreakpointChanged" showSideContent="{SearchViewModel>/SideContent}">
+				<f:GridList items="{SearchViewModel>/NewMaterialList}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+					<f:customLayout>
+						<grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))" gridGap="0.5rem"/>
+					</f:customLayout>
+					<f:GridListItem press="onPress1" type="Active"
+						highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}"
+						class="sapUiTinyMarginBeginEnd cl_Materialgridlist">
+						<VBox height="100%">
+							<HBox height="100%" class="sapUiSmallMargin" alignItems="Center">
+								<VBox>
+									<HBox>
+										<Image height="3rem" width="auto" src="{imageModel>/path}/image/inspmechanic.png" class="sapUiTinyMarginBeginEnd"/>
+										<Label text="{parts:['SearchViewModel>Material', 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}"
+											class="cl_blueTXT sapUiSmallMarginEnd sapUiSmallMarginTop" wrapping="true" design="Bold"/>
+									</HBox>
+								</VBox>
+							</HBox>
+						</VBox>
+					</f:GridListItem>
+				</f:GridList>
+				<l:sideContent>
+					<FlexBox alignItems="Start" justifyContent="End">
+						<Button text="Add" type="Emphasized"></Button>
+					</FlexBox>
+					<List mode="MultiSelect" items="{SearchViewModel>/SideList}" class="sapUiTinyMarginTop">
+						<items>
+							<StandardListItem title="{SearchViewModel>Material}"/>
+						</items>
+					</List>
+				</l:sideContent>
+			</l:DynamicSideContent>
+		</content>
+		<buttons>
+			<Button text="Pass" type="Accept" press="onPresspass"></Button>
+			<Button text="Fail" type="Reject" press="onPressFail"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

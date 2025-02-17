@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.f" xmlns:card="sap.f.cards">
+	<Dialog contentHeight="auto" contentWidth="auto" class="sapUiSizeCompact" showHeader="false">
+		<customHeader>
+			<Bar class="cl_bar">
+				<!--<contentMiddle>-->
+				<!--	<Label design="Bold" text="" class="PageHead"/>-->
+				<!--</contentMiddle>-->
+				<contentRight>
+					<Button icon="sap-icon://decline" type="Reject" tooltip="Close" press="onCloseUnregister" class="cl_Rejectbtn sapUiSizeCompact"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<!--<f:Card class="sapUiSmallMargin cl_fcard" width="400px">-->
+			<!--	<f:header>-->
+			<!--		<card:Header title="" subtitle="" iconSrc="{imageModel>/path}/image/Sedan.png"/>-->
+			<!--	</f:header>-->
+			<!--	<f:content>-->
+			<!--		<FlexBox alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTopBottom sapUiSmallMargin">-->
+			<!--			<VBox>-->
+			<!--				<Input maxLength="10" placeholder="Certificate Number" width="10rem" value="{VIRGlobalModel>/unRegplateno}"></Input>-->
+			<!--				<Input placeholder="Source" value="{SearchViewModel>/Source}" width="10rem"/>-->
+			<!--				<DatePicker width="10rem" value="{VIRGlobalModel>/Certdate}" displayFormat="dd/MM/yyyy"></DatePicker>-->
+			<!--			</VBox>-->
+			<!--			<Button type="Emphasized" text="Search" class="sapUiTinyMarginBegin" press="onpressgetesma"></Button>-->
+			<!--		</FlexBox>-->
+			<!--	</f:content>-->
+			<!--</f:Card>-->
+			<FlexBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+				<!--<HBox>-->
+					<Input maxLength="10" placeholder="Certificate Number" width="10rem" value="{VIRGlobalModel>/unRegplateno}"></Input>
+					<Input placeholder="Source" class="sapUiTinyMarginBegin" value="{SearchViewModel>/Source}" width="10rem"/>
+					<DatePicker width="10rem" value="{VIRGlobalModel>/Certdate}" class="sapUiTinyMarginBegin"></DatePicker>
+				<!--</HBox>-->
+			</FlexBox>
+		</content>
+		<buttons>
+			<Button type="Emphasized" text="Search" class="sapUiTinyMarginBegin cl_Emphasizebtn" press="onpressgetesma"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

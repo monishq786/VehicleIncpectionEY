@@ -1,0 +1,75 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="VIR.controller.Payment"
+	xmlns:u="sap.ui.unified" xmlns:ui="sap.ui.table">
+	<App>
+		<pages>
+			<Page showFooter="true" showHeader="false" class="cl_page">
+				<content>
+					<ui:Table width="auto" class="sapUiTinyMargin sapUiTinyMarginTop cl_paymentuitable cl_uitable" rows="{PaymentModel>/PendingReq}" selectionMode="None"
+						visibleRowCount="14">
+						<ui:columns>
+							<ui:Column width="auto">
+								<Label text="Service Id"/>
+								<ui:template>
+									<Text text="{PaymentModel>ReqNo}"></Text>
+								</ui:template>
+							</ui:Column>
+							<ui:Column width="auto">
+								<Label text="Plate No"/>
+								<ui:template>
+									<Text text="{PaymentModel>Plateno} / {PaymentModel>PlateColor}"></Text>
+								</ui:template>
+							</ui:Column>
+							<ui:Column width="auto">
+								<Label text="Lane"/>
+								<ui:template>
+									<Text text="L{PaymentModel>Lane}"></Text>
+								</ui:template>
+							</ui:Column>
+							<ui:Column width="auto">
+								<Label text="Plate Kind"/>
+								<ui:template>
+									<Text text="{PaymentModel>Kind}"></Text>
+								</ui:template>
+							</ui:Column>
+							<ui:Column width="auto">
+								<Label text="Plate Source"/>
+								<ui:template>
+									<Text text="{PaymentModel>Source}"></Text>
+								</ui:template>
+							</ui:Column>
+							<ui:Column width="auto">
+								<Label text="Total Amount"/>
+								<ui:template>
+									<Text text="{PaymentModel>Amout} AED"></Text>
+								</ui:template>
+							</ui:Column>
+								<ui:Column width="auto">
+								<Label text="Payment Date"/>
+								<ui:template>
+									<Text text="{PaymentModel>ReqDate}"></Text>
+								</ui:template>
+							</ui:Column>
+							<ui:Column width="auto">
+								<Label text="Payment Status"/>
+								<ui:template>
+									<HBox>
+										<ObjectStatus class="sapUiTinyMarginTop"  inverted="true" active="true" text="{PaymentModel>Paymenttype}"
+											state="{parts:['PaymentModel>Paymenttype'],formatter:'VIR.model.formatter.status'}"></ObjectStatus>
+										<Button type="Transparent" class="sapUiTinyMarginBegin"  icon='{imageModel>/path}/image/reset.png' visible="{= ${PaymentModel>Paymenttype} === 'Pending'? true : false}"></Button>
+									</HBox>
+								</ui:template>
+							</ui:Column>
+						</ui:columns>
+					</ui:Table>
+				</content>
+				<footer class="cl_footer">
+					<OverflowToolbar enabled="true" visible="true">
+						<content>
+							<!--<Button text="Short Close Test" type="Emphasized" iconFirst="true" width="auto" press="onPressGenerateRequest" class="sapUiSmallMarginEnd"/>-->
+						</content>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

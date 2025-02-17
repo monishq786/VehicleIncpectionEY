@@ -1,0 +1,204 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="VIR.controller.CreateCustomer"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page showHeader="false" class="sapUiSizeCompact" showFooter="true">
+				<content>
+					<l:VerticalLayout width="100%">
+						<l:BlockLayout background="Dashboard">
+							<l:BlockLayoutRow accentCells="Accent1">
+								<l:BlockLayoutCell width="4" title="Create Vehicle &amp; Customer" class="Cl_BlockLayoutCustomerScreen cl_createCustomerBlkContent">
+									<f:Form editable="true" class="cl_formlabel">
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+												emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Plate No/Plate Code">
+														<f:fields>
+															<Input required="true" maxLength="5" value="{CreateCustomerModel>/PlateNo}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+															<Input required="true" value="{CreateCustomerModel>/PlateCode}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Chassis No">
+														<f:fields>
+															<Input required="true" maxLength="14" value="{CreateCustomerModel>/Chassisno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Engine No">
+														<f:fields>
+															<Input required="true" maxLength="14" value="{CreateCustomerModel>/Engineno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Emirates">
+														<f:fields>
+															<Input value="{CreateCustomerModel>/Country}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true"
+																valueHelpOnly="true" valueHelpRequest="openCountryF4"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Manufacturer">
+														<f:fields>
+															<Input required="true" value="{CreateCustomerModel>/CV_Manufacturer}" editable="{CreateCustomerModel>/SearchFieldEditable}"
+																showValueHelp="true" valueHelpOnly="true" valueHelpRequest="openManufacturerF4"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Model">
+														<f:fields>
+															<Input required="true" value="{CreateCustomerModel>/CV_Model}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true"
+																valueHelpOnly="true" valueHelpRequest="openModelF4"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Plate Type">
+														<f:fields>
+															<ComboBox items="{CreateCustomerModel>/PlatetypeF4}" value="{CreateCustomerModel>/PlateType}">
+																<core:ListItem key="{CreateCustomerModel>Category}" text="{CreateCustomerModel>Category}"/>
+															</ComboBox>
+															<!--<Input value="{CreateCustomerModel>/PlateType}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>-->
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Kind" visible="false">
+														<f:fields>
+															<ComboBox items="{CreateCustomerModel>/KindF4}" value="{CreateCustomerModel>/Kind}">
+																<core:ListItem key="{CreateCustomerModel>Kind}" text="{CreateCustomerModel>Kind}"/>
+															</ComboBox>
+															<!--<Input value="{CreateCustomerModel>/Kind}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>-->
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Type" visible="false">
+														<f:fields>
+															<ComboBox items="{CreateCustomerModel>/TypeF4}" value="{CreateCustomerModel>/Type}">
+																<core:ListItem key="{CreateCustomerModel>Type}" text="{CreateCustomerModel>Type}"/>
+															</ComboBox>
+															<!--<Input value="{CreateCustomerModel>/Type}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>-->
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Body Color" visible="false">
+														<f:fields>
+															<Input value="{CreateCustomerModel>/BodyColor}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true"
+																valueHelpOnly="true" valueHelpRequest="openColorF4"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Gear Type" visible="false">
+														<f:fields>
+															<ComboBox items="{CreateCustomerModel>/GearTypeF4}" value="{CreateCustomerModel>/GearType}">
+																<core:ListItem key="{CreateCustomerModel>Gear}" text="{CreateCustomerModel>Gear}"/>
+															</ComboBox>
+															<!--<Input value="{CreateCustomerModel>/GearType}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>-->
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Fuel Type" visible="false">
+														<f:fields>
+															<ComboBox items="{CreateCustomerModel>/FueltypeF4}" value="{CreateCustomerModel>/FuelType}">
+																<core:ListItem key="{CreateCustomerModel>Type}" text="{CreateCustomerModel>Type}"/>
+															</ComboBox>
+															<!--<Input value="{CreateCustomerModel>/FuelType}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>-->
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Steering Side / Weight Kind" visible="false">
+														<f:fields>
+															<Input value="{CreateCustomerModel>/SteeringSide}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+															<Input value="{CreateCustomerModel>/WeightKind}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Init Reg Year / Reg Exp Date" visible="false">
+														<f:fields>
+															<DatePicker value="{CreateCustomerModel>/InitRegyear}" valueFormat="dd/mm/yyyy" editable="{CreateCustomerModel>/SearchFieldEditable}"></DatePicker>
+															<DatePicker value="{CreateCustomerModel>/RegExpYear}" valueFormat="dd/mm/yyyy" editable="{CreateCustomerModel>/SearchFieldEditable}"></DatePicker>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="MFG Year / Mielage" visible="false">
+														<f:fields>
+															<DatePicker id="DP11" value="{CreateCustomerModel>/MFGYear}" displayFormat="yyyy" valueFormat="yyyy"
+																editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+															<Input placeholder="Mielage" value="{CreateCustomerModel>/mileage}" editable="{CreateCustomerModel>/SearchFieldEditable}"></Input>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Horse Power / No.of.Axles" visible="false">
+														<f:fields>
+															<StepInput value="{CreateCustomerModel>/HP}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+															<StepInput value="{CreateCustomerModel>/Axles}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="No.of.Cylinders / Wheels" visible="false">
+														<f:fields>
+															<StepInput value="{CreateCustomerModel>/Cylinders}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+															<StepInput value="{CreateCustomerModel>/Wheels}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="No.of.Doors / Passengers" visible="false">
+														<f:fields>
+															<StepInput value="{CreateCustomerModel>/Doors}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+															<StepInput value="{CreateCustomerModel>/Passengers}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Empty / Full Weight" visible="false">
+														<f:fields>
+															<StepInput value="{CreateCustomerModel>/EmptyWeight}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+															<StepInput value="{CreateCustomerModel>/FullWeight}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Cubic Capacity" visible="false">
+														<f:fields>
+															<StepInput width="50%" value="{CreateCustomerModel>/CubicCapacity}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Mobile No ">
+														<f:fields>
+															<Input required="true" width="50%" placeholder="Mobile No" value="{CreateCustomerModel>/MObileNo}" maxLength="9"></Input>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Name">
+														<f:fields>
+															<Input required="false" width="50%" placeholder="Name" value="" maxLength="9"></Input>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Email ID">
+														<f:fields>
+															<Input required="false" width="50%" placeholder="Email ID" value="" maxLength="9"></Input>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="" visible="false">
+														<f:fields>
+															<CheckBox text="Handicap Veh" wrapping="true" editable="{SearchViewModel>/SearchFieldEditable}"></CheckBox>
+															<CheckBox text="Modified Veh" editable="{SearchViewModel>/SearchFieldEditable}"></CheckBox>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="" visible="false">
+														<f:fields>
+															<CheckBox text="Classic Veh" editable="{SearchViewModel>/SearchFieldEditable}"></CheckBox>
+															<CheckBox text="Classic Veh 4" wrapping="true" editable="{SearchViewModel>/SearchFieldEditable}"></CheckBox>
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+											<f:FormContainer></f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+						</l:BlockLayout>
+					</l:VerticalLayout>
+				</content>
+				<footer class="cl_footer">
+					<OverflowToolbar enabled="true" visible="true">
+						<ToolbarSpacer/>
+						<content>
+							<Button text="Create Vehicle" type="Transparent" iconFirst="true" width="auto" visible="true" iconDensityAware="false"
+								press="onPressCreateVehicle" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/GenerateReq.png'/>
+							<Button text="Reset" press="onreset" type="Transparent" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/reset.png'
+								iconFirst="true"></Button>
+							<Button text="Exit" type="Transparent" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit"
+								class="sapUiSmallMarginEnd" icon="{imageModel>/path}/image/exit.png"/>
+						</content>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

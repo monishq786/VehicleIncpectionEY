@@ -1,0 +1,250 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="VIR.controller.Search"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"  xmlns:g="sap.f"
+
+    xmlns:grid="sap.ui.layout.cssgrid">
+	<App>
+		<pages>
+			<Page id="page2" title="{i18n>title}" showHeader="false" class="sapUiSizeCompact" showFooter="true">
+				<VBox class="sapUiTinyMarginBeginEnd sapUiTinyMarginTop cl_headerbox">
+					<f:Form editable="true" class="cl_label">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+								emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="3" singleContainerFullSize="false"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Plate Number">
+										<f:fields>
+											<Input value="{VIRGlobalModel>/PlateNo}" maxLength="5"/>
+											<Image press="onpressAnpr" src='{imageModel>/path}/image/Camera.png' width="28px" height="29px"></Image>
+											<Text text="{VIRGlobalModel>/secs} Secs" class="cl_sectext"></Text>
+										</f:fields>
+									</f:FormElement>
+									<!--<f:FormElement label="Wheel Drive">-->
+									<!--	<f:fields>-->
+									<!--		<Input value="{SearchViewModel>/4Wheel}"/>-->
+									<!--	</f:fields>-->
+									<!--</f:FormElement>-->
+									<f:FormElement label="Plate Color / Code">
+										<f:fields>
+											<Input value="{VIRGlobalModel>/Platecolor}"/>
+											<Input value=""/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="">
+										<f:fields>
+											<RadioButton text="Individual"></RadioButton>
+											<RadioButton text="Corporate"></RadioButton>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:formElements>
+									<!--<f:FormElement label="Lane">-->
+									<!--	<f:fields>-->
+									<!--<Input value="{SearchViewModel>/Queue}"/>-->
+									<!--		<Input value="L{VIRGlobalModel>/Bay}" editable="false" width="50%"/>-->
+									<!--	</f:fields>-->
+									<!--</f:FormElement>-->
+									<f:FormElement label="Purpose">
+										<f:fields>
+											<!--<Input value="{VIRGlobalModel>/Purpose}"/>-->
+											<ComboBox items="{SearchViewModel>/Purpose}" value="{VIRGlobalModel>/Purpose}" change="onChangePurpose">
+												<core:ListItem key="{SearchViewModel>Purpose}" text="{SearchViewModel>Purpose}"/>
+											</ComboBox>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Main Purpose">
+										<f:fields>
+											<Input value="{SearchViewModel>/mainpurpose}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="">
+										<f:fields>
+											<CheckBox text="Un-Registered" select="onSelectUnregister" selected="{SearchViewModel>/Unregister}"></CheckBox>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="">
+										<f:fields>
+											<!--<Input></Input>-->
+											<Button class="cl_Emphasizebtn" text="AD Mobility" type="Emphasized" press="onPressAdpolice"></Button>
+											<Button text="Reset" type="Reject" press="onPressReset" class="cl_Rejectbtn"></Button>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</VBox>
+				<l:VerticalLayout id="containerLayout1" width="100%">
+					<l:BlockLayout id="BlockLayout" background="Dashboard">
+						<l:BlockLayoutRow>
+							<l:BlockLayoutCell width='2' class="Cl_Bannerwidth">
+								<!--<HBox>-->
+								<HBox>
+									<Image width="42px" height="42px" src="{imageModel>/path}/image/sedan.png"/>
+									<ObjectIdentifier title="Vehicle Details" titleActive="false" class="cl_objlabel sapUiTinyMarginTop sapUiSmallMarginBegin"/>
+								</HBox>
+								<VBox class="sapUiSmallMarginBegin">
+									<ObjectAttribute title="Chassis No" text="{SearchViewModel>/Chassisno}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Engine No" text="{SearchViewModel>/Engineno}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Country" text="{SearchViewModel>/Country}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Manufacturer" text="{SearchViewModel>/Manufacturer}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Model" text="{SearchViewModel>/Model}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Kind" text="{SearchViewModel>/Kind}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Type" text="{SearchViewModel>/Type}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Body Color" text="{SearchViewModel>/BodyColor}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Gear Type" text="{SearchViewModel>/GearType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Fuel Type" text="{SearchViewModel>/FuelType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Steering Side" text="{SearchViewModel>/SteeringSide}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Weight Kind" text="{SearchViewModel>/WeightKind}" class="cl_objlabel sapUiTinyMarginTop" active="true"/>
+								</VBox>
+							</l:BlockLayoutCell>
+							<l:BlockLayoutCell width='2' class="Cl_Bannerwidth">
+								<VBox class="sapUiSmallMarginBegin">
+									<ObjectAttribute title="Init Reg Year" text="{SearchViewModel>/InitRegyear}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Reg Exp Date" text="{SearchViewModel>/RegExpYear}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Plate Type" text="{SearchViewModel>/PlateType}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="MFG Year" text="{SearchViewModel>/MFGYear}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="Horse Power" text="{SearchViewModel>/HP}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="No.of.Axles" text="{SearchViewModel>/Axles}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="No.of.Cylinders" text="{SearchViewModel>/Cylinders}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="No.of.Wheels" text="{SearchViewModel>/Wheels}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+									<ObjectAttribute title="No.of.Doors" text="{SearchViewModel>/Doors}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="No.of.Passengers" text="{SearchViewModel>/Passengers}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Empty Weight" text="{SearchViewModel>/EmptyWeight}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Full Weight" text="{SearchViewModel>/FullWeight}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Mielage" text="{SearchViewModel>/CubicCapacity}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/>
+									<ObjectAttribute title="Cubic Capacity" text="{SearchViewModel>/CubicCapacity}" class="cl_objlabel sapUiTinyMarginTop" active="true"/>
+								</VBox>
+							</l:BlockLayoutCell>
+							<l:BlockLayoutCell width='2' class="Cl_Bannerwidth Cl_Search_BlockLayoutheight">
+								<!-- <HBox>
+									<Image width="42px" height="42px" src="{imageModel>/path}/image/favoriteuser.png"/>
+									<ObjectIdentifier title="Customer Details" titleActive="false" class="cl_objlabel sapUiTinyMarginTop sapUiSmallMarginBegin"/>
+								</HBox>
+								<HBox alignItems="Start" justifyContent="Start">
+									<VBox class="Cl_TitleBold"> -->
+										<!--<ObjectAttribute title="BP No" text="{SearchViewModel>/HeaderCustomerNo}" active="true" class="sapUiTinyMarginTopBottom"/>-->
+										<!-- <ObjectAttribute title="Name" text="{SearchViewModel>/CustomerName}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+										<ObjectAttribute title="Email" text="{SearchViewModel>/HeaderEmail}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+										<ObjectAttribute title="Mobile" text="{SearchViewModel>/HeaderMobileNo}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/>
+										<ObjectAttribute title="City" text="{SearchViewModel>/HeaderEmirates}" active="true" class="cl_objlabel sapUiTinyMarginTopBottom"/> -->
+										<!--<ObjectAttribute title="postal Code" text="{SearchViewModel>/pincode}" class="sapUiTinyMarginTopBottom" active="true"/>-->
+										<!-- <ObjectAttribute title="Address" text="{SearchViewModel>/Address}" class="cl_objlabel sapUiTinyMarginTopBottom" active="true"/> -->
+									<!-- </VBox>
+								</HBox> -->
+
+								   <g:GridListItem
+                                        class="Cl_ProfileCardBanner"
+                                    >
+                                        <OverflowToolbar
+                                            height="6.5rem"
+                                            design="Solid"
+                                            class="Cl_CustomerHeaderBG"
+                                        >
+                                            <VBox justifyContent="SpaceBetween">
+                                                <FlexBox
+                                                    alignItems="Start"
+                                                    justifyContent="Center"
+                                                >
+                                                    <Title
+                                                        text="Customer Details"
+                                                        wrapping="true"
+                                                        class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin"
+                                                    />
+                                                </FlexBox>
+                                                <Text
+                                                    text="{SearchViewModel>/HeaderCustomerNo}"
+                                                    class="sapUiSmallMarginBegin cl_AdnocRewardsCard"
+                                                />
+                                            </VBox>
+                                        </OverflowToolbar>
+                                        <HBox>
+                                            <VBox
+                                                width="1000%"
+                                                class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                                            >
+                                                <ObjectAttribute
+                                                    title="Name"
+                                                    text="{SearchViewModel>/CustomerName}"
+                                                    active="true"
+                                                    class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                />
+
+                                                <ObjectAttribute
+                                                    title="Email"
+                                                    text="{SearchViewModel>/HeaderEmail}"
+                                                    active="true"
+                                                    class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                />
+
+                                                <ObjectAttribute
+                                                    title="Mobile"
+                                                    text="{SearchViewModel>/HeaderMobileNo}"
+                                                    active="true"
+                                                    class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                />
+
+                                                <ObjectAttribute
+                                                    title="City"
+                                                    text="{SearchViewModel>/HeaderEmirates}"
+                                                    active="true"
+                                                    class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                />
+
+                                                <ObjectAttribute
+                                                    title="Postal Code"
+                                                    text="{SearchViewModel>/pincode}"
+                                                    class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                    active="true"
+                                                />
+                                                <ObjectAttribute
+                                                    title="Address"
+                                                    text="{SearchViewModel>/Address}"
+                                                    class="cl_objAttri sapUiTinyMarginTopBottom sapUiTinyMarginBegin"
+                                                    active="true"
+                                                />
+
+                                               
+                                            </VBox>
+                                            
+                                        </HBox>
+                                       
+                                    </g:GridListItem>
+
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</l:VerticalLayout>
+				<footer class="cl_footer">
+					<OverflowToolbar enabled="true" visible="true">
+						<Button text="Create Vehicle" type="Transparent" icon="{imageModel>/path}/image/user.png" press="onPressCreateCustomer"></Button>
+						<ToolbarSpacer/>
+						<content>
+							<!--<Button text="Generate Request" type="Default" iconFirst="true" width="auto" visible="true" iconDensityAware="false"-->
+							<!--	press="onPressGenerateRequest" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/GenerateReq.png'/>-->
+							<!--<Button text="Print" type="Default" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onPressSaveCustomer"-->
+							<!--	class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/print.png'/>-->
+							<Button  text="Retest" press="onpressretest1" type="Emphasized" class="sapUiSmallMarginEnd cl_Emphasizebtn"
+								iconFirst="true"></Button>
+															<Button text="Proceed" type="Emphasized" class="sapUiSmallMarginEnd cl_Emphasizebtn" press="onPressProceed"></Button>
+
+							<!--<Button text="Re - Test 2" type="Transparent" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/retest.png' iconFirst="true"></Button>-->
+							<!--<Button text="Options" type="Default" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onPressSaveCustomer"-->
+							<!--	class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/choices.gif'/>-->
+							<!--<Button text="Exit" type="Default" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit"-->
+							<!--	class="sapUiSmallMarginEnd" icon="{imageModel>/path}/image/exit.gif"/>-->
+						</content>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
