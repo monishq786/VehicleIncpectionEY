@@ -70,8 +70,14 @@
                                                                 <Input id="input15" width="2rem" maxLength="1" liveChange="" />
                                                             </HBox>
                                                         </f:fields> -->
+                                                        <f:fields >
+                                                            <Text text="{SearchViewModel>/Chassisno}" />
+                                                        </f:fields>
                                                     </f:FormElement>
                                                     <f:FormElement label="Engine No">
+                                                        <f:fields >
+                                                            <Text text="{SearchViewModel>/Engineno}" />
+                                                        </f:fields>
                                                         <!-- <f:fields>
                                                             <HBox alignItems="Start" justifyContent="Start" width="100%">
                                                                 <Input id="Eng1" width="2rem" maxLength="1" liveChange="" />
