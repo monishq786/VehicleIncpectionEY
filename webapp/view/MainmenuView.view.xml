@@ -59,7 +59,7 @@
 										<tnt:NavigationListItem text="Renew" select="onView2" type="Navigation"/>
 									</tnt:NavigationListItem>
 									<tnt:NavigationListItem text="Open Service Requests" key="Request" select="onPressPendingReq" icon="sap-icon://my-sales-order" id="Request"></tnt:NavigationListItem>
-									<tnt:NavigationListItem text="Pending Payments" key="Payments" select="onPressPayment" icon="sap-icon://sales-quote" id="Short"></tnt:NavigationListItem>
+									<!-- <tnt:NavigationListItem text="Pending Payments" key="Payments" select="onPressPayment" icon="sap-icon://sales-quote" id="Short"></tnt:NavigationListItem> -->
 
 									<tnt:NavigationListItem text="Inspection" key="NewHome" select="onPressNewHome" icon="sap-icon://sales-quote" id="newhome"></tnt:NavigationListItem>
 								</tnt:NavigationList>
