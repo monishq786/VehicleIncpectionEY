@@ -10,6 +10,7 @@ sap.ui.define([
 
 			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this._oRouter.attachRouteMatched(this.handleRouteMatched, this);
+			
 		},
 		handleRouteMatched: function (oEvent) {
 			if (oEvent.getParameter("name") === "GenerateReq") {
@@ -1754,7 +1755,7 @@ sap.ui.define([
 			this.getView().getModel("VIRGlobalModel").setProperty("/unRegplateno", "");
 			this._ModelInitialLoad();
 			var oRouter = UIComponent.getRouterFor(this);
-			oRouter.navTo("Search", false);
+			oRouter.navTo("Home", false);
 
 		},
 		onpresssaveconf: function () {
