@@ -24,6 +24,7 @@ sap.ui.define([
 				"Lane1": [],
 				"Lane2": [],
 				"Lane3": [],
+				"Lane4": [],
 				"Status": [{
 					"Item": "10",
 					"Service": "Re-New -Fresh Test",
@@ -376,6 +377,7 @@ sap.ui.define([
 			var aLane1 = [];
 			var aLane2 = [];
 			var aLane3 = [];
+			var aLane4 = [];
 
 			aLane1 = aPendingReq.filter(function (e) {
 				return e.Lane === "1";
@@ -391,6 +393,12 @@ sap.ui.define([
 				return e.Lane === "3";
 			});
 			this.getView().getModel("SearchViewModel").setProperty("/Lane3", aLane3);
+			this.getView().getModel("SearchViewModel").refresh();
+
+			aLane4 = aPendingReq.filter(function (e) {
+				return e.Lane === "4";
+			});
+			this.getView().getModel("SearchViewModel").setProperty("/Lane4", aLane3);
 			this.getView().getModel("SearchViewModel").refresh();
 		},
 

@@ -1,584 +1,278 @@
-<mvc:View
-    xmlns:core="sap.ui.core"
+<mvc:View xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    controllerName="VIR.controller.PendingRequest"
+    xmlns="sap.m" controllerName="VIR.controller.PendingRequest"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:form="sap.ui.layout.form"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.f"
     xmlns:cssgrid="sap.ui.layout.cssgrid"
-    xmlns:grid="sap.ui.layout.cssgrid"
->
+    xmlns:grid="sap.ui.layout.cssgrid">
     <App>
         <pages>
-            <Page
-                showHeader="false"
-                class="sapUiSizeCompact"
-            >
+            <Page showHeader="false" class="sapUiSizeCompact">
                 <content>
-                    <Toolbar
-                        class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop cl_toolbar1"
-                    >
-                        <Image
-                            src="{imageModel>/path}/image/calendar.png"
-                            width="26px"
-                            height="26px"
-                        />
-                        <Text
-                            text="{SearchViewModel>/CurrDate}"
-                            class="cl_WelcomeText sapUiSmallMarginBegin"
-                        />
+                    <Toolbar class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop cl_toolbar1">
+                        <Image src="{imageModel>/path}/image/calendar.png" width="26px" height="26px" />
+                        <Text text="{SearchViewModel>/CurrDate}" class="cl_WelcomeText sapUiSmallMarginBegin" />
                         <ToolbarSpacer />
-                        <Text
-                            text="Open Service Requests"
-                            class="cl_WelcomeText sapUiSmallMarginBegin"
-                        />
+                        <Text text="Open Service Requests" class="cl_WelcomeText sapUiSmallMarginBegin" />
                         <ToolbarSpacer />
                     </Toolbar>
 
-                    <l:VerticalLayout width="100%">
-                        <l:BlockLayout background="Dashboard">
-                            <l:BlockLayoutRow accentCells="Accent1">
-                                <l:BlockLayoutCell
-                                    width="3"
-                                    class="Cl_BlockLayoutPading"
-                                >
-                                    <OverflowToolbar
-                                        height="2rem"
-                                        design="Solid"
-                                        class="Cl_CustomerHeaderBG"
-                                    >
-                                        <VBox justifyContent="SpaceBetween">
-                                            <FlexBox
-                                                alignItems="Start"
-                                                justifyContent="Center"
-                                            >
-                                                <Title
-                                                    text="Lane 1"
-                                                    wrapping="true"
-                                                    class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin"
-                                                />
-                                            </FlexBox>
-                                        </VBox>
-                                    </OverflowToolbar>
-                                    <!-- Lane 1 -->
-                                    <f:GridList
-                                        items="{SearchViewModel>/Lane1}"
-                                        class="sapUiTinyMarginTop cl_whitematetialgridlist"
-                                        mode="None"
-                                    >
-                                        <f:customLayout>
-                                            <grid:GridBasicLayout
-                                                gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))"
-                                                gridGap="0.5rem"
-                                            />
-                                        </f:customLayout>
-                                        <f:GridListItem
-                                            type="Inactive"
-                                            class="sapUiTinyMarginBeginEnd cl_Materialgridlist1"
-                                        >
-                                            <VBox>
-                                                <Toolbar class="cl_toolbar1">
-                                                    <Text
-                                                        text="Plate Info: {SearchViewModel>Plateno} / {SearchViewModel>PlateColor}"
-                                                        class="cl_openordertxt"
-                                                    />
-                                                    <!-- <Text text="Lane: {SearchViewModel>Lane}" class="sapUiTinyMarginBegin cl_WelcomeText"></Text> -->
-                                                    <ToolbarSpacer />
-                                                    <!-- <ObjectStatus state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}"
-											visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}" inverted="true" text="Traffic: {SearchViewModel>Tstatus}"/> -->
-                                                </Toolbar>
-                                                <Toolbar class="cl_toolbar1">
-                                                    <Text
-                                                        text="SR # {SearchViewModel>ReqNo}"
-                                                        class="cl_WelcomeText"
-                                                    />
-
-                                                    <ToolbarSpacer />
-                                                    <!-- <ObjectStatus class="CL_warningobj" visible="{= ${SearchViewModel>ComprehensiveTest} === 'X'? true : false}" inverted="true" active="true"
-											text="Comprehensive: {SearchViewModel>CStatus}" state="{parts:['SearchViewModel>CStatus'],formatter:'VIR.model.formatter.Tstate'}"></ObjectStatus> -->
-                                                </Toolbar>
-                                                <Toolbar class="cl_toolbar1">
-                                                    <Button
-                                                        text="Status"
-                                                        type="Default"
-                                                        icon="sap-icon://message-information"
-                                                        press="onpressstatus"
-                                                    />
-                                                    <!-- <ObjectAttribute
-                                                        class="cl_objAttri1"
-                                                        title="MAHA File Received"
-                                                        text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}"
-                                                        active="true"
-                                                    /> -->
-                                                    <ToolbarSpacer />
-                                                    <!-- <ObjectStatus class="CL_warningobj" visible="{= ${SearchViewModel>Esma} === 'X'? true : false}" inverted="true" active="true"
-											text="ESMA: {SearchViewModel>EStatus}" state="{parts:['SearchViewModel>EStatus'],formatter:'VIR.model.formatter.Tstate'}"></ObjectStatus> -->
-                                                </Toolbar>
-                                                <!--<HBox class="sapUiTinyMarginBegin" alignItems="Center">-->
-                                                <!--</HBox>-->
-                                                <!--<HBox class="sapUiTinyMarginBegin" alignItems="Center">-->
-                                                <!--	<Text text="{SearchViewModel>Plateno} / {SearchViewModel>PlateColor}"></Text>-->
-                                                <!--</HBox>-->
-                                                <!--<HBox class="sapUiTinyMarginTop sapUiTinyMarginBegin" alignItems="Center">-->
-                                                <!--	<ObjectAttribute class="cl_objAttri1" title="MAHA File Received"-->
-                                                <!--		text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true"/>-->
-                                                <!--</HBox>-->
-                                                <!--<ObjectStatus state="Information" class="sapUiTinyMarginTop sapUiTinyMarginBegin" inverted="true" active="true" text="Test Status"-->
-                                                <!--	icon="sap-icon://information" press="onpressteststatus"/>-->
-                                                <HBox
-                                                    alignItems="Center"
-                                                    renderType="Bare"
-                                                    class="cl_GridHbox sapUiTinyMarginTop"
-                                                >
-                                                    <VBox width="50%">
-                                                        <HBox
-                                                            class="cl_greenhbox"
-                                                        >
-                                                            <ObjectAttribute
-                                                                press="onPressServiceTest"
-                                                                class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                                text="Service test"
-                                                                title=""
-                                                                active="true"
-                                                            />
-                                                            <Image
-                                                                press="onPressServiceTest"
-                                                                class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                                src="{imageModel>/path}/image/phyinspection.png"
-                                                                width="20px"
-                                                                height="20px"
-                                                            />
-                                                        </HBox>
+                    <IconTabBar id="id_OpenServiceReq" backgroundDesign="Translucent" selectedKey="VehicleTest" class="cl_icontabbar">
+                        <items>
+                            <IconTabFilter text="Standard Lane" key="VehicleTest">
+                                <l:VerticalLayout width="100%">
+                                    <l:BlockLayout background="Dashboard">
+                                        <l:BlockLayoutRow accentCells="Accent1">
+                                            <l:BlockLayoutCell width="3" class="Cl_BlockLayoutPading">
+                                                <OverflowToolbar height="2rem" design="Solid" class="Cl_CustomerHeaderBG">
+                                                    <VBox justifyContent="SpaceBetween">
+                                                        <FlexBox alignItems="Start" justifyContent="Center">
+                                                            <Title text="Lane 1" wrapping="true" class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin" />
+                                                        </FlexBox>
                                                     </VBox>
-                                                    <VBox
-                                                        width="50%"
-                                                        class="cl_redhbox"
-                                                    >
-                                                        <HBox
-                                                            class="sapUiTinyMarginBegin"
-                                                        >
-                                                            <ObjectAttribute
-                                                                press="onPressShortClose"
-                                                                class="cl_objAttriwhite sapUiTinyMarginTop"
-                                                                title=""
-                                                                text="On Hold"
-                                                                active="true"
-                                                            />
-                                                            <Image
-                                                                press="onPressShortClose"
-                                                                class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                                src="{imageModel>/path}/image/Shortclose.png"
-                                                                width="20px"
-                                                                height="20px"
-                                                            />
-                                                        </HBox>
-                                                    </VBox>
-                                                </HBox>
-                                            </VBox>
-                                        </f:GridListItem>
-                                    </f:GridList>
-                                </l:BlockLayoutCell>
+                                                </OverflowToolbar>
+                                                <!-- Lane 1 -->
+                                                <f:GridList items="{SearchViewModel>/Lane1}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                    <f:customLayout>
+                                                        <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))" gridGap="0.5rem" />
+                                                    </f:customLayout>
+                                                    <f:GridListItem type="Inactive" class="sapUiTinyMarginBeginEnd cl_Materialgridlist1">
+                                                        <VBox>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Text text="Plate Info: {SearchViewModel>Plateno} / {SearchViewModel>PlateColor}" class="cl_openordertxt" />
+                                                                <ToolbarSpacer />
+                                                            </Toolbar>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Text text="SR # {SearchViewModel>ReqNo}" class="cl_WelcomeText" />
 
-                                <l:BlockLayoutCell
-                                    width="3"
-                                    class="Cl_BlockLayoutPading"
-                                >
-                                    <OverflowToolbar
-                                        height="2rem"
-                                        design="Solid"
-                                        class="Cl_CustomerHeaderBG"
-                                    >
-                                        <VBox justifyContent="SpaceBetween">
-                                            <FlexBox
-                                                alignItems="Start"
-                                                justifyContent="Center"
-                                            >
-                                                <Title
-                                                    text="Lane 2"
-                                                    wrapping="true"
-                                                    class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin"
-                                                />
-                                            </FlexBox>
-                                        </VBox>
-                                    </OverflowToolbar>
-                                    <!-- Lane 2 -->
-                                    <f:GridList
-                                        items="{SearchViewModel>/Lane2}"
-                                        class="sapUiTinyMarginTop cl_whitematetialgridlist"
-                                        mode="None"
-                                    >
-                                        <f:customLayout>
-                                            <grid:GridBasicLayout
-                                                gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))"
-                                                gridGap="0.5rem"
-                                            />
-                                        </f:customLayout>
+                                                                <ToolbarSpacer />
+                                                            </Toolbar>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Button text="Status" type="Default" icon="sap-icon://message-information" press="onpressstatus" />
+                                                                <ToolbarSpacer />
+                                                            </Toolbar>
 
-                                        <f:GridListItem
-                                            type="Inactive"
-                                            class="sapUiTinyMarginBeginEnd cl_Materialgridlist1"
-                                        >
-                                            <VBox>
-                                                <Toolbar class="cl_toolbar1">
-                                                    <Text
-                                                        text="Plate Info: {SearchViewModel>Plateno} / {SearchViewModel>PlateColor}"
-                                                        class="cl_openordertxt"
-                                                    />
+                                                            <HBox alignItems="Center" renderType="Bare" class="cl_GridHbox sapUiTinyMarginTop">
+                                                                <VBox width="50%">
+                                                                    <HBox class="cl_greenhbox">
+                                                                        <ObjectAttribute press="onPressServiceTest" class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop" text="Service test" title="" active="true" />
+                                                                        <Image press="onPressServiceTest" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/phyinspection.png" width="20px" height="20px" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                                <VBox width="50%" class="cl_redhbox">
+                                                                    <HBox class="sapUiTinyMarginBegin">
+                                                                        <ObjectAttribute press="onPressShortClose" class="cl_objAttriwhite sapUiTinyMarginTop" title="" text="On Hold" active="true" />
+                                                                        <Image press="onPressShortClose" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/Shortclose.png" width="20px" height="20px" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </f:GridListItem>
+                                                </f:GridList>
+                                            </l:BlockLayoutCell>
+                                        </l:BlockLayoutRow>
+                                    </l:BlockLayout>
+                                </l:VerticalLayout>
+                            </IconTabFilter>
 
-                                                    <!-- <Text
-                                                        text="Lane: {SearchViewModel>Lane}"
-                                                        class="sapUiTinyMarginBegin cl_WelcomeText"
-                                                    /> -->
-                                                    <ToolbarSpacer />
-                                                    <!-- <ObjectStatus
-                                                        state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                                        visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}"
-                                                        inverted="true"
-                                                        text="Traffic: {SearchViewModel>Tstatus}"
-                                                    /> -->
-                                                </Toolbar>
-                                                <Toolbar class="cl_toolbar1">
-                                                    <Text
-                                                        text="SR # {SearchViewModel>ReqNo}"
-                                                        class="cl_WelcomeText"
-                                                    />
-                                                    <ToolbarSpacer />
-                                                    <!-- <ObjectStatus
-                                                        class="CL_warningobj"
-                                                        visible="{= ${SearchViewModel>ComprehensiveTest} === 'X'? true : false}"
-                                                        inverted="true"
-                                                        active="true"
-                                                        text="Comprehensive: {SearchViewModel>CStatus}"
-                                                        state="{parts:['SearchViewModel>CStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                                    /> -->
-                                                </Toolbar>
-                                                <Toolbar class="cl_toolbar1">
-                                                    <Button
-                                                        text="Status"
-                                                        type="Default"
-                                                        icon="sap-icon://message-information"
-                                                        press="onpressstatus"
-                                                    />
-                                                    <!-- <ObjectAttribute
-                                                        class="cl_objAttri1"
-                                                        title="MAHA File Received"
-                                                        text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}"
-                                                        active="true"
-                                                    />
-                                                    <ToolbarSpacer />
-                                                    <ObjectStatus
-                                                        class="CL_warningobj"
-                                                        visible="{= ${SearchViewModel>Esma} === 'X'? true : false}"
-                                                        inverted="true"
-                                                        active="true"
-                                                        text="ESMA: {SearchViewModel>EStatus}"
-                                                        state="{parts:['SearchViewModel>EStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                                    /> -->
-                                                </Toolbar>
-                                                <!--<HBox class="sapUiTinyMarginBegin" alignItems="Center">-->
-                                                <!--</HBox>-->
-                                                <!--<HBox class="sapUiTinyMarginBegin" alignItems="Center">-->
-                                                <!--	<Text text="{SearchViewModel>Plateno} / {SearchViewModel>PlateColor}"></Text>-->
-                                                <!--</HBox>-->
-                                                <!--<HBox class="sapUiTinyMarginTop sapUiTinyMarginBegin" alignItems="Center">-->
-                                                <!--	<ObjectAttribute class="cl_objAttri1" title="MAHA File Received"-->
-                                                <!--		text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true"/>-->
-                                                <!--</HBox>-->
-                                                <!--<ObjectStatus state="Information" class="sapUiTinyMarginTop sapUiTinyMarginBegin" inverted="true" active="true" text="Test Status"-->
-                                                <!--	icon="sap-icon://information" press="onpressteststatus"/>-->
-                                                <HBox
-                                                    alignItems="Center"
-                                                    renderType="Bare"
-                                                    class="cl_GridHbox sapUiTinyMarginTop"
-                                                >
-                                                    <VBox width="50%">
-                                                        <HBox
-                                                            class="cl_greenhbox"
-                                                        >
-                                                            <ObjectAttribute
-                                                                press="onPressServiceTest"
-                                                                class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                                text="Service test"
-                                                                title=""
-                                                                active="true"
-                                                            />
-                                                            <Image
-                                                                press="onPressServiceTest"
-                                                                class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                                src="{imageModel>/path}/image/phyinspection.png"
-                                                                width="20px"
-                                                                height="20px"
-                                                            />
-                                                        </HBox>
+                            <IconTabFilter text="Premium Lane" key="VehicleTest">
+                                <l:VerticalLayout width="100%">
+                                    <l:BlockLayout background="Dashboard">
+                                        <l:BlockLayoutRow accentCells="Accent1">
+                                            <l:BlockLayoutCell width="3" class="Cl_BlockLayoutPading">
+                                                <OverflowToolbar height="2rem" design="Solid" class="Cl_CustomerHeaderBG">
+                                                    <VBox justifyContent="SpaceBetween">
+                                                        <FlexBox alignItems="Start" justifyContent="Center">
+                                                            <Title text="Lane 2" wrapping="true" class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin" />
+                                                        </FlexBox>
                                                     </VBox>
-                                                    <VBox
-                                                        width="50%"
-                                                        class="cl_redhbox"
-                                                    >
-                                                        <HBox
-                                                            class="sapUiTinyMarginBegin"
-                                                        >
-                                                            <ObjectAttribute
-                                                                press="onPressShortClose"
-                                                                class="cl_objAttriwhite sapUiTinyMarginTop"
-                                                                title=""
-                                                                text="On Hold"
-                                                                active="true"
-                                                            />
-                                                            <Image
-                                                                press="onPressShortClose"
-                                                                class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                                src="{imageModel>/path}/image/Shortclose.png"
-                                                                width="20px"
-                                                                height="20px"
-                                                            />
-                                                        </HBox>
-                                                    </VBox>
-                                                </HBox>
-                                            </VBox>
-                                        </f:GridListItem>
-                                    </f:GridList>
-                                </l:BlockLayoutCell>
-                                <l:BlockLayoutCell
-                                    width="3"
-                                    class="Cl_BlockLayoutPading"
-                                >
-                                    <OverflowToolbar
-                                        height="2rem"
-                                        design="Solid"
-                                        class="Cl_CustomerHeaderBG"
-                                    >
-                                        <VBox justifyContent="SpaceBetween">
-                                            <FlexBox
-                                                alignItems="Start"
-                                                justifyContent="Center"
-                                            >
-                                                <Title
-                                                    text="Lane 3"
-                                                    wrapping="true"
-                                                    class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin"
-                                                />
-                                            </FlexBox>
-                                        </VBox>
-                                    </OverflowToolbar>
-                                    <!-- Lane 3-->
-                                    <f:GridList
-                                        items="{SearchViewModel>/Lane3}"
-                                        class="sapUiTinyMarginTop cl_whitematetialgridlist"
-                                        mode="None"
-                                    >
-                                        <f:customLayout>
-                                            <grid:GridBasicLayout
-                                                gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))"
-                                                gridGap="0.5rem"
-                                            />
-                                        </f:customLayout>
-                                        <f:GridListItem
-                                            type="Inactive"
-                                            class="sapUiTinyMarginBeginEnd cl_Materialgridlist1"
-                                        >
-                                            <VBox>
-                                                <Toolbar class="cl_toolbar1">
-                                                    <Text
-                                                        text="Plate Info: {SearchViewModel>Plateno} / {SearchViewModel>PlateColor}"
-                                                        class="cl_openordertxt"
-                                                    />
+                                                </OverflowToolbar>
+                                                <!-- Lane 2 -->
+                                                <f:GridList items="{SearchViewModel>/Lane2}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                    <f:customLayout>
+                                                        <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))" gridGap="0.5rem" />
+                                                    </f:customLayout>
 
-                                                    <!-- <Text
-                                                        text="Lane: {SearchViewModel>Lane}"
-                                                        class="sapUiTinyMarginBegin cl_WelcomeText"
-                                                    /> -->
-                                                    <ToolbarSpacer />
-                                                    <!-- <ObjectStatus
-                                                        state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                                        visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}"
-                                                        inverted="true"
-                                                        text="Traffic: {SearchViewModel>Tstatus}"
-                                                    /> -->
-                                                </Toolbar>
-                                                <Toolbar class="cl_toolbar1">
-                                                    <Text
-                                                        text="SR # {SearchViewModel>ReqNo}"
-                                                        class="cl_WelcomeText"
-                                                    />
-                                                    <ToolbarSpacer />
-                                                    <!-- <ObjectStatus
-                                                        class="CL_warningobj"
-                                                        visible="{= ${SearchViewModel>ComprehensiveTest} === 'X'? true : false}"
-                                                        inverted="true"
-                                                        active="true"
-                                                        text="Comprehensive: {SearchViewModel>CStatus}"
-                                                        state="{parts:['SearchViewModel>CStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                                    /> -->
-                                                </Toolbar>
-                                                <Toolbar class="cl_toolbar1">
-                                                    <Button
-                                                        text="Status"
-                                                        type="Default"
-                                                        icon="sap-icon://message-information"
-                                                        press="onpressstatus"
-                                                    />
-                                                    <!-- <ObjectAttribute
-                                                        class="cl_objAttri1"
-                                                        title="MAHA File Received"
-                                                        text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}"
-                                                        active="true"
-                                                    />
-                                                    <ToolbarSpacer />
-                                                    <ObjectStatus
-                                                        class="CL_warningobj"
-                                                        visible="{= ${SearchViewModel>Esma} === 'X'? true : false}"
-                                                        inverted="true"
-                                                        active="true"
-                                                        text="ESMA: {SearchViewModel>EStatus}"
-                                                        state="{parts:['SearchViewModel>EStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                                    /> -->
-                                                </Toolbar>
-                                                <!--<HBox class="sapUiTinyMarginBegin" alignItems="Center">-->
-                                                <!--</HBox>-->
-                                                <!--<HBox class="sapUiTinyMarginBegin" alignItems="Center">-->
-                                                <!--	<Text text="{SearchViewModel>Plateno} / {SearchViewModel>PlateColor}"></Text>-->
-                                                <!--</HBox>-->
-                                                <!--<HBox class="sapUiTinyMarginTop sapUiTinyMarginBegin" alignItems="Center">-->
-                                                <!--	<ObjectAttribute class="cl_objAttri1" title="MAHA File Received"-->
-                                                <!--		text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true"/>-->
-                                                <!--</HBox>-->
-                                                <!--<ObjectStatus state="Information" class="sapUiTinyMarginTop sapUiTinyMarginBegin" inverted="true" active="true" text="Test Status"-->
-                                                <!--	icon="sap-icon://information" press="onpressteststatus"/>-->
-                                                <HBox
-                                                    alignItems="Center"
-                                                    renderType="Bare"
-                                                    class="cl_GridHbox sapUiTinyMarginTop"
-                                                >
-                                                    <VBox width="50%">
-                                                        <HBox
-                                                            class="cl_greenhbox"
-                                                        >
-                                                            <ObjectAttribute
-                                                                press="onPressServiceTest"
-                                                                class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                                text="Service test"
-                                                                title=""
-                                                                active="true"
-                                                            />
-                                                            <Image
-                                                                press="onPressServiceTest"
-                                                                class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                                src="{imageModel>/path}/image/phyinspection.png"
-                                                                width="20px"
-                                                                height="20px"
-                                                            />
-                                                        </HBox>
-                                                    </VBox>
-                                                    <VBox
-                                                        width="50%"
-                                                        class="cl_redhbox"
-                                                    >
-                                                        <HBox
-                                                            class="sapUiTinyMarginBegin"
-                                                        >
-                                                            <ObjectAttribute
-                                                                press="onPressShortClose"
-                                                                class="cl_objAttriwhite sapUiTinyMarginTop"
-                                                                title=""
-                                                                text="OnHold"
-                                                                active="true"
-                                                            />
-                                                            <Image
-                                                                press="onPressShortClose"
-                                                                class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                                src="{imageModel>/path}/image/Shortclose.png"
-                                                                width="20px"
-                                                                height="20px"
-                                                            />
-                                                        </HBox>
-                                                    </VBox>
-                                                </HBox>
-                                            </VBox>
-                                        </f:GridListItem>
-                                    </f:GridList>
-                                </l:BlockLayoutCell>
-                            </l:BlockLayoutRow>
-                        </l:BlockLayout>
-                    </l:VerticalLayout>
+                                                    <f:GridListItem type="Inactive" class="sapUiTinyMarginBeginEnd cl_Materialgridlist1">
+                                                        <VBox>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Text text="Plate Info: {SearchViewModel>Plateno} / {SearchViewModel>PlateColor}" class="cl_openordertxt" />
 
-                    <Carousel
-                        visible="false"
-                        loop="true"
-                        height="auto"
-                        pageIndicatorPlacement="Bottom"
-                        showPageIndicator="false"
-                        arrowsPlacement="PageIndicator"
-                        class="customCarousel"
-                    >
+                                                                <!-- <Text text="Lane: {SearchViewModel>Lane}" class="sapUiTinyMarginBegin cl_WelcomeText" /> -->
+                                                                <ToolbarSpacer />
+                                                                <!-- <ObjectStatus state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}" visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}" inverted="true" text="Traffic: {SearchViewModel>Tstatus}" /> -->
+                                                            </Toolbar>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Text text="SR # {SearchViewModel>ReqNo}" class="cl_WelcomeText" />
+                                                                <ToolbarSpacer />
+                                                            </Toolbar>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Button text="Status" type="Default" icon="sap-icon://message-information" press="onpressstatus" />
+                                                            </Toolbar>
+                                                            <HBox alignItems="Center" renderType="Bare" class="cl_GridHbox sapUiTinyMarginTop">
+                                                                <VBox width="50%">
+                                                                    <HBox class="cl_greenhbox">
+                                                                        <ObjectAttribute press="onPressServiceTest" class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop" text="Service test" title="" active="true" />
+                                                                        <Image press="onPressServiceTest" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/phyinspection.png" width="20px" height="20px" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                                <VBox width="50%" class="cl_redhbox">
+                                                                    <HBox class="sapUiTinyMarginBegin">
+                                                                        <ObjectAttribute press="onPressShortClose" class="cl_objAttriwhite sapUiTinyMarginTop" title="" text="On Hold" active="true" />
+                                                                        <Image press="onPressShortClose" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/Shortclose.png" width="20px" height="20px" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </f:GridListItem>
+                                                </f:GridList>
+                                            </l:BlockLayoutCell>
+
+                                        </l:BlockLayoutRow>
+                                    </l:BlockLayout>
+                                </l:VerticalLayout>
+
+                            </IconTabFilter>
+
+                            <IconTabFilter text="B2B" key="VehicleTest">
+                                <l:VerticalLayout width="100%">
+                                    <l:BlockLayout background="Dashboard">
+                                        <l:BlockLayoutRow accentCells="Accent1">
+
+                                            <l:BlockLayoutCell width="3" class="Cl_BlockLayoutPading">
+                                                <OverflowToolbar height="2rem" design="Solid" class="Cl_CustomerHeaderBG">
+                                                    <VBox justifyContent="SpaceBetween">
+                                                        <FlexBox alignItems="Start" justifyContent="Center">
+                                                            <Title text="Lane 3" wrapping="true" class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin" />
+                                                        </FlexBox>
+                                                    </VBox>
+                                                </OverflowToolbar>
+                                                <!-- Lane 3-->
+                                                <f:GridList items="{SearchViewModel>/Lane3}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                    <f:customLayout>
+                                                        <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))" gridGap="0.5rem" />
+                                                    </f:customLayout>
+                                                    <f:GridListItem type="Inactive" class="sapUiTinyMarginBeginEnd cl_Materialgridlist1">
+                                                        <VBox>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Text text="Plate Info: {SearchViewModel>Plateno} / {SearchViewModel>PlateColor}" class="cl_openordertxt" />
+
+                                                                <ToolbarSpacer />
+                                                            </Toolbar>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Text text="SR # {SearchViewModel>ReqNo}" class="cl_WelcomeText" />
+                                                                <ToolbarSpacer />
+                                                            </Toolbar>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Button text="Status" type="Default" icon="sap-icon://message-information" press="onpressstatus" />
+                                                            </Toolbar>
+                                                            <HBox alignItems="Center" renderType="Bare" class="cl_GridHbox sapUiTinyMarginTop">
+                                                                <VBox width="50%">
+                                                                    <HBox class="cl_greenhbox">
+                                                                        <ObjectAttribute press="onPressServiceTest" class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop" text="Service test" title="" active="true" />
+                                                                        <Image press="onPressServiceTest" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/phyinspection.png" width="20px" height="20px" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                                <VBox width="50%" class="cl_redhbox">
+                                                                    <HBox class="sapUiTinyMarginBegin">
+                                                                        <ObjectAttribute press="onPressShortClose" class="cl_objAttriwhite sapUiTinyMarginTop" title="" text="OnHold" active="true" />
+                                                                        <Image press="onPressShortClose" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/Shortclose.png" width="20px" height="20px" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </f:GridListItem>
+                                                </f:GridList>
+                                            </l:BlockLayoutCell>
+                                        </l:BlockLayoutRow>
+                                    </l:BlockLayout>
+                                </l:VerticalLayout>
+
+                            </IconTabFilter>
+
+                            <IconTabFilter text="Permits" key="Permit">
+                               <l:VerticalLayout width="100%">
+                                    <l:BlockLayout background="Dashboard">
+                                        <l:BlockLayoutRow accentCells="Accent1">
+
+                                            <l:BlockLayoutCell width="3" class="Cl_BlockLayoutPading">
+                                                <OverflowToolbar height="2rem" design="Solid" class="Cl_CustomerHeaderBG">
+                                                    <VBox justifyContent="SpaceBetween">
+                                                        <FlexBox alignItems="Start" justifyContent="Center">
+                                                            <Title text="Lane 4" wrapping="true" class="cl_AdnocRewardsCard sapUiTinyMarginTop sapUiSmallMarginBegin" />
+                                                        </FlexBox>
+                                                    </VBox>
+                                                </OverflowToolbar>
+                                                <!-- Lane 3-->
+                                                <f:GridList items="{SearchViewModel>/Lane4}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                    <f:customLayout>
+                                                        <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))" gridGap="0.5rem" />
+                                                    </f:customLayout>
+                                                    <f:GridListItem type="Inactive" class="sapUiTinyMarginBeginEnd cl_Materialgridlist1">
+                                                        <VBox>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Text text="Plate Info: {SearchViewModel>Plateno} / {SearchViewModel>PlateColor}" class="cl_openordertxt" />
+
+                                                                <ToolbarSpacer />
+                                                            </Toolbar>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Text text="SR # {SearchViewModel>ReqNo}" class="cl_WelcomeText" />
+                                                                <ToolbarSpacer />
+                                                            </Toolbar>
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Button text="Status" type="Default" icon="sap-icon://message-information" press="onpressstatus" />
+                                                            </Toolbar>
+                                                            <HBox alignItems="Center" renderType="Bare" class="cl_GridHbox sapUiTinyMarginTop">
+                                                                <VBox width="50%">
+                                                                    <HBox class="cl_greenhbox">
+                                                                        <ObjectAttribute press="onPressServiceTest" class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop" text="Service test" title="" active="true" />
+                                                                        <Image press="onPressServiceTest" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/phyinspection.png" width="20px" height="20px" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                                <VBox width="50%" class="cl_redhbox">
+                                                                    <HBox class="sapUiTinyMarginBegin">
+                                                                        <ObjectAttribute press="onPressShortClose" class="cl_objAttriwhite sapUiTinyMarginTop" title="" text="OnHold" active="true" />
+                                                                        <Image press="onPressShortClose" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/Shortclose.png" width="20px" height="20px" />
+                                                                    </HBox>
+                                                                </VBox>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </f:GridListItem>
+                                                </f:GridList>
+                                            </l:BlockLayoutCell>
+                                        </l:BlockLayoutRow>
+                                    </l:BlockLayout>
+                                </l:VerticalLayout>
+                            </IconTabFilter>
+
+                        </items>
+                    </IconTabBar>
+
+                    <Carousel visible="false" loop="true" height="auto" pageIndicatorPlacement="Bottom" showPageIndicator="false" arrowsPlacement="PageIndicator" class="customCarousel">
                         <!-- Lane 1 -->
-                        <f:GridList
-                            headerText="Lane 1"
-                            items="{SearchViewModel>/Lane1}"
-                            class="sapUiTinyMarginTop cl_whitematetialgridlist"
-                            mode="None"
-                        >
+                        <f:GridList headerText="Lane 1" items="{SearchViewModel>/Lane1}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
                             <f:customLayout>
-                                <grid:GridBasicLayout
-                                    gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))"
-                                    gridGap="0.5rem"
-                                />
+                                <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))" gridGap="0.5rem" />
                             </f:customLayout>
-                            <f:GridListItem
-                                type="Inactive"
-                                class="sapUiTinyMarginBeginEnd cl_Materialgridlist1"
-                            >
+                            <f:GridListItem type="Inactive" class="sapUiTinyMarginBeginEnd cl_Materialgridlist1">
                                 <VBox>
                                     <Toolbar class="cl_toolbar1">
-                                        <Text
-                                            text="{SearchViewModel>ReqNo}"
-                                            class="cl_WelcomeText"
-                                        />
-                                        <Text
-                                            text="Lane: {SearchViewModel>Lane}"
-                                            class="sapUiTinyMarginBegin cl_WelcomeText"
-                                        />
+                                        <Text text="{SearchViewModel>ReqNo}" class="cl_WelcomeText" />
+                                        <Text text="Lane: {SearchViewModel>Lane}" class="sapUiTinyMarginBegin cl_WelcomeText" />
                                         <ToolbarSpacer />
-                                        <ObjectStatus
-                                            state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                            visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}"
-                                            inverted="true"
-                                            text="Traffic: {SearchViewModel>Tstatus}"
-                                        />
+                                        <ObjectStatus state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}" visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}" inverted="true" text="Traffic: {SearchViewModel>Tstatus}" />
                                     </Toolbar>
                                     <Toolbar class="cl_toolbar1">
-                                        <Text
-                                            text="{SearchViewModel>Plateno} / {SearchViewModel>PlateColor}"
-                                            class="cl_traffictexttxt"
-                                        />
+                                        <Text text="{SearchViewModel>Plateno} / {SearchViewModel>PlateColor}" class="cl_traffictexttxt" />
                                         <ToolbarSpacer />
-                                        <ObjectStatus
-                                            class="CL_warningobj"
-                                            visible="{= ${SearchViewModel>ComprehensiveTest} === 'X'? true : false}"
-                                            inverted="true"
-                                            active="true"
-                                            text="Comprehensive: {SearchViewModel>CStatus}"
-                                            state="{parts:['SearchViewModel>CStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                        />
+                                        <ObjectStatus class="CL_warningobj" visible="{= ${SearchViewModel>ComprehensiveTest} === 'X'? true : false}" inverted="true" active="true" text="Comprehensive: {SearchViewModel>CStatus}" state="{parts:['SearchViewModel>CStatus'],formatter:'VIR.model.formatter.Tstate'}" />
                                     </Toolbar>
                                     <Toolbar class="cl_toolbar1">
-                                        <ObjectAttribute
-                                            class="cl_objAttri1"
-                                            title="MAHA File Received"
-                                            text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}"
-                                            active="true"
-                                        />
+                                        <ObjectAttribute class="cl_objAttri1" title="MAHA File Received" text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true" />
                                         <ToolbarSpacer />
-                                        <ObjectStatus
-                                            class="CL_warningobj"
-                                            visible="{= ${SearchViewModel>Esma} === 'X'? true : false}"
-                                            inverted="true"
-                                            active="true"
-                                            text="ESMA: {SearchViewModel>EStatus}"
-                                            state="{parts:['SearchViewModel>EStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                        />
+                                        <ObjectStatus class="CL_warningobj" visible="{= ${SearchViewModel>Esma} === 'X'? true : false}" inverted="true" active="true" text="ESMA: {SearchViewModel>EStatus}" state="{parts:['SearchViewModel>EStatus'],formatter:'VIR.model.formatter.Tstate'}" />
                                     </Toolbar>
                                     <!--<HBox class="sapUiTinyMarginBegin" alignItems="Center">-->
                                     <!--</HBox>-->
@@ -587,52 +281,21 @@
                                     <!--</HBox>-->
                                     <!--<HBox class="sapUiTinyMarginTop sapUiTinyMarginBegin" alignItems="Center">-->
                                     <!--	<ObjectAttribute class="cl_objAttri1" title="MAHA File Received"-->
-                                    <!--		text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true"/>-->
+                                    <!-- text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true"/>-->
                                     <!--</HBox>-->
                                     <!--<ObjectStatus state="Information" class="sapUiTinyMarginTop sapUiTinyMarginBegin" inverted="true" active="true" text="Test Status"-->
-                                    <!--	icon="sap-icon://information" press="onpressteststatus"/>-->
-                                    <HBox
-                                        alignItems="Center"
-                                        renderType="Bare"
-                                        class="cl_GridHbox sapUiTinyMarginTop"
-                                    >
+                                    <!-- icon="sap-icon://information" press="onpressteststatus"/>-->
+                                    <HBox alignItems="Center" renderType="Bare" class="cl_GridHbox sapUiTinyMarginTop">
                                         <VBox width="50%">
                                             <HBox class="cl_greenhbox">
-                                                <ObjectAttribute
-                                                    press="onPressServiceTest"
-                                                    class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                    text="Service test"
-                                                    title=""
-                                                    active="true"
-                                                />
-                                                <Image
-                                                    press="onPressServiceTest"
-                                                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                    src="{imageModel>/path}/image/phyinspection.png"
-                                                    width="20px"
-                                                    height="20px"
-                                                />
+                                                <ObjectAttribute press="onPressServiceTest" class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop" text="Service test" title="" active="true" />
+                                                <Image press="onPressServiceTest" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/phyinspection.png" width="20px" height="20px" />
                                             </HBox>
                                         </VBox>
-                                        <VBox
-                                            width="50%"
-                                            class="cl_redhbox"
-                                        >
+                                        <VBox width="50%" class="cl_redhbox">
                                             <HBox class="sapUiTinyMarginBegin">
-                                                <ObjectAttribute
-                                                    press="onPressShortClose"
-                                                    class="cl_objAttriwhite sapUiTinyMarginTop"
-                                                    title=""
-                                                    text="Short Close"
-                                                    active="true"
-                                                />
-                                                <Image
-                                                    press="onPressShortClose"
-                                                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                    src="{imageModel>/path}/image/Shortclose.png"
-                                                    width="20px"
-                                                    height="20px"
-                                                />
+                                                <ObjectAttribute press="onPressShortClose" class="cl_objAttriwhite sapUiTinyMarginTop" title="" text="Short Close" active="true" />
+                                                <Image press="onPressShortClose" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/Shortclose.png" width="20px" height="20px" />
                                             </HBox>
                                         </VBox>
                                     </HBox>
@@ -641,72 +304,28 @@
                         </f:GridList>
 
                         <!-- Lane 2 -->
-                        <f:GridList
-                            headerText="Lane 2"
-                            items="{SearchViewModel>/Lane2}"
-                            class="sapUiTinyMarginTop cl_whitematetialgridlist"
-                            mode="None"
-                        >
+                        <f:GridList headerText="Lane 2" items="{SearchViewModel>/Lane2}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
                             <f:customLayout>
-                                <grid:GridBasicLayout
-                                    gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))"
-                                    gridGap="0.5rem"
-                                />
+                                <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))" gridGap="0.5rem" />
                             </f:customLayout>
 
-                            <f:GridListItem
-                                type="Inactive"
-                                class="sapUiTinyMarginBeginEnd cl_Materialgridlist1"
-                            >
+                            <f:GridListItem type="Inactive" class="sapUiTinyMarginBeginEnd cl_Materialgridlist1">
                                 <VBox>
                                     <Toolbar class="cl_toolbar1">
-                                        <Text
-                                            text="{SearchViewModel>ReqNo}"
-                                            class="cl_WelcomeText"
-                                        />
-                                        <Text
-                                            text="Lane: {SearchViewModel>Lane}"
-                                            class="sapUiTinyMarginBegin cl_WelcomeText"
-                                        />
+                                        <Text text="{SearchViewModel>ReqNo}" class="cl_WelcomeText" />
+                                        <Text text="Lane: {SearchViewModel>Lane}" class="sapUiTinyMarginBegin cl_WelcomeText" />
                                         <ToolbarSpacer />
-                                        <ObjectStatus
-                                            state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                            visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}"
-                                            inverted="true"
-                                            text="Traffic: {SearchViewModel>Tstatus}"
-                                        />
+                                        <ObjectStatus state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}" visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}" inverted="true" text="Traffic: {SearchViewModel>Tstatus}" />
                                     </Toolbar>
                                     <Toolbar class="cl_toolbar1">
-                                        <Text
-                                            text="{SearchViewModel>Plateno} / {SearchViewModel>PlateColor}"
-                                            class="cl_traffictexttxt"
-                                        />
+                                        <Text text="{SearchViewModel>Plateno} / {SearchViewModel>PlateColor}" class="cl_traffictexttxt" />
                                         <ToolbarSpacer />
-                                        <ObjectStatus
-                                            class="CL_warningobj"
-                                            visible="{= ${SearchViewModel>ComprehensiveTest} === 'X'? true : false}"
-                                            inverted="true"
-                                            active="true"
-                                            text="Comprehensive: {SearchViewModel>CStatus}"
-                                            state="{parts:['SearchViewModel>CStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                        />
+                                        <ObjectStatus class="CL_warningobj" visible="{= ${SearchViewModel>ComprehensiveTest} === 'X'? true : false}" inverted="true" active="true" text="Comprehensive: {SearchViewModel>CStatus}" state="{parts:['SearchViewModel>CStatus'],formatter:'VIR.model.formatter.Tstate'}" />
                                     </Toolbar>
                                     <Toolbar class="cl_toolbar1">
-                                        <ObjectAttribute
-                                            class="cl_objAttri1"
-                                            title="MAHA File Received"
-                                            text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}"
-                                            active="true"
-                                        />
+                                        <ObjectAttribute class="cl_objAttri1" title="MAHA File Received" text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true" />
                                         <ToolbarSpacer />
-                                        <ObjectStatus
-                                            class="CL_warningobj"
-                                            visible="{= ${SearchViewModel>Esma} === 'X'? true : false}"
-                                            inverted="true"
-                                            active="true"
-                                            text="ESMA: {SearchViewModel>EStatus}"
-                                            state="{parts:['SearchViewModel>EStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                        />
+                                        <ObjectStatus class="CL_warningobj" visible="{= ${SearchViewModel>Esma} === 'X'? true : false}" inverted="true" active="true" text="ESMA: {SearchViewModel>EStatus}" state="{parts:['SearchViewModel>EStatus'],formatter:'VIR.model.formatter.Tstate'}" />
                                     </Toolbar>
                                     <!--<HBox class="sapUiTinyMarginBegin" alignItems="Center">-->
                                     <!--</HBox>-->
@@ -715,52 +334,21 @@
                                     <!--</HBox>-->
                                     <!--<HBox class="sapUiTinyMarginTop sapUiTinyMarginBegin" alignItems="Center">-->
                                     <!--	<ObjectAttribute class="cl_objAttri1" title="MAHA File Received"-->
-                                    <!--		text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true"/>-->
+                                    <!-- text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true"/>-->
                                     <!--</HBox>-->
                                     <!--<ObjectStatus state="Information" class="sapUiTinyMarginTop sapUiTinyMarginBegin" inverted="true" active="true" text="Test Status"-->
-                                    <!--	icon="sap-icon://information" press="onpressteststatus"/>-->
-                                    <HBox
-                                        alignItems="Center"
-                                        renderType="Bare"
-                                        class="cl_GridHbox sapUiTinyMarginTop"
-                                    >
+                                    <!-- icon="sap-icon://information" press="onpressteststatus"/>-->
+                                    <HBox alignItems="Center" renderType="Bare" class="cl_GridHbox sapUiTinyMarginTop">
                                         <VBox width="50%">
                                             <HBox class="cl_greenhbox">
-                                                <ObjectAttribute
-                                                    press="onPressServiceTest"
-                                                    class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                    text="Service test"
-                                                    title=""
-                                                    active="true"
-                                                />
-                                                <Image
-                                                    press="onPressServiceTest"
-                                                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                    src="{imageModel>/path}/image/phyinspection.png"
-                                                    width="20px"
-                                                    height="20px"
-                                                />
+                                                <ObjectAttribute press="onPressServiceTest" class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop" text="Service test" title="" active="true" />
+                                                <Image press="onPressServiceTest" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/phyinspection.png" width="20px" height="20px" />
                                             </HBox>
                                         </VBox>
-                                        <VBox
-                                            width="50%"
-                                            class="cl_redhbox"
-                                        >
+                                        <VBox width="50%" class="cl_redhbox">
                                             <HBox class="sapUiTinyMarginBegin">
-                                                <ObjectAttribute
-                                                    press="onPressShortClose"
-                                                    class="cl_objAttriwhite sapUiTinyMarginTop"
-                                                    title=""
-                                                    text="Short Close"
-                                                    active="true"
-                                                />
-                                                <Image
-                                                    press="onPressShortClose"
-                                                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                    src="{imageModel>/path}/image/Shortclose.png"
-                                                    width="20px"
-                                                    height="20px"
-                                                />
+                                                <ObjectAttribute press="onPressShortClose" class="cl_objAttriwhite sapUiTinyMarginTop" title="" text="Short Close" active="true" />
+                                                <Image press="onPressShortClose" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/Shortclose.png" width="20px" height="20px" />
                                             </HBox>
                                         </VBox>
                                     </HBox>
@@ -769,71 +357,27 @@
                         </f:GridList>
 
                         <!-- Lane 3-->
-                        <f:GridList
-                            headerText="Lane 3"
-                            items="{SearchViewModel>/Lane3}"
-                            class="sapUiTinyMarginTop cl_whitematetialgridlist"
-                            mode="None"
-                        >
+                        <f:GridList headerText="Lane 3" items="{SearchViewModel>/Lane3}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
                             <f:customLayout>
-                                <grid:GridBasicLayout
-                                    gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))"
-                                    gridGap="0.5rem"
-                                />
+                                <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(20rem, 1fr))" gridGap="0.5rem" />
                             </f:customLayout>
-                            <f:GridListItem
-                                type="Inactive"
-                                class="sapUiTinyMarginBeginEnd cl_Materialgridlist1"
-                            >
+                            <f:GridListItem type="Inactive" class="sapUiTinyMarginBeginEnd cl_Materialgridlist1">
                                 <VBox>
                                     <Toolbar class="cl_toolbar1">
-                                        <Text
-                                            text="{SearchViewModel>ReqNo}"
-                                            class="cl_WelcomeText"
-                                        />
-                                        <Text
-                                            text="Lane: {SearchViewModel>Lane}"
-                                            class="sapUiTinyMarginBegin cl_WelcomeText"
-                                        />
+                                        <Text text="{SearchViewModel>ReqNo}" class="cl_WelcomeText" />
+                                        <Text text="Lane: {SearchViewModel>Lane}" class="sapUiTinyMarginBegin cl_WelcomeText" />
                                         <ToolbarSpacer />
-                                        <ObjectStatus
-                                            state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                            visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}"
-                                            inverted="true"
-                                            text="Traffic: {SearchViewModel>Tstatus}"
-                                        />
+                                        <ObjectStatus state="{parts:['SearchViewModel>Tstatus'],formatter:'VIR.model.formatter.Tstate'}" visible="{= ${SearchViewModel>TrafficTest} === 'X'? true : false}" inverted="true" text="Traffic: {SearchViewModel>Tstatus}" />
                                     </Toolbar>
                                     <Toolbar class="cl_toolbar1">
-                                        <Text
-                                            text="{SearchViewModel>Plateno} / {SearchViewModel>PlateColor}"
-                                            class="cl_traffictexttxt"
-                                        />
+                                        <Text text="{SearchViewModel>Plateno} / {SearchViewModel>PlateColor}" class="cl_traffictexttxt" />
                                         <ToolbarSpacer />
-                                        <ObjectStatus
-                                            class="CL_warningobj"
-                                            visible="{= ${SearchViewModel>ComprehensiveTest} === 'X'? true : false}"
-                                            inverted="true"
-                                            active="true"
-                                            text="Comprehensive: {SearchViewModel>CStatus}"
-                                            state="{parts:['SearchViewModel>CStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                        />
+                                        <ObjectStatus class="CL_warningobj" visible="{= ${SearchViewModel>ComprehensiveTest} === 'X'? true : false}" inverted="true" active="true" text="Comprehensive: {SearchViewModel>CStatus}" state="{parts:['SearchViewModel>CStatus'],formatter:'VIR.model.formatter.Tstate'}" />
                                     </Toolbar>
                                     <Toolbar class="cl_toolbar1">
-                                        <ObjectAttribute
-                                            class="cl_objAttri1"
-                                            title="MAHA File Received"
-                                            text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}"
-                                            active="true"
-                                        />
+                                        <ObjectAttribute class="cl_objAttri1" title="MAHA File Received" text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true" />
                                         <ToolbarSpacer />
-                                        <ObjectStatus
-                                            class="CL_warningobj"
-                                            visible="{= ${SearchViewModel>Esma} === 'X'? true : false}"
-                                            inverted="true"
-                                            active="true"
-                                            text="ESMA: {SearchViewModel>EStatus}"
-                                            state="{parts:['SearchViewModel>EStatus'],formatter:'VIR.model.formatter.Tstate'}"
-                                        />
+                                        <ObjectStatus class="CL_warningobj" visible="{= ${SearchViewModel>Esma} === 'X'? true : false}" inverted="true" active="true" text="ESMA: {SearchViewModel>EStatus}" state="{parts:['SearchViewModel>EStatus'],formatter:'VIR.model.formatter.Tstate'}" />
                                     </Toolbar>
                                     <!--<HBox class="sapUiTinyMarginBegin" alignItems="Center">-->
                                     <!--</HBox>-->
@@ -842,52 +386,21 @@
                                     <!--</HBox>-->
                                     <!--<HBox class="sapUiTinyMarginTop sapUiTinyMarginBegin" alignItems="Center">-->
                                     <!--	<ObjectAttribute class="cl_objAttri1" title="MAHA File Received"-->
-                                    <!--		text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true"/>-->
+                                    <!-- text="{parts:['SearchViewModel>Paymenttype'],formatter:'VIR.model.formatter.State'}" active="true"/>-->
                                     <!--</HBox>-->
                                     <!--<ObjectStatus state="Information" class="sapUiTinyMarginTop sapUiTinyMarginBegin" inverted="true" active="true" text="Test Status"-->
-                                    <!--	icon="sap-icon://information" press="onpressteststatus"/>-->
-                                    <HBox
-                                        alignItems="Center"
-                                        renderType="Bare"
-                                        class="cl_GridHbox sapUiTinyMarginTop"
-                                    >
+                                    <!-- icon="sap-icon://information" press="onpressteststatus"/>-->
+                                    <HBox alignItems="Center" renderType="Bare" class="cl_GridHbox sapUiTinyMarginTop">
                                         <VBox width="50%">
                                             <HBox class="cl_greenhbox">
-                                                <ObjectAttribute
-                                                    press="onPressServiceTest"
-                                                    class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                    text="Service test"
-                                                    title=""
-                                                    active="true"
-                                                />
-                                                <Image
-                                                    press="onPressServiceTest"
-                                                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                    src="{imageModel>/path}/image/phyinspection.png"
-                                                    width="20px"
-                                                    height="20px"
-                                                />
+                                                <ObjectAttribute press="onPressServiceTest" class="cl_objAttriwhite sapUiTinyMarginBegin sapUiTinyMarginTop" text="Service test" title="" active="true" />
+                                                <Image press="onPressServiceTest" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/phyinspection.png" width="20px" height="20px" />
                                             </HBox>
                                         </VBox>
-                                        <VBox
-                                            width="50%"
-                                            class="cl_redhbox"
-                                        >
+                                        <VBox width="50%" class="cl_redhbox">
                                             <HBox class="sapUiTinyMarginBegin">
-                                                <ObjectAttribute
-                                                    press="onPressShortClose"
-                                                    class="cl_objAttriwhite sapUiTinyMarginTop"
-                                                    title=""
-                                                    text="Short Close"
-                                                    active="true"
-                                                />
-                                                <Image
-                                                    press="onPressShortClose"
-                                                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
-                                                    src="{imageModel>/path}/image/Shortclose.png"
-                                                    width="20px"
-                                                    height="20px"
-                                                />
+                                                <ObjectAttribute press="onPressShortClose" class="cl_objAttriwhite sapUiTinyMarginTop" title="" text="Short Close" active="true" />
+                                                <Image press="onPressShortClose" class="sapUiTinyMarginBegin sapUiTinyMarginTop" src="{imageModel>/path}/image/Shortclose.png" width="20px" height="20px" />
                                             </HBox>
                                         </VBox>
                                     </HBox>

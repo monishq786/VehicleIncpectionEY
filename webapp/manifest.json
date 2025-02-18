@@ -227,6 +227,15 @@
                     "target": [
                         "Home"
                     ]
+                },
+                {
+                    "name": "PaymentIntegration",
+                    "pattern": "PaymentIntegration",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "PaymentIntegration"
+                    ]
                 }
             ],
             "targets": {
@@ -234,6 +243,12 @@
                     "viewType": "XML",
                     "viewName": "View1",
                     "clearControlAggregation": false
+                },
+                "PaymentIntegration": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "PaymentIntegration"
                 },
                 "MainmenuView": {
                     "viewType": "XML",

@@ -1477,8 +1477,8 @@ sap.ui.define([
 						this.getView().getModel("SearchViewModel").refresh();
 						var that = this;
 						this.intervalHandle = setTimeout(function () {
-							that.onPressCart();
-							sap.ui.getCore().byId("id_carticontabbar").setSelectedKey("Payment");
+							that.onBtnPressPaymentProcess();
+							//sap.ui.getCore().byId("id_carticontabbar").setSelectedKey("Payment");
 						}, 300);
 					}
 				}.bind(this)
@@ -2342,6 +2342,15 @@ sap.ui.define([
 				this.getView().addDependent(this.CartFrag);
 			}
 			this.CartFrag.open();
+		},
+		onBtnPressPaymentProcess: function () {
+			const oRouter = this.getOwnerComponent().getRouter();
+            oRouter.navTo("PaymentIntegration", {}, true);
+			// if (!this.CartFrag) {
+			// 	this.CartFrag = sap.ui.xmlfragment("VIR.fragment.Cart", this);
+			// 	this.getView().addDependent(this.CartFrag);
+			// }
+			// this.CartFrag.open();
 		},
 
 		onPressClose: function () {
