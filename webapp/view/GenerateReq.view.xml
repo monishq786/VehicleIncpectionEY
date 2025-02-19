@@ -53,37 +53,33 @@
                                 </HBox>
                             </OverflowToolbar>
                             <HBox visible="true">
-                                <VBox width="82%">
-                                    <HBox visible="false" class="sapUiSmallMarginBottom sapUiTinyMarginTop">
+                                <VBox width="86%">
+                                    <!-- <HBox visible="false" class="sapUiSmallMarginBottom sapUiTinyMarginTop">
+                                        
+                                            <ObjectAttribute title="Plate Detail" text="{VIRGlobalModel>/PlateNo} / S" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                            <ObjectAttribute title="Emirates" text="Abu Dhabi" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                            <ObjectAttribute title="Model" text="Toyota Fortuner" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                        </HBox> -->
+                                    <HBox class="sapUiSmallMarginBottom sapUiTinyMarginTop">
 
-                                        <ObjectAttribute title="Plate Detail" text="{VIRGlobalModel>/PlateNo} / S" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
-                                        <ObjectAttribute title="Emirates" text="Abu Dhabi" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
-                                        <ObjectAttribute title="Model" text="Toyota Fortuner" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                        <!-- <Image src="{imageModel>/path}/image/toyota.svg" press="onPressShowVehicleInfo" class="sapUiTinyMarginBegin" width="30px" height="30px" /> -->
+                                        <ObjectAttribute title="Chassis No" text="{VIRGlobalModel>/Chassisno}" active='true' class="cl_objAttri sapUiTinyMarginBegin" />
+                                        <ObjectAttribute title="Engine No" text="{VIRGlobalModel>/Engineno}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                        <ObjectAttribute title="Reg Exp Year" text="{VIRGlobalModel>/RegExpYear}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
+                                        <ObjectAttribute title="Horse power" text="{VIRGlobalModel>/HP}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
+                                        <ObjectAttribute title="Full Weight" text="{VIRGlobalModel>/FullWeight}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                        <ObjectAttribute title="Cubic Capacity" text="1600" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
                                     </HBox>
                                     <HBox class="sapUiSmallMarginBottom sapUiTinyMarginTop">
-                                        <VBox>
-                                            <ObjectAttribute title="Chassis No" text="{VIRGlobalModel>/Chassisno}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop" />
-                                            <ObjectAttribute title="Vehicle Type" text="{VIRGlobalModel>/Type}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop" />
-                                            <ObjectAttribute title="Body Color" text="{VIRGlobalModel>/BodyColor}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop" />
-                                            <ObjectAttribute title="Gear Type" text="{VIRGlobalModel>/GearType}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop" />
-                                            <ObjectAttribute title="Fuel Type" text="{VIRGlobalModel>/FuelType}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop" />
-                                        </VBox>
-                                        <VBox>
-                                            <ObjectAttribute title="Engine No" text="{VIRGlobalModel>/Engineno}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop" />
-                                            <ObjectAttribute title="Steering Side" text="{VIRGlobalModel>/SteeringSide}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop " />
-                                            <ObjectAttribute title="MFG Year" text="{VIRGlobalModel>/MFGYear}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop " />
-                                            <ObjectAttribute title="Reg year" text="{VIRGlobalModel>/InitRegyear}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop" />
-                                            <ObjectAttribute title="Mileage" text="{VIRGlobalModel>/mileage}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop " />
-                                        </VBox>
-                                        <VBox>
-                                            <ObjectAttribute title="Reg Exp Year" text="{VIRGlobalModel>/RegExpYear}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop " />
-                                            <ObjectAttribute title="Horse power" text="{VIRGlobalModel>/HP}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop " />
-                                            <ObjectAttribute title="Full Weight" text="{VIRGlobalModel>/FullWeight}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop" />
-                                            <ObjectAttribute title="Cubic Capacity" text="{VIRGlobalModel>/CubicCapacity}" active='true' class="cl_objAttri sapUiTinyMarginBegin sapUiTinyMarginTop " />
-                                        </VBox>
                                         <!-- <Image src="{imageModel>/path}/image/toyota.svg" press="onPressShowVehicleInfo" class="sapUiTinyMarginBegin" width="46px" height="46px" /> -->
-
-
+                                        <ObjectAttribute title="Vehicle Type" text="{VIRGlobalModel>/Type}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                        <ObjectAttribute title="Body Color" text="{VIRGlobalModel>/BodyColor}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
+                                        <ObjectAttribute title="Gear Type" text="{VIRGlobalModel>/GearType}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
+                                        <ObjectAttribute title="Fuel Type" text="{VIRGlobalModel>/FuelType}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                        <ObjectAttribute title="Steering Side" text="{VIRGlobalModel>/SteeringSide}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
+                                        <ObjectAttribute title="MFG Year" text="{VIRGlobalModel>/MFGYear}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
+                                        <ObjectAttribute title="Reg year" text="{VIRGlobalModel>/InitRegyear}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                        <ObjectAttribute title="Mileage" text="{VIRGlobalModel>/mileage}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
                                     </HBox>
                                     <HBox visible="false" class="sapUiSmallMarginBottom">
                                         <!-- <Image src="{imageModel>/path}/image/Toyota.png" press="onPressShowVehicleInfo" class="sapUiSmallMarginBegin" /> -->
@@ -93,7 +89,7 @@
                                             <ObjectAttribute title="SR" text="#{VIRGlobalModel>/SR}" active="true" class="cl_objAttri sapUiTinyMarginBeginEnd" /> -->
                                     </HBox>
                                 </VBox>
-                                <VBox width="18%">
+                                <VBox width="14%" justifyContent="End">
                                     <!-- <Image src="{imageModel>/path}/image/Toyota.png" press="onPressShowVehicleInfo" /> -->
 
                                     <!-- <Text text="Service Test" class="cl_WelcomeText" /> -->
@@ -414,7 +410,7 @@
                         <!-- <Button text="New Permit" class="cl_Emphasizebtn" type="Emphasized" press="onpressPermit" visible="{= ${VIRGlobalModel>/Purpose} === 'Permit'? true : false}" /> -->
                         <ToolbarSpacer />
                         <!-- <Button enabled="{SearchViewModel>/Btnenable}" text="Visual Test" press="onpressVisualTest" visible="{SearchViewModel>/PrintbtnVisible}" icon="{imageModel>/path}/image/view.png" type="Transparent" iconFirst="true" /> -->
-
+                        <Button enabled="{SearchViewModel>/Btnenable}" text="Change Vehicle Info" press="onPressChange" visible="{SearchViewModel>/PrintbtnVisible}" icon="{imageModel>/path}/image/view.png" type="Transparent" iconFirst="true" />
                         <Button class="sapUiSmallMarginEnd" text="Proceed" type="Transparent" press="onPressSave" enabled="{SearchViewModel>/FieldsEditable}">
                             <customData>
                                 <BadgeCustomData key="badge" value="{VIRGlobalModel>/MyCartCount}" visible="true" />

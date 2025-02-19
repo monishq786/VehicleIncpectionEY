@@ -6,7 +6,7 @@
     xmlns:form="sap.ui.layout.form">
     <App>
         <pages>
-            <Page showFooter="true" showHeader="false" class="cl_page">
+            <Page id="id_Payment" showFooter="true" showHeader="false" class="cl_page">
                 <content>
                     <IconTabBar id="id_carticontabbar1" backgroundDesign="Translucent" selectedKey="VehicleTest" class="cl_icontabbar">
                         <items>

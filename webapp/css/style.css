@@ -1656,3 +1656,16 @@ border-bottom:none !important
     font-size: 1.2rem;
     margin: 0 2px;
 }
+.smallInput {
+    width: 25px !important;  /* Set width for small box */
+    height: 25px !important; /* Set height for small box */
+    text-align: center;       /* Center text */
+    font-size: 16px;          /* Adjust font size */
+    border-radius: 5px;       /* Rounded corners */
+}
+
+.chassisInputContainer {
+    gap: 5px;                 /* Spacing between input boxes */
+    display: flex;
+    flex-wrap: wrap;          /* Wrap inputs if screen size is small */
+}

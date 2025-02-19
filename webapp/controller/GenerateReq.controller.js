@@ -1461,7 +1461,8 @@ sap.ui.define([
 							}
 						}
 						this.getView().getModel("VIRGlobalModel").setProperty("/unRegplateno", "");
-
+						this.getView().getModel("SearchViewModel").getProperty("/TotalAmount","100");
+						this.getView().getModel("SearchViewModel").getProperty("/VatAmount","10");
 						var aserviceItems = this.getView().getModel("VIRGlobalModel").getProperty("/ServiceItems");
 						var aAccessoriesItems = this.getView().getModel("SearchViewModel").getProperty("/Accessories");
 						var aVehicleTestItems = this.getView().getModel("SearchViewModel").getProperty("/VehicleTest");
@@ -1477,8 +1478,8 @@ sap.ui.define([
 						this.getView().getModel("SearchViewModel").refresh();
 						var that = this;
 						this.intervalHandle = setTimeout(function () {
-							that.onBtnPressPaymentProcess();
-							//sap.ui.getCore().byId("id_carticontabbar").setSelectedKey("Payment");
+							that.onPressCart();
+							sap.ui.getCore().byId("id_carticontabbar").setSelectedKey("Payment");
 						}, 300);
 					}
 				}.bind(this)

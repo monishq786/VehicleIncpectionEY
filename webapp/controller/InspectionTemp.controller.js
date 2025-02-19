@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/core/UIComponent",
-	"sap/m/MessageBox"
-], function (Controller, UIComponent, MessageBox) {
+	"sap/m/MessageBox",
+	"sap/ui/model/json/JSONModel"
+], function (Controller, UIComponent, MessageBox,JSONModel) {
 	"use strict";
 
 	return Controller.extend("VIR.controller.InspectionTemp", {
@@ -10,6 +11,11 @@ sap.ui.define([
 
 			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this._oRouter.attachRouteMatched(this.handleRouteMatched, this);
+			
+			var Model = new JSONModel({
+				selectedValue: ""
+			});
+			this.getView().setModel(Model, "myModel");
 		},
 		onAfterRendering: function () {
 			// this.loadSVG();
@@ -1084,6 +1090,9 @@ sap.ui.define([
 				var path = oEvent.getSource().getBindingContext("SearchViewModel").getPath().split("/")[2]
 				this.object = parseInt(path);
 				this.object1 = currObj;
+
+				var oModel = this.getView().getModel("myModel");
+				oModel.setProperty("/selectedValue",this.object1.Material);
 
 				// var VIStatusItems = this.getView().getModel("SearchViewModel").getProperty("/VIStatus");
 

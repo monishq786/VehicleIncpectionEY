@@ -18,14 +18,12 @@
                                     <Title text="Search Vehicle" class="Cl_TitleColor" />
                                     <FlexBox wrap="Wrap" height="auto" alignItems="Center" justifyContent="Start">
                                         <Input value="{VIRGlobalModel>/PlateNo}" width="8rem" placeholder="Plate Number" maxLength="5" class="Cl_SearchInput sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+                                        <Input value="" placeholder="Chassis Number" maxLength="10" class="Cl_SearchInput sapUiTinyMarginBeginEnd sapUiTinyMarginBottom" width="8rem" />
+                                        <Input value="" placeholder="Certificate Number" maxLength="10" class="Cl_SearchInput sapUiTinyMarginBegin sapUiTinyMarginBottom" width="8rem" />
                                         <Input value="" placeholder="Plate Color" width="8rem" maxLength="5" class="Cl_SearchInput  sapUiTinyMarginBottom sapUiTinyMarginBegin" />
                                         <Input value="" width="8rem" placeholder="Plate Kind" maxLength="5" class="Cl_SearchInput  sapUiTinyMarginBottom sapUiTinyMarginBegin" />
                                         <Input value="" width="8rem" placeholder="Plate Source" maxLength="5" class="Cl_SearchInput  sapUiTinyMarginBottom sapUiTinyMarginBegin" />
-
                                         <Input value="{VIRGlobalModel>/PlateCode}" width="8rem" placeholder="Plate Code" maxLength="3" class="Cl_SearchInput sapUiTinyMarginBegin sapUiTinyMarginEnd sapUiTinyMarginBottom" />
-
-                                        <Input value="" placeholder="Chassis Number" maxLength="10" class="Cl_SearchInput sapUiTinyMarginBeginEnd sapUiTinyMarginBottom" width="8rem" />
-                                        <Input value="" placeholder="Certificate Number" maxLength="10" class="Cl_SearchInput sapUiTinyMarginBegin sapUiTinyMarginBottom" width="8rem" />
                                         <Button text="Go" type="Emphasized" class="sapUiSmallMarginBeginEnd" press="onPressAdpolice" />
                                         <Button text="Clear" type="Transparent" class="sapUiTinyMarginBeginEnd" />
                                     </FlexBox>
@@ -37,6 +35,7 @@
                                 <l:BlockLayoutCell width="6" class="Cl_BlockLayoutRadius" height="5rem">
                                     <FlexBox alignItems="Start" justifyContent="SpaceBetween">
                                         <Title text="Vehicle Info" class="Cl_TitleColor sapUiSmallMargin" />
+                                         <Button icon="sap-icon://add-employee" text="Create Vehicle " type="Transparent" class="sapUiTinyMarginBegin" press="onBtnPressCustomerCreation"/>
                                         <!-- <Image src="{imageModel>/path}/image/toyota.svg" press="onPressShowVehicleInfo" class="sapUiTinyMarginBegin" width="46px" height="46px" /> -->
                                     </FlexBox>
                                     <f:Form editable="false" class="cl_VehicleInfo" layout="ResponsiveGridLayout">

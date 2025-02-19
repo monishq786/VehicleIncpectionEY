@@ -1,5 +1,9 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="VIR.controller.CreateCustomer"
-	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+<mvc:View xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="VIR.controller.CreateCustomer"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout">
 	<App>
 		<pages>
 			<Page showHeader="false" class="sapUiSizeCompact" showFooter="true">
@@ -7,11 +11,10 @@
 					<l:VerticalLayout width="100%">
 						<l:BlockLayout background="Dashboard">
 							<l:BlockLayoutRow accentCells="Accent1">
-								<l:BlockLayoutCell width="4" title="Create Vehicle &amp; Customer" class="Cl_BlockLayoutCustomerScreen cl_createCustomerBlkContent">
-									<f:Form editable="true" class="cl_formlabel">
+								<l:BlockLayoutCell width="2" title="Create Vehicle &amp; Customer" class="cl_createCustomerBlkContent">
+									<f:Form editable="true">
 										<f:layout>
-											<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
-												emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+											<f:ResponsiveGridLayout singleContainerFullSize="true"/>
 										</f:layout>
 										<f:formContainers>
 											<f:FormContainer>
@@ -24,30 +27,57 @@
 													</f:FormElement>
 													<f:FormElement label="Chassis No">
 														<f:fields>
-															<Input required="true" maxLength="14" value="{CreateCustomerModel>/Chassisno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+															<HBox alignItems="Start" class="chassisInputContainer">
+																<Input id="input1" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input2" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input3" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input4" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input5" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input6" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input7" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input8" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input9" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input10" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input11" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input12" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input13" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input14" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input15" class="smallInput" maxLength="1" liveChange="" />
+															</HBox>
+
+															<!-- <Input required="true" maxLength="14" value="{CreateCustomerModel>/Chassisno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/> -->
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Engine No">
 														<f:fields>
-															<Input required="true" maxLength="14" value="{CreateCustomerModel>/Engineno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+															<HBox alignItems="Start" justifyContent="Start" class="chassisInputContainer">
+																<Input id="En1" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En2" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En3" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En4" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En5" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En6" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En7" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En8" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En9" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En10" class="smallInput" maxLength="1" liveChange="" />
+															</HBox>
+															<!-- <Input required="true" maxLength="14" value="{CreateCustomerModel>/Engineno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/> -->
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Emirates">
 														<f:fields>
-															<Input value="{CreateCustomerModel>/Country}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true"
-																valueHelpOnly="true" valueHelpRequest="openCountryF4"/>
+															<Input value="{CreateCustomerModel>/Country}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="openCountryF4"/>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Manufacturer">
 														<f:fields>
-															<Input required="true" value="{CreateCustomerModel>/CV_Manufacturer}" editable="{CreateCustomerModel>/SearchFieldEditable}"
-																showValueHelp="true" valueHelpOnly="true" valueHelpRequest="openManufacturerF4"/>
+															<Input required="true" value="{CreateCustomerModel>/CV_Manufacturer}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="openManufacturerF4"/>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Model">
 														<f:fields>
-															<Input required="true" value="{CreateCustomerModel>/CV_Model}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true"
-																valueHelpOnly="true" valueHelpRequest="openModelF4"/>
+															<Input required="true" value="{CreateCustomerModel>/CV_Model}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="openModelF4"/>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Plate Type">
@@ -76,8 +106,7 @@
 													</f:FormElement>
 													<f:FormElement label="Body Color" visible="false">
 														<f:fields>
-															<Input value="{CreateCustomerModel>/BodyColor}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true"
-																valueHelpOnly="true" valueHelpRequest="openColorF4"/>
+															<Input value="{CreateCustomerModel>/BodyColor}" editable="{CreateCustomerModel>/SearchFieldEditable}" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="openColorF4"/>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Gear Type" visible="false">
@@ -96,10 +125,6 @@
 															<!--<Input value="{CreateCustomerModel>/FuelType}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>-->
 														</f:fields>
 													</f:FormElement>
-												</f:formElements>
-											</f:FormContainer>
-											<f:FormContainer>
-												<f:formElements>
 													<f:FormElement label="Steering Side / Weight Kind" visible="false">
 														<f:fields>
 															<Input value="{CreateCustomerModel>/SteeringSide}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
@@ -114,8 +139,7 @@
 													</f:FormElement>
 													<f:FormElement label="MFG Year / Mielage" visible="false">
 														<f:fields>
-															<DatePicker id="DP11" value="{CreateCustomerModel>/MFGYear}" displayFormat="yyyy" valueFormat="yyyy"
-																editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+															<DatePicker id="DP11" value="{CreateCustomerModel>/MFGYear}" displayFormat="yyyy" valueFormat="yyyy" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
 															<Input placeholder="Mielage" value="{CreateCustomerModel>/mileage}" editable="{CreateCustomerModel>/SearchFieldEditable}"></Input>
 														</f:fields>
 													</f:FormElement>
@@ -145,22 +169,22 @@
 													</f:FormElement>
 													<f:FormElement label="Cubic Capacity" visible="false">
 														<f:fields>
-															<StepInput width="50%" value="{CreateCustomerModel>/CubicCapacity}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+															<StepInput width="64%" value="{CreateCustomerModel>/CubicCapacity}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Mobile No ">
 														<f:fields>
-															<Input required="true" width="50%" placeholder="Mobile No" value="{CreateCustomerModel>/MObileNo}" maxLength="9"></Input>
+															<Input required="true" placeholder="Mobile No" value="{CreateCustomerModel>/MObileNo}" maxLength="9"></Input>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Name">
 														<f:fields>
-															<Input required="false" width="50%" placeholder="Name" value="" maxLength="9"></Input>
+															<Input required="false" placeholder="Name" value="" maxLength="9"></Input>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Email ID">
 														<f:fields>
-															<Input required="false" width="50%" placeholder="Email ID" value="" maxLength="9"></Input>
+															<Input required="false" placeholder="Email ID" value="" maxLength="9"></Input>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="" visible="false">
@@ -177,7 +201,12 @@
 													</f:FormElement>
 												</f:formElements>
 											</f:FormContainer>
-											<f:FormContainer></f:FormContainer>
+											<!-- <f:FormContainer>
+												<f:formElements>
+													
+												</f:formElements>
+											</f:FormContainer>
+											<f:FormContainer></f:FormContainer> -->
 										</f:formContainers>
 									</f:Form>
 								</l:BlockLayoutCell>
@@ -189,12 +218,9 @@
 					<OverflowToolbar enabled="true" visible="true">
 						<ToolbarSpacer/>
 						<content>
-							<Button text="Create Vehicle" type="Transparent" iconFirst="true" width="auto" visible="true" iconDensityAware="false"
-								press="onPressCreateVehicle" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/GenerateReq.png'/>
-							<Button text="Reset" press="onreset" type="Transparent" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/reset.png'
-								iconFirst="true"></Button>
-							<Button text="Exit" type="Transparent" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit"
-								class="sapUiSmallMarginEnd" icon="{imageModel>/path}/image/exit.png"/>
+							<Button text="Submit" type="Transparent" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onPressCreateVehicle" class="sapUiSmallMarginEnd" icon='sap-icon://save'/>
+							<Button text="Reset" press="onreset" type="Transparent" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/reset.png' iconFirst="true"></Button>
+							<Button text="Exit" type="Transparent" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit" class="sapUiSmallMarginEnd" icon="{imageModel>/path}/image/exit.png"/>
 						</content>
 					</OverflowToolbar>
 				</footer>

@@ -22,7 +22,7 @@ sap.ui.define([
 			// this.getView().getModel("VIRGlobalModel").setProperty("/PlateNo", "");
 			this.getView().getModel("VIRGlobalModel").setProperty("/MahaFileUpdated", true);
 			this.getView().getModel("VIRGlobalModel").setProperty("/MahaFileNotUpdated", false);
-			this.getView().getModel("SearchViewModel").setProperty("/Btnenable", true);
+			//this.getView().getModel("SearchViewModel").setProperty("/Btnenable", true);
 			this.getView().getModel("SearchViewModel").setProperty("/FieldsEditable", false);
 			this.getView().getModel("SearchViewModel").setProperty("/PaybtnVisible", false);
 			this.getView().getModel("VIRGlobalModel").setProperty("/unRegplateno", "");
@@ -46,7 +46,7 @@ sap.ui.define([
 			}
 			this.getView().getModel("VIRGlobalModel").refresh();
 			this.getView().getModel("SearchViewModel").refresh();
-			this.CartFrag.close();
+            this.onBtnPressCancel();
 
 		},
         onBtnPressCancel: function () {

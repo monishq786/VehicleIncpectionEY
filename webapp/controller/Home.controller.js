@@ -1055,6 +1055,9 @@ sap.ui.define([
 			}
 		},
 
-
+		onBtnPressCustomerCreation: function () {
+			const oRouter = this.getOwnerComponent().getRouter();
+            oRouter.navTo("CreateCustomer", {}, true);
+		}
 	});
 });
