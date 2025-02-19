@@ -114,10 +114,21 @@
                                                     <List mode="None" items="{SearchViewModel>/Interiorlist}" class="sapUiTinyMarginTop cl_customlist">
                                                         <CustomListItem>
                                                             <Toolbar class="cl_toolbar1">
-                                                                <Link class="cl_link" text="{SearchViewModel>Interior}" press="handleInterirorPress" />
-                                                                <ToolbarSpacer
-                                                                />
-                                                                <Switch change="onSwitchpress" type="AcceptReject" state="{SearchViewModel>State}" class="cl_swicth" />
+                                                                <core:Icon src="sap-icon://alert" class="size2" color="#E9D502">
+                                                                    <core:layoutData>
+                                                                        <FlexItemData growFactor="1" />
+                                                                    </core:layoutData>
+                                                                </core:Icon>
+                                                                <!-- <Button icon="sap-icon://alert" press="" visible="true" /> -->
+                                                                <ToggleButton text="{SearchViewModel>Interior}" enabled="true" pressed="false" press="handleInterirorPress">
+                                                                    <layoutData>
+                                                                        <FlexItemData growFactor="2" />
+                                                                    </layoutData>
+                                                                </ToggleButton>
+                                                                <!-- <Link class="cl_link" text="{SearchViewModel>Interior}" press="handleInterirorPress" /> -->
+                                                                <ToolbarSpacer/>
+
+                                                                <!-- <Switch change="onSwitchpress" type="AcceptReject" state="{SearchViewModel>State}" class="cl_swicth" /> -->
                                                             </Toolbar>
                                                         </CustomListItem>
                                                     </List>
@@ -172,8 +183,7 @@
 
                         <!-- <Button text="Road Unworthy" enabled="{SearchViewModel>/BtnEnabled}" type="Emphasized" iconFirst="true" width="auto" class="sapUiSmallMarginEnd cl_Emphasizebtn" press="onPressSave"/>
 						<Button text="Interrupted" enabled="{SearchViewModel>/BtnEnabled}" type="Emphasized" iconFirst="true" width="auto" class="sapUiSmallMarginEnd cl_Emphasizebtn" press="onPressSave"/> -->
-                        <!--<Button text="Save" type="Emphasized" iconFirst="true" width="auto" iconDensityAware="false" press="onPressSave" class="sapUiTinyMarginEnd"-->
-                        <!-- visible="{SearchViewModel>/SavebtnVisible}"/>-->
+                        <Button text="Save" type="Emphasized" iconFirst="true" width="auto" iconDensityAware="false" press="" class="sapUiTinyMarginEnd"/>
                         <!-- <Button enabled="{SearchViewModel>/Btnenable}" text="Change Vehicle Info" type="Default" iconFirst="true" width="auto" iconDensityAware="false" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/information.png' press="onPressChange" /> -->
                         <Button enabled="{SearchViewModel>/BtnEnabled}" text="Confirm" type="Emphasized" press="onConfirmVisualTest" class="cl_Emphasizebtn sapUiSmallMarginEnd" />
                         <Button text="Clear" type="Emphasized" iconFirst="true" width="auto" class="cl_Emphasizebtn sapUiSmallMarginEnd" press="onPressclear" />

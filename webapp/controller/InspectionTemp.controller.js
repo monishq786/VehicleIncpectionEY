@@ -3,7 +3,7 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/m/MessageBox",
 	"sap/ui/model/json/JSONModel"
-], function (Controller, UIComponent, MessageBox,JSONModel) {
+], function (Controller, UIComponent, MessageBox, JSONModel) {
 	"use strict";
 
 	return Controller.extend("VIR.controller.InspectionTemp", {
@@ -11,7 +11,7 @@ sap.ui.define([
 
 			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this._oRouter.attachRouteMatched(this.handleRouteMatched, this);
-			
+
 			var Model = new JSONModel({
 				selectedValue: ""
 			});
@@ -852,11 +852,15 @@ sap.ui.define([
 			this.getView().getModel("SearchViewModel").setProperty("/Currlist", obj.Interior);
 			this.getView().getModel("SearchViewModel").refresh();
 		},
-		onExit: function () {
+		onExit1: function () {
 
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.navTo("GenerateReq", false);
 
+		},
+		onExit: function () {
+			
+			MessageBox.warning("You have not Saved Data.");
 		},
 		onPressCompretest: function () {
 			var oRouter = UIComponent.getRouterFor(this);
@@ -1092,7 +1096,7 @@ sap.ui.define([
 				this.object1 = currObj;
 
 				var oModel = this.getView().getModel("myModel");
-				oModel.setProperty("/selectedValue",this.object1.Material);
+				oModel.setProperty("/selectedValue", this.object1.Material);
 
 				// var VIStatusItems = this.getView().getModel("SearchViewModel").getProperty("/VIStatus");
 
@@ -1267,18 +1271,18 @@ sap.ui.define([
 			// if (purpose === "ESMA Test") {
 			// 	// this.getView().getModel("SearchViewModel").setProperty("/ESMABtnVisible", true);
 			// } else if (purpose === "Permit") {
-				var arrItems = this.getView().getModel("VIRGlobalModel").getProperty("/ServiceItems");
-				for (var i = 0; i < arrItems.length; i++) {
-					if (arrItems[i].ServiceName === "Change Color") {
-						this.getView().getModel("SearchViewModel").setProperty("/PermitColorEditable", true);
-					} else if (arrItems[i].ServiceName === "Change Fuel Type") {
-						this.getView().getModel("SearchViewModel").setProperty("/PermitFuelTypeEditable", true);
-					} else if (arrItems[i].ServiceName === "Change Vehicle Kind") {
-						this.getView().getModel("SearchViewModel").setProperty("/PermitVehKindEditable", true);
-					}
+			var arrItems = this.getView().getModel("VIRGlobalModel").getProperty("/ServiceItems");
+			for (var i = 0; i < arrItems.length; i++) {
+				if (arrItems[i].ServiceName === "Change Color") {
+					this.getView().getModel("SearchViewModel").setProperty("/PermitColorEditable", true);
+				} else if (arrItems[i].ServiceName === "Change Fuel Type") {
+					this.getView().getModel("SearchViewModel").setProperty("/PermitFuelTypeEditable", true);
+				} else if (arrItems[i].ServiceName === "Change Vehicle Kind") {
+					this.getView().getModel("SearchViewModel").setProperty("/PermitVehKindEditable", true);
 				}
-				this.getView().getModel("SearchViewModel").setProperty("/ChangeInfoBtnVisible", false);
-				this.getView().getModel("SearchViewModel").setProperty("/PermitBtnVisible", true);
+			}
+			this.getView().getModel("SearchViewModel").setProperty("/ChangeInfoBtnVisible", false);
+			this.getView().getModel("SearchViewModel").setProperty("/PermitBtnVisible", true);
 			// }
 
 			this.onPressAdpolice();
