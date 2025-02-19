@@ -26,8 +26,8 @@
                                         <ObjectAttribute title="Model" text="BMW X5" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
                                     </HBox>
                                     <HBox visible="true" class="sapUiSmallMarginBottom">
-                                        <ObjectStatus class="CL_successobj sapUiSmallMarginBegin" visible="{VIRGlobalModel>/MahaFileUpdated}" text="MAHA File Processed" inverted="true" active="false" icon="sap-icon://sys-enter-2" state="Success" />
-                                        <ObjectStatus class="CL_warningobj sapUiSmallMarginBegin" visible="{VIRGlobalModel>/MahaFileNotUpdated}" text="MAHA File Not Processed" inverted="true" active="true" icon="sap-icon://alert" state="Warning" press="onPressChange" />
+                                        <!-- <ObjectStatus class="CL_successobj sapUiSmallMarginBegin" visible="{VIRGlobalModel>/MahaFileUpdated}" text="MAHA File Processed" inverted="true" active="false" icon="sap-icon://sys-enter-2" state="Success" />
+                                        <ObjectStatus class="CL_warningobj sapUiSmallMarginBegin" visible="{VIRGlobalModel>/MahaFileNotUpdated}" text="MAHA File Not Processed" inverted="true" active="true" icon="sap-icon://alert" state="Warning" press="onPressChange" /> -->
 
                                         <ObjectAttribute title="SR" text="#{VIRGlobalModel>/SR}" active="true" class="cl_objAttri sapUiTinyMarginBeginEnd" />
                                     </HBox>

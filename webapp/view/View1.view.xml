@@ -405,7 +405,7 @@
 							</VBox>
 						</f:GridListItem>
 
-						<f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="" type="Active" visible="true" >
+						<f:GridListItem class="Cl_QuickLinkGridList sapUiTinyMarginBeginEnd sapUiTinyMarginTopBottom" press="navigateToList" type="Active" visible="true" >
 
 							<VBox height="auto" justifyContent="Center">
 								<layoutData>

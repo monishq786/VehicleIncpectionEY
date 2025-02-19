@@ -410,7 +410,7 @@
                         <!-- <Button text="New Permit" class="cl_Emphasizebtn" type="Emphasized" press="onpressPermit" visible="{= ${VIRGlobalModel>/Purpose} === 'Permit'? true : false}" /> -->
                         <ToolbarSpacer />
                         <!-- <Button enabled="{SearchViewModel>/Btnenable}" text="Visual Test" press="onpressVisualTest" visible="{SearchViewModel>/PrintbtnVisible}" icon="{imageModel>/path}/image/view.png" type="Transparent" iconFirst="true" /> -->
-                        <Button enabled="{SearchViewModel>/Btnenable}" text="Change Vehicle Info" press="onPressChange" visible="{SearchViewModel>/PrintbtnVisible}" icon="{imageModel>/path}/image/view.png" type="Transparent" iconFirst="true" />
+                        <Button text="Change Vehicle Info" press="onPressChange" icon="{imageModel>/path}/image/view.png" type="Transparent" iconFirst="true" />
                         <Button class="sapUiSmallMarginEnd" text="Proceed" type="Transparent" press="onPressSave" enabled="{SearchViewModel>/FieldsEditable}">
                             <customData>
                                 <BadgeCustomData key="badge" value="{VIRGlobalModel>/MyCartCount}" visible="true" />

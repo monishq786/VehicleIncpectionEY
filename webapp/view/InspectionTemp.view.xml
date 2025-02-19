@@ -1,62 +1,33 @@
-<mvc:View
-    xmlns:core="sap.ui.core"
+<mvc:View xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    controllerName="VIR.controller.InspectionTemp"
+    xmlns="sap.m" controllerName="VIR.controller.InspectionTemp"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form"
->
+    xmlns:f="sap.ui.layout.form">
     <App>
         <pages>
-            <Page
-                title="Title"
-                showHeader="false"
-                class="cl_page"
-                showFooter="true"
-            >
+            <Page title="Title" showHeader="false" class="cl_page" showFooter="true">
                 <content>
                     <l:VerticalLayout width="100%">
                         <l:BlockLayout background="Dashboard">
                             <l:BlockLayoutRow>
-                                <l:BlockLayoutCell
-                                    width='1.5'
-                                    class="Cl_VIBannerwidth"
-                                >
+                                <l:BlockLayoutCell width='1.5' class="Cl_VIBannerwidth">
                                     <VBox>
                                         <VBox>
-                                            <Text
-                                                text="Service Test"
-                                                class="cl_WelcomeText sapUiTinyMarginBegin"
-                                            />
-                                            <Text
-                                                text="#{VIRGlobalModel>/SR}"
-                                                class="cl_WelcomeText sapUiTinyMarginTop sapUiTinyMarginBegin"
-                                            />
+                                            <Text text="Service Test" class="cl_WelcomeText sapUiTinyMarginBegin" />
+                                            <Text text="#{VIRGlobalModel>/SR}" class="cl_WelcomeText sapUiTinyMarginTop sapUiTinyMarginBegin" />
                                         </VBox>
-                                        <List
-                                            items="{VIRGlobalModel>/InspItems}"
-                                            class="sapUiTinyMarginTop cl_customlist cl_standardlistitem"
-                                        >
-                                            <StandardListItem
-                                                press="onselectList"
-                                                type="Navigation"
-                                                highlight="{VIRGlobalModel>Highlight}"
-                                                class="sapUiSmallMarginTop"
-                                                title="{VIRGlobalModel>Item} {VIRGlobalModel>ServiceName}"
-                                            />
+                                        <List items="{VIRGlobalModel>/InspItems}" class="sapUiTinyMarginTop cl_customlist cl_standardlistitem">
+                                            <StandardListItem press="onselectList" type="Navigation" highlight="{VIRGlobalModel>Highlight}" class="sapUiSmallMarginTop" title="{VIRGlobalModel>Item} {VIRGlobalModel>ServiceName}" />
                                         </List>
                                         <!--<Toolbar class="cl_toolbar1">-->
                                         <!--	<ToolbarSpacer></ToolbarSpacer>-->
                                         <!--	<Button press="onpressPrevious" icon="sap-icon://close-command-field" enabled="{SearchViewModel>/PreviousEnable}"></Button>-->
-                                        <!--	<Button press="onpressNext" icon="sap-icon://open-command-field"  enabled="{SearchViewModel>/nextEnable}"></Button>-->
+                                        <!--	<Button press="onpressNext" icon="sap-icon://open-command-field" enabled="{SearchViewModel>/nextEnable}"></Button>-->
                                         <!--</Toolbar>-->
                                     </VBox>
                                 </l:BlockLayoutCell>
-                                <l:BlockLayoutCell
-                                    width='4.5'
-                                    class="Cl_VIBannerwidth"
-                                >
+                                <l:BlockLayoutCell width='4.5' class="Cl_VIBannerwidth">
                                     <VBox>
                                         <!-- <HBox>
 											<VBox alignItems="Center">
@@ -110,26 +81,13 @@
                                         <!--</Button>-->
                                         <!-- </HBox> -->
                                         <Toolbar class="cl_toolbar1">
-                                            <Text
-                                                text="Main Defect Category"
-                                                class="cl_WelcomeText"
-                                            />
+                                            <Text text="Main Defect Category" class="cl_WelcomeText" />
                                             <ToolbarSpacer />
-                                            <Text
-                                                text="{SearchViewModel>/ServiceItem} {SearchViewModel>/Servicename}"
-                                                class="cl_WelcomeText"
-                                            />
+                                            <Text text="{SearchViewModel>/ServiceItem} {SearchViewModel>/Servicename}" class="cl_WelcomeText" />
                                         </Toolbar>
-                                        <NavContainer
-                                            visible="{VIRGlobalModel>/VisualVisible}"
-                                            id="id_VInavCon"
-                                            width="98%"
-                                            height="25rem"
-                                            class="navContainerControl"
-                                        >
+                                        <NavContainer visible="{VIRGlobalModel>/VisualVisible}" id="id_VInavCon" width="98%" height="25rem" class="navContainerControl">
                                             <!-- <Page id="p1" title="" class="cl_page" showHeader="false"> -->
-                                            <!-- <l:DynamicSideContent class="sapUiDSCExplored sapUiContentPadding cl_sidecontent" sideContentFallDown="BelowM" containerQuery="true"
-													breakpointChanged="handleBreakpointChanged" showSideContent="true">
+                                            <!-- <l:DynamicSideContent class="sapUiDSCExplored sapUiContentPadding cl_sidecontent" sideContentFallDown="BelowM" containerQuery="true" breakpointChanged="handleBreakpointChanged" showSideContent="true">
 													<core:HTML id="idSvgContainer" sanitizeContent="false" afterRendering="onSvgContainerRendered"/>
 													<l:sideContent>
 														<ScrollContainer height="23rem" vertical="true" focusable="true">
@@ -151,121 +109,47 @@
 													</l:sideContent>
 												</l:DynamicSideContent>
 											</Page> -->
-                                            <Page
-                                                id="p2"
-                                                title="Main Defect Category"
-                                                class="cl_page"
-                                                showHeader="false"
-                                            >
-                                                <l:DynamicSideContent
-                                                    class="cl_rightcontent sapUiDSCExplored sapUiContentPadding"
-                                                    sideContentFallDown="BelowM"
-                                                    containerQuery="true"
-                                                    breakpointChanged="handleBreakpointChanged"
-                                                    showSideContent="true"
-                                                >
-                                                    <List
-                                                        mode="None"
-                                                        items="{SearchViewModel>/Interiorlist}"
-                                                        class="sapUiTinyMarginTop cl_customlist"
-                                                    >
+                                            <Page id="p2" title="Main Defect Category" class="cl_page" showHeader="false">
+                                                <l:DynamicSideContent class="cl_rightcontent sapUiDSCExplored sapUiContentPadding" sideContentFallDown="BelowM" containerQuery="true" breakpointChanged="handleBreakpointChanged" showSideContent="true">
+                                                    <List mode="None" items="{SearchViewModel>/Interiorlist}" class="sapUiTinyMarginTop cl_customlist">
                                                         <CustomListItem>
-                                                            <Toolbar
-                                                                class="cl_toolbar1"
-                                                            >
-                                                                <Link
-                                                                    class="cl_link"
-                                                                    text="{SearchViewModel>Interior}"
-                                                                    press="handleInterirorPress"
-                                                                />
+                                                            <Toolbar class="cl_toolbar1">
+                                                                <Link class="cl_link" text="{SearchViewModel>Interior}" press="handleInterirorPress" />
                                                                 <ToolbarSpacer
                                                                 />
-                                                                <Switch
-                                                                    change="onSwitchpress"
-                                                                    type="AcceptReject"
-                                                                    state="{SearchViewModel>State}"
-                                                                    class="cl_swicth"
-                                                                />
+                                                                <Switch change="onSwitchpress" type="AcceptReject" state="{SearchViewModel>State}" class="cl_swicth" />
                                                             </Toolbar>
                                                         </CustomListItem>
                                                     </List>
                                                     <l:sideContent>
-                                                        <ScrollContainer
-                                                            height="23rem"
-                                                            vertical="true"
-                                                            focusable="true"
-                                                        >
-                                                            <List
-                                                                mode="None"
-                                                                visible="true"
-                                                                items="{SearchViewModel>/InteriorSideList}"
-                                                                class="sapUiTinyMarginTop cl_customlist"
-                                                            >
+                                                        <ScrollContainer height="23rem" vertical="true" focusable="true">
+                                                            <List mode="None" visible="true" items="{SearchViewModel>/InteriorSideList}" class="sapUiTinyMarginTop cl_customlist">
                                                                 <CustomListItem>
-                                                                    <Toolbar
-                                                                        class="cl_toolbar1"
-                                                                    >
-                                                                        <CheckBox
-                                                                            text=""
-                                                                            selected="{SearchViewModel>Selected}"
-                                                                            select="onListSelect"
-                                                                        />
+                                                                    <Toolbar class="cl_toolbar1">
+                                                                        <CheckBox text="" selected="{SearchViewModel>Selected}" select="onListSelect" />
 
-                                                                        <VBox
-                                                                            alignContent="Center"
-                                                                            alignItems="Center"
-                                                                            justifyContent="Center"
-                                                                        >
-                                                                            <Text
-                                                                                text="{SearchViewModel>Material}"
-                                                                                class="cl_sidelisttext"
-                                                                            />
+                                                                        <VBox alignContent="Center" alignItems="Center" justifyContent="Center">
+                                                                            <Text text="{SearchViewModel>Material}" class="cl_sidelisttext" />
                                                                         </VBox>
                                                                         <ToolbarSpacer
                                                                         />
-                                                                        <Button
-                                                                            icon="sap-icon://alert"
-                                                                            press="onOpenDefects"
-                                                                            visible="{= ${SearchViewModel>Visible} === true ? true : false}"
-                                                                        />
-                                                                        <!-- <Image   width="28px" height="28px" src="{imageModel>/path}/image/dot.png"></Image> -->
+                                                                        <Button icon="sap-icon://alert" press="onOpenDefects" visible="{= ${SearchViewModel>Visible} === true ? true : false}" />
+                                                                        <!-- <Image width="28px" height="28px" src="{imageModel>/path}/image/dot.png"></Image> -->
                                                                     </Toolbar>
                                                                 </CustomListItem>
                                                             </List>
-                                                            <List
-                                                                mode="None"
-                                                                visible="false"
-                                                                items="{SearchViewModel>/LightList}"
-                                                                class="sapUiTinyMarginTop cl_customlist"
-                                                            >
+                                                            <List mode="None" visible="false" items="{SearchViewModel>/LightList}" class="sapUiTinyMarginTop cl_customlist">
                                                                 <CustomListItem>
-                                                                    <Toolbar
-                                                                        class="cl_toolbar1"
-                                                                    >
-                                                                        <CheckBox
-                                                                            text=""
-                                                                            selected="{SearchViewModel>Selected}"
-                                                                            select="onListSelect"
-                                                                        />
+                                                                    <Toolbar class="cl_toolbar1">
+                                                                        <CheckBox text="" selected="{SearchViewModel>Selected}" select="onListSelect" />
 
-                                                                        <VBox
-                                                                            alignContent="Center"
-                                                                            alignItems="Center"
-                                                                            justifyContent="Center"
-                                                                        >
-                                                                            <Text
-                                                                                text="{SearchViewModel>Material}"
-                                                                                class="cl_sidelisttext"
-                                                                            />
+                                                                        <VBox alignContent="Center" alignItems="Center" justifyContent="Center">
+                                                                            <Text text="{SearchViewModel>Material}" class="cl_sidelisttext" />
                                                                         </VBox>
                                                                         <ToolbarSpacer
                                                                         />
-                                                                        <Button
-                                                                            icon="sap-icon://alert"
-                                                                            press="onOpenDefects"
-                                                                            visible="{= ${SearchViewModel>Visible} === true ? true : false}"
-                                                                        />
-                                                                        <!-- <Image   width="28px" height="28px" src="{imageModel>/path}/image/dot.png"></Image> -->
+                                                                        <Button icon="sap-icon://alert" press="onOpenDefects" visible="{= ${SearchViewModel>Visible} === true ? true : false}" />
+                                                                        <!-- <Image width="28px" height="28px" src="{imageModel>/path}/image/dot.png"></Image> -->
                                                                     </Toolbar>
                                                                 </CustomListItem>
                                                             </List>
@@ -281,74 +165,19 @@
                     </l:VerticalLayout>
                 </content>
                 <footer class="cl_footer">
-                    <OverflowToolbar
-                        enabled="true"
-                        visible="true"
-                    >
+                    <OverflowToolbar enabled="true" visible="true">
                         <ToolbarSpacer />
-                        <Button
-                            press="onPressESMA"
-                            visible="{SearchViewModel>/ESMABtnVisible}"
-                            text="ESMA Test"
-                            type="Emphasized"
-                            width="auto"
-                            iconDensityAware="false"
-                            iconFirst="true"
-                            class="sapUiTinyMarginEnd cl_Emphasizebtn"
-                        />
-                        <Button
-                            text="Comprehensive Test"
-                            type="Emphasized"
-                            iconFirst="true"
-                            width="auto"
-                            visible="{SearchViewModel>/ComprehensivetestbtnVisible}"
-                            iconDensityAware="false"
-                            class="sapUiSmallMarginEnd cl_Emphasizebtn"
-                            press="onPressCompretest"
-                        />
+                        <Button press="onPressESMA" visible="{SearchViewModel>/ESMABtnVisible}" text="ESMA Test" type="Emphasized" width="auto" iconDensityAware="false" iconFirst="true" class="sapUiTinyMarginEnd cl_Emphasizebtn" />
+                        <Button text="Comprehensive Test" type="Emphasized" iconFirst="true" width="auto" visible="{SearchViewModel>/ComprehensivetestbtnVisible}" iconDensityAware="false" class="sapUiSmallMarginEnd cl_Emphasizebtn" press="onPressCompretest" />
 
-                        <!-- <Button text="Road Unworthy" enabled="{SearchViewModel>/BtnEnabled}" type="Emphasized" iconFirst="true" width="auto"
-							class="sapUiSmallMarginEnd cl_Emphasizebtn" press="onPressSave"/>
-						<Button text="Interrupted" enabled="{SearchViewModel>/BtnEnabled}" type="Emphasized" iconFirst="true" width="auto"
-							class="sapUiSmallMarginEnd cl_Emphasizebtn" press="onPressSave"/> -->
+                        <!-- <Button text="Road Unworthy" enabled="{SearchViewModel>/BtnEnabled}" type="Emphasized" iconFirst="true" width="auto" class="sapUiSmallMarginEnd cl_Emphasizebtn" press="onPressSave"/>
+						<Button text="Interrupted" enabled="{SearchViewModel>/BtnEnabled}" type="Emphasized" iconFirst="true" width="auto" class="sapUiSmallMarginEnd cl_Emphasizebtn" press="onPressSave"/> -->
                         <!--<Button text="Save" type="Emphasized" iconFirst="true" width="auto" iconDensityAware="false" press="onPressSave" class="sapUiTinyMarginEnd"-->
-                        <!--	visible="{SearchViewModel>/SavebtnVisible}"/>-->
-                       <Button
-                            enabled="{SearchViewModel>/Btnenable}"
-                            text="Change Vehicle Info"
-                            type="Default"
-                            iconFirst="true"
-                            width="auto"
-                            iconDensityAware="false"
-                            class="sapUiSmallMarginEnd"
-                            icon='{imageModel>/path}/image/information.png'
-                            press="onPressChange"
-                        />
-                        <Button
-                            enabled="{SearchViewModel>/BtnEnabled}"
-                            text="Confirm"
-                            type="Emphasized"
-                            press="onConfirmVisualTest"
-                            class="cl_Emphasizebtn sapUiSmallMarginEnd"
-                        />
-                        <Button
-                            text="Clear"
-                            type="Emphasized"
-                            iconFirst="true"
-                            width="auto"
-                            class="cl_Emphasizebtn sapUiSmallMarginEnd"
-                            press="onPressclear"
-                        />
-                        <Button
-                            text="Exit"
-                            type="Emphasized"
-                            iconFirst="true"
-                            width="auto"
-                            visible="true"
-                            iconDensityAware="false"
-                            press="onExit"
-                            class="sapUiSmallMarginEnd cl_Emphasizebtn"
-                        />
+                        <!-- visible="{SearchViewModel>/SavebtnVisible}"/>-->
+                        <!-- <Button enabled="{SearchViewModel>/Btnenable}" text="Change Vehicle Info" type="Default" iconFirst="true" width="auto" iconDensityAware="false" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/information.png' press="onPressChange" /> -->
+                        <Button enabled="{SearchViewModel>/BtnEnabled}" text="Confirm" type="Emphasized" press="onConfirmVisualTest" class="cl_Emphasizebtn sapUiSmallMarginEnd" />
+                        <Button text="Clear" type="Emphasized" iconFirst="true" width="auto" class="cl_Emphasizebtn sapUiSmallMarginEnd" press="onPressclear" />
+                        <Button text="Exit" type="Emphasized" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit" class="sapUiSmallMarginEnd cl_Emphasizebtn" />
                     </OverflowToolbar>
                 </footer>
             </Page>

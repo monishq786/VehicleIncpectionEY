@@ -236,6 +236,15 @@
                     "target": [
                         "PaymentIntegration"
                     ]
+                },
+                {
+                    "name": "List",
+                    "pattern": "List",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "List"
+                    ]
                 }
             ],
             "targets": {
@@ -243,6 +252,12 @@
                     "viewType": "XML",
                     "viewName": "View1",
                     "clearControlAggregation": false
+                },
+                "List": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "List"
                 },
                 "PaymentIntegration": {
                     "viewType": "XML",

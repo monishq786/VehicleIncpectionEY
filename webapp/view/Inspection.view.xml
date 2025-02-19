@@ -22,7 +22,7 @@
                                             <StandardListItem press="onselectList" type="Navigation" highlight="{VIRGlobalModel>Highlight}" class="sapUiSmallMarginTop" title="{VIRGlobalModel>Item} {VIRGlobalModel>ServiceName}" />
                                         </List>
 
-                                        
+
                                     </VBox>
                                 </l:BlockLayoutCell>
                                 <l:BlockLayoutCell width='4.5' class="Cl_VIBannerwidth">
@@ -71,7 +71,7 @@
                                                     </f:GridListItem> -->
 
                                                     <f:GridListItem press="onPress1" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" visible="true" class="Cl_GridListItems sapUiTinyMarginBeginEnd">
-                                                            <VBox height="auto" justifyContent="SpaceBetween">
+                                                        <VBox height="auto" justifyContent="SpaceBetween">
                                                             <VBox class="sapUiTinyMargin">
                                                                 <HBox alignContent="Start" justifyContent="SpaceBetween">
                                                                     <HBox>
@@ -103,8 +103,8 @@
                                                             </VBox>
                                                         </VBox>
                                                     </f:GridListItem>
-                                                     <f:GridListItem press="onPress2" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" visible="true" class="Cl_GridListItems sapUiTinyMarginBeginEnd">
-                                                            <VBox height="auto" justifyContent="SpaceBetween">
+                                                    <f:GridListItem press="onPress2" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" visible="true" class="Cl_GridListItems sapUiTinyMarginBeginEnd">
+                                                        <VBox height="auto" justifyContent="SpaceBetween">
                                                             <VBox class="sapUiTinyMargin">
                                                                 <HBox alignContent="Start" justifyContent="SpaceBetween">
                                                                     <HBox>
@@ -118,7 +118,7 @@
                                                     </f:GridListItem>
                                                 </f:GridList>
 
-                                               
+
                                             </Page>
 
                                             <Page showNavButton="true" navButtonPress="navtopt2" id="pt3" title="{SearchViewModel>/ServiceItem} {SearchViewModel>/Servicename} - Status and Location of Defect" class="cl_page" showFooter="false">
@@ -291,7 +291,7 @@
 
                                                                                 <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
                                                                                     <VBox >
-                                                                                        <VBox  class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                        <VBox class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
                                                                                             <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
                                                                                                 <HBox>
                                                                                                     <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />
@@ -312,7 +312,7 @@
 
                                                                                 <f:GridListItem press="onPressLocation" type="Active" highlight="{parts:['SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionRemove'}" class="sapUiTinyMarginBeginEnd cl_Materialgridlist2">
                                                                                     <VBox >
-                                                                                        <VBox  class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
+                                                                                        <VBox class="sapUiTinyMargin" alignItems="Center" justifyContent="Center" alignContent="Center">
                                                                                             <VBox alignItems="Center" justifyContent="Center" alignContent="Center">
                                                                                                 <HBox>
                                                                                                     <Label text="{parts:['SearchViewModel>Location' , 'SearchViewModel>Highlight'],formatter:'VIR.model.formatter.MaterialSelectionText'}" class="cl_blueTXT sapUiSmallMarginEnd" wrapping="true" />

@@ -932,6 +932,11 @@ sap.ui.define([
 
 		},
 
+		navigateToList:function(){
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("VIR.controller.List", true);
+		}
+
 
 	});
 });
