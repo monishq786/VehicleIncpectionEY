@@ -1288,7 +1288,7 @@ sap.ui.define([
 			this.onPressAdpolice();
 		},
 		onCloseChangeinfof4: function () {
-			this.ChangeinfoFrag.close();
+			this.VIStatusFrag.close();
 		},
 
 	});

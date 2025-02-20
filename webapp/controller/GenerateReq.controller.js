@@ -130,7 +130,7 @@ sap.ui.define([
 				"SavebtnVisible": true,
 				"PaybtnVisible": false,
 				"PrintbtnVisible": false,
-				"TraffictestbtnVisible": false,
+				"TraffictestbtnVisible": true,
 				"ComprehensivetestbtnVisible": false,
 				"IDTypes": [{
 					"Type": "Emirates ID"

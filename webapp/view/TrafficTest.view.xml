@@ -1,4 +1,6 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="VIR.controller.TrafficTest"
+<mvc:View xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="VIR.controller.TrafficTest"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
@@ -57,14 +59,14 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text class="cl_traffictexttxt"  text="تاريخ الاختبار"></Text>
+								<Text class="cl_traffictexttxt" text="تاريخ الاختبار"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Vehicle Test"  class="cl_traffictexttxt"></Text>
+								<Text text="Vehicle Test" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -74,7 +76,7 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="اختبار المركبة"></Text>
+								<Text class="cl_traffictexttxt" text="اختبار المركبة"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
@@ -86,7 +88,7 @@
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Request No"  class="cl_traffictexttxt"></Text>
+								<Text text="Request No" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -103,7 +105,7 @@
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Plate Info"  class="cl_traffictexttxt"></Text>
+								<Text text="Plate Info" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -113,14 +115,14 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="رقم الطلب"></Text>
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Chassis No"  class="cl_traffictexttxt"></Text>
+								<Text text="Chassis No" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -130,14 +132,14 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="رقم الطلب"></Text>
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Engine No"  class="cl_traffictexttxt"></Text>
+								<Text text="Engine No" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -147,14 +149,14 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="رقم الطلب"></Text>
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Country"  class="cl_traffictexttxt"></Text>
+								<Text text="Country" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -164,14 +166,14 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="رقم الطلب"></Text>
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Manufacturer"  class="cl_traffictexttxt"></Text>
+								<Text text="Manufacturer" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -181,14 +183,14 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="رقم الطلب"></Text>
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Kind"  class="cl_traffictexttxt"></Text>
+								<Text text="Kind" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -198,14 +200,14 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="رقم الطلب"></Text>
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Body Color"  class="cl_traffictexttxt"></Text>
+								<Text text="Body Color" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -215,14 +217,14 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="رقم الطلب"></Text>
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Mfg Year"  class="cl_traffictexttxt"></Text>
+								<Text text="Mfg Year" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -232,14 +234,14 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="رقم الطلب"></Text>
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
 					<HBox class="sapUiTinyMarginTop sapUiLargeMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
-								<Text text="Test Purpose"  class="cl_traffictexttxt"></Text>
+								<Text text="Test Purpose" class="cl_traffictexttxt"></Text>
 							</FlexBox>
 						</VBox>
 						<VBox width="33.33%">
@@ -249,7 +251,7 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text  class="cl_traffictexttxt" text="رقم الطلب"></Text>
+								<Text class="cl_traffictexttxt" text="رقم الطلب"></Text>
 							</FlexBox>
 						</VBox>
 					</HBox>
@@ -268,8 +270,7 @@
 						<Text class="cl_HeadingTooltext2" text="Requirements to inspect the vehicle in the LANE متطلبات فحص السيارة في الطريق"></Text>
 						<ToolbarSpacer></ToolbarSpacer>
 					</Toolbar>
-					<Table width="auto" items="{Traffictestmodel>/Body}" noDataText="No Data" fixedLayout="true" visible="true" growing="true"
-						growingThreshold="100" growingScrollToLoad="false" class="sapUiTinyMargin cl_table" alternateRowColors="false" popinLayout="GridSmall">
+					<Table width="auto" items="{Traffictestmodel>/Body}" noDataText="No Data" fixedLayout="true" visible="true" growing="true" growingThreshold="100" growingScrollToLoad="false" class="sapUiTinyMargin cl_table" alternateRowColors="false" popinLayout="GridSmall">
 						<columns>
 							<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
 								<header>
@@ -319,9 +320,7 @@
 							</ColumnListItem>
 						</items>
 					</Table>
-					<Table width="auto" items="{Traffictestmodel>/Engine}" noDataText="No Data" fixedLayout="true" visible="true" growing="true"
-						growingThreshold="100" growingScrollToLoad="false" class="sapUiTinyMargin cl_table sapUiTinyMarginTop" alternateRowColors="false"
-						popinLayout="GridSmall">
+					<Table width="auto" items="{Traffictestmodel>/Engine}" noDataText="No Data" fixedLayout="true" visible="true" growing="true" growingThreshold="100" growingScrollToLoad="false" class="sapUiTinyMargin cl_table sapUiTinyMarginTop" alternateRowColors="false" popinLayout="GridSmall">
 						<columns>
 							<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
 								<header>
@@ -371,9 +370,7 @@
 							</ColumnListItem>
 						</items>
 					</Table>
-					<Table width="auto" items="{Traffictestmodel>/Tyres}" noDataText="No Data" fixedLayout="true" visible="true" growing="true"
-						growingThreshold="100" growingScrollToLoad="false" class="sapUiTinyMargin cl_table sapUiTinyMarginTop" alternateRowColors="false"
-						popinLayout="GridSmall">
+					<Table width="auto" items="{Traffictestmodel>/Tyres}" noDataText="No Data" fixedLayout="true" visible="true" growing="true" growingThreshold="100" growingScrollToLoad="false" class="sapUiTinyMargin cl_table sapUiTinyMarginTop" alternateRowColors="false" popinLayout="GridSmall">
 						<columns>
 							<Column width="auto" hAlign="Begin" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" mergeDuplicates="false">
 								<header>
@@ -419,7 +416,7 @@
 							</ColumnListItem>
 						</items>
 					</Table>
-					<HBox class="sapUiSmallMarginTop sapUiMediumMarginBeginEnd" height="3rem">
+					<!-- <HBox class="sapUiSmallMarginTop sapUiMediumMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
 								<Text text="Inspection Result" class="cl_traffictexttxt"></Text>
@@ -435,8 +432,8 @@
 								<Text class="cl_traffictexttxt" text="تفتيش النتيجة"></Text>
 							</FlexBox>
 						</VBox>
-					</HBox>
-					<HBox class="sapUiTinyMarginTop sapUiMediumMarginBeginEnd" height="3rem">
+					</HBox> -->
+					<!-- <HBox class="sapUiTinyMarginTop sapUiMediumMarginBeginEnd" height="3rem">
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
 								<Text text="Inspector No" class="cl_traffictexttxt"></Text>
@@ -449,10 +446,10 @@
 						</VBox>
 						<VBox width="33.33%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="End">
-								<Text class="cl_traffictexttxt"  text="رقم المفتش"></Text>
+								<Text class="cl_traffictexttxt" text="رقم المفتش"></Text>
 							</FlexBox>
 						</VBox>
-					</HBox>
+					</HBox> -->
 					<HBox class="sapUiTinyMarginTop sapUiMediumMarginBeginEnd" height="3rem">
 						<VBox width="15%">
 							<FlexBox height="100px" alignItems="Start" justifyContent="Start">
@@ -476,11 +473,9 @@
 						<Text class="cl_HeadingTooltext2" text="البنود و الظروف"></Text>
 					</Toolbar>
 					<Toolbar class="sapUiTinyMarginBeginEnd cl_toolbar3">
-						<Text class="cl_HeadingTooltext2"
-							text="1 - ADNOC Distribution is not responsible for any vehicle malfunction that occurs in the vehicle during &amp; after the completion of the vehicle test"></Text>
+						<Text class="cl_HeadingTooltext2" text="1 - ADNOC Distribution is not responsible for any vehicle malfunction that occurs in the vehicle during &amp; after the completion of the vehicle test"></Text>
 						<ToolbarSpacer></ToolbarSpacer>
-						<Text class="cl_HeadingTooltext2"
-							text="1 - شركة أدنوك للتوزيع ليست مسؤولة عن أي شيء عطل في السيارة يحدث في السيارة أثناء بعد الانتهاء من اختبار المركبة"></Text>
+						<Text class="cl_HeadingTooltext2" text="1 - شركة أدنوك للتوزيع ليست مسؤولة عن أي شيء عطل في السيارة يحدث في السيارة أثناء بعد الانتهاء من اختبار المركبة"></Text>
 					</Toolbar>
 					<Toolbar class="sapUiTinyMarginBeginEnd cl_toolbar2">
 						<Text class="cl_HeadingTooltext2" text="2 - This test is not intended for registration or renew"></Text>
@@ -512,14 +507,12 @@
 					<OverflowToolbar enabled="true" visible="true">
 						<ToolbarSpacer/>
 						<content>
-							<!--<Button text="Submit" icon="{imageModel>/path}/image/submit.png" type="Transparent" iconFirst="true" width="auto" press="onSubmit"/>-->
-							<Button text="Upload Files" icon="{imageModel>/path}/image/upload.png" type="Transparent" iconFirst="true" width="auto"
-								press="onPressSaveCustomer"/>
+							<Button text="Save"  type="Emphasized" iconFirst="true" width="auto" press=""/>
+							<Button text="Upload Files" icon="{imageModel>/path}/image/upload.png" type="Transparent" iconFirst="true" width="auto" press="onPressSaveCustomer"/>
 							<Button text="View Uploaded Files" icon="{imageModel>/path}/image/view.png" type="Transparent" iconFirst="true"></Button>
 							<Button press="onPressApprove" text="Approve" type="Transparent" iconFirst="true" icon="{imageModel>/path}/image/approve.png"></Button>
 							<Button text="Print" visible="{Traffictestmodel>/PrintbtnVisible}" type="Default" iconFirst="true" icon='{imageModel>/path}/image/print.png'/>
-							<Button text="Exit" type="Emphasized" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit"
-								class="sapUiSmallMarginEnd cl_Emphasizebtn" />
+							<Button text="Exit" type="Emphasized" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit" class="sapUiSmallMarginEnd cl_Emphasizebtn" />
 						</content>
 					</OverflowToolbar>
 				</footer>

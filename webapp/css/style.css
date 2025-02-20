@@ -392,7 +392,7 @@ tr[data-mydata="X"] {
 
 .cl_bordergridlist {
     background-color: white;
-    border: 2px solid #00C000 !important;
+    border: 2px solid #068006bd !important;
     border-radius: 4px !important;
     height: 3.5rem !important;
 }
@@ -1668,4 +1668,8 @@ border-bottom:none !important
     gap: 5px;                 /* Spacing between input boxes */
     display: flex;
     flex-wrap: wrap;          /* Wrap inputs if screen size is small */
+}
+
+.sapMLIB.sapMLIBActive{
+    background: none !important;
 }
