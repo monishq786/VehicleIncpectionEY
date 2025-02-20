@@ -11,10 +11,10 @@
 					<l:VerticalLayout width="100%">
 						<l:BlockLayout background="Dashboard">
 							<l:BlockLayoutRow accentCells="Accent1">
-								<l:BlockLayoutCell width="3" title="Create Vehicle &amp; Customer" class="cl_createCustomerBlkContent">
-									<f:Form editable="true" width="70%">
+								<l:BlockLayoutCell width="5" title="Create Vehicle &amp; Customer" class="Cl_BlockLayoutCustomerScreen cl_createCustomerBlkContent">
+									<f:Form editable="true" class="cl_formlabel">
 										<f:layout>
-											<f:ResponsiveGridLayout singleContainerFullSize="true"/>
+											<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="2" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
 										</f:layout>
 										<f:formContainers>
 											<f:FormContainer>
@@ -27,7 +27,7 @@
 													</f:FormElement>
 													<f:FormElement label="Chassis No">
 														<f:fields>
-															<!-- <HBox alignItems="Start" class="chassisInputContainer">
+															<HBox alignItems="Start" class="chassisInputContainer">
 																<Input id="input1" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="input2" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="input3" class="smallInput" maxLength="1" liveChange="" />
@@ -42,17 +42,14 @@
 																<Input id="input12" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="input13" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="input14" class="smallInput" maxLength="1" liveChange="" />
-																<Input id="input15" class="smallInput" maxLength="1" liveChange="" />
-																<Input id="input16" class="smallInput" maxLength="1" liveChange="" />
-																<Input id="input17" class="smallInput" maxLength="1" liveChange="" />
-															</HBox> -->
+															</HBox>
 
-															<Input required="true" maxLength="14" value="{CreateCustomerModel>/Chassisno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+															<!-- <Input required="true" maxLength="14" value="{CreateCustomerModel>/Chassisno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/> -->
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Engine No">
 														<f:fields>
-															<!-- <HBox alignItems="Start" justifyContent="Start" class="chassisInputContainer">
+														<HBox alignItems="Start" justifyContent="Start" class="chassisInputContainer">
 																<Input id="En1" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En2" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En3" class="smallInput" maxLength="1" liveChange="" />
@@ -63,8 +60,8 @@
 																<Input id="En8" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En9" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En10" class="smallInput" maxLength="1" liveChange="" />
-															</HBox> -->
-															<Input required="true" maxLength="14" value="{CreateCustomerModel>/Engineno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
+															</HBox>
+															<!-- <Input required="true" maxLength="14" value="{CreateCustomerModel>/Engineno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/> -->
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Emirates">
@@ -127,6 +124,10 @@
 															<!--<Input value="{CreateCustomerModel>/FuelType}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>-->
 														</f:fields>
 													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+											<f:FormContainer>
+												<f:formElements>
 													<f:FormElement label="Steering Side / Weight Kind" visible="false">
 														<f:fields>
 															<Input value="{CreateCustomerModel>/SteeringSide}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
@@ -171,7 +172,7 @@
 													</f:FormElement>
 													<f:FormElement label="Cubic Capacity" visible="false">
 														<f:fields>
-															<StepInput width="64%" value="{CreateCustomerModel>/CubicCapacity}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
+															<StepInput width="50%" value="{CreateCustomerModel>/CubicCapacity}" editable="{CreateCustomerModel>/SearchFieldEditable}"></StepInput>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Mobile No ">
@@ -203,12 +204,7 @@
 													</f:FormElement>
 												</f:formElements>
 											</f:FormContainer>
-											<!-- <f:FormContainer>
-												<f:formElements>
-													
-												</f:formElements>
-											</f:FormContainer>
-											<f:FormContainer></f:FormContainer> -->
+											<f:FormContainer></f:FormContainer>
 										</f:formContainers>
 									</f:Form>
 								</l:BlockLayoutCell>
@@ -220,7 +216,7 @@
 					<OverflowToolbar enabled="true" visible="true">
 						<ToolbarSpacer/>
 						<content>
-							<Button text="Submit" type="Transparent" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onPressCreateVehicle" class="sapUiSmallMarginEnd" icon='sap-icon://save'/>
+							<Button text="Create Vehicle" type="Transparent" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onPressCreateVehicle" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/GenerateReq.png'/>
 							<Button text="Reset" press="onreset" type="Transparent" class="sapUiSmallMarginEnd" icon='{imageModel>/path}/image/reset.png' iconFirst="true"></Button>
 							<Button text="Exit" type="Transparent" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="onExit" class="sapUiSmallMarginEnd" icon="{imageModel>/path}/image/exit.png"/>
 						</content>

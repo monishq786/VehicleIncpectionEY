@@ -457,7 +457,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-
+                    "group":"Most Frequent Fresh Tests"
 				}, {
 					"Material": "2700000057",
 					"ServiceName": "Re-New - Fresh Test",
@@ -473,6 +473,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Others Tests"
 
 				}, {
 					"Material": "2700000058",
@@ -489,6 +490,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Others Tests"
 
 				}, {
 					"Material": "2700000059",
@@ -505,6 +507,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Others Tests"
 
 				}, {
 					"Material": "2700000060",
@@ -521,6 +524,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Most Frequent Fresh Tests"
 
 				}, {
 					"Material": "2700000061",
@@ -537,6 +541,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Most Frequent Fresh Tests"
 
 				}, {
 					"Material": "2700000062",
@@ -553,6 +558,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Most Frequent Fresh Tests"
 
 				}, {
 					"Material": "2700000068",
@@ -569,6 +575,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Most Frequent Fresh Tests"
 
 				}, {
 					"Material": "2700000091",
@@ -585,6 +592,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Most Frequent Fresh Tests"
 
 
 				}, {
@@ -602,6 +610,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Most Frequent Fresh Tests"
 
 				}, {
 					"Material": "2700000065",
@@ -618,6 +627,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Most Frequent Fresh Tests"
 
 				}, {
 					"Material": "2700000066",
@@ -634,6 +644,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Others Tests"
 
 				}, {
 					"Material": "2700000067",
@@ -650,6 +661,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
+					"group":"Others Tests"
 
 				}, {
 					"Material": "2700000068",
@@ -665,7 +677,8 @@ sap.ui.define([
 					"Highlight": "None",
 					"Type": "Active",
 					"MahaIn": "",
-					"MahaOut": ""
+					"MahaOut": "",
+					"group":"Others Tests"
 				}, {
 					"Material": "2700000069",
 					"ServiceName": "Change Info - Fresh Test",
@@ -680,7 +693,8 @@ sap.ui.define([
 					"Highlight": "None",
 					"Type": "Active",
 					"MahaIn": "",
-					"MahaOut": ""
+					"MahaOut": "",
+					"group":"Others Tests"
 				}, {
 					"Material": "270000070",
 					"ServiceName": "Install Plate Sport Number - Fresh Test",
@@ -695,7 +709,8 @@ sap.ui.define([
 					"Highlight": "None",
 					"Type": "Active",
 					"MahaIn": "",
-					"MahaOut": ""
+					"MahaOut": "",
+					"group":"Others Tests"
 				}, {
 					"Material": "270000071",
 					"ServiceName": "Trailer & Semi-Trailer Test - Fresh Test",
@@ -710,7 +725,8 @@ sap.ui.define([
 					"Highlight": "None",
 					"Type": "Active",
 					"MahaIn": "",
-					"MahaOut": ""
+					"MahaOut": "",
+					"group":"Others Tests"
 				}, {
 					"Material": "270000073",
 					"ServiceName": "Traffic Test - Fresh Test",
@@ -725,8 +741,10 @@ sap.ui.define([
 					"Highlight": "None",
 					"Type": "Active",
 					"MahaIn": "",
-					"MahaOut": ""
-				}, {
+					"MahaOut": "",
+					"group":"Others Tests"
+				}, 
+				{
 					"Material": "270000075",
 					"ServiceName": "Engine Change Test-Out Center  - Fresh Test",
 					"ArabicText": "اختبار ملصقات الإعلانات - اختبار جديد",
@@ -740,97 +758,8 @@ sap.ui.define([
 					"Highlight": "None",
 					"Type": "Active",
 					"MahaIn": "",
-					"MahaOut": ""
-				}, {
-					"Material": "270000076",
-					"ServiceName": "Advertisement Stickers Test-Out Center  - Fresh Test",
-					"ArabicText": "اختبار ملصقات الإعلانات - اختبار جديد",
-					"Price": "125",
-					"VATPer": "5",
-					"VAT": "8.25",
-					"Stock": "25",
-					"QtyInd": "",
-					"TotalAmount": "173.25",
-					"Maha": "X",
-					"Highlight": "None",
-					"Type": "Active",
-					"MahaIn": "",
-					"MahaOut": ""
-				}, {
-					"Material": "270000078",
-					"ServiceName": "Colour change Test-Out Center  - Fresh Test",
-					"ArabicText": "اختبار ملصقات الإعلانات - اختبار جديد",
-					"Price": "115",
-					"VATPer": "5",
-					"VAT": "8.25",
-					"Stock": "25",
-					"QtyInd": "",
-					"TotalAmount": "173.25",
-					"Maha": "X",
-					"Highlight": "None",
-					"Type": "Active",
-					"MahaIn": "",
-					"MahaOut": ""
-				}, {
-					"Material": "270000079",
-					"ServiceName": "Change Info-Out Center  - Fresh Test",
-					"ArabicText": "اختبار ملصقات الإعلانات - اختبار جديد",
-					"Price": "105",
-					"VATPer": "5",
-					"VAT": "8.25",
-					"Stock": "25",
-					"QtyInd": "",
-					"TotalAmount": "173.25",
-					"Maha": "X",
-					"Highlight": "None",
-					"Type": "Active",
-					"MahaIn": "",
-					"MahaOut": ""
-				}, {
-					"Material": "270000080",
-					"ServiceName": "Install Plate Sport Number-Out Center  - Fresh Test",
-					"ArabicText": "اختبار ملصقات الإعلانات - اختبار جديد",
-					"Price": "80",
-					"VATPer": "5",
-					"VAT": "8.25",
-					"Stock": "25",
-					"QtyInd": "",
-					"TotalAmount": "173.25",
-					"Maha": "X",
-					"Highlight": "None",
-					"Type": "Active",
-					"MahaIn": "",
-					"MahaOut": ""
-				}, {
-					"Material": "270000088",
-					"ServiceName": "Comprehensive Test - Fresh Test",
-					"ArabicText": "اختبار ملصقات الإعلانات - اختبار جديد",
-					"Price": "590",
-					"VATPer": "5",
-					"VAT": "8.25",
-					"Stock": "25",
-					"QtyInd": "",
-					"TotalAmount": "173.25",
-					"Maha": "X",
-					"Highlight": "None",
-					"Type": "Active",
-					"MahaIn": "",
-					"MahaOut": ""
-				}, {
-					"Material": "270000100",
-					"ServiceName": "Re-New-Premium service  - Fresh Test",
-					"ArabicText": "اختبار ملصقات الإعلانات - اختبار جديد",
-					"Price": "600",
-					"VATPer": "5",
-					"VAT": "8.25",
-					"Stock": "25",
-					"QtyInd": "",
-					"TotalAmount": "173.25",
-					"Maha": "X",
-					"Highlight": "None",
-					"Type": "Active",
-					"MahaIn": "",
-					"MahaOut": ""
+					"MahaOut": "",
+					"group":"Others Tests"
 				}],
 				"Permit": [{
 					"Material": "2700000120",

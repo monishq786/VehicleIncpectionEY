@@ -19,9 +19,9 @@
                         <ToolbarSpacer />
                     </Toolbar>
 
-                    <IconTabBar id="id_OpenServiceReq" backgroundDesign="Translucent" selectedKey="VehicleTest" class="cl_icontabbar">
+                    <IconTabBar id="id_OpenServiceReq" backgroundDesign="Transparent" selectedKey="VehicleTest" class="cl_icontabbar">
                         <items>
-                            <IconTabFilter text="Standard Lane" key="VehicleTest">
+                            <IconTabFilter text="Standard Lane" key="VehicleTest" class="cl_WelcomeText">
                                 <l:VerticalLayout width="100%">
                                     <l:BlockLayout background="Dashboard">
                                         <l:BlockLayoutRow accentCells="Accent1">

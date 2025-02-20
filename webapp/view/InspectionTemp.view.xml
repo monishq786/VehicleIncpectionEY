@@ -3,7 +3,8 @@
     xmlns="sap.m" controllerName="VIR.controller.InspectionTemp"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form">
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:f="sap.f">
     <App>
         <pages>
             <Page title="Title" showHeader="false" class="cl_page" showFooter="true">
@@ -111,23 +112,41 @@
 											</Page> -->
                                             <Page id="p2" title="Main Defect Category" class="cl_page" showHeader="false">
                                                 <l:DynamicSideContent class="cl_rightcontent sapUiDSCExplored sapUiContentPadding" sideContentFallDown="BelowM" containerQuery="true" breakpointChanged="handleBreakpointChanged" showSideContent="true">
+                                                    <!-- <f:GridList id="idgridVT" items="{SearchViewModel>/Interiorlist}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
+                                                        <f:customLayout>
+                                                            <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))" gridGap="0.5rem" />
+                                                        </f:customLayout>
+                                                        <f:GridListItem type="Active" press="handleInterirorPress" class="sapUiTinyMarginBegin">
+                                                            <FlexBox class="sapUiTinyMargin">
+                                                                <Text text="{SearchViewModel>Interior}" wrapping="true" style="width: auto; white-space: nowrap;"/>
+                                                            </FlexBox>
+                                                        </f:GridListItem>
+                                                    </f:GridList> -->
+
+                                                    <!-- <FlexBox wrap="Wrap" justifyContent="Start" alignItems="Center" class="sapUiSmallMargin">
+                                                        <f:Card id="dynamicCard" class="sapUiSmallMargin">
+                                                            <Text text="{SearchViewModel>Interior}" wrapping="true" width="auto" />
+                                                        </f:Card>
+                                                    </FlexBox> -->
+   
+
                                                     <List mode="None" items="{SearchViewModel>/Interiorlist}" class="sapUiTinyMarginTop cl_customlist">
                                                         <CustomListItem>
+
                                                             <Toolbar class="cl_toolbar1">
-                                                                <!-- <Button icon="sap-icon://alert" press="onOpenDefects" visible="{= ${SearchViewModel>Visible} === true ? true : false}" /> -->
-                                                                <ToggleButton text="{SearchViewModel>Interior}" enabled="true" pressed="false" press="handleInterirorPress">
-                                                                    <layoutData>
-                                                                        <FlexItemData growFactor="2" />
-                                                                    </layoutData>
-                                                                </ToggleButton>
-                                                                <!-- <Link class="cl_link" text="{SearchViewModel>Interior}" press="handleInterirorPress" /> -->
+                                                                <HBox>
+                                                                    <ToggleButton text="{SearchViewModel>Interior}" enabled="true" pressed="false" press="handleInterirorPress" width="auto">
+                                                                    </ToggleButton>
+                                                                </HBox>
                                                                 <ToolbarSpacer/>
 
-                                                                <!-- <Switch change="onSwitchpress" type="AcceptReject" state="{SearchViewModel>State}" class="cl_swicth" /> -->
                                                             </Toolbar>
+
+
                                                         </CustomListItem>
                                                     </List>
                                                     <l:sideContent>
+
                                                         <ScrollContainer height="23rem" vertical="true" focusable="true">
                                                             <List mode="None" visible="true" items="{SearchViewModel>/InteriorSideList}" class="sapUiTinyMarginTop cl_customlist">
                                                                 <CustomListItem>
@@ -154,7 +173,7 @@
                                                                         </VBox>
                                                                         <ToolbarSpacer
                                                                         />
-                                                                        
+
                                                                         <!-- <Image width="28px" height="28px" src="{imageModel>/path}/image/dot.png"></Image> -->
                                                                     </Toolbar>
                                                                 </CustomListItem>
