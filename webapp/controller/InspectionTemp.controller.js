@@ -1291,6 +1291,22 @@ sap.ui.define([
 			this.VIStatusFrag.close();
 		},
 
+		obBtnPressSummry: function (oEvent) {
+			var oButton = oEvent.getSource();
+			if (!this.StatusPopover) {
+				Fragment.load({
+					name: "VIR.fragment.Summry",
+					controller: this
+				}).then(function (oPopover) {
+					this.StatusPopover = oPopover;
+					this.getView().addDependent(this.StatusPopover);
+					this.StatusPopover.openBy(oButton);
+				}.bind(this));
+			} else {
+				this.StatusPopover.openBy(oButton);
+			}
+		}
+
 	});
 
 });

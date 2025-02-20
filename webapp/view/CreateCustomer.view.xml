@@ -11,8 +11,8 @@
 					<l:VerticalLayout width="100%">
 						<l:BlockLayout background="Dashboard">
 							<l:BlockLayoutRow accentCells="Accent1">
-								<l:BlockLayoutCell width="2" title="Create Vehicle &amp; Customer" class="cl_createCustomerBlkContent">
-									<f:Form editable="true">
+								<l:BlockLayoutCell width="3" title="Create Vehicle &amp; Customer" class="cl_createCustomerBlkContent">
+									<f:Form editable="true" width="70%">
 										<f:layout>
 											<f:ResponsiveGridLayout singleContainerFullSize="true"/>
 										</f:layout>
@@ -27,7 +27,7 @@
 													</f:FormElement>
 													<f:FormElement label="Chassis No">
 														<f:fields>
-															<HBox alignItems="Start" class="chassisInputContainer">
+															<!-- <HBox alignItems="Start" class="chassisInputContainer">
 																<Input id="input1" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="input2" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="input3" class="smallInput" maxLength="1" liveChange="" />
@@ -43,14 +43,16 @@
 																<Input id="input13" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="input14" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="input15" class="smallInput" maxLength="1" liveChange="" />
-															</HBox>
+																<Input id="input16" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="input17" class="smallInput" maxLength="1" liveChange="" />
+															</HBox> -->
 
-															<!-- <Input required="true" maxLength="14" value="{CreateCustomerModel>/Chassisno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/> -->
+															<Input required="true" maxLength="14" value="{CreateCustomerModel>/Chassisno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Engine No">
 														<f:fields>
-															<HBox alignItems="Start" justifyContent="Start" class="chassisInputContainer">
+															<!-- <HBox alignItems="Start" justifyContent="Start" class="chassisInputContainer">
 																<Input id="En1" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En2" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En3" class="smallInput" maxLength="1" liveChange="" />
@@ -61,8 +63,8 @@
 																<Input id="En8" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En9" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En10" class="smallInput" maxLength="1" liveChange="" />
-															</HBox>
-															<!-- <Input required="true" maxLength="14" value="{CreateCustomerModel>/Engineno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/> -->
+															</HBox> -->
+															<Input required="true" maxLength="14" value="{CreateCustomerModel>/Engineno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/>
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Emirates">

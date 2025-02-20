@@ -114,12 +114,7 @@
                                                     <List mode="None" items="{SearchViewModel>/Interiorlist}" class="sapUiTinyMarginTop cl_customlist">
                                                         <CustomListItem>
                                                             <Toolbar class="cl_toolbar1">
-                                                                <core:Icon src="sap-icon://alert" class="size2" color="#E9D502">
-                                                                    <core:layoutData>
-                                                                        <FlexItemData growFactor="1" />
-                                                                    </core:layoutData>
-                                                                </core:Icon>
-                                                                <!-- <Button icon="sap-icon://alert" press="" visible="true" /> -->
+                                                                <!-- <Button icon="sap-icon://alert" press="onOpenDefects" visible="{= ${SearchViewModel>Visible} === true ? true : false}" /> -->
                                                                 <ToggleButton text="{SearchViewModel>Interior}" enabled="true" pressed="false" press="handleInterirorPress">
                                                                     <layoutData>
                                                                         <FlexItemData growFactor="2" />
@@ -159,7 +154,7 @@
                                                                         </VBox>
                                                                         <ToolbarSpacer
                                                                         />
-                                                                        <Button icon="sap-icon://alert" press="onOpenDefects" visible="{= ${SearchViewModel>Visible} === true ? true : false}" />
+                                                                        
                                                                         <!-- <Image width="28px" height="28px" src="{imageModel>/path}/image/dot.png"></Image> -->
                                                                     </Toolbar>
                                                                 </CustomListItem>
