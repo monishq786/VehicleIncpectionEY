@@ -635,6 +635,14 @@ sap.ui.define([
 					"Location": "Rear Right",
 					"Highlight": "None"
 				}],
+				"VIStatusMajor": [{
+					"Location": "Major",
+					"Highlight": "None"
+				}],
+				"VIStatusMinor": [{
+					"Location": "Minor",
+					"Highlight": "None"
+				}],
 				"NewMaterialList": [
 
 					{

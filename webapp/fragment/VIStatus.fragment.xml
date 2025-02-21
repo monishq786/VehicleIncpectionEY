@@ -241,11 +241,13 @@
 
                             <HBox justifyContent="Start" wrap="Wrap" class="tileContainer">
                                 <!-- Minor Card -->
-                                <GenericTile header="Minor" class="customMinorCard smallTile">
+                                <GenericTile frameType = "OneByHalf" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customMinorCard" header="Minor" press="">
+                                    <TileContent>
+                                    </TileContent>
                                 </GenericTile>
-
-                                <!-- Major Card -->
-                                <GenericTile header="Major" class="customMajorCard smallTile">
+                                <GenericTile frameType = "OneByHalf" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customMajorCard" header="Major" press="">
+                                    <TileContent>
+                                    </TileContent>
                                 </GenericTile>
                             </HBox>
                         </l:BlockLayoutCell>
