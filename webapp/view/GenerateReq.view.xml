@@ -54,30 +54,31 @@
                             </OverflowToolbar>
                             <HBox visible="true">
                                 <VBox width="86%">
-                                    <HBox visible="true" class="sapUiSmallMarginBottom sapUiTinyMarginTop">
+                                    <!-- <HBox visible="true" class="sapUiSmallMarginBottom sapUiTinyMarginTop">
                                         <ObjectAttribute title="Total" text="{SearchViewModel>/TotalAmount} AED" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
                                         <ObjectAttribute title="Vat" text="{SearchViewModel>/VatAmount} AED" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
                                         <ObjectAttribute title="SR #" text="{VIRGlobalModel>/SR}  " active='true' class="cl_objAttri sapUiSmallMarginBegin" />
-                                    </HBox>
-                                    <!-- <HBox class="sapUiSmallMarginBottom sapUiTinyMarginTop">
+                                    </HBox> -->
+                                    <HBox class="sapUiSmallMarginBottom sapUiTinyMarginTop">
 
                                         <ObjectAttribute title="Chassis No" text="{VIRGlobalModel>/Chassisno}" active='true' class="cl_objAttri sapUiTinyMarginBegin" />
                                         <ObjectAttribute title="Engine No" text="{VIRGlobalModel>/Engineno}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
                                         <ObjectAttribute title="Reg Exp Year" text="{VIRGlobalModel>/RegExpYear}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
                                         <ObjectAttribute title="Horse power" text="{VIRGlobalModel>/HP}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
-                                        <ObjectAttribute title="Full Weight" text="{VIRGlobalModel>/FullWeight}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
-                                        <ObjectAttribute title="Cubic Capacity" text="1600" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
-                                    </HBox> -->
-                                    <!-- <HBox class="sapUiSmallMarginBottom sapUiTinyMarginTop">
-                                        <ObjectAttribute title="Vehicle Type" text="{VIRGlobalModel>/Type}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
+                                        <ObjectAttribute title="Mileage" text="{VIRGlobalModel>/mileage}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
+                                        <!-- <ObjectAttribute title="Full Weight" text="{VIRGlobalModel>/FullWeight}" active='true' class="cl_objAttri sapUiSmallMarginBegin" /> -->
+                                        <!-- <ObjectAttribute title="Cubic Capacity" text="1600" active='true' class="cl_objAttri sapUiSmallMarginBegin " /> -->
+                                    </HBox>
+                                    <HBox class="sapUiSmallMarginBottom sapUiTinyMarginTop">
+                                        <ObjectAttribute title="Vehicle Type" text="{VIRGlobalModel>/Type}" active='true' class="cl_objAttri sapUiTinyMarginBegin" />
                                         <ObjectAttribute title="Body Color" text="{VIRGlobalModel>/BodyColor}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
                                         <ObjectAttribute title="Gear Type" text="{VIRGlobalModel>/GearType}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
                                         <ObjectAttribute title="Fuel Type" text="{VIRGlobalModel>/FuelType}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
                                         <ObjectAttribute title="Steering Side" text="{VIRGlobalModel>/SteeringSide}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
                                         <ObjectAttribute title="MFG Year" text="{VIRGlobalModel>/MFGYear}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
                                         <ObjectAttribute title="Reg year" text="{VIRGlobalModel>/InitRegyear}" active='true' class="cl_objAttri sapUiSmallMarginBegin" />
-                                        <ObjectAttribute title="Mileage" text="{VIRGlobalModel>/mileage}" active='true' class="cl_objAttri sapUiSmallMarginBegin " />
-                                    </HBox> -->
+                                        
+                                    </HBox>
                                     <HBox visible="false" class="sapUiSmallMarginBottom">
                                         <!-- <Image src="{imageModel>/path}/image/Toyota.png" press="onPressShowVehicleInfo" class="sapUiSmallMarginBegin" /> -->
                                         <!-- <ObjectStatus class="CL_successobj sapUiMediumMarginBegin" visible="{VIRGlobalModel>/MahaFileUpdated}" text="MAHA File Updated" inverted="true" active="false" icon="sap-icon://sys-enter-2" state="Success" />
@@ -86,15 +87,15 @@
                                             <ObjectAttribute title="SR" text="#{VIRGlobalModel>/SR}" active="true" class="cl_objAttri sapUiTinyMarginBeginEnd" /> -->
                                     </HBox>
                                 </VBox>
-                                <VBox width="14%" justifyContent="End">
+                                <VBox width="14%" justifyContent="End" class="sapUiSmallMarginBottom">
                                     <!-- <Image src="{imageModel>/path}/image/Toyota.png" press="onPressShowVehicleInfo" /> -->
 
                                     <!-- <Text text="Service Test" class="cl_WelcomeText" /> -->
-                                    <!-- <Text text="SR #{VIRGlobalModel>/SR}" class="cl_WelcomeText" /> -->
-                                    <!-- <ObjectStatus class="sapUiTinyMarginTop CL_successobj" visible="{VIRGlobalModel>/MahaFileUpdated}" text="MAHA File Processed" inverted="true" active="false" icon="sap-icon://sys-enter-2" state="Success" /> -->
-                                    <!-- <ObjectStatus class="sapUiTinyMarginTop CL_warningobj" visible="{VIRGlobalModel>/MahaFileNotUpdated}" text="MAHA File Not Processed" inverted="true" active="true" icon="sap-icon://alert" state="Warning" /> -->
-                                    <!-- <Title text="Total: {SearchViewModel>/TotalAmount} AED" level="H1" class="cl_TotalText" />
-                                    <Text text="VAT: {SearchViewModel>/VatAmount} AED" class="cl_VatText" /> -->
+                                    <Text text="SR #{VIRGlobalModel>/SR}" class="cl_WelcomeText" /> 
+                                    <!-- <ObjectStatus class="sapUiTinyMarginTop CL_successobj" visible="{VIRGlobalModel>/MahaFileUpdated}" text="MAHA File Processed" inverted="true" active="false" icon="sap-icon://sys-enter-2" state="Success" /> 
+                                    <ObjectStatus class="sapUiTinyMarginTop CL_warningobj" visible="{VIRGlobalModel>/MahaFileNotUpdated}" text="MAHA File Not Processed" inverted="true" active="true" icon="sap-icon://alert" state="Warning" /> -->
+                                    <Title text="Total: {SearchViewModel>/TotalAmount} AED" level="H1" class="cl_TotalText" />
+                                    <Text text="VAT: {SearchViewModel>/VatAmount} AED" class="cl_VatText" />
                                 </VBox>
                             </HBox>
 
@@ -104,23 +105,23 @@
                                 </OverflowToolbar> -->
                         </f:GridListItem>
                     </f:GridList>
-                    <FlexBox id="idgridVT" items="" class="cl_whitematetialgridlist">
+                    <!-- <FlexBox id="idgridVT" items="" class="cl_whitematetialgridlist" wrap="Wrap">
                         <items>
-                            <ToggleButton text="Chassis No :{VIRGlobalModel>/Chassisno}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Engine No :{VIRGlobalModel>/Engineno}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Full Weight :{VIRGlobalModel>/FullWeight}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Cubic Capacity :1600" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Vehicle Type :{VIRGlobalModel>/Type}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Body Color :{VIRGlobalModel>/BodyColor}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Gear Type :{VIRGlobalModel>/GearType}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Steering Side :{VIRGlobalModel>/SteeringSide}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Fuel Type :{VIRGlobalModel>/FuelType}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="MFG Year :{VIRGlobalModel>/MFGYear}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Reg year :{VIRGlobalModel>/InitRegyear}" class="cl_objAttri sapUiTinyMarginBegin" />
-                            <ToggleButton text="Mileage :{VIRGlobalModel>/mileage}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Chassis No :{VIRGlobalModel>/Chassisno}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Engine No :{VIRGlobalModel>/Engineno}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Full Weight :{VIRGlobalModel>/FullWeight}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Cubic Capacity :1600" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Vehicle Type :{VIRGlobalModel>/Type}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Body Color :{VIRGlobalModel>/BodyColor}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Gear Type :{VIRGlobalModel>/GearType}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Steering Side :{VIRGlobalModel>/SteeringSide}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Fuel Type :{VIRGlobalModel>/FuelType}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="MFG Year :{VIRGlobalModel>/MFGYear}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Reg year :{VIRGlobalModel>/InitRegyear}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <Button text="Mileage :{VIRGlobalModel>/mileage}" class="cl_objAttri sapUiTinyMarginBegin" />
                         </items>
 
-                    </FlexBox>
+                    </FlexBox> -->
 
                     <!-- 2nd Grid -->
 

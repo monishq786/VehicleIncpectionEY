@@ -237,16 +237,16 @@
                             </f:GridList>
                         </l:BlockLayoutCell>
                         <l:BlockLayoutCell width="2" class="cl_vistatusblocklayout">
-                            <TextArea class="sapUiSmallMargin" width="94%" rows="7" placeholder="Enter Remarks" />
-                            <HBox id="hbs" width="100%" height="10%">
-                                <VBox justifyContent="Start" height="1%" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+                            <TextArea class="sapUiSmallMargin" width="93%" rows="7" placeholder="Enter Remarks" />
 
-                                    <GenericTile header="Minor" press="onPressMinor" />
-                                </VBox>
-                                <VBox class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
-                                    <GenericTile header="Major" press="onPressMajor" />
-                                </VBox>
+                            <HBox justifyContent="Start" wrap="Wrap" class="tileContainer">
+                                <!-- Minor Card -->
+                                <GenericTile header="Minor" class="customMinorCard smallTile">
+                                </GenericTile>
 
+                                <!-- Major Card -->
+                                <GenericTile header="Major" class="customMajorCard smallTile">
+                                </GenericTile>
                             </HBox>
                         </l:BlockLayoutCell>
 

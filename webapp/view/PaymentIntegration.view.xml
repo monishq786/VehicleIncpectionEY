@@ -78,6 +78,7 @@
                                 </f:GridList>
                             </IconTabFilter>
                             <IconTabFilter text="Payment" key="Payment">
+                                
                                 <f:GridList visible="true">
                                     <f:customLayout>
                                         <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))" gridGap="0.5rem" />
@@ -134,7 +135,6 @@
                                         </form:Form>
                                     </content>
                                 </Panel>
-                                <!--Card MOP-->
                                 <Panel expandable="true" expand="onExpandCard" expanded="false" width="auto" class="sapUiTinyMarginBeginEnd" expandAnimation="true" visible="true">
                                     <headerToolbar>
                                         <OverflowToolbar height="3rem">

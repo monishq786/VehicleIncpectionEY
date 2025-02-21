@@ -457,7 +457,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-                    "group":"Most Frequent Fresh Tests"
+                    "group":"Most Frequent Tests"
 				}, {
 					"Material": "2700000057",
 					"ServiceName": "Re-New - Fresh Test",
@@ -473,7 +473,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 
 				}, {
 					"Material": "2700000058",
@@ -490,7 +490,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 
 				}, {
 					"Material": "2700000059",
@@ -507,7 +507,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 
 				}, {
 					"Material": "2700000060",
@@ -524,7 +524,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Most Frequent Fresh Tests"
+					"group":"Most Frequent Tests"
 
 				}, {
 					"Material": "2700000061",
@@ -541,7 +541,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Most Frequent Fresh Tests"
+					"group":"Most Frequent Tests"
 
 				}, {
 					"Material": "2700000062",
@@ -558,7 +558,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Most Frequent Fresh Tests"
+					"group":"Most Frequent Tests"
 
 				}, {
 					"Material": "2700000068",
@@ -575,7 +575,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Most Frequent Fresh Tests"
+					"group":"Most Frequent Tests"
 
 				}, {
 					"Material": "2700000091",
@@ -592,7 +592,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Most Frequent Fresh Tests"
+					"group":"Most Frequent Tests"
 
 
 				}, {
@@ -610,7 +610,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Most Frequent Fresh Tests"
+					"group":"Most Frequent Tests"
 
 				}, {
 					"Material": "2700000065",
@@ -627,7 +627,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Most Frequent Fresh Tests"
+					"group":"Most Frequent Tests"
 
 				}, {
 					"Material": "2700000066",
@@ -644,7 +644,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 
 				}, {
 					"Material": "2700000067",
@@ -661,7 +661,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 
 				}, {
 					"Material": "2700000068",
@@ -678,7 +678,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 				}, {
 					"Material": "2700000069",
 					"ServiceName": "Change Info - Fresh Test",
@@ -694,7 +694,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 				}, {
 					"Material": "270000070",
 					"ServiceName": "Install Plate Sport Number - Fresh Test",
@@ -710,7 +710,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 				}, {
 					"Material": "270000071",
 					"ServiceName": "Trailer & Semi-Trailer Test - Fresh Test",
@@ -726,7 +726,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 				}, {
 					"Material": "270000073",
 					"ServiceName": "Traffic Test - Fresh Test",
@@ -742,7 +742,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 				}, 
 				{
 					"Material": "270000075",
@@ -759,7 +759,7 @@ sap.ui.define([
 					"Type": "Active",
 					"MahaIn": "",
 					"MahaOut": "",
-					"group":"Others Tests"
+					"group":"Other Tests"
 				}],
 				"Permit": [{
 					"Material": "2700000120",

@@ -1229,6 +1229,22 @@ sap.ui.define([
 			const oRouter = this.getOwnerComponent().getRouter();
 			oRouter.navTo("GenerateReq", {}, true);
 		},
+		onNavigationFinished: function (evt) {
+			var toPage = evt.getParameter("to");
+			MessageToast.show("Navigation to page '" + toPage.getTitle() + "' finished");
+		},
+
+		handleNav: function (evt) {
+			var navCon = this.byId("navCon");
+			var target = evt.getSource().data("target");
+			if (target) {
+				var animation = this.byId("animationSelect").getSelectedKey();
+				navCon.to(this.byId(target), animation);
+			} else {
+				navCon.back();
+			}
+		}
+
 	});
 
 });

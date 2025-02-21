@@ -82,7 +82,7 @@
                                         <!--</Button>-->
                                         <!-- </HBox> -->
                                         <Toolbar class="cl_toolbar1">
-                                            <Text text="Main Defect Categorysadsadsad" class="cl_WelcomeText" />
+                                            <Text text="Main Defect Category" class="cl_WelcomeText" />
                                             <ToolbarSpacer />
                                             <Button text="Summary" icon="sap-icon://information" type="Emphasized" iconFirst="true" width="auto" visible="true" press="obBtnPressSummry" class="sapUiSmallMarginEnd cl_Emphasizebtn" />
                                             <Text text="{SearchViewModel>/ServiceItem} {SearchViewModel>/Servicename}" class="cl_WelcomeText" />
@@ -111,7 +111,7 @@
 													</l:sideContent>
 												</l:DynamicSideContent>
 											</Page> -->
-                                            <Page id="p2" title="Main Defect Categorysdasdasdasd" class="cl_page" showHeader="false">
+                                            <Page id="p2" title="Main Defect Category" class="cl_page" showHeader="false">
                                                 <l:DynamicSideContent class="cl_rightcontent sapUiDSCExplored sapUiContentPadding" sideContentFallDown="BelowM" containerQuery="true" breakpointChanged="handleBreakpointChanged" showSideContent="true">
                                                     <!-- <f:GridList id="idgridVT" items="{SearchViewModel>/Interiorlist}" class="sapUiTinyMarginTop cl_whitematetialgridlist" mode="None">
                                                         <f:GridListItem type="Active" press="handleInterirorPress" class="sapUiTinyMarginBegin cl_Materialgridlist">
