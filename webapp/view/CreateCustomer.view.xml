@@ -60,6 +60,10 @@
 																<Input id="En8" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En9" class="smallInput" maxLength="1" liveChange="" />
 																<Input id="En10" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En11" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En12" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En13" class="smallInput" maxLength="1" liveChange="" />
+																<Input id="En14" class="smallInput" maxLength="1" liveChange="" />
 															</HBox>
 															<!-- <Input required="true" maxLength="14" value="{CreateCustomerModel>/Engineno}" editable="{CreateCustomerModel>/SearchFieldEditable}"/> -->
 														</f:fields>

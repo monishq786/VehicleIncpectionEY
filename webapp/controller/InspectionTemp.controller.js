@@ -2,8 +2,9 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/core/UIComponent",
 	"sap/m/MessageBox",
-	"sap/ui/model/json/JSONModel"
-], function (Controller, UIComponent, MessageBox, JSONModel) {
+	"sap/ui/model/json/JSONModel",
+	'sap/ui/core/Fragment'
+], function (Controller, UIComponent, MessageBox, JSONModel,Fragment) {
 	"use strict";
 
 	return Controller.extend("VIR.controller.InspectionTemp", {
@@ -1295,7 +1296,7 @@ sap.ui.define([
 			var oButton = oEvent.getSource();
 			if (!this.StatusPopover) {
 				Fragment.load({
-					name: "VIR.fragment.Summry",
+					name: "VIR.fragment.Summary",
 					controller: this
 				}).then(function (oPopover) {
 					this.StatusPopover = oPopover;

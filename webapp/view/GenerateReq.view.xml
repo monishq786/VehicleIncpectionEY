@@ -104,6 +104,23 @@
                                 </OverflowToolbar> -->
                         </f:GridListItem>
                     </f:GridList>
+                    <FlexBox id="idgridVT" items="" class="cl_whitematetialgridlist">
+                        <items>
+                            <ToggleButton text="Chassis No :{VIRGlobalModel>/Chassisno}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Engine No :{VIRGlobalModel>/Engineno}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Full Weight :{VIRGlobalModel>/FullWeight}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Cubic Capacity :1600" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Vehicle Type :{VIRGlobalModel>/Type}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Body Color :{VIRGlobalModel>/BodyColor}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Gear Type :{VIRGlobalModel>/GearType}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Steering Side :{VIRGlobalModel>/SteeringSide}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Fuel Type :{VIRGlobalModel>/FuelType}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="MFG Year :{VIRGlobalModel>/MFGYear}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Reg year :{VIRGlobalModel>/InitRegyear}" class="cl_objAttri sapUiTinyMarginBegin" />
+                            <ToggleButton text="Mileage :{VIRGlobalModel>/mileage}" class="cl_objAttri sapUiTinyMarginBegin" />
+                        </items>
+
+                    </FlexBox>
 
                     <!-- 2nd Grid -->
 
