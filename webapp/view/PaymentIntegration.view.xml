@@ -2,6 +2,8 @@
     xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.f"
+    xmlns:ndc="sap.ndc"
+    xmlns:mvc="sap.ui.core.mvc"
     xmlns:grid="sap.ui.layout.cssgrid" controllerName="VIR.controller.PaymentIntegration"
     xmlns:form="sap.ui.layout.form">
     <App>
@@ -78,7 +80,7 @@
                                 </f:GridList>
                             </IconTabFilter>
                             <IconTabFilter text="Payment" key="Payment">
-                                
+
                                 <f:GridList visible="true">
                                     <f:customLayout>
                                         <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))" gridGap="0.5rem" />
@@ -97,7 +99,148 @@
                                     </f:GridListItem>
                                 </f:GridList>
 
-                                <Panel expandable="true" expand="onExpandCash" expanded="{ServicesViewModel>/CashMOPPanelExpand}" width="auto" class="sapUiTinyMarginBeginEnd" expandAnimation="true" visible="true">
+                                <HBox>
+                                    <OverflowToolbar id="otbFooter">
+                                        <ToolbarSpacer/>
+                                        <Button text="Cash" press="handleNav">
+                                            <layoutData>
+                                                <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                            </layoutData>
+                                            <customData>
+                                                <core:CustomData key="target" value="p1" />
+                                            </customData>
+                                        </Button>
+                                        <Button text="Wallet" press="handleNav">
+                                            <layoutData>
+                                                <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                            </layoutData>
+                                            <customData>
+                                                <core:CustomData key="target" value="p2" />
+                                            </customData>
+                                        </Button>
+                                        <Button text="Card" press="handleNav">
+                                            <customData>
+                                                <core:CustomData key="target" value="p3" />
+                                            </customData>
+                                        </Button>
+                                        <ndc:BarcodeScannerButton id="sampleBarcodeScannerButtonZebra" scanSuccess="onScanSuccessOne" scanFail="onScanErrorOne" inputLiveUpdate="onScanLiveUpdate" dialogTitle="Barcode Scanner Button1 Sample" keepCameraScan="{/keepCameraScanOne}" class="sampleBarcodeScannerButtonWithZebraEB "/>
+                                    </OverflowToolbar>
+                                </HBox>
+
+                                <NavContainer navigationFinished="onNavigationFinished" id="navCon" width="98%" height="17em" class="navContainerControl sapUiSmallMarginBottom center">
+                                    <Page id="p1" title="Payment Mode">
+
+                                        <!-- <form:SimpleForm id="SimpleFormChange356" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                                            <form:ColumnLayout> -->
+                                        <Label text="Cash" />
+                                        <Label text="Amount" />
+                                        <Input value="">
+                                        </Input>
+                                        <!-- </form:ColumnLayout>
+                                        </form:SimpleForm> -->
+                                        <!-- <footer><OverflowToolbar><Button text="Pay" /></OverflowToolbar></footer> -->
+                                        <footer>
+                                            <OverflowToolbar>
+                                                <ToolbarSpacer/>
+                                                <Button text="Pay" type="Accept" />
+                                                <Button text="Reject" type="Reject" />
+
+                                            </OverflowToolbar>
+                                        </footer>
+                                    </Page>
+                                    <Page id="p2" title="Payment Mode">
+                                        <!-- <form:SimpleForm id="SimpleFormChange355" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                                            <form:ColumnLayout> -->
+                                        <Label text="Wallet" />
+                                        <Input id="Wallet" value="2987 AED" />
+                                        <Label text="Amount" />
+                                        <Input value="">
+                                        </Input>
+                                        <!-- </form:ColumnLayout>
+                                        </form:SimpleForm> -->
+
+                                        <!-- <footer><OverflowToolbar><Button text="Pay" /></OverflowToolbar></footer> -->
+                                        <footer>
+                                            <OverflowToolbar>
+                                                <ToolbarSpacer/>
+                                                <Button text="Pay" type="Accept" />
+                                                <Button text="Reject" type="Reject" />
+
+                                            </OverflowToolbar>
+                                        </footer>
+                                    </Page>
+                                    <Page id="p3" title="Payment Mode">
+                                        <!-- <form:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                                            <form:ColumnLayout> -->
+                                        <Label text="Card Name" />
+                                        <Input id="cardName" value="" />
+                                        <Label text="Card Number" />
+                                        <Input value="">
+                                        </Input>
+                                        <Label text="CVV Number" />
+                                        <Input value="">
+                                        </Input>
+                                        <Label text="Expiry Date" />
+                                        <DatePicker id="DP1" value="{
+							'path': '/valueDP1',
+						'type': 'sap.ui.model.type.Date',
+						'formatOptions': {
+							'pattern': 'MM'
+						}
+					}" change="handleChange" class="sapUiSmallMarginBottom" placeholder="Month"/>
+                                        <DatePicker id="DP2" value="{
+							'path': '/valueDP2',
+						'type': 'sap.ui.model.type.Date',
+						'formatOptions': {
+							'pattern': 'yyyy'
+						}
+					}" change="handleChange" class="sapUiSmallMarginBottom" placeholder="Year"/>
+                                        <!-- </form:ColumnLayout>
+                                        </form:SimpleForm> -->
+                                        <!-- <ToolbarSpacer/>
+				<footer > <OverflowToolbar> <Button text="Pay" /></OverflowToolbar></footer> -->
+                                        <footer>
+                                            <OverflowToolbar>
+                                                <ToolbarSpacer/>
+                                                <Button text="Pay" type="Accept" />
+                                                <Button text="Reject" type="Reject" />
+
+                                            </OverflowToolbar>
+                                        </footer>
+                                    </Page>
+                                    <Page id="p4" title="Payment Mode">
+                                        <VBox id="sampleBarcodeScannerVBox">
+                                            <Label text="{/scanAPIInfo}" class="sapUiSmallMarginBegin"/>
+                                            <VBox class="sapUiSmallMargin">
+                                                <!-- <Label text="Barcode Button One:"/>
+							<CheckBox text="keepCameraScan One" selected="{/keepCameraScanOne}"/> -->
+                                                <HBox class="sapUiTinyMarginTop">
+                                                    <Input id="sampleBarcodeScannerResultOne" type="Text" placeholder="Enter Result One" width="20rem" />
+                                                    <ndc:BarcodeScannerButton id="sampleBarcodeScannerButtonZebraOne" scanSuccess="onScanSuccessOne" scanFail="onScanErrorOne" inputLiveUpdate="onScanLiveUpdate" dialogTitle="Barcode Scanner Button1 Sample" keepCameraScan="{/keepCameraScanOne}" class="sampleBarcodeScannerButtonWithZebraEB" />
+                                                </HBox>
+                                            </VBox>
+
+
+                                        </VBox>
+                                        <footer>
+                                            <OverflowToolbar>
+                                                <Button text="Pay" />
+                                            </OverflowToolbar>
+                                        </footer>
+                                    </Page>
+                                </NavContainer>
+                                <HBox>
+                                    <Select id="animationSelect" visible="false">
+                                        <core:Item text="Flip animation" key="flip" />
+                                        <layoutData>
+                                            <FlexItemData growFactor="1" />
+                                        </layoutData>
+                                    </Select>
+                                </HBox>
+
+
+
+                                <!-- <Panel expandable="true" expand="onExpandCash" expanded="{ServicesViewModel>/CashMOPPanelExpand}" width="auto" class="sapUiTinyMarginBeginEnd" expandAnimation="true" visible="true">
                                     <headerToolbar>
                                         <OverflowToolbar height="3rem">
                                             <Image height="1.5rem" />
@@ -134,8 +277,9 @@
                                             </form:formContainers>
                                         </form:Form>
                                     </content>
-                                </Panel>
-                                <Panel expandable="true" expand="onExpandCard" expanded="false" width="auto" class="sapUiTinyMarginBeginEnd" expandAnimation="true" visible="true">
+                                </Panel> -->
+
+                                <!-- <Panel expandable="true" expand="onExpandCard" expanded="false" width="auto" class="sapUiTinyMarginBeginEnd" expandAnimation="true" visible="true">
                                     <headerToolbar>
                                         <OverflowToolbar height="3rem">
                                             <Image height="1.5rem" />
@@ -172,9 +316,9 @@
                                             </form:formContainers>
                                         </form:Form>
                                     </content>
-                                </Panel>
+                                </Panel> -->
 
-                                <Panel expandable="true" expand="onExpandCoupons" expanded="false" width="auto" class="sapUiTinyMarginBeginEnd" expandAnimation="true" visible="true">
+                                <!-- <Panel expandable="true" expand="onExpandCoupons" expanded="false" width="auto" class="sapUiTinyMarginBeginEnd" expandAnimation="true" visible="true">
                                     <headerToolbar>
                                         <OverflowToolbar height="3rem">
                                             <Image height="1.5rem" />
@@ -191,7 +335,7 @@
                                             </Input>
                                         </FlexBox>
                                     </content>
-                                </Panel>
+                                </Panel> -->
                             </IconTabFilter>
                         </items>
                     </IconTabBar>

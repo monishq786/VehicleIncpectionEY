@@ -1229,12 +1229,12 @@ sap.ui.define([
 			const oRouter = this.getOwnerComponent().getRouter();
 			oRouter.navTo("GenerateReq", {}, true);
 		},
-		onNavigationFinished: function (evt) {
+		onNavigationFinished: function(evt) {
 			var toPage = evt.getParameter("to");
 			MessageToast.show("Navigation to page '" + toPage.getTitle() + "' finished");
 		},
 
-		handleNav: function (evt) {
+		handleNav: function(evt) {
 			var navCon = this.byId("navCon");
 			var target = evt.getSource().data("target");
 			if (target) {
@@ -1244,6 +1244,7 @@ sap.ui.define([
 				navCon.back();
 			}
 		}
+
 
 	});
 

@@ -636,9 +636,9 @@ height: 5.5rem !important;
     background: #fff !important;
     /* border: 1.8px solid #0047ba !important; */
     padding: 0 1rem 0 1rem !important;
-    border-bottom:1px solid #817d7d
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important; */
-    /* border-radius: 4px !important; */
+    border-bottom: 1px solid #817d7d
+        /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important; */
+        /* border-radius: 4px !important; */
 }
 
 .cl_salesordertxt {
@@ -1538,9 +1538,11 @@ path:hover {
     border-radius: 4px !important;
     height: 2rem;
 }
-.cl_custlisthdr .sapMListHdrText{
-border-bottom:none !important
+
+.cl_custlisthdr .sapMListHdrText {
+    border-bottom: none !important
 }
+
 .Cl_CustomerHeaderBG.sapMTB-Solid-CTX.sapMTB {
     background-image: url(../image/New_CustomerImage.PNG) !important;
     background-repeat: no-repeat;
@@ -1651,28 +1653,38 @@ border-bottom:none !important
     border: 1.5px solid #0047ba;
     border-radius: 8px;
 }
+
 .sapMInput {
     text-align: center;
     font-size: 1.2rem;
     margin: 0 2px;
 }
+
 .smallInput {
-    width: 25px !important;  /* Set width for small box */
-    height: 25px !important; /* Set height for small box */
-    text-align: center;       /* Center text */
-    font-size: 16px;          /* Adjust font size */
-    border-radius: 5px;       /* Rounded corners */
+    width: 25px !important;
+    /* Set width for small box */
+    height: 25px !important;
+    /* Set height for small box */
+    text-align: center;
+    /* Center text */
+    font-size: 16px;
+    /* Adjust font size */
+    border-radius: 5px;
+    /* Rounded corners */
 }
 
 .chassisInputContainer {
-    gap: 5px;                 /* Spacing between input boxes */
+    gap: 5px;
+    /* Spacing between input boxes */
     display: flex;
-    flex-wrap: wrap;          /* Wrap inputs if screen size is small */
+    flex-wrap: wrap;
+    /* Wrap inputs if screen size is small */
 }
 
-.sapMLIB.sapMLIBActive{
+.sapMLIB.sapMLIBActive {
     background: none !important;
 }
+
 .customMinorCard {
     color: white;
     border-radius: 10px;
@@ -1684,15 +1696,18 @@ border-bottom:none !important
     color: white;
     border-radius: 10px;
 }
+
 /* Tile Container for Responsive Layout */
 .tileContainer {
     display: flex;
-    gap: 10px; /* Space between tiles */
+    gap: 10px;
+    /* Space between tiles */
 }
 
 /* Small Tile Styling */
 .smallTile {
-    width: 120px; /* Default tile size */
+    width: 120px;
+    /* Default tile size */
     height: 100px;
     font-size: 12px;
     text-align: center;
@@ -1712,15 +1727,23 @@ border-bottom:none !important
     border-radius: 10px;
 }
 
+.navContainerControl {
+    border-color: #888;
+    border-style: solid;
+    border-width: 0.0625em;
+}
+
 /* Media Query for Tablet Screens */
 @media screen and (max-width: 768px) {
     .tileContainer {
-        flex-direction: row; /* Stack tiles vertically */
+        flex-direction: row;
+        /* Stack tiles vertically */
         justify-content: space-between;
     }
 
     .smallTile {
-        width: 45%; /* Full width on smaller screens */
+        width: 45%;
+        /* Full width on smaller screens */
         height: auto;
     }
 }

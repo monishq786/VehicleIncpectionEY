@@ -20,12 +20,13 @@
                                         <Input value="{VIRGlobalModel>/PlateNo}" width="8rem" placeholder="Plate Number" maxLength="5" class="Cl_SearchInput sapUiTinyMarginEnd sapUiTinyMarginBottom" />
                                         <Input value="" placeholder="Chassis Number" maxLength="10" class="Cl_SearchInput sapUiTinyMarginBeginEnd sapUiTinyMarginBottom" width="8rem" />
                                         <Input value="" placeholder="Certificate Number" maxLength="10" class="Cl_SearchInput sapUiTinyMarginBegin sapUiTinyMarginBottom" width="8rem" />
-                                        <Input value="" placeholder="Plate Color" width="8rem" maxLength="5" class="Cl_SearchInput  sapUiTinyMarginBottom sapUiTinyMarginBegin" />
-                                        <Input value="" width="8rem" placeholder="Plate Kind" maxLength="5" class="Cl_SearchInput  sapUiTinyMarginBottom sapUiTinyMarginBegin" />
-                                        <Input value="" width="8rem" placeholder="Plate Source" maxLength="5" class="Cl_SearchInput  sapUiTinyMarginBottom sapUiTinyMarginBegin" />
-                                        <Input value="{VIRGlobalModel>/PlateCode}" width="8rem" placeholder="Plate Code" maxLength="3" class="Cl_SearchInput sapUiTinyMarginBegin sapUiTinyMarginEnd sapUiTinyMarginBottom" />
-                                        <Button text="Go" type="Emphasized" class="sapUiSmallMarginBeginEnd" press="onPressAdpolice" />
-                                        <Button text="Clear" type="Transparent" class="sapUiTinyMarginBeginEnd" />
+                                        <Input value="" placeholder="Plate Color" width="8rem" maxLength="5" class="Cl_SearchInput  sapUiTinyMarginBottom sapUiTinyMarginBegin" showValueHelp="true" valueHelpRequest=""/>
+                                        <Input value="" width="8rem" placeholder="Plate Kind" maxLength="5" class="Cl_SearchInput  sapUiTinyMarginBottom sapUiTinyMarginBegin" showValueHelp="true" valueHelpRequest=""/>
+                                        <Input value="" width="8rem" placeholder="Plate Source" maxLength="5" class="Cl_SearchInput  sapUiTinyMarginBottom sapUiTinyMarginBegin" showValueHelp="true" valueHelpRequest=""/>
+                                        <Input value="{VIRGlobalModel>/PlateCode}" width="6rem" placeholder="Plate Code" maxLength="3" class="Cl_SearchInput sapUiTinyMarginBegin sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+                                        <Button text="Go" type="Emphasized" class="sapUiTinyMarginBeginEnd" press="onPressAdpolice" />
+                                        <Button text="Recapture" type="Emphasized" class="sapUiTinyMarginBeginEnd" press="" />
+                                        <Button text="Clear" type="Emphasized" class="sapUiTinyMarginBeginEnd" />
                                     </FlexBox>
                                 </l:BlockLayoutCell>
                             </l:BlockLayoutRow>
@@ -224,9 +225,9 @@
                                 <l:BlockLayoutCell width="2" class="Cl_BlockLayoutRadius">
                                     <ff:GridListItem visible="true" class="Cl_QuickLinkGridList">
                                         <VBox height="auto" justifyContent="Center">
-                                            <FlexBox alignItems="Center" justifyContent="Center" height="3rem">
+                                            <!-- <FlexBox alignItems="Center" justifyContent="Center" height="3rem">
                                                 <Image height="2.7rem" src="{imageModel>/path}/image/user.png" class="sapUiTinyMarginEnd sapUiTinyMarginTop" />
-                                            </FlexBox>
+                                            </FlexBox> -->
                                             <VBox alignItems="Center" justifyContent="Center">
                                                 <HBox>
                                                     <core:Icon src="sap-icon://employe" class="size4 sapUiTinyMarginTopBottom" color="#1C4C98" />
