@@ -1732,18 +1732,3 @@ path:hover {
     border-style: solid;
     border-width: 0.0625em;
 }
-
-/* Media Query for Tablet Screens */
-@media screen and (max-width: 768px) {
-    .tileContainer {
-        flex-direction: row;
-        /* Stack tiles vertically */
-        justify-content: space-between;
-    }
-
-    .smallTile {
-        width: 45%;
-        /* Full width on smaller screens */
-        height: auto;
-    }
-}
