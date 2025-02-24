@@ -4,7 +4,7 @@ sap.ui.define([
 	"sap/m/MessageBox",
 	"sap/ui/model/json/JSONModel",
 	'sap/ui/core/Fragment'
-], function (Controller, UIComponent, MessageBox, JSONModel,Fragment) {
+], function (Controller, UIComponent, MessageBox, JSONModel, Fragment) {
 	"use strict";
 
 	return Controller.extend("VIR.controller.InspectionTemp", {
@@ -17,6 +17,17 @@ sap.ui.define([
 				selectedValue: ""
 			});
 			this.getView().setModel(Model, "myModel");
+
+			let summaryData = {
+				"data": [
+					{ "heading": "Lights", "point": "Repair Front Lights(Low)" },
+					{ "heading": "Lights", "point": "Repair Signal Lights" },
+					{ "heading": "Body", "point": "Bullet Point A" },
+					{ "heading": "Attachment", "point": "Bullet Point B" }
+				]
+			}
+			let oModel = new sap.ui.model.json.JSONModel(summaryData);
+			this.getView().setModel(oModel, "empModel");
 		},
 		onAfterRendering: function () {
 			// this.loadSVG();
@@ -868,7 +879,7 @@ sap.ui.define([
 
 		},
 		onExit: function () {
-			
+
 			MessageBox.warning("You have not Saved Data.");
 		},
 		onPressCompretest: function () {

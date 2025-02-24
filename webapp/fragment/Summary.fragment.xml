@@ -2,7 +2,36 @@
     xmlns:core="sap.ui.core">
     <ResponsivePopover title="" showHeader="false" class="sapUiPopupWithPadding" placement="Left" contentHeight="auto" contentWidth="auto">
         <content>
-            
+            <VBox>
+                <!-- Heading 1 -->
+                <Text text="Lights" class="sapMTitle"/>
+                <List>
+                    <StandardListItem title="• Repair Front Lights(Low)"/>
+                    <StandardListItem title="• Repair Signal Lights"/>
+                </List>
+
+                <!-- Heading 2 -->
+                <Text text="Breaks" class="sapMTitle"/>
+                <List>
+                    <StandardListItem title="• Repair or Replace Master Cylinder"/>
+                    <StandardListItem title="• Repair wheel cylinder oil leak"/>
+                </List>
+
+                <Text text="Body" class="sapMTitle"/>
+                <List>
+                    <StandardListItem title="• Repair/Adjust Brake"/>
+                    <StandardListItem title="• Repair Brake Hose"/>
+                    <StandardListItem title="• Repair Brake Piping"/>
+                </List>
+
+                <Text text="Attachment" class="sapMTitle"/>
+                <List>
+                    <StandardListItem title="• Chassis measurement report attached"/>
+                    <StandardListItem title="• Wheel Alignment report attached"/>
+                    <StandardListItem title="• Attachment product label Certificate"/>
+                    <StandardListItem title="• Agency certificate attached"/>
+                </List>
+            </VBox>
         </content>
     </ResponsivePopover>
 </core:FragmentDefinition>
