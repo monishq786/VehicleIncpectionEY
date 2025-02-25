@@ -97,146 +97,110 @@
                                             </VBox>
                                         </OverflowToolbar>
                                     </f:GridListItem>
+
                                 </f:GridList>
 
-                                <HBox>
-                                    <OverflowToolbar id="otbFooter">
-                                        <ToolbarSpacer/>
-                                        <Button text="Cash" press="handleNav">
+
+                                <!-- <VBox class="sapUiSmallMargin sapUiResponsiveContentPadding" justifyContent="Center" alignItems="Center"> -->
+
+                                    <!-- Payment Selection Buttons -->
+                                    <HBox class="sapUiSmallMarginBottom  sapUiResponsiveContentPadding" justifyContent="Start" alignItems="Start">
+                                        <Button id="btnCash" text="Cash" press="handleNav" class="sapUiTinyMarginBegin">
                                             <layoutData>
-                                                <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                                <OverflowToolbarLayoutData priority="NeverOverflow"/>
                                             </layoutData>
                                             <customData>
-                                                <core:CustomData key="target" value="p1" />
+                                                <core:CustomData key="target" value="p1"/>
                                             </customData>
                                         </Button>
-                                        <Button text="Wallet" press="handleNav">
+                                        <Button id="btnWallet" text="Wallet" press="handleNav" class="sapUiTinyMarginBegin">
                                             <layoutData>
-                                                <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                                <OverflowToolbarLayoutData priority="NeverOverflow"/>
                                             </layoutData>
                                             <customData>
-                                                <core:CustomData key="target" value="p2" />
+                                                <core:CustomData key="target" value="p2"/>
                                             </customData>
                                         </Button>
-                                        <Button text="Card" press="handleNav">
+                                        <Button id="btnCard" text="Card" press="handleNav" class="sapUiTinyMarginBegin">
                                             <customData>
-                                                <core:CustomData key="target" value="p3" />
+                                                <core:CustomData key="target" value="p3"/>
                                             </customData>
                                         </Button>
-                                        <ndc:BarcodeScannerButton id="sampleBarcodeScannerButtonZebra" scanSuccess="onScanSuccessOne" scanFail="onScanErrorOne" inputLiveUpdate="onScanLiveUpdate" dialogTitle="Barcode Scanner Button1 Sample" keepCameraScan="{/keepCameraScanOne}" class="sampleBarcodeScannerButtonWithZebraEB "/>
-                                    </OverflowToolbar>
-                                </HBox>
+                                        <Button id="btnScanner" text="Scanner" press="handleNav" class="sapUiTinyMarginBegin">
+                                            <customData>
+                                                <core:CustomData key="target" value="p4"/>
+                                            </customData>
+                                        </Button>
+                                    </HBox>
 
-                                <NavContainer navigationFinished="onNavigationFinished" id="navCon" width="98%" height="17em" class="navContainerControl sapUiSmallMarginBottom center">
-                                    <Page id="p1" title="Payment Mode">
+                                    <!-- Navigation Container -->
+                                    <NavContainer id="navCon" afterNavigate="onAfterNavigate" width="70%" height="18rem" class="sapUiResponsiveContentPadding">
 
-                                        <!-- <form:SimpleForm id="SimpleFormChange356" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
-                                            <form:ColumnLayout> -->
-                                        <Label text="Cash" />
-                                        <Label text="Amount" />
-                                        <Input value="">
-                                        </Input>
-                                        <!-- </form:ColumnLayout>
-                                        </form:SimpleForm> -->
-                                        <!-- <footer><OverflowToolbar><Button text="Pay" /></OverflowToolbar></footer> -->
-                                        <footer>
-                                            <OverflowToolbar>
-                                                <ToolbarSpacer/>
-                                                <Button text="Pay" type="Accept" />
-                                                <Button text="Reject" type="Reject" />
+                                        <!-- Cash Payment Page -->
+                                        <Page id="p1" title="Cash Payment" class="sapUiTinyMargin">
+                                            <VBox class="sapUiTinyMargin sapUiContentPadding">
+                                                <Label text="Amount" />
+                                                <Input value="" width="80%"/>
+                                            </VBox>
+                                        </Page>
 
-                                            </OverflowToolbar>
-                                        </footer>
-                                    </Page>
-                                    <Page id="p2" title="Payment Mode">
-                                        <!-- <form:SimpleForm id="SimpleFormChange355" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
-                                            <form:ColumnLayout> -->
-                                        <Label text="Wallet" />
-                                        <Input id="Wallet" value="2987 AED" />
-                                        <Label text="Amount" />
-                                        <Input value="">
-                                        </Input>
-                                        <!-- </form:ColumnLayout>
-                                        </form:SimpleForm> -->
+                                        <!-- Wallet Payment Page -->
+                                        <Page id="p2" title="Wallet Payment" class="sapUiSmallMargin">
+                                            <VBox class="sapUiSmallMargin sapUiContentPadding">
+                                                <Label text="Wallet Balance"/>
+                                                <Input id="Wallet" value="2987 AED" width="80%" editable="false"/>
+                                                <Label text="Enter Amount" />
+                                                <Input value="" width="80%"/>
+                                            </VBox>
+                                        </Page>
 
-                                        <!-- <footer><OverflowToolbar><Button text="Pay" /></OverflowToolbar></footer> -->
-                                        <footer>
-                                            <OverflowToolbar>
-                                                <ToolbarSpacer/>
-                                                <Button text="Pay" type="Accept" />
-                                                <Button text="Reject" type="Reject" />
-
-                                            </OverflowToolbar>
-                                        </footer>
-                                    </Page>
-                                    <Page id="p3" title="Payment Mode">
-                                        <!-- <form:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
-                                            <form:ColumnLayout> -->
-                                        <Label text="Card Name" />
-                                        <Input id="cardName" value="" />
-                                        <Label text="Card Number" />
-                                        <Input value="">
-                                        </Input>
-                                        <Label text="CVV Number" />
-                                        <Input value="">
-                                        </Input>
-                                        <Label text="Expiry Date" />
-                                        <DatePicker id="DP1" value="{
-							'path': '/valueDP1',
-						'type': 'sap.ui.model.type.Date',
-						'formatOptions': {
-							'pattern': 'MM'
-						}
-					}" change="handleChange" class="sapUiSmallMarginBottom" placeholder="Month"/>
-                                        <DatePicker id="DP2" value="{
-							'path': '/valueDP2',
-						'type': 'sap.ui.model.type.Date',
-						'formatOptions': {
-							'pattern': 'yyyy'
-						}
-					}" change="handleChange" class="sapUiSmallMarginBottom" placeholder="Year"/>
-                                        <!-- </form:ColumnLayout>
-                                        </form:SimpleForm> -->
-                                        <!-- <ToolbarSpacer/>
-				<footer > <OverflowToolbar> <Button text="Pay" /></OverflowToolbar></footer> -->
-                                        <footer>
-                                            <OverflowToolbar>
-                                                <ToolbarSpacer/>
-                                                <Button text="Pay" type="Accept" />
-                                                <Button text="Reject" type="Reject" />
-
-                                            </OverflowToolbar>
-                                        </footer>
-                                    </Page>
-                                    <Page id="p4" title="Payment Mode">
-                                        <VBox id="sampleBarcodeScannerVBox">
-                                            <Label text="{/scanAPIInfo}" class="sapUiSmallMarginBegin"/>
-                                            <VBox class="sapUiSmallMargin">
-                                                <!-- <Label text="Barcode Button One:"/>
-							<CheckBox text="keepCameraScan One" selected="{/keepCameraScanOne}"/> -->
-                                                <HBox class="sapUiTinyMarginTop">
-                                                    <Input id="sampleBarcodeScannerResultOne" type="Text" placeholder="Enter Result One" width="20rem" />
-                                                    <ndc:BarcodeScannerButton id="sampleBarcodeScannerButtonZebraOne" scanSuccess="onScanSuccessOne" scanFail="onScanErrorOne" inputLiveUpdate="onScanLiveUpdate" dialogTitle="Barcode Scanner Button1 Sample" keepCameraScan="{/keepCameraScanOne}" class="sampleBarcodeScannerButtonWithZebraEB" />
+                                        <!-- Card Payment Page -->
+                                        <Page id="p3" title="Card Payment" class="sapUiSmallMargin">
+                                            <VBox class="sapUiSmallMargin sapUiContentPadding">
+                                                <Label text="Card Name" />
+                                                <Input id="cardName" value="" width="80%"/>
+                                                <Label text="Card Number" />
+                                                <Input value="" width="80%"/>
+                                                <Label text="CVV Number" />
+                                                <Input value="" type="Password" width="80%"/>
+                                                <Label text="Expiry Date" />
+                                                <HBox>
+                                                    <DatePicker width="50%" id="DP1" placeholder="MM"/>
+                                                    <DatePicker width="50%" id="DP2" placeholder="YYYY"/>
                                                 </HBox>
                                             </VBox>
+                                        </Page>
+
+                                        <!-- Barcode Scanner Page -->
+                                        <Page id="p4" title="Scan Pay" class="sapUiSmallMargin">
+                                            <VBox id="sampleBarcodeScannerVBox" class="sapUiSmallMargin sapUiContentPadding">
+                                                <Label text="Scan your barcode below:" class="sapUiSmallMarginBegin"/>
+                                                <HBox class="sapUiSmallMargin">
+                                                    <Input id="sampleBarcodeScannerResultOne" type="Text" placeholder="Scanned Result" width="75%" />
+                                                    <ndc:BarcodeScannerButton id="sampleBarcodeScannerButtonZebraOne" scanSuccess="onScanSuccessOne" scanFail="onScanErrorOne" inputLiveUpdate="onScanLiveUpdate" dialogTitle="Barcode Scanner" keepCameraScan="{/keepCameraScanOne}" class="sapUiTinyMarginBegin"/>
+                                                </HBox>
+                                            </VBox>
+                                            <!-- <footer>
+                                                <OverflowToolbar>
+                                                    <ToolbarSpacer/>
+                                                    <Button text="Proceed to Pay" type="Emphasized" press="onPaymentProcess"/>
+                                                </OverflowToolbar>
+                                            </footer> -->
+                                        </Page>
+
+                                    </NavContainer>
+                                    <HBox>
+                                        <Select id="animationSelect" visible="false">
+                                            <core:Item text="Flip animation" key="show" />
+                                            <layoutData>
+                                                <FlexItemData growFactor="1" />
+                                            </layoutData>
+                                        </Select>
+                                    </HBox>
+                                <!-- </VBox> -->
 
 
-                                        </VBox>
-                                        <footer>
-                                            <OverflowToolbar>
-                                                <Button text="Pay" />
-                                            </OverflowToolbar>
-                                        </footer>
-                                    </Page>
-                                </NavContainer>
-                                <HBox>
-                                    <Select id="animationSelect" visible="false">
-                                        <core:Item text="Flip animation" key="flip" />
-                                        <layoutData>
-                                            <FlexItemData growFactor="1" />
-                                        </layoutData>
-                                    </Select>
-                                </HBox>
+
 
 
 
