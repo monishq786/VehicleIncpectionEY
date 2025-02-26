@@ -1,30 +1,30 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/core/UIComponent"
-], function(Controller, UIComponent) {
+], function (Controller, UIComponent) {
 	"use strict";
 
 	return Controller.extend("VIR.controller.MainmenuView", {
-onpressopenpayment:function(){
-	if (!this.PaymentFrag) {
-		this.PaymentFrag = sap.ui.xmlfragment("VIR.fragment.PaymentMode", this);
-		this.getView().addDependent(this.PaymentFrag);
-	}
-	this.PaymentFrag.open();
-},
-		
+		onpressopenpayment: function () {
+			if (!this.PaymentFrag) {
+				this.PaymentFrag = sap.ui.xmlfragment("VIR.fragment.PaymentMode", this);
+				this.getView().addDependent(this.PaymentFrag);
+			}
+			this.PaymentFrag.open();
+		},
+
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf VIR.view.MainmenuView
 		 */
-		onInit: function() {
+		onInit: function () {
 			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this._oRouter.attachRouteMatched(this.handleRouteMatched, this);
 			this.onPressBanner();
 		},
-		handleRouteMatched: function(oEvent) {
+		handleRouteMatched: function (oEvent) {
 			if (oEvent.getParameter("name") === "MainmenuView") {
 				var oStartupParameters = this.getOwnerComponent().getComponentData().startupParameters;
 				if (oStartupParameters && oStartupParameters.message && oStartupParameters.orderid) {
@@ -39,7 +39,7 @@ onpressopenpayment:function(){
 				}
 			}
 		},
-		onPressmainHome: function() {
+		onPressmainHome: function () {
 			// var sPreviousHash = History.getInstance().getPreviousHash();
 			var oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
 			oCrossAppNavigator.toExternal({
@@ -50,14 +50,14 @@ onpressopenpayment:function(){
 			var oRenderer = sap.ushell.Container.getRenderer("fiori2");
 			oRenderer.setHeaderVisibility(true, false);
 		},
-		onPressBanner: function(oEvent) {
+		onPressBanner: function (oEvent) {
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.navTo("View1", false);
 			var oToolPage = this.byId("id_VIRtoolPage");
 			oToolPage.setSideExpanded(true);
 
 		},
-		onPressSearch: function(oEvent) {
+		onPressSearch: function (oEvent) {
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.navTo("Search", false);
 			var oToolPage = this.byId("id_VIRtoolPage");
@@ -78,20 +78,20 @@ onpressopenpayment:function(){
 		 * This hook is the same one that SAPUI5 controls get after being rendered.
 		 * @memberOf VIR.view.MainmenuView
 		 */
-		onAfterRendering: function() {
+		onAfterRendering: function () {
 			// var oToolPage = this.byId("id_VIRtoolPage");
 			// oToolPage.setSideExpanded(false);
 
 		},
 
-		onSideNavButtonPress: function() {
+		onSideNavButtonPress: function () {
 			var oToolPage = this.byId("id_VIRtoolPage");
 			// var bSideExpanded = oToolPage.getSideExpanded();
 			// this._setToggleButtonTooltip(bSideExpanded);
 			oToolPage.setSideExpanded(!oToolPage.getSideExpanded());
 		},
 
-		_setToggleButtonTooltip: function(bLarge) {
+		_setToggleButtonTooltip: function (bLarge) {
 			var oToggleButton = this.byId('sideNavigationToggleButton');
 			if (bLarge) {
 				oToggleButton.setTooltip('Large Size Navigation');
@@ -99,13 +99,13 @@ onpressopenpayment:function(){
 				oToggleButton.setTooltip('Small Size Navigation');
 			}
 		},
-		onPressPendingReq: function() {
+		onPressPendingReq: function () {
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.navTo("PendingRequest", false);
 			var oToolPage = this.byId("id_VIRtoolPage");
 			oToolPage.setSideExpanded(false);
 		},
-		onPressPayment: function() {
+		onPressPayment: function () {
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.navTo("Payment", false);
 			var oToolPage = this.byId("id_VIRtoolPage");
@@ -114,10 +114,10 @@ onpressopenpayment:function(){
 
 
 
-		onPressNewHome:function(){
+		onPressNewHome: function () {
 			var oRouter = UIComponent.getRouterFor(this);
-				oRouter.navTo("Home", false);
-	}
+			oRouter.navTo("Home", false);
+		}
 
 
 
